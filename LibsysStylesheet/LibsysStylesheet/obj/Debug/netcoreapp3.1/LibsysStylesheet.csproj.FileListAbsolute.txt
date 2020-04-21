@@ -1,0 +1,15 @@
+E:\LibsysStylesheet\LibsysStylesheet\bin\Debug\netcoreapp3.1\LibsysStylesheet.deps.json
+E:\LibsysStylesheet\LibsysStylesheet\bin\Debug\netcoreapp3.1\LibsysStylesheet.dll
+E:\LibsysStylesheet\LibsysStylesheet\bin\Debug\netcoreapp3.1\LibsysStylesheet.pdb
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\LibsysStylesheet.csprojAssemblyReference.cache
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\LibsysStylesheet_MarkupCompile.cache
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\LibsysStylesheet_MarkupCompile.lref
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\Styles\Buttons.baml
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\Styles\Colors.baml
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\Styles\Fonts.baml
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\Styles\Texts.baml
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\LibsysStylesheet.g.resources
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\LibsysStylesheet.AssemblyInfoInputs.cache
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\LibsysStylesheet.AssemblyInfo.cs
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\LibsysStylesheet.dll
+E:\LibsysStylesheet\LibsysStylesheet\obj\Debug\netcoreapp3.1\LibsysStylesheet.pdb
