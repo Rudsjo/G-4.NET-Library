@@ -5,6 +5,7 @@
     /// </summary>
     #region Namespaces
     using System;
+    using Library.Core;
     #endregion
 
     /// <summary>
@@ -27,6 +28,11 @@
         /// Author of the article
         /// </summary>
         public string Author { get; set; }
+
+        /// <summary>
+        /// The category of this article <see cref="ArticleCategories"/>
+        /// </summary>
+        public ArticleCategories Category { get; set; }
 
         /// <summary>
         /// This article's release date

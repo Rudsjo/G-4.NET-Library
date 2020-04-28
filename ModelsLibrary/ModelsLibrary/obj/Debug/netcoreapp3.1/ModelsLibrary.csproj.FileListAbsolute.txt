@@ -1,0 +1,10 @@
+C:\Users\stimp\Desktop\Library\G-4.NET-Library\ModelsLibrary\ModelsLibrary\bin\Debug\netcoreapp3.1\ModelsLibrary.deps.json
+C:\Users\stimp\Desktop\Library\G-4.NET-Library\ModelsLibrary\ModelsLibrary\bin\Debug\netcoreapp3.1\ModelsLibrary.dll
+C:\Users\stimp\Desktop\Library\G-4.NET-Library\ModelsLibrary\ModelsLibrary\bin\Debug\netcoreapp3.1\ModelsLibrary.pdb
+C:\Users\stimp\Desktop\Library\G-4.NET-Library\ModelsLibrary\ModelsLibrary\obj\Debug\netcoreapp3.1\ModelsLibrary.csprojAssemblyReference.cache
+C:\Users\stimp\Desktop\Library\G-4.NET-Library\ModelsLibrary\ModelsLibrary\obj\Debug\netcoreapp3.1\ModelsLibrary.csproj.CoreCompileInputs.cache
+C:\Users\stimp\Desktop\Library\G-4.NET-Library\ModelsLibrary\ModelsLibrary\obj\Debug\netcoreapp3.1\ModelsLibrary.AssemblyInfoInputs.cache
+C:\Users\stimp\Desktop\Library\G-4.NET-Library\ModelsLibrary\ModelsLibrary\obj\Debug\netcoreapp3.1\ModelsLibrary.AssemblyInfo.cs
+C:\Users\stimp\Desktop\Library\G-4.NET-Library\ModelsLibrary\ModelsLibrary\obj\Debug\netcoreapp3.1\ModelsLibrary.csproj.CopyComplete
+C:\Users\stimp\Desktop\Library\G-4.NET-Library\ModelsLibrary\ModelsLibrary\obj\Debug\netcoreapp3.1\ModelsLibrary.dll
+C:\Users\stimp\Desktop\Library\G-4.NET-Library\ModelsLibrary\ModelsLibrary\obj\Debug\netcoreapp3.1\ModelsLibrary.pdb
