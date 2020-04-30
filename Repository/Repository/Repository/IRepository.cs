@@ -4,7 +4,8 @@
     /// Required namespaces
     /// </summary>
     #region Namespaces
-
+    using ModelsLibrary;
+    using System.Collections.Generic;
     #endregion
 
     /// <summary>
@@ -25,13 +26,15 @@
         /// Add a new category to the system
         /// </summary>
         /// <returns>True if category could be added</returns>
-        abstract bool AddCategory();
+        /// <param name="_categoryName">The name that will be given to the new category</param>
+        abstract bool AddCategory(string _categoryName);
 
         /// <summary>
         /// Add a new article to the system
         /// </summary>
         /// <returns>Returns true if article could be added</returns>
-        abstract bool AddArticle();
+        /// <param name="_article">Article to add to the system</param>
+        abstract bool AddArticle(Article _article);
 
         #endregion
 
@@ -41,7 +44,8 @@
         /// Gets all atrticles from the system with a specific status
         /// </summary>
         /// <returns>An IEnumerable with all found articles</returns>
-        abstract object GetAtriclesByStatus();
+        /// <param name="_status">Search articles by this status</param>
+        abstract object GetArticlesByStatus(int _status);
 
         #endregion
 
@@ -51,19 +55,25 @@
         /// Preform changes to an existing article
         /// </summary>
         /// <returns>True if article exists and was updated successfuly</returns>
-        abstract bool UpdateAtricle();
+        /// <param name="_articleID">ID of the article to be updated</param>
+        /// <param name="newArticle">The new article</param>
+        abstract bool UpdateArticle(int _articleID, Article newArticle);
 
         /// <summary>
         /// Preform changes to an existing category
         /// </summary>
         /// <returns>True if category exists and was updated successfuly</returns>
-        abstract bool UpdateCategory();
+        /// <param name="_categoryID">The ID of the category to be updated</param>
+        /// <param name="_newCategory">The new category name</param>
+        abstract bool UpdateCategory(int _categoryID, string _newCategory);
 
         /// <summary>
         /// Preform changes to an existing user
         /// </summary>
         /// <returns>True if user exists and was updated successfuly</returns>
-        abstract bool UpdateUser();
+        /// <param name="_UserID">The ID of the user to be updated</param>
+        /// <param name="_newUser">The new user info</param>
+        abstract bool UpdateUser(int _UserID, User _newUser);
 
         #endregion
 
@@ -72,20 +82,23 @@
         /// <summary>
         /// Removes an existing user from the system
         /// </summary>
-        /// <returns></returns>
-        abstract bool DeleteUser();
+        /// <returns>True if user exists and could be deteted</returns>
+        /// <param name="_userID">The ID of the user to be deleted</param>
+        abstract bool DeleteUser(int _userID);
 
         /// <summary>
         /// Removes and existing article from the system
         /// </summary>
-        /// <returns></returns>
-        abstract bool DeleteAtricle();
+        /// <returns>True if article exists and could be deleted</returns>
+        /// <param name="_articleID">The ID of the article to be deleted</param>
+        abstract bool DeleteArticle(int _articleID);
 
         /// <summary>
         /// Removes an existing category from the system
         /// </summary>
-        /// <returns></returns>
-        abstract bool DeleteCategory();
+        /// <returns>True if category exists and could be deleted</returns>
+        /// <param name="_categoryID">The ID of the caregory to be deleted</param>
+        abstract bool DeleteCategory(int _categoryID);
 
         #endregion
 
@@ -95,13 +108,15 @@
         /// Checks if the user is blocked or not
         /// </summary>
         /// <returns>True if user exists and is blocked</returns>
-        abstract bool IsUserBlocked();
+        /// <param name="_userID">The ID of the user to check</param>
+        abstract bool IsUserBlocked(int _userID);
 
         /// <summary>
         /// Checks if a specific article is reserved or not
         /// </summary>
         /// <returns>True if article exists and is reserved</returns>
-        abstract bool IsArticleReserved();
+        /// <param name="_articleID">The ID of the article to check</param>
+        abstract bool IsArticleReserved(int _articleID);
 
         #endregion
 
@@ -110,14 +125,14 @@
         /// <summary>
         /// Search for users in the system
         /// </summary>
-        /// <returns>Returns a list of the found users</returns>
-        abstract object SearchUsers();
+        /// <returns>Returns a collection of the found users</returns>
+        abstract IEnumerable<User> SearchUsers();
 
         /// <summary>
         /// Search for articles in the system
         /// </summary>
-        /// <returns>Returns a list of found users</returns>
-        abstract object SearchArticles();
+        /// <returns>Returns a collection of found users</returns>
+        abstract IEnumerable<Article> SearchArticles();
 
         #endregion
 
@@ -127,52 +142,47 @@
         /// Blocks a user
         /// </summary>
         /// <returns>True if user exists in the systen and could be blocked</returns>
-        abstract bool BlockUser();
+        /// <param name="_userID">The ID of the user to be blocked</param>
+        abstract bool BlockUser(int _userID);
 
         /// <summary>
         /// Unblocks a user
         /// </summary>
         /// <returns>True if user exists in the systen and could be unblocked</returns>
-        abstract bool UnblockUser();
+        /// <param name="_userID">The ID of the user to unblock</param>
+        abstract bool UnblockUser(int _userID);
 
         /// <summary>
         /// Reserves an article for a user
         /// </summary>
         /// <returns>True if the article could be reserved</returns>
-        abstract bool ReserveArticle();
+        /// <param name="_userID">ID of the user that the article will be reserved to</param>
+        /// <param name="_articleID">The ID of the article/param>
+        abstract bool ReserveArticle(int _userID, int _articleID);
 
         /// <summary>
         /// Lends an article to a user
         /// </summary>
         /// <returns>True if article was could be loaned</returns>
-        abstract bool LoanArticle();
+        /// <param name="_userID">ID of the user that the article will be lend to</param>
+        /// <param name="_articleID">The ID of the article</param>
+        abstract bool LoanArticle(int _userID, int _articleID);
 
         /// <summary>
-        /// Returns an article to the system
+        /// Return an article from a user
         /// </summary>
         /// <returns>True if article was returned successfuly</returns>
-        abstract bool ReturnArticle();
+        /// <param name="_articleID">ID of the lend article</param>
+        abstract bool ReturnArticle(int _articleID);
 
         /// <summary>
         /// Books a seminar
         /// </summary>
         /// <returns>Returns true if seminar could be booked</returns>
-        abstract bool BookSeminar();
+        /// <param name="_userID">ID of the user booking the seminar</param>
+        /// <param name="_seminarID">The ID of the seminar</param>
+        abstract bool BookSeminar(int _userID, int _seminarID);
 
         #endregion
     }
-
-    #region Backends
-
-    /// <summary>
-    /// Backend class that uses Microsoft SQL Server
-    /// </summary>
-    public class MSSQL // : IRepository
-    {
-        /* Väntar med att implementera interfacet 
-         * till nödvändiga klasser är skapade
-         */
-    }
-
-    #endregion
 }

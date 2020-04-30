@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stimp\\Desktop\\Library\\G-4.NET-Library\\Repository\\Repository\\Repository.csproj": {}
+    "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Repository\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stimp\\Desktop\\Library\\G-4.NET-Library\\Repository\\Repository\\Repository.csproj": {
+    "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Repository\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stimp\\Desktop\\Library\\G-4.NET-Library\\Repository\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Repository\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\stimp\\Desktop\\Library\\G-4.NET-Library\\Repository\\Repository\\Repository.csproj",
+        "projectPath": "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Repository\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\stimp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stimp\\Desktop\\Library\\G-4.NET-Library\\Repository\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Repository\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -42,6 +42,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
