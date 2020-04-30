@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+      "projectUniqueName": "C:\\Users\\stimp\\Desktop\\LibraryCore\\G-4.NET-Library\\Library.Core\\Library.Core\\Library.Core.csproj",
       "projectName": "Library.Core",
-      "projectPath": "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+      "projectPath": "C:\\Users\\stimp\\Desktop\\LibraryCore\\G-4.NET-Library\\Library.Core\\Library.Core\\Library.Core.csproj",
       "packagesPath": "C:\\Users\\stimp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Library.Core\\Library.Core\\obj\\",
+      "outputPath": "C:\\Users\\stimp\\Desktop\\LibraryCore\\G-4.NET-Library\\Library.Core\\Library.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

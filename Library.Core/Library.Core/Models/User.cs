@@ -1,4 +1,4 @@
-﻿namespace ModelsLibrary
+﻿namespace Library.Core
 {
     /// <summary>
     /// Required namespaces
