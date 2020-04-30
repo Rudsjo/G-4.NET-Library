@@ -1,33 +1,6 @@
 ﻿namespace Library.Core
 {
     /// <summary>
-    /// Categories for articles
-    /// </summary>
-    public enum ArticleCategories
-    {
-        /// <summary>
-        /// A horror article
-        /// </summary>
-        Horror,
-
-        /// <summary>
-        /// A comedy article
-        /// </summary>
-        Comedy,
-
-        /// <summary>
-        /// An action article
-        /// </summary>
-        Action,  
-
-        /* 
-          
-            Add more later
-
-         */
-    }
-
-    /// <summary>
     /// Usertypes
     /// </summary>
     public enum UserTypes
