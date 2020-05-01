@@ -9,7 +9,7 @@
       "Repository/1.0.0": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.7.0",
-          "ModelsLibrary": "1.0.0.0"
+          "Library.Core": "1.0.0.0"
         },
         "runtime": {
           "Repository.dll": {}
@@ -127,9 +127,9 @@
           }
         }
       },
-      "ModelsLibrary/1.0.0.0": {
+      "Library.Core/1.0.0.0": {
         "runtime": {
-          "ModelsLibrary.dll": {
+          "Library.Core.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -206,7 +206,7 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
-    "ModelsLibrary/1.0.0.0": {
+    "Library.Core/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
