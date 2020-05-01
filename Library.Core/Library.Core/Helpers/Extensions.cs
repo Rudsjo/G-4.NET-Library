@@ -1,4 +1,4 @@
-﻿namespace Repository
+﻿namespace Library.Core
 {
     /// <summary>
     /// Required nemspaces
