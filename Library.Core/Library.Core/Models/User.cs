@@ -38,14 +38,5 @@
         /// </summary>
         public string lastName { get; set; }
 
-        /// <summary>
-        /// The user's username
-        /// </summary>
-        public string Username { get; set; }
-
-        /// <summary>
-        /// The user type <see cref="UserTypes"/>
-        /// </summary>
-        public UserTypes Type { get; set; }
     }
 }
