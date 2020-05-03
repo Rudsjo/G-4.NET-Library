@@ -14,30 +14,61 @@
     /// </summary>
     public class Article
     {
+        /// <value>
+        /// The article identifier.
+        /// </value>
+        public int articleID { get; set; }
+
+        /// <value>
+        /// The category identifier.
+        /// </value>
+        public int categoryID { get; set; }
+
+        /// <value>
+        /// The status identifier.
+        /// </value>
+        public int statusID { get; set; }
+
+
         /// <summary>
         /// Title of the article
         /// </summary>
-        public string Title { get; set; }
+        public string title { get; set; }
 
-        /// <summary>
-        /// This article's ISBN
-        /// </summary>
-        public string ISBN { get; set; }
+        /// <value>
+        /// The price.
+        /// </value>
+        public float price { get; set; }
+
+        /// <value>
+        /// The isbn.
+        /// </value>
+        public string isbn { get; set; }
 
         /// <summary>
         /// Author of the article
         /// </summary>
-        public string Author { get; set; }
+        public string author { get; set; }
+
+        /// <value>
+        /// The publisher.
+        /// </value>
+        public string publisher { get; set; }
+
+        /// <value>
+        /// The placement.
+        /// </value>
+        public string placement { get; set; }
 
         /// <summary>
-        /// The category of this article>
+        /// Gets or sets the description.
         /// </summary>
-        public string Category { get; set; }
+        public string description { get; set; }
 
         /// <summary>
         /// This article's release date
         /// </summary>
-        public DateTime Published { get; set; }
+        public int loanTime { get; set; }
 
     }
 }
