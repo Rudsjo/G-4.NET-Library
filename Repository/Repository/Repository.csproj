@@ -11,13 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Library.Core">
-      <HintPath>..\..\..\Library.Core.dll</HintPath>
-      <Private>true</Private>
+      <HintPath>..\..\..\LibraryCore\G-4.NET-Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
 
