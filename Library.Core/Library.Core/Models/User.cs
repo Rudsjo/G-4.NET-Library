@@ -15,6 +15,30 @@
     public class User
     {
         /// <summary>
+        /// PersonalNumber of the user
+        /// </summary>
+        public string personalNumber { get; set; }
+
+        /// <summary>
+        /// Role ID
+        /// </summary>
+        public int roleID { get; set; }
+        /// <summary>
+        /// Role type string
+        /// </summary>
+        public string type { get; set; }
+
+        /// <summary>
+        /// User's first name
+        /// </summary>
+        public string firstName { get; set; }
+
+        /// <summary>
+        /// User's last name
+        /// </summary>
+        public string lastName { get; set; }
+
+        /// <summary>
         /// The user's username
         /// </summary>
         public string Username { get; set; }
