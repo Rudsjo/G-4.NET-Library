@@ -1,0 +1,39 @@
+﻿using Library.Core;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Text;
+using System.Windows.Controls;
+
+namespace Library
+{
+    /// <summary>
+    /// Value converter to convert a <see cref="PopupContents"/> to a <see cref="UserControl"/>
+    /// </summary>
+    public class PopUpContentValueConverter : BaseValueConverter<PopUpContentValueConverter>
+    {
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            switch ((PopUpContents)value)
+            {
+                case PopUpContents.None:
+                    return null;
+
+                case PopUpContents.DatabaseLogin:
+                    return new DatabaseLoginControl();
+
+                case PopUpContents.UserLogin:
+                    return new UserLoginControl();
+
+                default:
+                    return null;
+            }
+
+        }
+
+        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

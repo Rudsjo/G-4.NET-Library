@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 E:\Library\Library\App.xaml
-10-839836658
+13845621190
 
-242030172991
-197-1945489104
-Controls\PageHost.xaml;Controls\SideMenuControl.xaml;MainWindow.xaml;Pages\BookPage.xaml;Pages\LoginToDatabasePage.xaml;Pages\MainPage.xaml;Styling\Styles\Buttons.xaml;Styling\Styles\Colors.xaml;Styling\Styles\Fonts.xaml;Styling\Styles\Texts.xaml;
+28-230650916
+1961496882654
+Controls\MainContentUserControl.xaml;Controls\PageHost.xaml;Controls\PopUp Controls\DatabaseLoginControl.xaml;Controls\PopUp Controls\UserLoginControl.xaml;Controls\PopUpControl.xaml;Controls\SideMenuControl.xaml;MainWindow.xaml;Pages\BookPage.xaml;Pages\MainPage.xaml;Styling\Styles\Buttons.xaml;Styling\Styles\Colors.xaml;Styling\Styles\Fonts.xaml;Styling\Styles\Texts.xaml;
 
 False
 

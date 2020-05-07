@@ -46,6 +46,14 @@
             Width="250"
             local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.SideMenuVisible,
             Source={x:Static local:ViewModelLocator.Instance}}" Visibility="Collapsed" />
+        
+        
+        <!-- Pop up control -->
+        <local:PopUpControl Visibility="{Binding ApplicationViewModel.PopUpVisible,
+                                         Source={x:Static local:ViewModelLocator.Instance},
+                                         Converter={local:BooleanToVisibilityConverter}}"
+                            Grid.ColumnSpan="2"
+                            />
 
     </Grid>
 </Window>

@@ -39,7 +39,11 @@ namespace Library.Core
         /// <returns></returns>
         private async Task LogoutCommandAsync()
         {
-            IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.LoginToDatabasePage);
+
+
+
+            // Changing the page
+            IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.MainPage);
 
             await Task.Delay(1);
         }

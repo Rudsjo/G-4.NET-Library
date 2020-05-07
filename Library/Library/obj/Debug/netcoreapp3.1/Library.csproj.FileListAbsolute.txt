@@ -12,13 +12,10 @@ E:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 E:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll
-E:\Library\Library\bin\Debug\netcoreapp3.1\LibsysStylesheet.dll
 E:\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.pdb
-E:\Library\Library\bin\Debug\netcoreapp3.1\LibsysStylesheet.pdb
 E:\Library\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.g.cs
-E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\LoginToDatabasePage.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\App.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
@@ -27,7 +24,6 @@ E:\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.lref
 E:\Library\Library\obj\Debug\netcoreapp3.1\App.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.baml
-E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\LoginToDatabasePage.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\Library.g.resources
 E:\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
@@ -46,3 +42,11 @@ E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.baml

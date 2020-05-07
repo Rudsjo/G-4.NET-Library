@@ -32,21 +32,37 @@
     public enum ApplicationPages
     {
         /// <summary>
-        /// The login page for the database. 
-        /// This page will demand the user to log in before any actions can be made in the application.
-        /// </summary>
-        LoginToDatabasePage = 0,
-
-        /// <summary>
         /// The main page to hold basic information about all articles in a non-logged in mode
         /// </summary>
-        MainPage = 1,
+        MainPage = 0,
 
         /// <summary>
         /// The book page containing all available books in the system
         /// </summary>
-        BookPage = 2,
+        BookPage = 1,
         
+    }
+
+    /// <summary>
+    /// The different types of pop up windows
+    /// </summary>
+    public enum PopUpContents
+    {
+        /// <summary>
+        /// No popup
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// The login popup for the database
+        /// </summary>
+        DatabaseLogin = 1,
+
+        /// <summary>
+        /// The login popup for users
+        /// </summary>
+        UserLogin = 2,
+
     }
 
 }

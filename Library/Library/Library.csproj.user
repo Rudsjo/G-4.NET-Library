@@ -7,7 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\MainContentUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\PageHost.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\DatabaseLoginControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\UserLoginControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUpControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Controls\SideMenuControl.xaml.cs">
@@ -16,15 +28,24 @@
     <Compile Update="Pages\BookPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\LoginToDatabasePage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\MainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\MainContentUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\PageHost.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\DatabaseLoginControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\UserLoginControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUpControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\SideMenuControl.xaml">
@@ -34,9 +55,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\BookPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\LoginToDatabasePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPage.xaml">

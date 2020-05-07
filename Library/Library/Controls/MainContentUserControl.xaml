@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Library.MainContentUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <!-- TODO: FLYTTA DESSA TILL BASE PAGE -->
+    <UserControl.RenderTransform>
+        <SkewTransform AngleX="0" AngleY="0" />
+    </UserControl.RenderTransform>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- Header bar -->
+            <RowDefinition Height="*" />
+
+            <!-- Table -->
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header bar -->
+        <Border>
+
+            <Border.Effect>
+                <!-- Setting border shadow -->
+                <DropShadowEffect BlurRadius="9"
+                                  ShadowDepth="1"
+                                  Opacity="0.5"/>
+            </Border.Effect>
+
+            <Grid Background="#FFFFFF">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Search box -->
+                <TextBox Style="{StaticResource SearchBox}" Tag="Sök..." VerticalContentAlignment="Center"/>
+
+                <!-- Header buttons -->
+                <StackPanel Orientation="Horizontal"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right">
+
+                    <!-- Settings -->
+                    <Button Style="{StaticResource IconButton}"
+                            Content="&#xf013;"
+                            />
+
+                    <!-- Notifications -->
+                    <Button Style="{StaticResource IconButton}"
+                            Content="&#xf0f3;"
+                            />
+
+                    <!-- MyProfile / Login -->
+                    <Button Style="{StaticResource IconButton}"
+                            Content="&#xf007;"
+                            Command="{Binding MyProfile}"
+                            />
+
+                </StackPanel>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>

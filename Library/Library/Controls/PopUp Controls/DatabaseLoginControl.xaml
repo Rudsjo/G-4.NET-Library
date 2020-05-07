@@ -1,45 +1,40 @@
-﻿<local:BasePage x:TypeArguments="core:LoginToDatabasePageViewModel"
-    x:Class="Library.LoginToDatabasePage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Library"
-      xmlns:core="clr-namespace:Library.Core;assembly=Library.Core"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="LoginToDatabasePage"
-      x:Name="Page">
-    
+﻿<UserControl x:Class="Library.DatabaseLoginControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
     <!--
     
-    The page to hold the login form for the database. 
-    The page will be active as long as a database is not connected 
+    The control to hold the login form for the database. 
+    The control will be active as long as a database is not connected 
     to the application.
     
     -->
-    
-    
+
+
     <!-- TODO: FLYTTA DESSA TILL BASE PAGE -->
-    <Page.RenderTransform>
+    <UserControl.RenderTransform>
         <SkewTransform AngleX="0" AngleY="0" />
-    </Page.RenderTransform>
+    </UserControl.RenderTransform>
 
 
-    <Border>
+    <Border BorderThickness="2">
         <Grid>
             <!-- Main content -->
             <StackPanel
                  VerticalAlignment="Center"
                  HorizontalAlignment="Center"
                  TextBlock.TextAlignment="Center">
-                
+
                 <!-- Login content box -->
                 <Border Background="White"
                         Padding="15 50 15 15"
                         Width="330"
                         Margin="50 50 50 0">
-                    
+
                     <!-- Login content -->
                     <StackPanel>
 
@@ -49,7 +44,7 @@
                                MaxWidth="200"
                                Margin="-50 -50 -50 -20"
                                />
-                        
+
                         <!-- Subtext -->
                         <TextBlock Text="Databasinloggning"
                                    HorizontalAlignment="Center"
@@ -62,7 +57,7 @@
                                  Tag="Användarnamn"
                                  Style="{StaticResource LoginTextbox}"
                                  />
-                        
+
                         <!-- Save username -->
                         <CheckBox Content="Spara användarnamn"
                                   TextBlock.FontFamily="{StaticResource PassionOneRegular}"
@@ -71,7 +66,7 @@
                                   Margin="0 0 0 10"
                                 />
 
-                            <!-- Password -->
+                        <!-- Password -->
                         <PasswordBox x:Name="PasswordText"
                                      Style="{StaticResource CustomPasswordBox}"
                                      local:MonitorPasswordProperty.Value = "True"
@@ -80,7 +75,7 @@
 
                         <!-- Login Button -->
                         <Button Content="Logga in"
-                                local:IsBusyProperty.Value="{Binding LoginIsRunning}"
+                                local:IsBusyProperty.Value="{Binding DatabaseLoginIsRunning}"
                                 Style="{StaticResource LoginButton}"
                                 Command="{Binding LoginToDatabase}"
                                 CommandParameter="{Binding ElementName=Page}"
@@ -90,7 +85,7 @@
 
                     </StackPanel>
                 </Border>
-                
+
                 <!-- Forgot password -->
                 <!--<Button Style="{StaticResource TextButton}"
                         Command="{Binding ForgotPassword}"
@@ -100,5 +95,5 @@
             </StackPanel>
         </Grid>
     </Border>
-
-</local:BasePage>
+    
+</UserControl>

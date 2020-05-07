@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace Library.Core
 {
-    public class LoginToDatabasePageViewModel : BaseViewModel
+    public class DatabaseLoginControlViewModel : BaseViewModel
     {
         #region Public Properties
 
@@ -16,7 +16,7 @@ namespace Library.Core
         /// <summary>
         /// A flag indicating if the <see cref="LoginToDatabase"/> command is running
         /// </summary>
-        public bool LoginIsRunning { get; set; }
+        public bool DatabaseLoginIsRunning { get; set; }
 
         #endregion
 
@@ -25,7 +25,7 @@ namespace Library.Core
         /// <summary>
         /// Default constructor
         /// </summary>
-        public LoginToDatabasePageViewModel()
+        public DatabaseLoginControlViewModel()
         {
             // Setting the commands
             LoginToDatabase = new RelayCommand(async () => await LoginToDatabaseCommandAsync());
@@ -43,11 +43,11 @@ namespace Library.Core
         public async Task LoginToDatabaseCommandAsync()
         {
             // Checking if the login is already running, used to avoid overload
-            if (LoginIsRunning)
+            if (DatabaseLoginIsRunning)
                 return;
 
             // Indicate that the login is running
-            LoginIsRunning = true;
+            DatabaseLoginIsRunning = true;
 
             // The actual login trial
             try
@@ -55,14 +55,17 @@ namespace Library.Core
                 // Temporarily used waiter to simulate animation
                 await Task.Delay(500);
 
-                // Calling a new instance of the Application view model and changes the current page
+                // Close the login popup control
+                IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
+
+                // Setting the new page
                 IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.BookPage);
             }
 
             finally
             {
                 // When the login is done, no matter if it succeeds or not, the flag will be set to false
-                LoginIsRunning = false;
+                DatabaseLoginIsRunning = false;
             }
         } 
 
