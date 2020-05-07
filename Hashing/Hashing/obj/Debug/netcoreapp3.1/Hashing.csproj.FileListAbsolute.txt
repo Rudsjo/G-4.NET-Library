@@ -3,7 +3,6 @@ C:\Users\stimp\Desktop\LibraryCore\G-4.NET-Library\Hashing\Hashing\bin\Debug\net
 C:\Users\stimp\Desktop\LibraryCore\G-4.NET-Library\Hashing\Hashing\bin\Debug\netcoreapp3.1\Hashing.pdb
 C:\Users\stimp\Desktop\LibraryCore\G-4.NET-Library\Hashing\Hashing\bin\Debug\netcoreapp3.1\Library.Core.dll
 C:\Users\stimp\Desktop\LibraryCore\G-4.NET-Library\Hashing\Hashing\bin\Debug\netcoreapp3.1\Library.Core.pdb
-C:\Users\stimp\Desktop\LibraryCore\G-4.NET-Library\Hashing\Hashing\obj\Debug\netcoreapp3.1\Hashing.csprojAssemblyReference.cache
 C:\Users\stimp\Desktop\LibraryCore\G-4.NET-Library\Hashing\Hashing\obj\Debug\netcoreapp3.1\Hashing.csproj.CoreCompileInputs.cache
 C:\Users\stimp\Desktop\LibraryCore\G-4.NET-Library\Hashing\Hashing\obj\Debug\netcoreapp3.1\Hashing.AssemblyInfoInputs.cache
 C:\Users\stimp\Desktop\LibraryCore\G-4.NET-Library\Hashing\Hashing\obj\Debug\netcoreapp3.1\Hashing.AssemblyInfo.cs
