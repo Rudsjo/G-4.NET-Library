@@ -5,7 +5,11 @@
     /// </summary>
     #region Namespaces
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Net;
+    using System.Reflection;
     using System.Security;
     using static System.Runtime.InteropServices.Marshal;
     #endregion
@@ -73,6 +77,63 @@
 
             // Return the new SecureString
             return Result;
+        }
+
+        #endregion
+
+        #region List Extensions
+
+        /// <summary>
+        /// Extension method to convert a <see cref="IEnumerable{T}"/> to an <see cref="ObservableCollection{T}"/>
+        /// </summary
+        /// <typeparam name="T">The type the list is filled with</typeparam>
+        /// <typeparam name="L">The type of list</typeparam>
+        /// <param name="listToConvert">The lsit to convert</param>
+        /// <returns></returns>
+        public static ObservableCollection<T> ToObservableCollection<T, L>(this L listToConvert)
+            where L : IEnumerable<T>
+        {
+            // Creating the observable collection to return
+            var collectionToReturn = new ObservableCollection<T>();
+
+            // Getting base functionality from the List class to perform the convertion
+            var listToConvertAsList = (listToConvert as List<T>);
+
+            // Get all values from the sent in list and send them into the collection
+            listToConvertAsList.ForEach((x) =>
+            {
+                collectionToReturn.Add(x);
+            });
+
+            // Returning
+            return collectionToReturn;
+        }
+
+        /// <summary>
+        /// Extension method to fill a list with placeholder dummy data
+        /// </summary>
+        /// <typeparam name="T">The type of the list content</typeparam>
+        /// <typeparam name="L">The type of the list</typeparam>
+        /// <param name="listToFill">The list to fill up</param>
+        /// <param name="maxNumberOfItems">The maximum number of items</param>
+        /// <returns></returns>
+        public static ObservableCollection<T> FillPlaceHolders<T, L>(this L listToFill, int maxNumberOfItems)
+            where L : IEnumerable, new()
+            where T : new()
+        {
+            // Creating a nee temporary list
+            var tempList = new List<T>();
+
+            // Filling all the existing items
+            foreach (var item in listToFill)
+                tempList.Add((T)item);
+
+            // Adding remaining dummies
+            while (tempList.Count < maxNumberOfItems)
+                tempList.Add(new T());
+
+            // Returns the list as an observable collection
+            return tempList.ToObservableCollection<T, List<T>>();
         }
 
         #endregion

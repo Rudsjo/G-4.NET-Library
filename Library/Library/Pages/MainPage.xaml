@@ -22,6 +22,44 @@
 
     <Grid>
 
+        <Grid.RowDefinitions>
+            <!-- Login icon -->
+            <RowDefinition Height="Auto" />
+            <!-- Mian content -->
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Login icon -->
+        <Button Content="&#xf007;" 
+                FontFamily="{StaticResource FontAwesomeSolid}"
+                Style="{StaticResource IconButton}"
+                HorizontalAlignment="Right"
+                Margin="20"
+                />
+        
+        <!-- Main content -->
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+
+            <!-- Logo -->
+            <Image Source="/Styling/Images/LibsysLogo.png" Width="250" Height="250" />
+            
+            <!-- Search bar -->
+            <TextBox Style="{StaticResource SearchBox}" Tag="Sök..."
+                     Width="500" Height="50"
+                     BorderBrush="{StaticResource CustomLightGreyBrush}"
+                     BorderThickness="2"
+                     VerticalContentAlignment="Center"/>
+            
+            <!-- Show all books -->
+            <local:ButtonWithIcon Content="Eller visa alla böcker..."
+                                  IconContent="&#xf061;"
+                                  Style="{StaticResource TextIconButton}"
+                                  Margin="0 20"
+                                  Command="{Binding ShowAllBooks}"
+                                  />
+
+        </StackPanel>
+
 
     </Grid>
 </local:BasePage>

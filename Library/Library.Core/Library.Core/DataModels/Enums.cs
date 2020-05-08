@@ -32,21 +32,92 @@
     public enum ApplicationPages
     {
         /// <summary>
-        /// The login page for the database. 
-        /// This page will demand the user to log in before any actions can be made in the application.
-        /// </summary>
-        LoginToDatabasePage = 0,
-
-        /// <summary>
         /// The main page to hold basic information about all articles in a non-logged in mode
         /// </summary>
-        MainPage = 1,
+        MainPage = 0,
 
         /// <summary>
         /// The book page containing all available books in the system
         /// </summary>
-        BookPage = 2,
-        
+        BookPage = 1,
+
+        /// <summary>
+        /// The page to display all employess
+        /// </summary>
+        EmployeePage = 2,
+
+        /// <summary>
+        /// the page to display all customers
+        /// </summary>
+        CustomerPage = 3,      
+    }
+
+    /// <summary>
+    /// The different types of pop up windows
+    /// </summary>
+    public enum PopUpContents
+    {
+        /// <summary>
+        /// No popup
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// The login popup for the database
+        /// </summary>
+        DatabaseLogin = 1,
+
+        /// <summary>
+        /// The login popup for users
+        /// </summary>
+        UserLogin = 2,
+
+        /// <summary>
+        /// The popup content when any database error is happening
+        /// </summary>
+        DatabaseError = 3,
+
+        /// <summary>
+        /// Popup content to add a user
+        /// </summary>
+        AddUser = 4,
+
+    }
+
+    /// <summary>
+    /// All the sortable tables
+    /// </summary>
+    public enum SortableTables
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        PersonalNumber = 0,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        FirstName = 1,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        LastName = 2,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        LoanedArticles = 3,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        ReservedArticles = 4,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Title = 5,
     }
 
 }
