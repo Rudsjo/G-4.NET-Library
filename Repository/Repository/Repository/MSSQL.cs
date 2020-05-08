@@ -169,6 +169,27 @@
             }
         }
 
+        /// <summary>
+        /// <see cref="ILibraryRepository.GetUserByID(string)"/>
+        /// </summary>
+        /// <param name="_personalNumber">The personalnumber.</param>
+        /// <returns>
+        /// The salt from that user
+        /// </returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<string> GetUserByID(string _personalNumber)
+        {
+            // Open a connection to the database
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                // Get the result from the database.
+                var Result = await Connection.QueryAsync<string>("FindUser", new { PersonalNumber = _personalNumber }, commandType: CommandType.StoredProcedure);
+
+                // Check if result contains any elements.
+                return (Result.Count() == 0) ? null : Result.First();
+            }
+        }
+
         #endregion
 
         #region 'Check' queries
@@ -294,6 +315,25 @@
             }
         }
 
+        /// <summary>
+        /// <see cref="ILibraryRepository.AttemptLogin(string, SecureString)"/>
+        /// </summary>
+        /// <param name="_personalNumber">The personal number.</param>
+        /// <param name="Password">The password.</param>
+        /// <returns></returns>
+        public async Task<User> AttemptLogin(string _personalNumber, SecureString Password)
+        {
+            // Open a new connection to the database.
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                // Get the result from the database.
+                var Result = await Connection.QueryAsync<User>("AttemptLogin", new { PersonalNumber = _personalNumber,
+                                                                                     Password = Password.ToUnsecureString() }, commandType: CommandType.StoredProcedure);
+                // Check if the result has an element, if not return null
+                return (Result.Count() == 0) ? null : Result.First();
+            }
+        }
+
         #endregion
 
         #region 'Search' queries
@@ -399,7 +439,6 @@
                     commandType: CommandType.StoredProcedure)).First() != 0;
             }
         }
-
         #endregion
     }
 }

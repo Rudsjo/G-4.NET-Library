@@ -49,6 +49,13 @@
         /// <param name="_status">Search articles by this status</param>
         abstract Task<IEnumerable<Article>> GetArticlesByStatus(int _status);
 
+        /// <summary>
+        /// Gets the user by their identifier.
+        /// </summary>
+        /// <param name="_personalNumber">The personalnumber.</param>
+        /// <returns>The salt from that user</returns>
+        abstract Task<string> GetUserByID(string _personalNumber);
+
         #endregion
 
         #region 'Update' declerations
@@ -187,6 +194,15 @@
         /// <param name="_personalNumber">ID of the user booking the seminar</param>
         /// <param name="_seminarID">The ID of the seminar</param>
         abstract Task<bool> BookSeminar(string _personalNumber, int _seminarID);
+
+        /// <summary>
+        /// Attempts to login the user
+        /// </summary>
+        /// <param name="_personalNumber">The personal number.</param>
+        /// <param name="Password">The password.</param>
+        /// <returns>Returns the <see cref="User"/ if the login was successful,
+        ///          Null if the login failed.></returns>
+        abstract Task<User> AttemptLogin(string _personalNumber, SecureString Password);
 
         #endregion
     }

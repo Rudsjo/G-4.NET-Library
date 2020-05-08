@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <Reference Include="Library.Core">
-      <HintPath>..\..\..\LibraryCore\G-4.NET-Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll</HintPath>
+      <HintPath>..\..\..\..\Library.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
 
