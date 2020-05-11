@@ -56,7 +56,7 @@
         #region 'Add' queries
 
         /// <summary>
-        /// <see cref="IRepository.AddCategory(string)"/>
+        /// <see cref="ILibraryRepository.AddCategory(string)"/>
         /// </summary>
         /// <param name="_categoryName"></param>
         /// <returns></returns>
@@ -70,7 +70,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.AddArticle(Article)"/>
+        /// <see cref="ILibraryRepository.AddArticle(Article)"/>
         /// </summary>
         /// <param name="_article"></param>
         /// <returns></returns>
@@ -98,13 +98,24 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.AddUser"/>
+        /// <see cref="ILibraryRepository.AddUser(string, string, string, int, SecureString, string)"/>
         /// </summary>
         /// <returns></returns>
-        public async Task<bool> AddUser()
+        public async Task<bool> AddUser(string PersonalNumber, string FirstName, string LastName, int RoleID, SecureString Password, string SaltBase64)
         {
-            throw new NotImplementedException();
-
+            // Open a new connection to the databse.
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                // Return the result as bool
+                return (await Connection.QueryAsync<int>("AddUser", new {
+                    personalNumber = PersonalNumber,
+                    firstName      = FirstName,
+                    lastName       = LastName,
+                    roleID         = RoleID,
+                    password       = Password.ToUnsecureString(),
+                    salt           = SaltBase64
+                }, commandType: CommandType.StoredProcedure)).First() != 0;
+            }
         }
 
         #endregion
@@ -112,7 +123,7 @@
         #region 'Delete' queries
 
         /// <summary>
-        /// <see cref="IRepository.DeleteArticle(int)"/>
+        /// <see cref="ILibraryRepository.DeleteArticle(int)"/>
         /// </summary>
         /// <param name="_articleID"></param>
         /// <returns></returns>
@@ -125,7 +136,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.DeleteCategory(int)"/>
+        /// <see cref="ILibraryRepository.DeleteCategory(int)"/>
         /// </summary>
         /// <param name="_categoryID"></param>
         /// <returns></returns>
@@ -138,7 +149,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.DeleteUser(string)"/>
+        /// <see cref="ILibraryRepository.DeleteUser(string)"/>
         /// </summary>
         /// <param name="_personalNumber"></param>
         /// <returns></returns>
@@ -155,7 +166,7 @@
         #region 'Get' queries
 
         /// <summary>
-        /// <see cref="IRepository.GetArticlesByStatus(int)"/>
+        /// <see cref="ILibraryRepository.GetArticlesByStatus(int)"/>
         /// </summary>
         /// <param name="_status"></param>
         /// <returns></returns>
@@ -195,7 +206,7 @@
         #region 'Check' queries
 
         /// <summary>
-        /// <see cref="IRepository.IsArticleReserved(int)"/>
+        /// <see cref="ILibraryRepository.IsArticleReserved(int)"/>
         /// </summary>
         /// <param name="_articleID"></param>
         /// <returns></returns>
@@ -210,7 +221,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.IsUserBlocked(string)"/>
+        /// <see cref="ILibraryRepository.IsUserBlocked(string)"/>
         /// </summary>
         /// <param name="_personalNumber"></param>
         /// <returns></returns>
@@ -229,7 +240,7 @@
         #region 'Action' queries
 
         /// <summary>
-        /// <see cref="IRepository.BlockUser(string, string)"/>
+        /// <see cref="ILibraryRepository.BlockUser(string, string)"/>
         /// </summary>
         /// <param name="_personalNumber">PersonalNumber of the user</param>
         /// <param name="_reason">The reason for blocking this user</param>
@@ -245,7 +256,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.UnblockUser(string)"/>
+        /// <see cref="ILibraryRepository.UnblockUser(string)"/>
         /// </summary>
         /// <param name="_personalNumber"></param>
         /// <returns></returns>
@@ -260,7 +271,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.BookSeminar(string, int)"/>
+        /// <see cref="ILibraryRepository.BookSeminar(string, int)"/>
         /// </summary>
         /// <param name="_userID"></param>
         /// <param name="_seminarID"></param>
@@ -268,7 +279,7 @@
         public Task<bool> BookSeminar(string _userID, int _seminarID) { throw new NotImplementedException(); }
 
         /// <summary>
-        /// <see cref="IRepository.LoanArticle(string, int)"/>
+        /// <see cref="ILibraryRepository.LoanArticle(string, int)"/>
         /// </summary>
         /// <param name="_personalNumber"></param>
         /// <param name="_articleID"></param>
@@ -284,7 +295,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.ReserveArticle(string, int, string)"/>
+        /// <see cref="ILibraryRepository.ReserveArticle(string, int, string)"/>
         /// </summary>
         /// <param name="_personalNumber"></param>
         /// <param name="_articleID"></param>
@@ -301,7 +312,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.ReturnArticle(int)"/>
+        /// <see cref="ILibraryRepository.ReturnArticle(int)"/>
         /// </summary>
         /// <param name="_articleID"></param>
         /// <returns></returns>
@@ -339,7 +350,7 @@
         #region 'Search' queries
 
         /// <summary>
-        /// <see cref="IRepository.SearchArticles"/>
+        /// <see cref="ILibraryRepository.SearchArticles"/>
         /// </summary>
         /// <returns></returns>
         public async Task<IEnumerable<Article>> SearchArticles(string _keyword)
@@ -355,7 +366,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.SearchUsers"/>
+        /// <see cref="ILibraryRepository.SearchUsers"/>
         /// </summary>
         /// <returns></returns>
         public async Task<IEnumerable<User>> SearchUsers(string _keyword)
@@ -375,7 +386,7 @@
         #region 'Update' queries
 
         /// <summary>
-        /// <see cref="IRepository.UpdateArticle(int, Article)"/>
+        /// <see cref="ILibraryRepository.UpdateArticle(int, Article)"/>
         /// </summary>
         /// <param name="_articleID"></param>
         /// <param name="newArticle"></param>
@@ -403,7 +414,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.UpdateCategory(int, string)"/>
+        /// <see cref="ILibraryRepository.UpdateCategory(int, string)"/>
         /// </summary>
         /// <param name="_categoryID"></param>
         /// <param name="_newCategory"></param>
@@ -418,7 +429,7 @@
         }
 
         /// <summary>
-        /// <see cref="IRepository.UpdateUser(string, User)"/>
+        /// <see cref="ILibraryRepository.UpdateUser(string, User)"/>
         /// </summary>
         /// <param name="_UserID"></param>
         /// <param name="_newUser"></param>

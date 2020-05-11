@@ -22,7 +22,7 @@
         /// Add a new user to the system
         /// </summary>
         /// <returns>True if user could be added</returns>
-        abstract Task<bool> AddUser();
+        abstract Task<bool> AddUser(string PersonalNumber, string FirstName, string LastName, int RoleID, SecureString Password, string SaltBase64);
 
         /// <summary>
         /// Add a new category to the system
