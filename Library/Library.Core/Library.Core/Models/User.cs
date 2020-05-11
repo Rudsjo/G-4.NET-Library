@@ -12,7 +12,7 @@
     /// about a user. It is supposed to be a return
     /// object from the repository.
     /// </summary>
-    public class User
+    public class User : IUser
     {
         /// <summary>
         /// PersonalNumber of the user

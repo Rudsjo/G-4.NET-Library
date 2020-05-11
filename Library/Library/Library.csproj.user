@@ -7,16 +7,37 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\MainContentUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\PageHost.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\AddUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\DatabaseLoginControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\UserLoginControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUpControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Controls\SideMenuControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\TableControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\BackupPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\BookPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\LoginToDatabasePage.xaml.cs">
+    <Compile Update="Pages\EmployeePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPage.xaml.cs">
@@ -24,19 +45,40 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\MainContentUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\PageHost.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\AddUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\DatabaseLoginControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\UserLoginControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUpControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\SideMenuControl.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Controls\TableControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\BackupPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\BookPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\LoginToDatabasePage.xaml">
+    <Page Update="Pages\EmployeePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPage.xaml">

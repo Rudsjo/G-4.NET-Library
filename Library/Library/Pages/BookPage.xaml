@@ -21,7 +21,7 @@
         <SkewTransform AngleX="0" AngleY="0" />
     </Page.RenderTransform>
 
-    <Grid>
-        
-    </Grid>
+    <local:MainContentUserControl />
+
+
 </local:BasePage>

@@ -22,6 +22,10 @@
     <Color x:Key="CustomGrey">#707070</Color>
     <SolidColorBrush x:Key="CustomGreyBrush" Color="{StaticResource CustomGrey}" />
     
+    <!-- Medium Grey Color -->
+    <Color x:Key="MediumGrey">#8E8E8E</Color>
+    <SolidColorBrush x:Key="MediumGreyBrush" Color="{StaticResource MediumGrey}" />
+
     <!-- Light Grey Color -->
     <Color x:Key="CustomLightGrey">#EDEDED</Color>
     <SolidColorBrush x:Key="CustomLightGreyBrush" Color="{StaticResource CustomLightGrey}" />
