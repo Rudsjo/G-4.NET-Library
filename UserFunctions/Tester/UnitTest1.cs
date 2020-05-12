@@ -1,9 +1,9 @@
 namespace LoginTester
 {
-    using Library.Core;
     #region Namespaces
     using Login;
     using NUnit.Framework;
+    using Library.Core;
     using System.Threading.Tasks;
     #endregion
 
@@ -39,6 +39,18 @@ namespace LoginTester
 
             // The user should be have been added successfully.
             Assert.IsTrue(Result);
+        }
+
+        /// <summary>
+        /// Test the 'CanDeleteUser' function.
+        /// </summary>
+        [Test]
+        public async Task CanUserBeDeleted()
+        {
+            var res = await UserFunctions.CanDeleteUser("9803148536");
+
+            // Should always return true because this user is a 'dummy user' with no loaned articles
+            Assert.IsTrue(res);
         }
     }
 }

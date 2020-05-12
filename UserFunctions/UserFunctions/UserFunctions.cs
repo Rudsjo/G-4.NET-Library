@@ -11,6 +11,7 @@
     using System.Threading.Tasks;
     using System.Security.Cryptography;
     using System.Text;
+    using System.Linq;
     #endregion
 
     /// <summary>
@@ -39,7 +40,7 @@
             // If the result is null, then we know that the username is incorrect.
             if (SaltBase64 == null)
                 return false;
-
+            
             // Create a SHA256 hasher.
             var Hasher = SHA256.Create();
 
@@ -117,6 +118,27 @@
             // Try to add the new user to the system.
             return await rep.AddUser(PersonalNumber, FirstName, LastName, RoleID, Password, SaltBase64);
         }
+
+        /// <summary>
+        /// Determines if a user can be deleted.
+        /// </summary>
+        /// <param name="PersonalNumber">The personal number.</param>
+        /// <returns>
+        ///   <c>true</c> if collection contains no articles; otherwise, <c>false</c>.
+        /// </returns>
+        public static async Task<bool> CanDeleteUser(string PersonalNumber)
+        =>
+        (await rep.GetUserLoans(PersonalNumber)).ToList().Count() == 0;
+
+        /// <summary>
+        /// Deletes the loan from user.
+        /// </summary>
+        /// <param name="ArticleID">The article identifier.</param>
+        /// <returns></returns>
+        public static async Task<bool> ReturnArticle(int ArticleID)
+        =>
+        await rep.ReturnArticle(ArticleID);
+        
 
     }
 }
