@@ -235,6 +235,26 @@
             }
         }
 
+        /// <summary>
+        /// <see cref="ILibraryRepository.GetUserLoans(string)"/>
+        /// Returns a collection of the user's loaned articles. containing 
+        /// <see cref="Article.articleID"/>, 
+        /// <see cref="Article.loanTime"/>, 
+        /// <see cref="Article.title"/>
+        /// </summary>
+        /// <param name="_personalNumber"></param>
+        /// <returns>
+        /// </returns>
+        public async Task<IEnumerable<Article>> GetUserLoans(string _personalNumber)
+        {
+            // Create a new connection
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                // Get and return the collection 
+                return await Connection.QueryAsync<Article>("GetUserLoans", new { PersonalNumber = _personalNumber }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
         #endregion
 
         #region 'Action' queries
@@ -450,6 +470,7 @@
                     commandType: CommandType.StoredProcedure)).First() != 0;
             }
         }
+
         #endregion
     }
 }

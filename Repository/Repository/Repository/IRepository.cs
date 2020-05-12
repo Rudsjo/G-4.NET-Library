@@ -56,6 +56,13 @@
         /// <returns>The salt from that user</returns>
         abstract Task<string> GetUserByID(string _personalNumber);
 
+        /// <summary>
+        /// Gets the user loans.
+        /// </summary>
+        /// <param name="_personalNumber">The user's personal number.</param>
+        /// <returns></returns>
+        abstract Task<IEnumerable<Article>> GetUserLoans(string _personalNumber);
+
         #endregion
 
         #region 'Update' declerations
