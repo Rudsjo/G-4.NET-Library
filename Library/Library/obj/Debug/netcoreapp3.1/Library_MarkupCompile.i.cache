@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\
 Library
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\pette\Desktop\Library\Library\App.xaml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\App.xaml
 19-592996966
 
-37-122638818
-1961033508111
+371131688230
+196-1474738645
 Controls\MainContentUserControl.xaml;Controls\PageHost.xaml;Controls\PopUp Controls\AddUserControl.xaml;Controls\PopUp Controls\ConfirmationControl.xaml;Controls\PopUp Controls\DatabaseLoginControl.xaml;Controls\PopUp Controls\LoadingControl.xaml;Controls\PopUp Controls\UserLoginControl.xaml;Controls\PopUpControl.xaml;Controls\SideMenuControl.xaml;Controls\TableControl.xaml;MainWindow.xaml;Pages\BackupPage.xaml;Pages\BookPage.xaml;Pages\EmployeePage.xaml;Pages\MainPage.xaml;Styling\Styles\Buttons.xaml;Styling\Styles\Colors.xaml;Styling\Styles\Fonts.xaml;Styling\Styles\Texts.xaml;
 
-False
+True
 
