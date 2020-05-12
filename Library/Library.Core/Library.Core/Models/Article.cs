@@ -12,7 +12,7 @@
     /// This is a model of an article in
     /// the library's system
     /// </summary>
-    public class Article
+    public class Article : IArticle
     {
         /// <value>
         /// The article identifier.

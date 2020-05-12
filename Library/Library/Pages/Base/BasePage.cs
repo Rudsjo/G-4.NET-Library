@@ -26,12 +26,12 @@ namespace Library
         /// <summary>
         /// The time any slide animation takes to complete
         /// </summary>
-        public float SlideSeconds { get; set; } = 1.5f;
+        public float SlideSeconds { get; set; } = 1.2f;
 
         /// <summary>
         /// The time any flip animation takes to complete
         /// </summary>
-        public float FlipSeconds { get; set; } = 1.5f;
+        public float FlipSeconds { get; set; } = 1.4f;
 
         /// <summary>
         /// A flag to indicate if the page should animate out on load
@@ -69,7 +69,7 @@ namespace Library
 
             // Otherwise...
             else
-                // Aniamte the page in
+                // Animate the page in
                 await AnimateInAsync();
         }
 
@@ -110,6 +110,7 @@ namespace Library
                     {
                         // Start the animation
                         await this.FlipAndFadeOut(FlipSeconds);
+                        //await this.SlideAndFadeOutToLeft(SlideSeconds);
                         break;
                     }
             }

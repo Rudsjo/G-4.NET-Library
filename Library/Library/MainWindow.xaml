@@ -7,14 +7,19 @@
         xmlns:core="clr-namespace:Library.Core;assembly=Library.Core"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="800" Width="1200">
+        Title="MainWindow" Height="800" Width="1200"
+        RenderTransformOrigin="0.5 0.5"
+        >
     
     <!--
     
     The Main window containing the mmain content
     
     -->
-    
+    <Window.RenderTransform>
+        <ScaleTransform ScaleX="1" ScaleY="1" />
+    </Window.RenderTransform>
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -46,6 +51,14 @@
             Width="250"
             local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.SideMenuVisible,
             Source={x:Static local:ViewModelLocator.Instance}}" Visibility="Collapsed" />
+        
+        
+        <!-- Pop up control -->
+        <local:PopUpControl Visibility="{Binding ApplicationViewModel.PopUpVisible,
+                                         Source={x:Static local:ViewModelLocator.Instance},
+                                         Converter={local:BooleanToVisibilityConverter}}"
+                            Grid.ColumnSpan="2"
+                            />
 
     </Grid>
 </Window>

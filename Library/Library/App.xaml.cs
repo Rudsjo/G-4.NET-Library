@@ -17,8 +17,10 @@ namespace Library
             // Let the base application do what it needs
             base.OnStartup(e);
 
-            // Binds an Application view model to the main window
             IoC.CreateInstance<ApplicationViewModel>();
+
+            // Set start page
+            IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.MainPage);
 
             // Create a new instance of the main window
             Current.MainWindow = new MainWindow();

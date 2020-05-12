@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Library\Library\obj\Debug\netcoreapp3.1\
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\
 Library
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-E:\Library\Library\App.xaml
-10-839836658
+C:\Users\pette\Desktop\Library\Library\App.xaml
+19-592996966
 
-25-1968728931
-1961496882654
-Controls\PageHost.xaml;Controls\SideMenuControl.xaml;MainWindow.xaml;Pages\BookPage.xaml;Pages\LoginToDatabasePage.xaml;Pages\MainPage.xaml;Styling\Styles\Buttons.xaml;Styling\Styles\Colors.xaml;Styling\Styles\Fonts.xaml;Styling\Styles\Texts.xaml;
+37-122638818
+1961033508111
+Controls\MainContentUserControl.xaml;Controls\PageHost.xaml;Controls\PopUp Controls\AddUserControl.xaml;Controls\PopUp Controls\ConfirmationControl.xaml;Controls\PopUp Controls\DatabaseLoginControl.xaml;Controls\PopUp Controls\LoadingControl.xaml;Controls\PopUp Controls\UserLoginControl.xaml;Controls\PopUpControl.xaml;Controls\SideMenuControl.xaml;Controls\TableControl.xaml;MainWindow.xaml;Pages\BackupPage.xaml;Pages\BookPage.xaml;Pages\EmployeePage.xaml;Pages\MainPage.xaml;Styling\Styles\Buttons.xaml;Styling\Styles\Colors.xaml;Styling\Styles\Fonts.xaml;Styling\Styles\Texts.xaml;
 
 False
 

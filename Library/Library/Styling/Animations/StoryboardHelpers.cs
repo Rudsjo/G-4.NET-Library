@@ -155,5 +155,93 @@ namespace Library
             // Add this to the storyboard
             storyboard.Children.Add(animation);
         }
+
+        /// <summary>
+        /// Adds a zoom in animation
+        /// </summary>
+        /// <param name="storyboard">The storyboard to add the animation to</param>
+        /// <param name="seconds">The time the animation will take</param>
+        public static void AddZoomInX(this Storyboard storyboard, float seconds)
+        {
+            // Creates the zoom animation
+            var animation = new DoubleAnimation()
+            {
+                Duration = new Duration(TimeSpan.FromSeconds(seconds)),
+                From = 0,
+                To = 1
+            };
+
+            // Set the target property
+            Storyboard.SetTargetProperty(animation, new PropertyPath("RenderTransform.(ScaleTransform.ScaleX)"));
+
+            // Add to the storyboard
+            storyboard.Children.Add(animation);
+        }
+
+        /// <summary>
+        /// Adds a zoom in animation
+        /// </summary>
+        /// <param name="storyboard">The storyboard to add the animation to</param>
+        /// <param name="seconds">The time the animation will take</param>
+        public static void AddZoomInY(this Storyboard storyboard, float seconds)
+        {
+            // Creates the zoom animation
+            var animation = new DoubleAnimation()
+            {
+                Duration = new Duration(TimeSpan.FromSeconds(seconds)),
+                From = 0,
+                To = 1
+            };
+
+            // Set the target property
+            Storyboard.SetTargetProperty(animation, new PropertyPath("RenderTransform.(ScaleTransform.ScaleY)"));
+
+            // Add to the storyboard
+            storyboard.Children.Add(animation);
+        }
+
+        /// <summary>
+        /// Adds a zoom out animation
+        /// </summary>
+        /// <param name="storyboard">The storyboard to add the animation to</param>
+        /// <param name="seconds">The time the animation will take</param>
+        public static void AddZoomOutX(this Storyboard storyboard, float seconds)
+        {
+            // Creates the zoom animation
+            var animation = new DoubleAnimation()
+            {
+                Duration = new Duration(TimeSpan.FromSeconds(seconds)),
+                From = 1,
+                To = 0
+            };
+
+            // Set the target property
+            Storyboard.SetTargetProperty(animation, new PropertyPath("RenderTransform.(ScaleTransform.ScaleX)"));
+
+            // Add to the storyboard
+            storyboard.Children.Add(animation);
+        }
+
+        /// <summary>
+        /// Adds a zoom out animation
+        /// </summary>
+        /// <param name="storyboard">The storyboard to add the animation to</param>
+        /// <param name="seconds">The time the animation will take</param>
+        public static void AddZoomOutY(this Storyboard storyboard, float seconds)
+        {
+            // Creates the zoom animation
+            var animation = new DoubleAnimation()
+            {
+                Duration = new Duration(TimeSpan.FromSeconds(seconds)),
+                From = 1,
+                To = 0
+            };
+
+            // Set the target property
+            Storyboard.SetTargetProperty(animation, new PropertyPath("RenderTransform.(ScaleTransform.ScaleY)"));
+
+            // Add to the storyboard
+            storyboard.Children.Add(animation);
+        }
     }
 }
