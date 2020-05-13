@@ -1,4 +1,5 @@
 ﻿
+using Library.Core;
 using System.Windows.Controls;
 
 
@@ -12,6 +13,7 @@ namespace Library
         public AddArticleControl()
         {
             InitializeComponent();
+            DataContext = IoC.CreateInstance<AddArticleControlViewModel>();
         }
     }
 }

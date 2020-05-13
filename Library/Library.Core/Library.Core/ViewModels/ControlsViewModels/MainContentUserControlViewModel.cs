@@ -91,8 +91,7 @@ namespace Library.Core
                 // Book page
                 case ApplicationPages.BookPage:
                     {
-                        // TODO: Implementera ett pop up fönster för att lägga till en artikel
-                        //IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.AddArticle);
+                        IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.AddArticle);
                         break;
                     }
 

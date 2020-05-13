@@ -28,6 +28,9 @@ namespace Library
                 case PopUpContents.AddUser:
                     return new AddUserControl();
 
+                case PopUpContents.AddArticle:
+                    return new AddArticleControl();
+
                 case PopUpContents.Loading:
                     return new LoadingControl();
 
