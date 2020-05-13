@@ -24,9 +24,14 @@ namespace Library.Core
         public ICommand Abort { get; set; }
 
         /// <summary>
-        /// The user to delete
+        /// The personal number of the user to delete
         /// </summary>
-        public IUser UserToDelete { get; set; }
+        public string UserToDelete { get; set; }
+
+        /// <summary>
+        /// The id of the article to delete
+        /// </summary>
+        public int ArticleToDelete { get; set; }
 
         #endregion
 
@@ -57,13 +62,16 @@ namespace Library.Core
             {
                 // Book page
                 case ApplicationPages.BookPage:
+                    // Deletes the book
+                    // TODO: Koppla mot databas
+                    IoC.CreateInstance<BookPageViewModel>().BookList.Clear();
                     break;
 
                 // Employee page
                 case ApplicationPages.EmployeePage:
                     {
                         // Deletes the user
-                        await IoC.CreateInstance<ApplicationViewModel>().rep.DeleteUser((UserToDelete as UserViewModel).personalNumber);
+                        await IoC.CreateInstance<ApplicationViewModel>().rep.DeleteUser(UserToDelete);
                         break;
                     }
 

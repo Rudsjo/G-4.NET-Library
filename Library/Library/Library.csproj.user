@@ -13,6 +13,9 @@
     <Compile Update="Controls\PageHost.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\PopUp Controls\AddArticleControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\PopUp Controls\AddUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,7 +40,7 @@
     <Compile Update="Controls\SideMenuControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Controls\TableControl.xaml.cs">
+    <Compile Update="Controls\UserTableControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\BackupPage.xaml.cs">
@@ -58,6 +61,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\PageHost.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\AddArticleControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\PopUp Controls\AddUserControl.xaml">
@@ -84,7 +90,10 @@
     <Page Update="Controls\SideMenuControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\TableControl.xaml">
+    <Page Update="Controls\ArticleTableControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\UserTableControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

@@ -7,9 +7,9 @@ namespace Library
     /// <summary>
     /// Interaction logic for TableControl.xaml
     /// </summary>
-    public partial class TableControl : UserControl
+    public partial class ArticleTableControl : UserControl
     {
-        public TableControl()
+        public ArticleTableControl()
         {
             InitializeComponent();
             DataContext = IoC.CreateInstance<TableControlViewModel>();

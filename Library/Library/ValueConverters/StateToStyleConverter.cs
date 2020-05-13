@@ -89,6 +89,47 @@ namespace Library
                             else
                                 return defaultBrush;
                         }
+
+                    case SortableTables.Title:
+                        {
+                            if ((string)parameter == "Title")
+                                return sortedBrush;
+                            else
+                                return defaultBrush;
+                        }
+
+                    case SortableTables.Author:
+                        {
+                            if ((string)parameter == "Author")
+                                return sortedBrush;
+                            else
+                                return defaultBrush;
+                        }
+
+                    case SortableTables.Edition:
+                        {
+                            if ((string)parameter == "Edition")
+                                return sortedBrush;
+                            else
+                                return defaultBrush;
+                        }
+
+                    case SortableTables.Availability:
+                        {
+                            if ((string)parameter == "Availability")
+                                return sortedBrush;
+                            else
+                                return defaultBrush;
+                        }
+
+                    case SortableTables.Placement:
+                        {
+                            if ((string)parameter == "Placement")
+                                return sortedBrush;
+                            else
+                                return defaultBrush;
+                        }
+
                     default:
                         return defaultBrush;
                 }

@@ -124,27 +124,6 @@ C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcorea
 C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.baml
 C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.g.cs
 C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.baml
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\TableControl.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\App.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.cache
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.lref
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.exe
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.deps.json
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.json
@@ -161,6 +140,26 @@ C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.pdb
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.lref
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\App.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.baml
@@ -168,10 +167,10 @@ C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.baml
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\TableControl.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.baml
@@ -180,6 +179,7 @@ C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Buttons.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Colors.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Fonts.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Scroll.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Texts.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.g.resources
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
@@ -187,8 +187,12 @@ C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfo.cs
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.Fody.CopyLocal.cache
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CopyComplete
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Scroll.baml
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.g.cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.baml

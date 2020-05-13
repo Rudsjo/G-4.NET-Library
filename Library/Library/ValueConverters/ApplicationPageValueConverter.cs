@@ -1,6 +1,7 @@
 ﻿using Library.Core;
 using System;
 using System.Globalization;
+using System.Windows.Documents;
 
 namespace Library
 {
@@ -11,24 +12,47 @@ namespace Library
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            // Checks the current page
-            switch ((ApplicationPages)value)
+            switch ((string)parameter)
             {
+                case "Main":
+                    {
+                        // Checks the current page
+                        switch ((ApplicationPages)value)
+                        {
 
-                case ApplicationPages.MainPage:
-                    return new MainPage();
+                            case ApplicationPages.MainPage:
+                                return new MainPage();
 
-                case ApplicationPages.BookPage:
-                    return new BookPage();
+                            case ApplicationPages.BookPage:
+                                return new BookPage();
 
-                case ApplicationPages.EmployeePage:
-                    return new EmployeePage();
+                            case ApplicationPages.EmployeePage:
+                                return new EmployeePage();
 
-                // Default
+                            // Default
+                            default:
+                                return new BackupPage();
+                        }
+                    }
+
+                case "Table":
+                    {
+                        switch ((ApplicationPages)value)
+                        {
+                            case ApplicationPages.BookPage:
+                                return new ArticleTableControl();
+
+                            case ApplicationPages.EmployeePage:
+                                return new UserTableControl();
+
+                            default:
+                                return null;
+                        }
+                    }
+
                 default:
-                    return new BackupPage();
+                    return null;
             }
-
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -38,7 +39,8 @@ namespace Library.Core
         /// <summary>
         /// The headers of the table
         /// </summary>
-        public string[] TableHeaderTexts { get; set; }   
+        public string[] TableHeaderTexts { get; set; }
+
 
         #endregion
 
@@ -67,6 +69,8 @@ namespace Library.Core
             switch (IoC.CreateInstance<ApplicationViewModel>().CurrentPage)
             {
                 case ApplicationPages.BookPage:
+                    IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Confirmation);
+                    IoC.CreateInstance<ConfirmationControlViewModel>().ArticleToDelete = (itemToDelete as IArticle).articleID;
                     break;
 
                 case ApplicationPages.EmployeePage:
@@ -74,7 +78,7 @@ namespace Library.Core
                         if (await CanDeleteUser((itemToDelete as UserViewModel).personalNumber))
                         {
                             IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Confirmation);
-                            IoC.CreateInstance<ConfirmationControlViewModel>().UserToDelete = (IUser)itemToDelete;
+                            IoC.CreateInstance<ConfirmationControlViewModel>().UserToDelete = (itemToDelete as IUser).personalNumber;
                         }
                         break;
                     }
@@ -151,6 +155,61 @@ namespace Library.Core
 
                         // Return the ordered list with placeholders
                         CurrentList = (CurrentList as ObservableCollection<UserViewModel>).SortByPropertyName(nameof(UserViewModel.reservedArticles));
+
+                        break;
+                    }
+
+                case "Title":
+                    {
+                        // Set the correct state
+                        TableToSort = SortableTables.Title;
+
+                        // Return the ordered list with placeholders
+                        CurrentList = (CurrentList as ObservableCollection<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.title));
+
+                        break;
+                    }
+
+                case "Author":
+                    {
+                        // Set the correct state
+                        TableToSort = SortableTables.Author;
+
+                        // Return the ordered list with placeholders
+                        CurrentList = (CurrentList as ObservableCollection<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.author));
+
+                        break;
+                    }
+
+                case "Edition":
+                    {
+                        // Set the correct state
+                        TableToSort = SortableTables.Edition;
+
+                        // Return the ordered list with placeholders
+                        CurrentList = (CurrentList as ObservableCollection<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.edition));
+
+                        break;
+                    }
+
+                case "Availability":
+                    {
+                        // Set the correct state
+                        TableToSort = SortableTables.Availability;
+
+                        // Return the ordered list with placeholders
+                        CurrentList = (CurrentList as ObservableCollection<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.availability));
+
+                        break;
+                    }
+
+                case "Placement":
+                    {
+                        // Set the correct state
+                        TableToSort = SortableTables.Placement;
+
+                        // Return the ordered list with placeholders
+                        CurrentList = (CurrentList as ObservableCollection<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.placement));
 
                         break;
                     }

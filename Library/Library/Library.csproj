@@ -75,6 +75,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\ArticleTableControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Controls\ArticleTableControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styling\Styles\Buttons.xaml">
       <SubType>Designer</SubType>
     </Page>

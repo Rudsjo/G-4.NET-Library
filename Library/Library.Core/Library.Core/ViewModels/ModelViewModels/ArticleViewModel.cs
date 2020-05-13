@@ -68,6 +68,11 @@ namespace Library.Core
         /// </summary>
         public int loanTime { get; set; }
 
+        /// <summary>
+        /// The articles edition
+        /// </summary>
+        public string edition { get; set; }
+
         #endregion
 
         #region Added Properties
@@ -76,6 +81,16 @@ namespace Library.Core
         /// Flag to indicate if the object is a real user or not
         /// </summary>
         public bool IsPlaceholder { get; set; }
+
+        /// <summary>
+        /// The quantity of the article
+        /// </summary>
+        public string quantity { get; set; }
+
+        /// <summary>
+        /// The number of articles available
+        /// </summary>
+        public string availability { get; set; }
 
         #endregion
     }

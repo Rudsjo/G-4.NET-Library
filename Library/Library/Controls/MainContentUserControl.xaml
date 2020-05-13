@@ -121,8 +121,13 @@
             </Grid>
 
             <!-- Table -->
-            <local:TableControl Grid.Row="1" Margin="50 0 50 0" />
-
+            <Frame Grid.Row="1" Margin="50 0 50 0"
+                   Content="{Binding ApplicationViewModel.CurrentPage, 
+                             Source={x:Static local:ViewModelLocator.Instance},
+                             Converter={local:ApplicationPageValueConverter},
+                             ConverterParameter=Table}"
+                   local:NoFrameHistory.Value = "True"
+                   />
 
         </Grid>
 

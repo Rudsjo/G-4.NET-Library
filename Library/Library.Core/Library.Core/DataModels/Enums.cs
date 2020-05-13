@@ -115,34 +115,54 @@
         None = 0,
 
         /// <summary>
-        /// Sort by <see cref="User.personalNumber"/>
+        /// Sort by <see cref="UserViewModel.personalNumber"/>
         /// </summary>
         PersonalNumber = 1,
 
         /// <summary>
-        /// Sort by <see cref="User.firstName"/>
+        /// Sort by <see cref="UserViewModel.firstName"/>
         /// </summary>
         FirstName = 2,
 
         /// <summary>
-        /// Sort by <see cref="User.lastName"/>
+        /// Sort by <see cref="UserViewModel.lastName"/>
         /// </summary>
         LastName = 3,
 
         /// <summary>
-        /// Sort by <see cref="User."/>
+        /// Sort by <see cref="UserViewModel.loanedArticles"/>
         /// </summary>
         LoanedArticles = 4,
 
         /// <summary>
-        /// 
+        /// Sort by <see cref="UserViewModel.reservedArticles"/>
         /// </summary>
         ReservedArticles = 5,
 
         /// <summary>
-        /// 
+        /// Sort by <see cref="ArticleViewModel.title"/>
         /// </summary>
         Title = 6,
+
+        /// <summary>
+        /// Sort by <see cref="ArticleViewModel.author"/>
+        /// </summary>
+        Author = 7,
+
+        /// <summary>
+        /// Sort by <see cref="ArticleViewModel."/>
+        /// </summary>
+        Edition = 8,
+
+        /// <summary>
+        /// Sort by <see cref="ArticleViewModel.quantity"/>
+        /// </summary>
+        Availability = 9,
+
+        /// <summary>
+        /// Sort by <see cref="ArticleViewModel.placement"/>
+        /// </summary>
+        Placement = 10,
     }
 
 }

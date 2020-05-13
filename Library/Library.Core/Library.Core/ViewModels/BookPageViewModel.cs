@@ -26,13 +26,38 @@ namespace Library.Core
         /// </summary>
         public BookPageViewModel()
         {
+            BookList = new ObservableCollection<ArticleViewModel>()
+            {
+                new ArticleViewModel()
+                {
+                    title = "Bubu",
+                    author = "helooo",
+                    availability = "5",
+                    placement = "aa"
+                },
+                new ArticleViewModel()
+                {
+                    title = "Gregers bok",
+                    author = "Greger",
+                    availability = "1",
+                    placement = "Bb"
+                },
+                new ArticleViewModel()
+                {
+                    title = "Allan",
+                    author = "ÖB",
+                    availability = "7",
+                    placement = "Öö"
+                },
+            };
+
             // Fill up placeholders
             IoC.CreateInstance<TableControlViewModel>().CurrentList = BookList.FillPlaceHolders().ToList().ToObservableCollection();
 
             // Setting the dynamic texts
             IoC.CreateInstance<MainContentUserControlViewModel>().HeaderText = "Alla böcker";
             IoC.CreateInstance<MainContentUserControlViewModel>().AddButtonText = "Lägg till bok";
-            IoC.CreateInstance<TableControlViewModel>().TableHeaderTexts = new string[] { "Titel", "Författare", "Upplaga", "Tillgänglighet", "Placering" };
+            IoC.CreateInstance<TableControlViewModel>().TableHeaderTexts = new string[] { "Titel", "Författare", "Placering", "Tillgänglighet" };
         }
 
         #endregion

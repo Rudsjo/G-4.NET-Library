@@ -1,7 +1,9 @@
 ﻿C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\App.xaml;;
+FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\ArticleTableControl.xaml;;
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\MainContentUserControl.xaml;;
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\PageHost.xaml;;
+FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\PopUp Controls\AddArticleControl.xaml;;
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\PopUp Controls\AddUserControl.xaml;;
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\PopUp Controls\ConfirmationControl.xaml;;
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\PopUp Controls\DatabaseLoginControl.xaml;;
@@ -10,7 +12,7 @@ FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Librar
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\PopUp Controls\UserLoginControl.xaml;;
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\PopUpControl.xaml;;
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\SideMenuControl.xaml;;
-FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\TableControl.xaml;;
+FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Controls\UserTableControl.xaml;;
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\MainWindow.xaml;;
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Pages\BackupPage.xaml;;
 FC:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\Pages\BookPage.xaml;;
