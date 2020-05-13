@@ -14,9 +14,6 @@ namespace Library
             // Checks the current page
             switch ((ApplicationPages)value)
             {
-                // Login to database page
-                case ApplicationPages.LoginToDatabasePage:
-                    return new LoginToDatabasePage();
 
                 case ApplicationPages.MainPage:
                     return new MainPage();
@@ -24,9 +21,12 @@ namespace Library
                 case ApplicationPages.BookPage:
                     return new BookPage();
 
+                case ApplicationPages.EmployeePage:
+                    return new EmployeePage();
+
                 // Default
                 default:
-                    return new LoginToDatabasePage();
+                    return new BackupPage();
             }
 
         }
