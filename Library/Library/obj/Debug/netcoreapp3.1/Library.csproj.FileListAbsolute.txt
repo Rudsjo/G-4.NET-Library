@@ -6,7 +6,6 @@ E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLogin
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.g.cs
-E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\TableControl.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.g.cs
@@ -21,7 +20,6 @@ E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserContro
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.baml
-E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\TableControl.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.baml
@@ -196,3 +194,16 @@ C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.baml
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.g.cs
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Scroll.baml

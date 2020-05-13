@@ -168,6 +168,9 @@
         public static IEnumerable<T> SortByPropertyName<T>(this IEnumerable<T> listToSort, string propertyName, string placeholderPropertyName = "IsPlaceholder")
         where T : class, new()
         {
+            if (listToSort == null || listToSort.ToList().Count == 0)
+                return new ObservableCollection<T>().FillPlaceHolders();
+
             // Get the property info of the sent in property
             var propertyInfo = listToSort.First().GetType().GetProperty(propertyName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
 

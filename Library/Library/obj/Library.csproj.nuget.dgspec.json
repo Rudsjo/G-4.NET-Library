@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library\\Library.csproj": {}
+    "E:\\Library\\Library\\Library.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
+    "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+        "projectUniqueName": "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
         "projectName": "Library.Core",
-        "projectPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+        "projectPath": "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
         "packagesPath": "C:\\Users\\joxca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library.Core\\Library.Core\\obj\\",
+        "outputPath": "E:\\Library\\Library.Core\\Library.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joxca\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,14 +74,14 @@
         }
       }
     },
-    "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library\\Library.csproj": {
+    "E:\\Library\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library\\Library.csproj",
+        "projectUniqueName": "E:\\Library\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library\\Library.csproj",
+        "projectPath": "E:\\Library\\Library\\Library.csproj",
         "packagesPath": "C:\\Users\\joxca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library\\obj\\",
+        "outputPath": "E:\\Library\\Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joxca\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -97,8 +97,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
-                "projectPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\G-4.NET-Library-BaseProject1.4\\G-4.NET-Library-BaseProject1.4\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
+              "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
+                "projectPath": "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
               }
             }
           }

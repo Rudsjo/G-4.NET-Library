@@ -12,7 +12,7 @@
                                 SnapsToDevicePixels="True"
                                 Background="{StaticResource MainBlueBrush}"
                                 CornerRadius="3"
-                                Height="4"
+                                Height="Auto"
                                 Width="{TemplateBinding Width}"/>
                 </ControlTemplate>
             </Setter.Value>

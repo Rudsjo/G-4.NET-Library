@@ -157,6 +157,32 @@ namespace Library
         }
 
         /// <summary>
+        /// Adds a slide out animation to the right
+        /// </summary>
+        /// <param name="storyboard">The storyboard to add the animation to</param>
+        /// <param name="seconds">The time the animation will take</param>
+        /// <param name="offset">The distance of the slide</param>
+        /// <param name="decelerationRatio">The ratio of deceleration</param>
+        /// <param name="keepMargin">Whether to keep the element at the same width during the animation or not</param>
+        public static void AddSlideToRight(this Storyboard storyboard, float seconds, double offset, double startPoint = 0, float decelerationRatio = 0.9f, bool keepMargin = true)
+        {
+            // Create the margin animate from right
+            var animation = new ThicknessAnimation
+            {
+                Duration = new Duration(TimeSpan.FromSeconds(seconds)),
+                From = new Thickness(startPoint, 0, 0, 0),
+                To = new Thickness(offset, 0, keepMargin ? -offset : 0, 0),
+                DecelerationRatio = decelerationRatio
+            };
+
+            // Set the target property name
+            Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
+
+            // Add this to the storyboard
+            storyboard.Children.Add(animation);
+        }
+
+        /// <summary>
         /// Adds a zoom in animation
         /// </summary>
         /// <param name="storyboard">The storyboard to add the animation to</param>

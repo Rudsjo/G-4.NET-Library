@@ -92,6 +92,11 @@ namespace Library.Core
         /// </summary>
         public string availability { get; set; }
 
+        /// <summary>
+        /// Flag to indicate if animation should take place
+        /// </summary>
+        public bool ShouldAnimateOut { get; set; }
+
         #endregion
     }
 }
