@@ -91,7 +91,8 @@
                         description = _article.description,
                         loanTime = _article.loanTime,
                         statusID = _article.statusID,
-                        placement = _article.placement
+                        placement = _article.placement,
+                        edition = _article.edition
                     },
                     commandType: CommandType.StoredProcedure)).First() != 0;
             }
@@ -427,7 +428,8 @@
                         description = newArticle.description ,
                         loanTime  = newArticle.loanTime      ,
                         statusID  = newArticle.statusID      ,
-                        placement = newArticle.placement 
+                        placement = newArticle.placement     ,
+                        edition   = newArticle.edition
                     }, 
                     commandType: CommandType.StoredProcedure)).First() != 0;
             }
