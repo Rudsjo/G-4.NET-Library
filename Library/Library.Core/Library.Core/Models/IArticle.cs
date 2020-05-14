@@ -13,5 +13,7 @@
         string publisher { get; set; }
         int statusID { get; set; }
         string title { get; set; }
+
+        string edition { get; set; }
     }
 }

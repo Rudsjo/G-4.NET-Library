@@ -76,3 +76,4 @@ C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\
 C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
 C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
 C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+E:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache

@@ -281,3 +281,5 @@ C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\
 C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
 C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.g.cs
 C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.baml

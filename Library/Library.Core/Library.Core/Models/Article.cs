@@ -70,5 +70,10 @@
         /// </summary>
         public int loanTime { get; set; }
 
+        /// <summary>
+        /// The edition of the article
+        /// </summary>
+        public string edition { get; set; }
+
     }
 }

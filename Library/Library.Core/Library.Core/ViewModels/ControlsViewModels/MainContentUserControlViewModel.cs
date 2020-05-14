@@ -15,7 +15,15 @@ namespace Library.Core
 
         #region Public Properties
 
-        private IEnumerable<Article> Items;
+        /// <summary>
+        /// List to hold articles
+        /// </summary>
+        private IEnumerable<ArticleViewModel> ArticleItems;
+
+        /// <summary>
+        /// List to hold articles
+        /// </summary>
+        private IEnumerable<UserViewModel> UserItems;
 
         /// <summary>
         /// The command to open MyProfile popup,
@@ -52,8 +60,11 @@ namespace Library.Core
 
             set
             {
+
                 if (value == null)
+                {
                     return;
+                }
 
                 _searchText = value;
 
@@ -67,11 +78,22 @@ namespace Library.Core
         /// </summary>
         private void SearchUpdate()
         {
-            IoC.CreateInstance<TableControlViewModel>().CurrentList = Items.Where(s =>
-            s.author.ToLower().Contains(_searchText.ToLower())     ||
-            s.isbn.ToLower().Contains(_searchText.ToLower())       ||
-            s.publisher.ToLower().Contains(_searchText.ToLower())  ||
-            s.title.ToLower().Contains(_searchText.ToLower()));
+            if(IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
+            {
+                IoC.CreateInstance<TableControlViewModel>().CurrentList = ArticleItems.Where(s =>
+                s.author.ToLower().Contains(_searchText.ToLower()) ||
+                s.isbn.ToLower().Contains(_searchText.ToLower()) ||
+                s.publisher.ToLower().Contains(_searchText.ToLower()) ||
+                s.title.ToLower().Contains(_searchText.ToLower())).FillPlaceHolders();
+            }
+            else
+            {
+                IoC.CreateInstance<TableControlViewModel>().CurrentList = UserItems.Where(u =>
+                u.personalNumber.ToLower().Contains(_searchText.ToLower()) ||
+                u.firstName.ToLower().Contains(_searchText.ToLower()) ||
+                u.lastName.ToLower().Contains(_searchText.ToLower()) ||
+                u.type.ToLower().Contains(_searchText.ToLower())).FillPlaceHolders();
+            }
         }
 
         #endregion
@@ -87,7 +109,8 @@ namespace Library.Core
             MyProfile = new RelayCommand(async () => await MyProfileCommandAsync());
             OpenAdd = new RelayCommand(async () => await OpenAddCommand());
 
-            LoadArticles();
+            // Get items from the database
+            LoadItems();
         }
 
         #endregion
@@ -97,7 +120,12 @@ namespace Library.Core
         /// <summary>
         /// Method to fill a local list with data from the database
         /// </summary>
-        private async void LoadArticles() { Items = await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles(); }
+        private async void LoadItems() 
+        { 
+            ArticleItems = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ConvertModelDataToViewModel<IArticle, ArticleViewModel>(); 
+            UserItems = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ConvertModelDataToViewModel<IUser, UserViewModel>();
+        }
+
 
         /// <summary>
         /// Command to open a MyProfile popup,

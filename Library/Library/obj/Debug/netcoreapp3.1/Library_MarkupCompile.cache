@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\
+E:\Library\Library\obj\Debug\netcoreapp3.1\
 Library
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\App.xaml
+E:\Library\Library\App.xaml
 2424844996
 
 41-92826626
-196-329745647
+1961496882654
 Controls\ArticleTableControl.xaml;Controls\MainContentUserControl.xaml;Controls\PageHost.xaml;Controls\PopUp Controls\AddArticleControl.xaml;Controls\PopUp Controls\AddUserControl.xaml;Controls\PopUp Controls\ArticleInfoControl.xaml;Controls\PopUp Controls\ConfirmationControl.xaml;Controls\PopUp Controls\DatabaseLoginControl.xaml;Controls\PopUp Controls\LoadingControl.xaml;Controls\PopUp Controls\SuccessfulControl.xaml;Controls\PopUp Controls\UserLoginControl.xaml;Controls\PopUpControl.xaml;Controls\SideMenuControl.xaml;Controls\UserTableControl.xaml;MainWindow.xaml;Pages\BackupPage.xaml;Pages\BookPage.xaml;Pages\EmployeePage.xaml;Pages\MainPage.xaml;Styling\Styles\Buttons.xaml;Styling\Styles\Colors.xaml;Styling\Styles\Fonts.xaml;Styling\Styles\Scroll.xaml;Styling\Styles\Texts.xaml;
 
 False
