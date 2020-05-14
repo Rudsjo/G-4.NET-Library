@@ -55,6 +55,7 @@
                 <local:ContentControlWithIcon 
                         Grid.Row="1"
                         Style="{StaticResource InfoBox}"
+                        FontSize="14"
                         Tag="Titel"
                         UserInput = "{Binding CurrentArticle.title}"
                         ContentIcon="&#xf5b7;"
@@ -65,6 +66,7 @@
                 <local:ContentControlWithIcon 
                          Grid.Row="2"
                          Style="{StaticResource InfoBox}"
+                         FontSize="14"
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding CurrentArticle.author}"
                          Tag="Författare"
@@ -74,7 +76,8 @@
                 <!-- Publisher -->
                 <local:ContentControlWithIcon 
                          Grid.Row="3"                      
-                         Style="{StaticResource InfoBox}"                     
+                         Style="{StaticResource InfoBox}"  
+                         FontSize="14" 
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding CurrentArticle.publisher}"
                          Tag="Förlag"
@@ -83,6 +86,7 @@
                 <!-- ISBN -->
                 <local:ContentControlWithIcon Grid.Row="4"                     
                          Style="{StaticResource InfoBox}"
+                         FontSize="14"
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding CurrentArticle.isbn}"
                          Tag="ISBN"
@@ -92,6 +96,7 @@
                 <!-- LoanTime -->
                 <local:ContentControlWithIcon Grid.Row="5"                     
                          Style="{StaticResource InfoBox}"
+                         FontSize="14"                  
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding CurrentArticle.loanTime}"
                          Tag="Lånetid"
@@ -101,6 +106,7 @@
                 <!-- Placement -->
                 <local:ContentControlWithIcon Grid.Row="6"                    
                          Style="{StaticResource InfoBox}"
+                         FontSize="14"
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding CurrentArticle.placement}"
                          Tag="Placering"
@@ -111,6 +117,7 @@
                 <local:ContentControlWithIcon Grid.Row="1" Grid.Column="1"                     
                          Style="{StaticResource InfoBox}"
                          VerticalContentAlignment="Bottom"
+                         FontSize="14"
                          UserInput="{Binding CurrentArticle.price}"
                          Tag="Inköpspris"
                          ContentIcon="&#xf155;"
@@ -121,6 +128,7 @@
                          Style="{StaticResource InfoBox}"
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding CurrentArticle.avaliability}"
+                         FontSize="14"
                          Tag="Antal"
                          ContentIcon="&#xf03a;"
                          />
@@ -130,6 +138,7 @@
                          Style="{StaticResource InfoBox}"
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding CurrentArticle.categoryID}"
+                         FontSize="14"               
                          Tag="Antal"
                          ContentIcon="&#xf03a;"
                          />
@@ -139,7 +148,8 @@
                 <local:ContentControlWithIcon 
                     Grid.Row="4" Grid.Column="1"
                     Style="{StaticResource InfoBox}"
-                    UserInput="{Binding CurrentArticle.description}"             
+                    UserInput="{Binding CurrentArticle.description}"
+                    FontSize="14"
                     Tag="Beskrivning"
                     ContentIcon="&#xf304;"         
                          />

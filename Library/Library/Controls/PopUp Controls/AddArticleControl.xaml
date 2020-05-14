@@ -76,6 +76,7 @@
                          UserInput="{Binding InputAuthor, Mode=TwoWay}"
                          Tag="Författare"
                          ContentIcon="&#xf4ff;"
+                         TabIndex="1"
                      />
 
                 <!-- Publisher -->
@@ -85,7 +86,10 @@
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding InputPublisher, Mode=TwoWay}"
                          Tag="Förlag"
-                         ContentIcon="&#xf02e;" />
+                         ContentIcon="&#xf02e;"
+                         TabIndex="2"
+                    
+                    />
 
                 <!-- ISBN -->
                 <local:ContentControlWithIcon Grid.Row="4"                     
@@ -94,6 +98,7 @@
                          UserInput="{Binding InputISBN, Mode=TwoWay}"
                          Tag="ISBN"
                          ContentIcon="&#xf0cb;"
+                         TabIndex="3"
                          />
 
                 <!-- LoanTime -->
@@ -102,7 +107,8 @@
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding InputLoanTime, Mode=TwoWay}"
                          Tag="Lånetid"
-                         ContentIcon="&#xf4fd;"             
+                         ContentIcon="&#xf4fd;"
+                         TabIndex="4"
                         />
 
                 <!-- Placement -->
@@ -112,6 +118,7 @@
                          UserInput="{Binding InputPlacement, Mode=TwoWay}"
                          Tag="Placering"
                          ContentIcon="&#xf3c5;"
+                         TabIndex="5"
                          />
 
                 <!-- Price -->
@@ -120,7 +127,7 @@
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding InputPrice, Mode=TwoWay}"
                          Tag="Inköpspris"
-                         ContentIcon="&#xf155;"
+                         ContentIcon="&#xf155;" TabIndex="6"
                          />
 
                 <!-- Quantity -->
@@ -129,7 +136,7 @@
                          VerticalContentAlignment="Bottom"
                          UserInput="{Binding InputQuantity, Mode=TwoWay}"
                          Tag="Antal"
-                         ContentIcon="&#xf03a;"
+                         ContentIcon="&#xf03a;" TabIndex="7"
                          />
 
                 <!-- Category -->
@@ -137,7 +144,7 @@
                 <ComboBox Grid.Row="3" Grid.Column="1"                    
                           VerticalContentAlignment="Bottom"
                           Margin="20" 
-                          Tag="Kategori"
+                          Tag="Kategori" TabIndex="8"
                          />
 
                 <!-- Description -->
@@ -146,7 +153,7 @@
                     Grid.Row="4" Grid.Column="1"
                     Style="{StaticResource FormBox}"
                     Tag="Beskrivning"
-                    ContentIcon="&#xf304;"
+                    ContentIcon="&#xf304;" TabIndex="9"
                   
                          />
 
@@ -156,6 +163,7 @@
                         Width="220" Height="60"
                         Content="Lägg till" Style="{StaticResource BlueActionButton}"
                         Command="{Binding AddToTempList}"
+                        TabIndex="10"
                         />
 
 
@@ -194,7 +202,13 @@
 
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border>
+                                <Border BorderBrush="{StaticResource LightBlueBrush}" 
+                                        BorderThickness="1" 
+                                        Padding="10" 
+                                        Margin="5 0 10 10" 
+                                        RenderTransformOrigin="0.5 0.5"
+                                        local:SlideAndFadeToRightProperty.Value="{Binding ShouldAnimateOut}"
+                                        >
                                     <Border.Effect>
                                         <DropShadowEffect BlurRadius="2"
                                                   ShadowDepth="1"
@@ -204,22 +218,35 @@
                                                   />
                                     </Border.Effect>
 
-                                    <Button Content="{Binding title}"
-                                            BorderBrush="{StaticResource MainBlueBrush}" 
-                                            BorderThickness="2" 
-                                            Background="Transparent"
-                                            Padding="0 10"
-                                            Margin="20 2"
-                                            VerticalContentAlignment="Center"
-                                            FontFamily="{StaticResource MontserratSemiBold}" FontSize="10"
-                                            RenderTransformOrigin="0.5 0.5"
-                                            local:SlideAndFadeToRightProperty.Value="{Binding ShouldAnimateOut}">
+                                    <Border.RenderTransform>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </Border.RenderTransform>
 
-                                        <Button.RenderTransform>
-                                            <ScaleTransform ScaleX="1" ScaleY="1" />
-                                        </Button.RenderTransform>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
 
-                                    </Button>
+                                        <TextBlock Text="{Binding title}" 
+                                                   Margin="5 0 0 0"
+                                                   FontSize="10" FontFamily="{StaticResource MontserratSemiBold}"
+                                                   VerticalAlignment="Center"
+                                                   />
+
+                                        <Button Grid.Column="1"
+                                                    Style="{StaticResource IconButton}"
+                                                    Content="&#xf2ed;" 
+                                                    FontSize="16"
+                                                    HorizontalAlignment="Right"
+                                                    Margin="0 0 10 0"
+                                                    Command="{Binding DataContext.RemoveAddedItem, 
+                                                              RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                                    CommandParameter="{Binding}"
+                                                    />
+
+                                    </Grid>
+
                                 </Border>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>

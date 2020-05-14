@@ -42,19 +42,37 @@
 
             <!-- Logo -->
             <Image Source="/Styling/Images/LibsysLogo.png" Width="250" Height="250" />
-            
-            <!-- Search bar -->
-            <TextBox Style="{StaticResource SearchBox}" Tag="Sök..."
-                     Width="500" Height="50"
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Search bar -->
+                <TextBox Style="{StaticResource SearchBox}" Tag="Sök..."
+                     Width="400" Height="50"
                      BorderBrush="{StaticResource CustomLightGreyBrush}"
                      BorderThickness="2"
-                     VerticalContentAlignment="Center"/>
-            
+                     VerticalContentAlignment="Center"
+                         Text="{Binding FirstSearchText}"
+                         />
+                
+                <!-- Button -->
+                <Border Grid.Column="1">
+                    <Button Content="&#xf061;" 
+                            Style="{StaticResource SearchButton}" 
+                            Margin="-12 20"
+                            Command="{Binding FirstSearch}"
+                            />
+                </Border>
+
+            </Grid>
+
             <!-- Show all books -->
             <local:ButtonWithIcon Content="Eller visa alla böcker..."
-                                  IconContent="&#xf061;"
                                   Style="{StaticResource TextIconButton}"
-                                  Margin="0 20"
+                                  Margin="-140 20"
                                   Command="{Binding ShowAllBooks}"
                                   />
 

@@ -1,4 +1,6 @@
 ﻿using Repository;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Library.Core
 {
@@ -18,6 +20,16 @@ namespace Library.Core
 
 
         #region Public Properties
+
+        /// <summary>
+        /// Placeholder list to be shown in the skeleton controls
+        /// </summary>
+        public IEnumerable<UserViewModel> SkeletonList { get; set; } = new ObservableCollection<UserViewModel>().FillPlaceHolders();
+
+        /// <summary>
+        /// Flag to indicate if a skeleton control is visible
+        /// </summary>
+        public bool IsSkeletonVisible { get; set; }
 
         /// <summary>
         /// The repository of the application
@@ -48,7 +60,7 @@ namespace Library.Core
         /// <summary>
         /// Flag to indicate if the system is connected to the database or not
         /// </summary>
-        public bool LoggedInToDatabase { get; set; } = false;
+        public bool LoggedInToDatabase { get; set; } = true;
 
         /// <summary>
         /// Flag to indicate if the application is loading

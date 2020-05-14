@@ -27,9 +27,10 @@ namespace Library.Core
         /// </summary>
         public ICommand AddUser { get; set; }
 
-        public ObservableCollection<UserViewModel> TempUserList { get; set; }
-
-        public IEnumerable<RoleViewModel> CurrentRoles { get; set; }
+        /// <summary>
+        /// List to hold all roles available
+        /// </summary>
+        public IEnumerable<IRole> CurrentRoles { get; set; } = new ObservableCollection<RoleViewModel>();
 
         /// <summary>
         /// The personal number written by the user
@@ -84,7 +85,8 @@ namespace Library.Core
         public AddUserControlViewModel()
         {
             // Gett all user data
-            IoC.CreateInstance<TableControlViewModel>().LoadItems();
+            //IoC.CreateInstance<TableControlViewModel>().LoadItems();
+            GetRoles();
 
             // Setting commands
             CloseAddUserControl = new RelayCommand(async () => await CloseAddUserControlCommand());
@@ -94,6 +96,8 @@ namespace Library.Core
         #endregion
 
         #region Private Methods
+
+        private async void GetRoles() { CurrentRoles = await IoC.CreateInstance<ApplicationViewModel>().rep.GetAllRoles(); }
 
 
         /// <summary>
@@ -124,17 +128,6 @@ namespace Library.Core
             // Make sure all warnings are resetted
             IsWrongInput = false;
             PasswordIsWrong = false;
-
-            // Get all the items from the saved employee list
-            TempUserList = IoC.CreateInstance<EmployeePageViewModel>().UserList;
-
-            // If list hasn't been created before...
-            if(TempUserList == null)
-                // Create an instance of a list
-                TempUserList = IoC.CreateList<ObservableCollection<UserViewModel>>();
-
-            // Remove any placeholders
-            TempUserList = TempUserList.Where(x => x.IsPlaceholder != true).ToList().ToObservableCollection();
 
             // Check if all fields are filled
             if (PNumber == null || FirstName == null || LastName == null || CurrentRole.roleID == 0)
@@ -177,15 +170,10 @@ namespace Library.Core
             // Close popup
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
-
-            // Fill up any remaining placeholders
-            TempUserList = TempUserList.FillPlaceHolders().ToObservableCollection();
-
             // Fill the new data
             IoC.CreateInstance<TableControlViewModel>().LoadItems();
  
             // Closes the pop up
-            // TODO: Implement confirmation window
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
             // Resetting the input properties

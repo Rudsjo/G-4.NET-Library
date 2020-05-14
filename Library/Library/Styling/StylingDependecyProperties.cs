@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Library
 {
@@ -20,6 +21,20 @@ namespace Library
             get { return (string)GetValue(IconContentProperty); }
             set { SetValue(IconContentProperty, value); }
         }
+
+
+
+        public ICommand ButtonInButtonCommand
+        {
+            get { return (ICommand)GetValue(ButtonInButtonProperty); }
+            set { SetValue(ButtonInButtonProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ButtonInButtonProperty =
+            DependencyProperty.Register(nameof(ButtonInButtonCommand), typeof(ICommand), typeof(ButtonWithIcon), new PropertyMetadata(default));
+
+
     }
 
     /// <summary>

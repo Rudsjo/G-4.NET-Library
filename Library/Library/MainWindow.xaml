@@ -49,7 +49,12 @@
             Source={x:Static local:ViewModelLocator.Instance}, Converter={local:BooleanToVisibilityConverter},
             ConverterParameter=ErrorText}"
             />
-
+        
+        <!-- Skeleton main content -->
+        <local:MainContentUserControlSkeleton Grid.Column="1" Grid.Row="1"
+        Visibility="{Binding ApplicationViewModel.IsSkeletonVisible,
+        Source={x:Static local:ViewModelLocator.Instance}, Converter={local:BooleanToVisibilityConverter},
+        ConverterParameter=ErrorText}" />
 
         <!-- Setting the page -->
         <local:PageHost

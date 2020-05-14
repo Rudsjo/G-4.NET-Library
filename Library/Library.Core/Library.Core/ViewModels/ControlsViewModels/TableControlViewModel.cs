@@ -91,7 +91,7 @@ namespace Library.Core
             else
                 CurrentList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>().FillPlaceHolders();
 
-            await Task.Delay(2000);
+            await Task.Delay(1500);
 
             // When data is loaded, set the flag
             IoC.CreateInstance<ApplicationViewModel>().IsLoading = false;
@@ -152,9 +152,9 @@ namespace Library.Core
                         TableToSort = SortableTables.PersonalNumber;
 
                         // Return the ordered list with placeholders
-                        CurrentList = 
-                            (CurrentList as ObservableCollection<UserViewModel>).ToModelDataToViewModel<IUser, UserViewModel>()
-                            .SortByPropertyName(nameof(UserViewModel.personalNumber)).FillPlaceHolders();
+                        CurrentList =
+                            (CurrentList as IEnumerable<UserViewModel>).SortByPropertyName(nameof(UserViewModel.personalNumber))
+                            .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
                     }
@@ -178,7 +178,9 @@ namespace Library.Core
                         TableToSort = SortableTables.LastName;
 
                         // Return the ordered list with placeholders
-                        CurrentList = CurrentList.SortByPropertyName(nameof(UserViewModel.lastName)).FillPlaceHolders();
+                        CurrentList =
+                            (CurrentList as IEnumerable<UserViewModel>).SortByPropertyName(nameof(UserViewModel.lastName))
+                            .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
                     }
@@ -189,7 +191,9 @@ namespace Library.Core
                         TableToSort = SortableTables.LoanedArticles;
 
                         // Return the ordered list with placeholders
-                        CurrentList = CurrentList.SortByPropertyName(nameof(UserViewModel.loanedArticles)).FillPlaceHolders();
+                        CurrentList =
+                            (CurrentList as IEnumerable<UserViewModel>).SortByPropertyName(nameof(UserViewModel.loanedArticles))
+                            .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
                     }
@@ -200,7 +204,9 @@ namespace Library.Core
                         TableToSort = SortableTables.ReservedArticles;
 
                         // Return the ordered list with placeholders
-                        CurrentList = CurrentList.SortByPropertyName(nameof(UserViewModel.reservedArticles)).FillPlaceHolders();
+                        CurrentList =
+                            (CurrentList as IEnumerable<UserViewModel>).SortByPropertyName(nameof(UserViewModel.reservedArticles))
+                            .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
                     }
@@ -211,7 +217,9 @@ namespace Library.Core
                         TableToSort = SortableTables.Title;
 
                         // Return the ordered list with placeholders
-                        CurrentList = CurrentList.SortByPropertyName(nameof(ArticleViewModel.title)).FillPlaceHolders();
+                        CurrentList =
+                            (CurrentList as IEnumerable<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.title))
+                            .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
                     }
@@ -222,7 +230,9 @@ namespace Library.Core
                         TableToSort = SortableTables.Author;
 
                         // Return the ordered list with placeholders
-                        CurrentList = CurrentList.SortByPropertyName(nameof(ArticleViewModel.author)).FillPlaceHolders();
+                        CurrentList =
+                            (CurrentList as IEnumerable<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.author))
+                            .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
                     }
@@ -233,7 +243,9 @@ namespace Library.Core
                         TableToSort = SortableTables.Edition;
 
                         // Return the ordered list with placeholders
-                        CurrentList = CurrentList.SortByPropertyName(nameof(ArticleViewModel.edition)).FillPlaceHolders();
+                        CurrentList =
+                            (CurrentList as IEnumerable<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.edition))
+                            .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
                     }
@@ -244,7 +256,9 @@ namespace Library.Core
                         TableToSort = SortableTables.Availability;
 
                         // Return the ordered list with placeholders
-                        CurrentList = CurrentList.SortByPropertyName(nameof(ArticleViewModel.availability)).FillPlaceHolders();
+                        CurrentList =
+                            (CurrentList as IEnumerable<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.availability))
+                            .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
                     }
@@ -255,7 +269,9 @@ namespace Library.Core
                         TableToSort = SortableTables.Placement;
 
                         // Return the ordered list with placeholders
-                        CurrentList = CurrentList.SortByPropertyName(nameof(ArticleViewModel.placement)).FillPlaceHolders();
+                        CurrentList =
+                            (CurrentList as IEnumerable<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.placement))
+                            .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
                     }

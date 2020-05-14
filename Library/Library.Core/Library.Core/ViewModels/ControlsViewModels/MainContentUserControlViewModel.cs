@@ -15,6 +15,9 @@ namespace Library.Core
 
         #region Public Properties
 
+        public IEnumerable<ArticleViewModel> ArticleSearchList { get; set; }
+        public IEnumerable<UserViewModel> UserSearchList { get; set; }
+
         /// <summary>
         /// The command to open MyProfile popup,
         /// if user is not logged in the login pop up will be displayed
@@ -36,6 +39,7 @@ namespace Library.Core
         /// </summary>
         public string AddButtonText { get; set; }
 
+
         /// <summary>
         /// Private backingfield for search
         /// </summary>
@@ -50,7 +54,6 @@ namespace Library.Core
 
             set
             {
-
                 if (value == null)
                 {
                     return;
@@ -66,24 +69,37 @@ namespace Library.Core
         /// <summary>
         ///  Searches for articles in the articles list 
         /// </summary>
-        private void SearchUpdate()
+        private async Task SearchUpdate()
         {
-            //if(IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
-            //{
-            //    IoC.CreateInstance<TableControlViewModel>().CurrentList = ArticleItems.Where(s =>
-            //    s.author.ToLower().Contains(_searchText.ToLower()) ||
-            //    s.isbn.ToLower().Contains(_searchText.ToLower()) ||
-            //    s.publisher.ToLower().Contains(_searchText.ToLower()) ||
-            //    s.title.ToLower().Contains(_searchText.ToLower())).FillPlaceHolders();
-            //}
-            //else
-            //{
-            //    IoC.CreateInstance<TableControlViewModel>().CurrentList = UserItems.Where(u =>
-            //    u.personalNumber.ToLower().Contains(_searchText.ToLower()) ||
-            //    u.firstName.ToLower().Contains(_searchText.ToLower()) ||
-            //    u.lastName.ToLower().Contains(_searchText.ToLower()) ||
-            //    u.type.ToLower().Contains(_searchText.ToLower())).FillPlaceHolders();
-            //}
+
+            if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
+            {
+                // Get the full list
+                ArticleSearchList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ToModelDataToViewModel<IArticle, ArticleViewModel>();
+
+                // Search thorugh the list
+                IoC.CreateInstance<TableControlViewModel>().CurrentList = 
+                ArticleSearchList.Where(s =>
+                s.IsPlaceholder == false && (
+                s.author.ToLower().Contains(_searchText.ToLower()) ||
+                s.isbn.ToLower().Contains(_searchText.ToLower()) ||
+                s.publisher.ToLower().Contains(_searchText.ToLower()) ||
+                s.title.ToLower().Contains(_searchText.ToLower())))
+                .ToList().ToObservableCollection().FillPlaceHolders();
+            }
+            else
+            {
+                // Get the full list
+                UserSearchList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>();
+
+                IoC.CreateInstance<TableControlViewModel>().CurrentList =
+                (IoC.CreateInstance<TableControlViewModel>().CurrentList as IEnumerable<UserViewModel>).Where(u =>
+                u.IsPlaceholder == false && (
+                u.personalNumber.ToLower().Contains(_searchText.ToLower()) ||
+                u.firstName.ToLower().Contains(_searchText.ToLower()) ||
+                u.lastName.ToLower().Contains(_searchText.ToLower()) ||
+                u.type.ToLower().Contains(_searchText.ToLower()))).ToList().ToObservableCollection().FillPlaceHolders();
+            }
         }
 
         #endregion

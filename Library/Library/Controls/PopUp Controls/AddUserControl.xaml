@@ -18,11 +18,6 @@
 
 
     <!-- TODO: FLYTTA DESSA TILL BASE PAGE -->
-    <UserControl.RenderTransform>
-        <SkewTransform AngleX="0" AngleY="0" />
-    </UserControl.RenderTransform>
-
-
     <Border>
         <Grid>
             <!-- Main content -->

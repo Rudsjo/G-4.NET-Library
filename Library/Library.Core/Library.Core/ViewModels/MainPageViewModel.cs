@@ -18,6 +18,16 @@ namespace Library.Core
         /// </summary>
         public ICommand ShowAllBooks { get; set; }
 
+        /// <summary>
+        /// Command to activate a search through the system
+        /// </summary>
+        public ICommand FirstSearch { get; set; }
+
+        /// <summary>
+        /// The search text on the start page
+        /// </summary>
+        public string FirstSearchText { get; set; }
+
         #endregion
 
         #region Constructor
@@ -36,7 +46,15 @@ namespace Library.Core
 
             // Setting commands
             ShowAllBooks = new RelayCommand(async () => await ShowAllBooksCommandAsync());
+            FirstSearch = new RelayCommand(() => 
+            {
+                // Changing the page
+                IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.BookPage);
 
+                // Setting the search text
+                IoC.CreateInstance<MainContentUserControlViewModel>().SearchText = FirstSearchText;
+
+            });
         }
 
         #endregion

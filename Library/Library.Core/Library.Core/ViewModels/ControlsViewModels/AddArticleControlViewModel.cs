@@ -79,8 +79,14 @@ namespace Library.Core
         /// </summary>
         public bool IsBeingAdded { get; set; }
 
+        /// <summary>
+        /// Command to remove a selected added item
+        /// </summary>
+        public ICommand RemoveAddedItem { get; set; }
+
 
         // TODO: Add Category and Description properties
+        
 
         #endregion
 
@@ -90,9 +96,15 @@ namespace Library.Core
             AddToTempList = new RelayCommand(async () => await AddToTempListCommad());
             Close = new RelayCommand(() => { IoC.CreateInstance<ApplicationViewModel>().ClosePopUp(); });
             Confirm = new RelayCommand(async () => await ConfirmCommand());
+            RemoveAddedItem = new RelayParameterizedCommand(c);
         }
 
         #region Private Methods
+
+        private void c(object item)
+        {
+            TempListOfArticles.Remove((item as ArticleViewModel));
+        }
 
         /// <summary>
         /// Command to add items to <see cref="TempListOfArticles"/>
