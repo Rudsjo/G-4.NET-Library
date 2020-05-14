@@ -1,0 +1,257 @@
+﻿<UserControl x:Class="Library.AddArticleControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Border Background="#FFFFFF" Margin="100 50"
+            BorderBrush="{StaticResource MediumGreyBrush}" BorderThickness="2">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="9"
+                                          ShadowDepth="1"
+                                          Opacity="0.5" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="2"
+                       Style="{StaticResource CloseIconButton}"
+                       Content="&#xf00d;"
+                       HorizontalAlignment="Right" Margin="10"
+                       FontSize="20"
+                       Command="{Binding Close}"
+                       />
+
+            <!-- Form -->
+            <Grid Grid.Column="0" Grid.Row="1" Margin="0 -25 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <!-- Header -->
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Text="Lägg till artikel"
+                           Style="{StaticResource MainHeaderText}"
+                           />
+
+                <!-- Title -->
+                    <local:ContentControlWithIcon 
+                        Grid.Row="1"
+                        Style="{StaticResource FormBox}"
+                        Tag="Titel"
+                        UserInput = "{Binding InputTitle, Mode=TwoWay}"
+                        ContentIcon="&#xf5b7;"
+                        TabIndex="0"
+                     />
+                
+                    <!-- Author -->
+                <local:ContentControlWithIcon 
+                         Grid.Row="2"
+                         Style="{StaticResource FormBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding InputAuthor, Mode=TwoWay}"
+                         Tag="Författare"
+                         ContentIcon="&#xf4ff;"
+                     />
+
+                <!-- Publisher -->
+                <local:ContentControlWithIcon 
+                         Grid.Row="3"                      
+                         Style="{StaticResource FormBox}"                     
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding InputPublisher, Mode=TwoWay}"
+                         Tag="Förlag"
+                         ContentIcon="&#xf02e;" />
+
+                <!-- ISBN -->
+                <local:ContentControlWithIcon Grid.Row="4"                     
+                         Style="{StaticResource FormBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding InputISBN, Mode=TwoWay}"
+                         Tag="ISBN"
+                         ContentIcon="&#xf0cb;"
+                         />
+
+                <!-- LoanTime -->
+                <local:ContentControlWithIcon Grid.Row="5"                     
+                         Style="{StaticResource FormBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding InputLoanTime, Mode=TwoWay}"
+                         Tag="Lånetid"
+                         ContentIcon="&#xf4fd;"             
+                        />
+
+                <!-- Placement -->
+                <local:ContentControlWithIcon Grid.Row="6"                    
+                         Style="{StaticResource FormBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding InputPlacement, Mode=TwoWay}"
+                         Tag="Placering"
+                         ContentIcon="&#xf3c5;"
+                         />
+
+                <!-- Price -->
+                <local:ContentControlWithIcon Grid.Row="1" Grid.Column="1"                     
+                         Style="{StaticResource FormBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding InputPrice, Mode=TwoWay}"
+                         Tag="Inköpspris"
+                         ContentIcon="&#xf155;"
+                         />
+
+                <!-- Quantity -->
+                <local:ContentControlWithIcon Grid.Row="2" Grid.Column="1"                     
+                         Style="{StaticResource FormBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding InputQuantity, Mode=TwoWay}"
+                         Tag="Antal"
+                         ContentIcon="&#xf03a;"
+                         />
+
+                <!-- Category -->
+                <!-- TODO: Fixa egen style -->
+                <ComboBox Grid.Row="3" Grid.Column="1"                    
+                          VerticalContentAlignment="Bottom"
+                          Margin="20" 
+                          Tag="Kategori"
+                         />
+
+                <!-- Description -->
+                <!-- TODO: Fixa egen style -->
+                <local:ContentControlWithIcon 
+                    Grid.Row="4" Grid.Column="1"
+                    Style="{StaticResource FormBox}"
+                    Tag="Beskrivning"
+                    ContentIcon="&#xf304;"
+                  
+                         />
+
+
+                <Button Grid.Row="7" Grid.ColumnSpan="2"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Width="220" Height="60"
+                        Content="Lägg till" Style="{StaticResource BlueActionButton}"
+                        Command="{Binding AddToTempList}"
+                        />
+
+
+            </Grid>
+
+            <!-- Separator -->
+            <Border Grid.Column="1" 
+                    BorderThickness="2" 
+                    Margin="10" 
+                    BorderBrush="{StaticResource MediumLightGreyBrush}"
+                    CornerRadius="2"
+                    Grid.RowSpan="3"
+                    >
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="6"
+                                      ShadowDepth="3"
+                                      Opacity="0.1" />
+                </Border.Effect>
+            </Border>
+
+            
+            <!-- Added items -->
+            <Grid Grid.Column="2" Grid.Row="1" Margin="0 20 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <ScrollViewer>
+                    <ItemsControl ItemsSource="{Binding TempListOfArticles}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border>
+                                    <Border.Effect>
+                                        <DropShadowEffect BlurRadius="2"
+                                                  ShadowDepth="1"
+                                                  Opacity="0.5"
+                                                  Direction="-90"
+                                                  Color="{StaticResource DarkBlue}"
+                                                  />
+                                    </Border.Effect>
+
+                                    <Button Content="{Binding title}"
+                                            BorderBrush="{StaticResource MainBlueBrush}" 
+                                            BorderThickness="2" 
+                                            Background="Transparent"
+                                            Padding="0 10"
+                                            Margin="20 2"
+                                            VerticalContentAlignment="Center"
+                                            FontFamily="{StaticResource MontserratSemiBold}" FontSize="10"
+                                            RenderTransformOrigin="0.5 0.5"
+                                            local:SlideAndFadeToRightProperty.Value="{Binding ShouldAnimateOut}">
+
+                                        <Button.RenderTransform>
+                                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        </Button.RenderTransform>
+
+                                    </Button>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+                
+                
+                <!-- Add button -->
+
+                <StackPanel Grid.Row="1">
+                    <Border BorderBrush="{StaticResource LightBlueBrush}" BorderThickness="1" Opacity="0.2" Margin="10">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="9"
+                                              ShadowDepth="1"
+                                              Opacity="0.2"
+                                              />
+                        </Border.Effect>
+                    </Border>
+
+                    <Button Grid.Row="1"
+                            Content="Bekfräfta"
+                            Style="{StaticResource BlueActionButton}"
+                            Margin="20 0"
+                            Height="60"
+                            Command="{Binding Confirm}"
+                        />
+
+                </StackPanel>
+
+
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="Library.ArticleInfoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="470">
+
+    <Border Background="#FFFFFF" Margin="300 50"
+            BorderBrush="{StaticResource MediumGreyBrush}" BorderThickness="2">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="9"
+                                          ShadowDepth="1"
+                                          Opacity="0.5" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="2"
+                       Style="{StaticResource CloseIconButton}"
+                       Content="&#xf00d;"
+                       HorizontalAlignment="Right" Margin="10"
+                       FontSize="20"
+                       Command="{Binding Exit}"
+                       />
+
+            <!-- Form -->
+            <Grid Grid.Column="0" Grid.Row="1" Margin="0 -25 0 20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- Header -->
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Text="Info"
+                           Style="{StaticResource MainHeaderText}"
+                           />
+
+                <!-- Title -->
+                <local:ContentControlWithIcon 
+                        Grid.Row="1"
+                        Style="{StaticResource InfoBox}"
+                        Tag="Titel"
+                        UserInput = "{Binding CurrentArticle.title}"
+                        ContentIcon="&#xf5b7;"
+                        TabIndex="0"
+                     />
+
+                <!-- Author -->
+                <local:ContentControlWithIcon 
+                         Grid.Row="2"
+                         Style="{StaticResource InfoBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding CurrentArticle.author}"
+                         Tag="Författare"
+                         ContentIcon="&#xf4ff;"
+                     />
+
+                <!-- Publisher -->
+                <local:ContentControlWithIcon 
+                         Grid.Row="3"                      
+                         Style="{StaticResource InfoBox}"                     
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding CurrentArticle.publisher}"
+                         Tag="Förlag"
+                         ContentIcon="&#xf02e;" />
+
+                <!-- ISBN -->
+                <local:ContentControlWithIcon Grid.Row="4"                     
+                         Style="{StaticResource InfoBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding CurrentArticle.isbn}"
+                         Tag="ISBN"
+                         ContentIcon="&#xf0cb;"
+                         />
+
+                <!-- LoanTime -->
+                <local:ContentControlWithIcon Grid.Row="5"                     
+                         Style="{StaticResource InfoBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding CurrentArticle.loanTime}"
+                         Tag="Lånetid"
+                         ContentIcon="&#xf4fd;"             
+                        />
+
+                <!-- Placement -->
+                <local:ContentControlWithIcon Grid.Row="6"                    
+                         Style="{StaticResource InfoBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding CurrentArticle.placement}"
+                         Tag="Placering"
+                         ContentIcon="&#xf3c5;"
+                         />
+
+                <!-- Price -->
+                <local:ContentControlWithIcon Grid.Row="1" Grid.Column="1"                     
+                         Style="{StaticResource InfoBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding CurrentArticle.price}"
+                         Tag="Inköpspris"
+                         ContentIcon="&#xf155;"
+                         />
+
+                <!-- Avaliability -->
+                <local:ContentControlWithIcon Grid.Row="2" Grid.Column="1"                     
+                         Style="{StaticResource InfoBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding CurrentArticle.avaliability}"
+                         Tag="Antal"
+                         ContentIcon="&#xf03a;"
+                         />
+
+                <!-- Category -->
+                <local:ContentControlWithIcon Grid.Row="3" Grid.Column="1"                     
+                         Style="{StaticResource InfoBox}"
+                         VerticalContentAlignment="Bottom"
+                         UserInput="{Binding CurrentArticle.categoryID}"
+                         Tag="Antal"
+                         ContentIcon="&#xf03a;"
+                         />
+
+                <!-- Description -->
+                <!-- TODO: Fixa egen style -->
+                <local:ContentControlWithIcon 
+                    Grid.Row="4" Grid.Column="1"
+                    Style="{StaticResource InfoBox}"
+                    UserInput="{Binding CurrentArticle.description}"             
+                    Tag="Beskrivning"
+                    ContentIcon="&#xf304;"         
+                         />
+
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

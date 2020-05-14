@@ -1,0 +1,283 @@
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\App.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.cache
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.lref
+E:\Library\Library\obj\Debug\netcoreapp3.1\App.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Buttons.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Colors.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Fonts.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Texts.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
+E:\Library\Library\bin\Debug\netcoreapp3.1\Library.exe
+E:\Library\Library\bin\Debug\netcoreapp3.1\Library.deps.json
+E:\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.json
+E:\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.dev.json
+E:\Library\Library\bin\Debug\netcoreapp3.1\Library.dll
+E:\Library\Library\bin\Debug\netcoreapp3.1\Library.pdb
+E:\Library\Library\bin\Debug\netcoreapp3.1\Dapper.dll
+E:\Library\Library\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+E:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+E:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+E:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+E:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll
+E:\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.pdb
+E:\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library.g.resources
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfoInputs.cache
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfo.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.Fody.CopyLocal.cache
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CopyComplete
+E:\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
+E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\Library.exe
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\Library.deps.json
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.json
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.dev.json
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\Library.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\Library.pdb
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\TableControl.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.cache
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.lref
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\TableControl.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Buttons.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Colors.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Fonts.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Texts.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.g.resources
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfoInputs.cache
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfo.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.Fody.CopyLocal.cache
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CopyComplete
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.baml
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.g.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.exe
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.deps.json
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.json
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.dev.json
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.pdb
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.lref
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Buttons.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Colors.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Fonts.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Scroll.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Texts.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.g.resources
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfoInputs.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfo.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.Fody.CopyLocal.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CopyComplete
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.baml
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Scroll.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\Library.exe
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\Library.deps.json
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.json
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.dev.json
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\Library.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\Library.pdb
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.lref
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Buttons.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Colors.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Fonts.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Scroll.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Texts.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.g.resources
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfoInputs.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfo.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.Fody.CopyLocal.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CopyComplete
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.baml
