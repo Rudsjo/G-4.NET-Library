@@ -80,10 +80,7 @@ namespace Library.Core
             }
 
             // Fill up the new user data
-            await IoC.CreateInstance<EmployeePageViewModel>().FillUserData();
-
-            //Fill up the article data to reload properties
-            await IoC.CreateInstance<BookPageViewModel>().FillArticleData();
+            IoC.CreateInstance<TableControlViewModel>().LoadItems();
 
             // Close the pop up
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();

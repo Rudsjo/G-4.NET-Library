@@ -28,35 +28,12 @@ namespace Library.Core
         public BookPageViewModel()
         {
             //Fills list of articles when page loads
-            Task.Run(async () => await FillArticleData());
+            IoC.CreateInstance<TableControlViewModel>().LoadItems();
 
             // Setting the dynamic texts
             IoC.CreateInstance<MainContentUserControlViewModel>().HeaderText = "Alla böcker";
             IoC.CreateInstance<MainContentUserControlViewModel>().AddButtonText = "Lägg till bok";
             IoC.CreateInstance<TableControlViewModel>().TableHeaderTexts = new string[] { "Titel", "Författare", "Placering", "Tillgänglighet" };
-        }
-
-        #endregion
-
-        #region Public methods
-
-        /// <summary>
-        /// Method that gets and fills list with articles from database
-        /// </summary>
-        /// <returns></returns>
-        public async Task FillArticleData()
-        {
-            //Indicating that data is loading
-            IoC.CreateInstance<ApplicationViewModel>().IsLoading = true;
-
-            //Fills the list of articles, gets all articles when not given a parameter
-            BookList = ViewModelHelpers.FillWithModelData<IArticle, ArticleViewModel>(await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ToObservableCollection();
-
-            //Sets the CurrentList in TableControlViewModel to the list of articles
-            IoC.CreateInstance<TableControlViewModel>().CurrentList = BookList.FillPlaceHolders().ToList().ToObservableCollection();
-
-            //Indicating that data is loaded
-            IoC.CreateInstance<ApplicationViewModel>().IsLoading = false;
         }
 
         #endregion

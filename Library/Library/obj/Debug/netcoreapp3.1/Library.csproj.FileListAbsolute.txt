@@ -283,3 +283,11 @@ C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\
 C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.baml
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.g.cs
 E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\HeaderBarControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\HeaderBarControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\HeaderBarControlSkeleton.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\MainContentUserControlSkeleton.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\TableControlSkeleton.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\HeaderBarControlSkeleton.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\MainContentUserControlSkeleton.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\TableControlSkeleton.baml

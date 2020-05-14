@@ -30,14 +30,31 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <!-- Header bar -->
+            <RowDefinition Height="*" />
+
+            <!-- Main content -->
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+
         <!-- Setting the main background -->
         <Grid.Background>
             <ImageBrush ImageSource="Styling\Images\LibsysBackground.png" />
         </Grid.Background>
+        
+        <!-- Header bar -->
+        <local:HeaderBarControl Grid.Column="1"
+            Visibility="{Binding ApplicationViewModel.SideMenuVisible,
+            Source={x:Static local:ViewModelLocator.Instance}, Converter={local:BooleanToVisibilityConverter},
+            ConverterParameter=ErrorText}"
+            />
+
 
         <!-- Setting the page -->
         <local:PageHost
             Grid.Column="1"
+            Grid.Row="1"
             d:DataContext=""
             DataContext="{Binding ApplicationViewModel.CurrentPage,
                           Source={x:Static local:ViewModelLocator.Instance},
@@ -48,17 +65,17 @@
         
         
         <!-- Side menu -->
-        <local:SideMenuControl
+        <local:SideMenuControl Grid.RowSpan="2"
             Width="250"
-            local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.SideMenuVisible,
-            Source={x:Static local:ViewModelLocator.Instance}}" Visibility="Collapsed" />
+            Visibility="{Binding ApplicationViewModel.SideMenuVisible, 
+                         Source={x:Static local:ViewModelLocator.Instance}, Converter={local:BooleanToVisibilityConverter}, ConverterParameter=ErrorText}" />
         
         
         <!-- Pop up control -->
         <local:PopUpControl Visibility="{Binding ApplicationViewModel.PopUpVisible,
                                          Source={x:Static local:ViewModelLocator.Instance},
                                          Converter={local:BooleanToVisibilityConverter}}"
-                            Grid.ColumnSpan="2"
+                            Grid.ColumnSpan="2" Grid.RowSpan="2"
                             />
 
     </Grid>

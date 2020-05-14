@@ -181,7 +181,7 @@
             listToSort = listToSort.OrderBy(e => propertyInfo.GetValue(e, null)).Where(x => (bool)propertyInfoOfPlaceholder.GetValue(x) != true);
 
             // Return the list with added placeholders
-            return listToSort.FillPlaceHolders().ToList().ToObservableCollection();
+            return listToSort;
         }
 
 
@@ -192,7 +192,7 @@
         /// <typeparam name="T">The type of ViewModel to return</typeparam>
         /// <param name="modelList">List to fill from</param>
         /// <returns>a list of the new viewmodels</returns>
-        public static IEnumerable<T> ConvertModelDataToViewModel<I, T>(this IEnumerable<I> modelList)
+        public static IEnumerable<T> ToModelDataToViewModel<I, T>(this IEnumerable<I> modelList)
             // interface
             where I : class
             // T has to derive from interface

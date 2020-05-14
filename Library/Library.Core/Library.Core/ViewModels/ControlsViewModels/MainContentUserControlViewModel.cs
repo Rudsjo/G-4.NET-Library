@@ -16,16 +16,6 @@ namespace Library.Core
         #region Public Properties
 
         /// <summary>
-        /// List to hold articles
-        /// </summary>
-        private IEnumerable<ArticleViewModel> ArticleItems;
-
-        /// <summary>
-        /// List to hold articles
-        /// </summary>
-        private IEnumerable<UserViewModel> UserItems;
-
-        /// <summary>
         /// The command to open MyProfile popup,
         /// if user is not logged in the login pop up will be displayed
         /// </summary>
@@ -78,22 +68,22 @@ namespace Library.Core
         /// </summary>
         private void SearchUpdate()
         {
-            if(IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
-            {
-                IoC.CreateInstance<TableControlViewModel>().CurrentList = ArticleItems.Where(s =>
-                s.author.ToLower().Contains(_searchText.ToLower()) ||
-                s.isbn.ToLower().Contains(_searchText.ToLower()) ||
-                s.publisher.ToLower().Contains(_searchText.ToLower()) ||
-                s.title.ToLower().Contains(_searchText.ToLower())).FillPlaceHolders();
-            }
-            else
-            {
-                IoC.CreateInstance<TableControlViewModel>().CurrentList = UserItems.Where(u =>
-                u.personalNumber.ToLower().Contains(_searchText.ToLower()) ||
-                u.firstName.ToLower().Contains(_searchText.ToLower()) ||
-                u.lastName.ToLower().Contains(_searchText.ToLower()) ||
-                u.type.ToLower().Contains(_searchText.ToLower())).FillPlaceHolders();
-            }
+            //if(IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
+            //{
+            //    IoC.CreateInstance<TableControlViewModel>().CurrentList = ArticleItems.Where(s =>
+            //    s.author.ToLower().Contains(_searchText.ToLower()) ||
+            //    s.isbn.ToLower().Contains(_searchText.ToLower()) ||
+            //    s.publisher.ToLower().Contains(_searchText.ToLower()) ||
+            //    s.title.ToLower().Contains(_searchText.ToLower())).FillPlaceHolders();
+            //}
+            //else
+            //{
+            //    IoC.CreateInstance<TableControlViewModel>().CurrentList = UserItems.Where(u =>
+            //    u.personalNumber.ToLower().Contains(_searchText.ToLower()) ||
+            //    u.firstName.ToLower().Contains(_searchText.ToLower()) ||
+            //    u.lastName.ToLower().Contains(_searchText.ToLower()) ||
+            //    u.type.ToLower().Contains(_searchText.ToLower())).FillPlaceHolders();
+            //}
         }
 
         #endregion
@@ -108,23 +98,11 @@ namespace Library.Core
             // Setting commands
             MyProfile = new RelayCommand(async () => await MyProfileCommandAsync());
             OpenAdd = new RelayCommand(async () => await OpenAddCommand());
-
-            // Get items from the database
-            LoadItems();
         }
 
         #endregion
 
         #region Private Methods
-
-        /// <summary>
-        /// Method to fill a local list with data from the database
-        /// </summary>
-        private async void LoadItems() 
-        { 
-            ArticleItems = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ConvertModelDataToViewModel<IArticle, ArticleViewModel>(); 
-            UserItems = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ConvertModelDataToViewModel<IUser, UserViewModel>();
-        }
 
 
         /// <summary>

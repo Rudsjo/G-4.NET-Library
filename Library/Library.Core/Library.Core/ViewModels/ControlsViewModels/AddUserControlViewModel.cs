@@ -84,7 +84,7 @@ namespace Library.Core
         public AddUserControlViewModel()
         {
             // Gett all user data
-            Task.Run(async () => await IoC.CreateInstance<EmployeePageViewModel>().FillUserData());
+            IoC.CreateInstance<TableControlViewModel>().LoadItems();
 
             // Setting commands
             CloseAddUserControl = new RelayCommand(async () => await CloseAddUserControlCommand());
@@ -182,7 +182,7 @@ namespace Library.Core
             TempUserList = TempUserList.FillPlaceHolders().ToObservableCollection();
 
             // Fill the new data
-            await IoC.CreateInstance<EmployeePageViewModel>().FillUserData();
+            IoC.CreateInstance<TableControlViewModel>().LoadItems();
  
             // Closes the pop up
             // TODO: Implement confirmation window

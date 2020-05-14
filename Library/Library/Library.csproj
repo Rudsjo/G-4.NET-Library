@@ -78,10 +78,28 @@
     <Compile Update="Controls\ArticleTableControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\Skeleton Controls\HeaderBarControlSkeleton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\Skeleton Controls\MainContentUserControlSkeleton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\Skeleton Controls\TableControlSkeleton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <Page Update="Controls\ArticleTableControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Skeleton Controls\HeaderBarControlSkeleton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Skeleton Controls\MainContentUserControlSkeleton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Skeleton Controls\TableControlSkeleton.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styling\Styles\Buttons.xaml">

@@ -37,6 +37,5 @@
         /// User's last name
         /// </summary>
         public string lastName { get; set; }
-
     }
 }

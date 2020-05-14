@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\HeaderBarControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\MainContentUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -60,6 +63,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\HeaderBarControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Skeleton Controls\HeaderBarControlSkeleton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Skeleton Controls\MainContentUserControlSkeleton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\MainContentUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -97,6 +109,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\ArticleTableControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Skeleton Controls\TableControlSkeleton.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\UserTableControl.xaml">

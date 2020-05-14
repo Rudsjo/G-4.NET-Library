@@ -6,130 +6,66 @@
              xmlns:local="clr-namespace:Library"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
-    <!-- TODO: FLYTTA DESSA TILL BASE PAGE -->
-    <UserControl.RenderTransform>
-        <SkewTransform AngleX="0" AngleY="0" />
-    </UserControl.RenderTransform>
 
+        <!-- Table -->
     <Grid>
         <Grid.RowDefinitions>
-            <!-- Header bar -->
+            <!-- Header text and buttons -->
+            <RowDefinition Height="Auto" />
+
+            <!-- The table -->
             <RowDefinition Height="*" />
 
-            <!-- Table -->
-            <RowDefinition Height="10*" />
+            <!-- Footer -->
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <!-- Header bar -->
-        <Border>
+        <!-- Header text and buttons -->
+        <Grid>
 
-            <Border.Effect>
-                <!-- Setting border shadow -->
-                <DropShadowEffect BlurRadius="9"
-                                  ShadowDepth="1"
-                                  Opacity="0.5"/>
-            </Border.Effect>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-            <Grid Background="#FFFFFF">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <!-- Search box -->
-                <TextBox Style="{StaticResource SearchBox}" Tag="Sök..." 
-                         VerticalContentAlignment="Center"
-                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
-                         />
-
-                <!-- Header buttons -->
-                <StackPanel Orientation="Horizontal"
-                        Grid.Column="1"
-                        HorizontalAlignment="Right">
-
-                    <!-- Settings -->
-                    <Button Style="{StaticResource IconButton}"
-                            Content="&#xf013;"
-                            />
-
-                    <!-- Notifications -->
-                    <Button Style="{StaticResource IconButton}"
-                            Content="&#xf0f3;"
-                            />
-
-                    <!-- MyProfile / Login -->
-                    <Button Style="{StaticResource IconButton}"
-                            Content="&#xf007;"
-                            Command="{Binding MyProfile}"
-                            />
-
-                </StackPanel>
-
-            </Grid>
-        </Border>
-        
-        <!-- Table -->
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <!-- Header text and buttons -->
-                <RowDefinition Height="Auto" />
-                
-                <!-- The table -->
-                <RowDefinition Height="*" />
-                
-                <!-- Footer -->
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-
-            <!-- Header text and buttons -->
-            <Grid>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                
-                <!-- Header text -->
-                <TextBlock Grid.Column="0"
+            <!-- Header text -->
+            <TextBlock Grid.Column="0"
                            Style="{StaticResource MainHeaderText}"
                            Text="{Binding HeaderText}"
                            HorizontalAlignment="Left"
                            Margin="50 80 0 10"
                            />
-                
-                <!-- Buttons -->
-                <StackPanel Orientation="Horizontal"
+
+            <!-- Buttons -->
+            <StackPanel Orientation="Horizontal"
                             Grid.Column="1"
                             HorizontalAlignment="Right"
                             Margin="0 80 50 10">
 
-                    <!-- Add -->
-                    <local:ButtonWithIcon Content="{Binding AddButtonText}"
+                <!-- Add -->
+                <local:ButtonWithIcon Content="{Binding AddButtonText}"
                                           IconContent="&#xf067;"
                                           Style="{StaticResource TableActionButton}"
                                           Command="{Binding OpenAdd}"
                                           Margin="0 0 5 0"
                                           />
 
-                    <!-- Filter -->
-                    <local:ButtonWithIcon Content="Filter"
+                <!-- Filter -->
+                <local:ButtonWithIcon Content="Filter"
                                           IconContent="&#xf0b0;"
                                           Style="{StaticResource TableActionButton}"
                                           />
-                </StackPanel>
-            </Grid>
+            </StackPanel>
+        </Grid>
 
-            <!-- Table -->
-            <Frame Grid.Row="1" Margin="50 0 50 0"
+        <!-- Table -->
+        <Frame Grid.Row="1" Margin="50 0 50 0"
                    Content="{Binding ApplicationViewModel.CurrentPage, 
                              Source={x:Static local:ViewModelLocator.Instance},
                              Converter={local:ApplicationPageValueConverter},
                              ConverterParameter=Table}"
                    local:NoFrameHistory.Value = "True"
                    />
-
-        </Grid>
 
     </Grid>
 </UserControl>

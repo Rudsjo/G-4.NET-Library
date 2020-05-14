@@ -21,17 +21,31 @@ namespace Library
                         {
 
                             case ApplicationPages.MainPage:
-                                return new MainPage();
+                                {
+                                    IoC.CreateInstance<ApplicationViewModel>().PageLoadComplete = false;
+                                    return new MainPage();
+                                }
 
                             case ApplicationPages.BookPage:
-                                return new BookPage();
+                                {
+                                    IoC.CreateInstance<ApplicationViewModel>().PageLoadComplete = false;
+                                    return new BookPage();
+                                }
 
                             case ApplicationPages.EmployeePage:
-                                return new EmployeePage();
+                                {
+                                    IoC.CreateInstance<ApplicationViewModel>().PageLoadComplete = false;
+                                    return new EmployeePage();
+
+                                }
 
                             // Default
                             default:
-                                return new BackupPage();
+                                {
+                                    IoC.CreateInstance<ApplicationViewModel>().PageLoadComplete = false;
+                                    return new BackupPage();
+
+                                }
                         }
                     }
 

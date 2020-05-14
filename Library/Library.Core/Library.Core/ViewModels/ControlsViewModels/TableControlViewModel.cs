@@ -43,7 +43,7 @@ namespace Library.Core
         /// <summary>
         /// The original list displayed in the table
         /// </summary>
-        public IEnumerable CurrentList { get; set; }
+        public IEnumerable<object> CurrentList { get; set; }
 
         /// <summary>
         /// The headers of the table
@@ -75,6 +75,30 @@ namespace Library.Core
 
         #endregion
 
+        #region Public Methods
+
+        /// <summary>
+        /// Method to fill a local list with data from the database
+        /// </summary>
+        public async void LoadItems()
+        {
+            // Set the flag to indicate that we're loading data
+            IoC.CreateInstance<ApplicationViewModel>().IsLoading = true;
+
+            // Set the content in the table
+            if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
+                CurrentList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ToModelDataToViewModel<IArticle, ArticleViewModel>().FillPlaceHolders();
+            else
+                CurrentList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>().FillPlaceHolders();
+
+            await Task.Delay(2000);
+
+            // When data is loaded, set the flag
+            IoC.CreateInstance<ApplicationViewModel>().IsLoading = false;
+        }
+
+        #endregion
+
         #region Private Methods
         /// <summary>
         /// Command to delete
@@ -85,9 +109,11 @@ namespace Library.Core
             switch (IoC.CreateInstance<ApplicationViewModel>().CurrentPage)
             {
                 case ApplicationPages.BookPage:
-                    IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Confirmation);
-                    IoC.CreateInstance<ConfirmationControlViewModel>().ArticleToDelete = (CurrentArticle as IArticle).articleID;
-                    break;
+                    {
+                        IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Confirmation);
+                        IoC.CreateInstance<ConfirmationControlViewModel>().ArticleToDelete = (CurrentArticle as IArticle).articleID;
+                        break;
+                    }
 
                 case ApplicationPages.EmployeePage:
                     {
@@ -126,7 +152,9 @@ namespace Library.Core
                         TableToSort = SortableTables.PersonalNumber;
 
                         // Return the ordered list with placeholders
-                        CurrentList = (CurrentList as ObservableCollection<UserViewModel>).SortByPropertyName(nameof(UserViewModel.personalNumber));
+                        CurrentList = 
+                            (CurrentList as ObservableCollection<UserViewModel>).ToModelDataToViewModel<IUser, UserViewModel>()
+                            .SortByPropertyName(nameof(UserViewModel.personalNumber)).FillPlaceHolders();
 
                         break;
                     }
@@ -137,7 +165,9 @@ namespace Library.Core
                         TableToSort = SortableTables.FirstName;
 
                         // Return the ordered list with placeholders
-                        CurrentList = (CurrentList as ObservableCollection<UserViewModel>).SortByPropertyName(nameof(UserViewModel.firstName));
+                        CurrentList =
+                            (CurrentList as IEnumerable<UserViewModel>).SortByPropertyName(nameof(UserViewModel.firstName))
+                            .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
                     }
@@ -148,7 +178,7 @@ namespace Library.Core
                         TableToSort = SortableTables.LastName;
 
                         // Return the ordered list with placeholders
-                        CurrentList = (CurrentList as ObservableCollection<UserViewModel>).SortByPropertyName(nameof(UserViewModel.lastName));
+                        CurrentList = CurrentList.SortByPropertyName(nameof(UserViewModel.lastName)).FillPlaceHolders();
 
                         break;
                     }
@@ -159,7 +189,7 @@ namespace Library.Core
                         TableToSort = SortableTables.LoanedArticles;
 
                         // Return the ordered list with placeholders
-                        CurrentList = (CurrentList as ObservableCollection<UserViewModel>).SortByPropertyName(nameof(UserViewModel.loanedArticles));
+                        CurrentList = CurrentList.SortByPropertyName(nameof(UserViewModel.loanedArticles)).FillPlaceHolders();
 
                         break;
                     }
@@ -170,7 +200,7 @@ namespace Library.Core
                         TableToSort = SortableTables.ReservedArticles;
 
                         // Return the ordered list with placeholders
-                        CurrentList = (CurrentList as ObservableCollection<UserViewModel>).SortByPropertyName(nameof(UserViewModel.reservedArticles));
+                        CurrentList = CurrentList.SortByPropertyName(nameof(UserViewModel.reservedArticles)).FillPlaceHolders();
 
                         break;
                     }
@@ -181,7 +211,7 @@ namespace Library.Core
                         TableToSort = SortableTables.Title;
 
                         // Return the ordered list with placeholders
-                        CurrentList = (CurrentList as ObservableCollection<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.title));
+                        CurrentList = CurrentList.SortByPropertyName(nameof(ArticleViewModel.title)).FillPlaceHolders();
 
                         break;
                     }
@@ -192,7 +222,7 @@ namespace Library.Core
                         TableToSort = SortableTables.Author;
 
                         // Return the ordered list with placeholders
-                        CurrentList = (CurrentList as ObservableCollection<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.author));
+                        CurrentList = CurrentList.SortByPropertyName(nameof(ArticleViewModel.author)).FillPlaceHolders();
 
                         break;
                     }
@@ -203,7 +233,7 @@ namespace Library.Core
                         TableToSort = SortableTables.Edition;
 
                         // Return the ordered list with placeholders
-                        CurrentList = (CurrentList as ObservableCollection<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.edition));
+                        CurrentList = CurrentList.SortByPropertyName(nameof(ArticleViewModel.edition)).FillPlaceHolders();
 
                         break;
                     }
@@ -214,7 +244,7 @@ namespace Library.Core
                         TableToSort = SortableTables.Availability;
 
                         // Return the ordered list with placeholders
-                        CurrentList = (CurrentList as ObservableCollection<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.availability));
+                        CurrentList = CurrentList.SortByPropertyName(nameof(ArticleViewModel.availability)).FillPlaceHolders();
 
                         break;
                     }
@@ -225,7 +255,7 @@ namespace Library.Core
                         TableToSort = SortableTables.Placement;
 
                         // Return the ordered list with placeholders
-                        CurrentList = (CurrentList as ObservableCollection<ArticleViewModel>).SortByPropertyName(nameof(ArticleViewModel.placement));
+                        CurrentList = CurrentList.SortByPropertyName(nameof(ArticleViewModel.placement)).FillPlaceHolders();
 
                         break;
                     }

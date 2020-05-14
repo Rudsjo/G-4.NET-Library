@@ -46,7 +46,7 @@ namespace Library
         /// <param name="page">The page to animate</param>
         /// <param name="seconds">The time of the animation</param>
         /// <returns></returns>
-        public static async Task FlipAndFadeOut(this Page page, float flipSeconds, float fadeSeconds = 0.5f)
+        public static async Task FlipAndFadeOut(this Page page, float flipSeconds)
         {
             // Creates the storyboard
             var sb = new Storyboard();
@@ -58,7 +58,7 @@ namespace Library
             sb.AddFlipOutY(flipSeconds, -120);
 
             // Add fade out animation
-            sb.AddFadeOut(fadeSeconds);
+            sb.AddFadeOut(flipSeconds);
 
             // Start animating
             sb.Begin(page);
@@ -67,7 +67,7 @@ namespace Library
             page.Visibility = Visibility.Visible;
 
             // Wait for it to finish
-            await Task.Delay((int)(fadeSeconds * 1000));
+            await Task.Delay((int)(flipSeconds * 1000));
         }
 
 

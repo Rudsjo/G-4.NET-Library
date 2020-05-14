@@ -91,6 +91,7 @@ namespace Library
                     {
                         // Start the animation
                         await this.SlideAndFadeInFromTheRight(SlideSeconds);
+                        IoC.CreateInstance<ApplicationViewModel>().PageLoadComplete = true;
                         break;
                     }
             }
@@ -109,8 +110,8 @@ namespace Library
                 case PageAnimation.FlipAndFadeOut:
                     {
                         // Start the animation
-                        await this.FlipAndFadeOut(FlipSeconds);
-                        //await this.SlideAndFadeOutToLeft(SlideSeconds);
+                        await this.FlipAndFadeOut(SlideSeconds);
+                        //await this.SlideAndFadeOutToLeft(FlipSeconds);
                         break;
                     }
             }

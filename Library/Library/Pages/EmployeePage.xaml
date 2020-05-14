@@ -11,15 +11,22 @@
     
     <!--
     
-    Page to display all 
+    Page to display all users
     
     -->
 
-    <!-- TODO: FLYTTA DESSA TILL BASE PAGE -->
-    <Page.RenderTransform>
-        <SkewTransform AngleX="0" AngleY="0" />
-    </Page.RenderTransform>
+    <Grid>
 
-    <local:MainContentUserControl />
-    
+        <local:MainContentUserControlSkeleton
+        Visibility="{Binding ApplicationViewModel.PageLoadComplete,
+        Source={x:Static local:ViewModelLocator.Instance}, Converter={local:BooleanToVisibilityConverter},
+        ConverterParameter=Skeleton}" 
+        />
+
+        <local:MainContentUserControl
+            Visibility="{Binding ApplicationViewModel.PageLoadComplete,
+            Source={x:Static local:ViewModelLocator.Instance}, Converter={local:BooleanToVisibilityConverter},
+            ConverterParameter=ErrorText}" />
+
+    </Grid>
 </local:BasePage>

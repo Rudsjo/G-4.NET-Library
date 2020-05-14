@@ -14,10 +14,10 @@ namespace Library
         {
             if (value)
                 // Animate in
-                await element.SlideAndFadeInFromLeft(FirstLoad ? 0 : 0.3f, keepMargin: false);
+                await element.SlideAndFadeInFromLeft(0.3f);
             else
                 // Animate out
-                await element.SlideAndFadeOutToLeft(FirstLoad ? 0 : 0.3f, keepMargin: false);
+                await element.SlideAndFadeOutToLeft(0.3f);
         }
 
     }

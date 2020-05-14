@@ -71,6 +71,11 @@ namespace Library.Core
             }
         }
 
+        /// <summary>
+        /// Flag to indicate if a page has been loaded
+        /// </summary>
+        public bool PageLoadComplete { get; set; }
+
 
         #endregion
 
