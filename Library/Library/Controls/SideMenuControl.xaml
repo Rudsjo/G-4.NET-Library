@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="Library.SideMenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library"
+             xmlns:core="clr-namespace:Library.Core;assembly=Library.Core"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="400">
+    
+    <!--
+    
+    User Control for the side menu. Content is dependent on the role of user.
+    
+    -->
+    
+    <!-- Main background -->
+    <Border Background="{StaticResource MainBlueBrush}">
+        
+        <!-- Content -->
+        <Grid>
+            <Grid.RowDefinitions>
+                
+                <!-- Logo/Header -->
+                <RowDefinition Height="Auto" />
+                
+                <!-- Menu items -->
+                <RowDefinition Height="Auto" />
+                
+                <!-- Space filler -->
+                <RowDefinition Height="*" />
+
+                <!-- Logout button -->
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+
+            <!-- Image -->
+            <Image Source="/Styling/Images/LibsysLogo_White.png"
+                   Width="150" Height="150" />
+
+
+            <StackPanel Orientation="Vertical" 
+                        Grid.Row="1">
+
+                <local:ButtonWithIcon Style="{Binding ApplicationViewModel.CurrentPage, 
+                                      Source={x:Static local:ViewModelLocator.Instance}, 
+                                      Converter={local:StateToStyleConverter},
+                                      ConverterParameter=BookPage}"
+                                      
+                                      Command="{Binding ChangePage}"
+                                      CommandParameter="BookPage"
+                                      
+                                      Content="Böcker"
+                                      IconContent="&#xf02d;"
+                                      Margin="0"
+                                      />
+
+                <local:ButtonWithIcon Style="{Binding ApplicationViewModel.CurrentPage,
+                                      Source={x:Static local:ViewModelLocator.Instance},
+                                      Converter={local:StateToStyleConverter},
+                                      ConverterParameter=EmployeePage}"
+                                      
+                                      Command="{Binding ChangePage}"
+                                      CommandParameter="EmployeePage"
+                                      
+                                      Content="Anställda"
+                                      IconContent="&#xf0c0;"
+                                      Margin="0"
+                                      />
+
+                <local:ButtonWithIcon Style="{Binding ApplicationViewModel.CurrentPage,
+                                      Source={x:Static local:ViewModelLocator.Instance},
+                                      Converter={local:StateToStyleConverter},
+                                      ConverterParameter=CustomerPage}"
+                                      
+                                      Command="{Binding ChangePage}"
+                                      CommandParameter="CustomerPage"
+                                    
+                                      Content="Studenter"
+                                      IconContent="&#xf501;"
+                                      Margin="0"
+                                      />
+
+            </StackPanel>
+
+            <local:ButtonWithIcon Grid.Row="3"
+                    Content="Logga ut"
+                    IconContent="&#xf2f5;"
+                    Command="{Binding ChangePage}"
+                    CommandParameter="Logout"
+                    Style="{StaticResource SideMenuLogoutButton}"
+                    Margin="0"
+                    />
+
+        </Grid>
+        
+    </Border>
+    
+</UserControl>
