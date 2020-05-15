@@ -35,7 +35,7 @@
     <!-- Table Header -->
     <Style TargetType="{x:Type TextBlock}" x:Key="TableHeaderText">
         <Setter Property="FontFamily" Value="{StaticResource PassionOneRegular}" />
-        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
     </Style>
     
     <!-- Table Header Icon -->
@@ -47,7 +47,8 @@
     <!-- Table Item Texts -->
     <Style TargetType="{x:Type TextBlock}" x:Key="TableItemText">
         <Setter Property="FontFamily" Value="{StaticResource MontserratBold}" />
-        <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeVerySmall}" />
+        <Setter Property="Foreground" Value="{StaticResource MediumGreyBrush}" />
     </Style>
     
     <!-- Table Item Icons -->
@@ -73,7 +74,14 @@
         <Setter Property="FontFamily" Value="{StaticResource PassionOneRegular}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
     </Style>
-
+    
+    <!-- Warning text -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="WarningText">
+        <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+        <Setter Property="Foreground" Value="{StaticResource WineRedBrush}" />
+        <Setter Property="Margin" Value="0 -15 0 0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
 
     <!-- Login Textbox -->
     <Style TargetType="{x:Type TextBox}" x:Key="LoginTextbox" BasedOn="{StaticResource BaseStyle}">
@@ -91,7 +99,6 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
-
 
                     <Grid>
                         <Border x:Name="border" 
@@ -225,6 +232,439 @@
                 </DataTrigger.ExitActions>
             </DataTrigger>
         </Style.Triggers>
+    </Style>
+
+    <!-- Search Box -->
+    <Style TargetType="{x:Type TextBox}" x:Key="SearchBox" BasedOn="{StaticResource BaseStyle}">
+
+        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+        <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+        <Setter Property="Margin" Value="20 10" />
+        <Setter Property="Padding" Value="20 0 0 0" />
+        <Setter Property="BorderBrush" Value="{StaticResource CustomLightGreyBrush}" />
+        <Setter Property="BorderThickness" Value="2" />
+
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="Foreground" Value="{StaticResource CustomGreyBrush}" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+
+
+                    <Grid>
+                        <Border x:Name="border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="25"
+                            SnapsToDevicePixels="True">
+
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                                      Focusable="false" 
+                                      HorizontalScrollBarVisibility="Hidden" 
+                                      VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock IsHitTestVisible="False"
+                                   Text="&#xf002;"
+                                   x:Name="PlaceholderIcon"
+                                   FontFamily="{StaticResource FontAwesomeSolid}"
+                                   Padding="0"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                   Foreground="{StaticResource CustomLightGreyBrush}"
+                                   Margin="20 0 15 0" >
+
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+
+                            <TextBlock IsHitTestVisible="False"
+                                   Text="{TemplateBinding Tag}"
+                                   x:Name="PlaceholderText"
+                                   FontFamily="{StaticResource MontserratLight}"
+                                   Padding="0"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                   Foreground="{StaticResource CustomLightGreyBrush}">
+
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </StackPanel>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Formbox, Box for add article-->
+    <Style TargetType="local:ContentControlWithIcon" x:Key="FormBox">
+
+        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+        <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderBrush" Value="{StaticResource MediumLightGreyBrush}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="Foreground" Value="{StaticResource CustomGreyBrush}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Height" Value="80" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Control}">
+
+                    <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Margin="{TemplateBinding Margin}" 
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True"
+                            >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Horizontal">
+                                
+                                <TextBlock IsHitTestVisible="False"
+                                           HorizontalAlignment="Center"
+                                           Width="27"
+                                           Text="{Binding ContentIcon, RelativeSource={RelativeSource AncestorType=local:ContentControlWithIcon}}"
+                                           FontFamily="{StaticResource FontAwesomeSolid}"
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource CustomLightGreyBrush}"
+                                           Margin="10 "
+                                           TextAlignment="Center"
+                                           />
+
+                                <Border BorderBrush="{StaticResource MediumLightGreyBrush}" BorderThickness="1" Margin="0 10 10 10" />
+
+                            </StackPanel>
+
+                            <TextBox Grid.Column="1">
+                               
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Margin" Value="0" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                                        <Setter Property="Foreground" Value="{StaticResource CustomGreyBrush}" />
+                                        <Setter Property="Text" Value="{Binding UserInput, RelativeSource={RelativeSource AncestorType=local:ContentControlWithIcon}}" />
+
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                                                    <Grid>
+                                                        <Border x:Name="border" 
+                                                                Background="{TemplateBinding Background}" 
+                                                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                                SnapsToDevicePixels="True">
+
+                                                            <ScrollViewer x:Name="PART_ContentHost" 
+                                                                          Focusable="false" 
+                                                                          HorizontalScrollBarVisibility="Hidden" 
+                                                                          VerticalScrollBarVisibility="Hidden"/>
+                                                        </Border>
+
+                                                        <TextBlock IsHitTestVisible="False"
+                                                                       Text="{Binding Tag, RelativeSource={RelativeSource AncestorType=local:ContentControlWithIcon}}"
+                                                                       x:Name="PlaceholderText"
+                                                                       FontFamily="{StaticResource MontserratLight}"
+                                                                       Padding="0"
+                                                                       VerticalAlignment="Center"
+                                                                       HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                                       Foreground="{StaticResource MediumLightGreyBrush}">
+
+                                                            <TextBlock.Style>
+                                                                <Style TargetType="{x:Type TextBlock}">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                                                            <Setter Property="Visibility" Value="Visible" />
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBlock.Style>
+                                                        </TextBlock>
+
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </Border>
+                        
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Formbox, Box for add article-->
+    <Style TargetType="local:ContentControlWithIcon" x:Key="FormBoxFocused">
+
+        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+        <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderBrush" Value="{StaticResource MediumLightGreyBrush}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="Foreground" Value="{StaticResource CustomGreyBrush}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Height" Value="80" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Control}">
+
+                    <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Margin="{TemplateBinding Margin}" 
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True"
+                            >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock IsHitTestVisible="False"
+                                           HorizontalAlignment="Center"
+                                           Width="27"
+                                           Text="{Binding ContentIcon, RelativeSource={RelativeSource AncestorType=local:ContentControlWithIcon}}"
+                                           FontFamily="{StaticResource FontAwesomeSolid}"
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource CustomLightGreyBrush}"
+                                           Margin="10 "
+                                           TextAlignment="Center"
+                                           />
+
+                                <Border BorderBrush="{StaticResource MediumLightGreyBrush}" BorderThickness="1" Margin="0 10 10 10" />
+
+                            </StackPanel>
+
+                            <TextBox Grid.Column="1" x:Name="focused">
+
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+
+                                        <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=focused}" />
+
+                                        <Setter Property="Margin" Value="0" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                                        <Setter Property="Foreground" Value="{StaticResource CustomGreyBrush}" />
+                                        <Setter Property="Text" Value="{Binding UserInput, RelativeSource={RelativeSource AncestorType=local:ContentControlWithIcon}}" />
+
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                                                    <Grid>
+                                                        <Border x:Name="border" 
+                                                                Background="{TemplateBinding Background}" 
+                                                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                                SnapsToDevicePixels="True">
+
+                                                            <ScrollViewer x:Name="PART_ContentHost" 
+                                                                          Focusable="false" 
+                                                                          HorizontalScrollBarVisibility="Hidden" 
+                                                                          VerticalScrollBarVisibility="Hidden"/>
+                                                        </Border>
+
+                                                        <TextBlock IsHitTestVisible="False"
+                                                                       Text="{Binding Tag, RelativeSource={RelativeSource AncestorType=local:ContentControlWithIcon}}"
+                                                                       x:Name="PlaceholderText"
+                                                                       FontFamily="{StaticResource MontserratLight}"
+                                                                       Padding="0"
+                                                                       VerticalAlignment="Center"
+                                                                       HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                                       Foreground="{StaticResource MediumLightGreyBrush}">
+
+                                                            <TextBlock.Style>
+                                                                <Style TargetType="{x:Type TextBlock}">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                                                            <Setter Property="Visibility" Value="Visible" />
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBlock.Style>
+                                                        </TextBlock>
+
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:ContentControlWithIcon" x:Key="InfoBox">
+
+
+        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+        <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderBrush" Value="{StaticResource MediumLightGreyBrush}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="Foreground" Value="{StaticResource CustomGreyBrush}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Height" Value="80" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Control}">
+
+                    <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Margin="{TemplateBinding Margin}" 
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True"
+                            >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock IsHitTestVisible="False"
+                                           HorizontalAlignment="Center"
+                                           Width="27"
+                                           Text="{Binding ContentIcon, RelativeSource={RelativeSource AncestorType=local:ContentControlWithIcon}}"
+                                           FontFamily="{StaticResource FontAwesomeSolid}"
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource CustomLightGreyBrush}"
+                                           Margin="10 "
+                                           TextAlignment="Center"
+                                           />
+
+                                <Border BorderBrush="{StaticResource MediumLightGreyBrush}" BorderThickness="1" Margin="0 10 10 10" />
+
+                            </StackPanel>
+
+
+                            <TextBox Grid.Column="1">
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+
+                                        <Setter Property="Margin" Value="0" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                                        <Setter Property="Foreground" Value="{StaticResource CustomGreyBrush}" />
+                                        <Setter Property="Text" Value="{Binding UserInput, RelativeSource={RelativeSource AncestorType=local:ContentControlWithIcon}}" />
+                                        <Setter Property="IsReadOnly" Value="True"/>
+                                        
+
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                                                    <Grid>
+                                                        <Border x:Name="border" 
+                                                                Background="{TemplateBinding Background}" 
+                                                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                                SnapsToDevicePixels="True">
+
+                                                            <ScrollViewer x:Name="PART_ContentHost" 
+                                                                          Focusable="false" 
+                                                                          HorizontalScrollBarVisibility="Hidden" 
+                                                                          VerticalScrollBarVisibility="Hidden"/>
+                                                        </Border>
+
+                                                        
+                                                        <TextBlock IsHitTestVisible="False"
+                                                                       Text="{Binding Tag, RelativeSource={RelativeSource AncestorType=local:ContentControlWithIcon}}"
+                                                                       x:Name="PlaceholderText"
+                                                                       FontFamily="{StaticResource MontserratLight}"
+                                                                       Padding="0"
+                                                                       VerticalAlignment="Center"
+                                                                       HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                                       Foreground="{StaticResource MediumLightGreyBrush}">
+
+                                                            <TextBlock.Style>
+                                                                <Style TargetType="{x:Type TextBlock}">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                                                            <Setter Property="Visibility" Value="Visible" />
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBlock.Style>
+                                                        </TextBlock>
+                                                     
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
 </ResourceDictionary>

@@ -14,6 +14,7 @@ namespace Library
         public MainPage()
         {
             InitializeComponent();
+            tbFirstSearch.Focus();
         }
     }
 }
