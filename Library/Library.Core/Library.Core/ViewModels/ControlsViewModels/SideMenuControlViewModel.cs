@@ -39,6 +39,9 @@ namespace Library.Core
         /// <returns></returns>
         private async Task LogoutCommandAsync(object pageToOpen)
         {
+            // Resets the Filterpopup when changing page
+            IoC.CreateInstance<MainContentUserControlViewModel>().ResetFilterPopup();
+
             switch ((string)pageToOpen)
             {
                 case "BookPage":

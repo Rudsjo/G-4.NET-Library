@@ -43,6 +43,12 @@ namespace Library
                 case PopUpContents.Info:
                     return new ArticleInfoControl();
 
+                case PopUpContents.Edit:
+                    return new ArticleEditControl();
+
+                case PopUpContents.Filter:
+                    return new ArticleFilterControl();
+
                 default:
                     return null;
             }

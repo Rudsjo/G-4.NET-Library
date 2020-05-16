@@ -10,6 +10,8 @@
                 <ResourceDictionary Source="Styling\Styles\Buttons.xaml" />
                 <ResourceDictionary Source="Styling\Styles\Texts.xaml" />
                 <ResourceDictionary Source="Styling\Styles\Scroll.xaml" />
+                <ResourceDictionary Source="Styling\Styles\ComboBoxes.xaml" />
+                <ResourceDictionary Source="Styling\Styles\CheckBoxes.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

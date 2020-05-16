@@ -324,7 +324,7 @@
     <!--Formbox, Box for add article-->
     <Style TargetType="local:ContentControlWithIcon" x:Key="FormBox">
 
-        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
         <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
         <Setter Property="Margin" Value="10" />
         <Setter Property="Padding" Value="0" />
@@ -437,7 +437,7 @@
     <!--Formbox, Box for add article-->
     <Style TargetType="local:ContentControlWithIcon" x:Key="FormBoxFocused">
 
-        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
         <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
         <Setter Property="Margin" Value="10" />
         <Setter Property="Padding" Value="0" />
@@ -550,6 +550,7 @@
         </Setter>
     </Style>
 
+    <!-- Info box -->
     <Style TargetType="local:ContentControlWithIcon" x:Key="InfoBox">
 
 
@@ -666,5 +667,6 @@
             </Setter.Value>
         </Setter>
     </Style>
+      
 
 </ResourceDictionary>

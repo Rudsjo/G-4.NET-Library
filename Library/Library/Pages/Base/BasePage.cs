@@ -110,8 +110,8 @@ namespace Library
                 case PageAnimation.FlipAndFadeOut:
                     {
                         // Start the animation
-                        await this.FlipAndFadeOut(SlideSeconds);
-                        //await this.SlideAndFadeOutToLeft(FlipSeconds);
+                        //await this.FlipAndFadeOut(SlideSeconds);
+                        await this.SlideAndFadeOutToLeft(FlipSeconds);
                         break;
                     }
             }

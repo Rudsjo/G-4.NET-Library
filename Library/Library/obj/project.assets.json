@@ -5306,11 +5306,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\Library\\Library\\Library.csproj",
+      "projectUniqueName": "D:\\Library\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\Library\\Library\\Library.csproj",
+      "projectPath": "D:\\Library\\Library\\Library.csproj",
       "packagesPath": "C:\\Users\\joxca\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\Library\\Library\\obj\\",
+      "outputPath": "D:\\Library\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5331,8 +5331,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\joxca\\OneDrive\\Skrivbord\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
-              "projectPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
+            "D:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
+              "projectPath": "D:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
             }
           }
         }

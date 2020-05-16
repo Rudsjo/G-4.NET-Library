@@ -15,6 +15,12 @@ namespace Library.Core
     {
 
         #region Public Properties
+
+        /// <summary>
+        /// Command property to update
+        /// </summary>
+        public ICommand Update { get; set; }
+
         /// <summary>
         /// Command property for ExitInfoCommand
         /// </summary>
@@ -70,8 +76,8 @@ namespace Library.Core
             Delete = new RelayParameterizedCommand(async (parameter) => await DeleteCommand(parameter));
             Info = new RelayParameterizedCommand(async (parameter) => await InfoCommand(parameter));
             Exit = new RelayCommand(async () => await ExitInfoCommand());
+            Update = new RelayCommand(async () => await UpdateCommand());
         }
-
 
         #endregion
 
@@ -87,9 +93,11 @@ namespace Library.Core
 
             // Set the content in the table
             if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
-                CurrentList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ToModelDataToViewModel<IArticle, ArticleViewModel>().FillPlaceHolders();
+                CurrentList = IoC.CreateInstance<MainContentUserControlViewModel>().ArticleSearchList
+                    = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ToModelDataToViewModel<IArticle, ArticleViewModel>().FillPlaceHolders();
             else
-                CurrentList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>().FillPlaceHolders();
+                CurrentList = IoC.CreateInstance<MainContentUserControlViewModel>().UserSearchList
+                    = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>().FillPlaceHolders();
 
             await Task.Delay(1500);
 
@@ -286,11 +294,36 @@ namespace Library.Core
         /// <returns></returns>
         private async Task InfoCommand(object itemToInspect)
         {
-            //Opens a popup to infoscreen
-            IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Info);
-
-            //Sets currentArticle to the selected item (itemToInspect)
+            //Kan den här ligga underst? Prova
             CurrentArticle = (itemToInspect as IArticle);
+
+            switch (IoC.CreateInstance<ApplicationViewModel>().CurrentRole)
+            {
+                //Opens a popup to editscreen
+                case UserTypes.Administrator:
+                    IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Edit);
+                    break;
+
+                //Opens a popup to editscreen
+                case UserTypes.Librarian:
+                    IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Edit);
+                    break;
+
+                case UserTypes.User:
+                    //Opens a popup to infoscreen
+                    IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Info);
+                    break;
+
+                case UserTypes.Visitor:
+                    //Opens a popup to infoscreen
+                    IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Info);
+                    break;
+
+                    //Default. Closes a popup, should there be any
+                default:
+                    IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
+                    break;
+            }
 
             await Task.Delay(1);
         }
@@ -307,6 +340,24 @@ namespace Library.Core
             await Task.Delay(1);
         }
 
+        /// <summary>
+        /// Command that updates an article in the database
+        /// </summary>
+        /// <returns></returns>
+        private async Task UpdateCommand()
+        {
+            //Tries to edit and add the newly updated article to the database
+            if (await IoC.CreateInstance<ApplicationViewModel>().rep.UpdateArticle(CurrentArticle.articleID, CurrentArticle.ToModel<IArticle, Article>()))
+            {
+                //If successful a confirmationtoken appears
+                IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Success);
+
+                await Task.Delay(700);
+
+                //Close confirmationtoken
+                IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
+            }
+        }
         #endregion
     }
 }

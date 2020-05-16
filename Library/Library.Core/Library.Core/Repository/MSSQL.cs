@@ -447,6 +447,7 @@
             {
                 return (await Connection.QueryAsync<int>("UpdateArticle", 
                     new {
+                        articleID = _articleID               ,
                         title     = newArticle.title         ,
                         author    = newArticle.author        ,
                         publisher = newArticle.publisher     ,
@@ -456,7 +457,8 @@
                         description = newArticle.description ,
                         loanTime  = newArticle.loanTime      ,
                         statusID  = newArticle.statusID      ,
-                        placement = newArticle.placement 
+                        placement = newArticle.placement     ,
+                        edition = newArticle.edition
                     }, 
                     commandType: CommandType.StoredProcedure)).First() != 0;
             }

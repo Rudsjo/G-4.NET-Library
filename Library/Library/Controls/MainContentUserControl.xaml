@@ -51,9 +51,12 @@
                                           />
 
                 <!-- Filter -->
-                <local:ButtonWithIcon Content="Filter"
-                                          IconContent="&#xf0b0;"
-                                          Style="{StaticResource TableActionButton}"
+                <local:ButtonWithIcon Content="{Binding FilterText}"         
+                                      IconContent="&#xf0b0;"
+                                      Style="{StaticResource TableActionButton}"
+                                      Background="{Binding FilterColor, 
+                                      Converter={local:StateToStyleConverter}}"
+                                      Command="{Binding OpenFilter}"
                                           />
             </StackPanel>
         </Grid>

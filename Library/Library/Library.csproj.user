@@ -22,6 +22,12 @@
     <Compile Update="Controls\PopUp Controls\AddUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\PopUp Controls\ArticleEditControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\ArticleFilterControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\PopUp Controls\ArticleInfoControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Controls\HeaderBarControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ArticleEditControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ArticleFilterControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\Skeleton Controls\HeaderBarControlSkeleton.xaml">
@@ -135,7 +147,13 @@
     <Page Update="Styling\Styles\Buttons.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styling\Styles\CheckBoxes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styling\Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styling\Styles\ComboBoxes.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styling\Styles\Fonts.xaml">

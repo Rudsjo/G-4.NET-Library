@@ -27,6 +27,8 @@ namespace Library.Core
         /// </summary>
         public BookPageViewModel()
         {
+            FillSearchableArticleList();
+
             //Fills list of articles when page loads
             IoC.CreateInstance<TableControlViewModel>().LoadItems();
 
@@ -34,6 +36,20 @@ namespace Library.Core
             IoC.CreateInstance<MainContentUserControlViewModel>().HeaderText = "Alla böcker";
             IoC.CreateInstance<MainContentUserControlViewModel>().AddButtonText = "Lägg till bok";
             IoC.CreateInstance<TableControlViewModel>().TableHeaderTexts = new string[] { "Titel", "Författare", "Placering", "Tillgänglighet" };
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        /// <summary>
+        /// Method to get all searchable articles
+        /// </summary>
+        private async void FillSearchableArticleList()
+        { 
+            // Get the full list
+            IoC.CreateInstance<MainContentUserControlViewModel>().ArticleSearchList = 
+                (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ToModelDataToViewModel<IArticle, ArticleViewModel>();
         }
 
         #endregion

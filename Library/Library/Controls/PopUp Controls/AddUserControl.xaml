@@ -55,8 +55,18 @@
                         <TextBlock Text="Lägg till användare"
                                    HorizontalAlignment="Center"
                                    Margin="0 0 0 20"
-                                   Style="{StaticResource SubHeaderText}"
+                                   Style="{StaticResource MainHeaderText}"
+                                   FontSize="28"
                                    />
+
+                        <Border BorderBrush="{StaticResource LightBlueBrush}" BorderThickness="1" 
+                        Margin="-10 -5 -10 30" Opacity="0.2">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="9"
+                                          ShadowDepth="1"
+                                          Opacity="0.2" />
+                            </Border.Effect>
+                        </Border>
 
                         <!-- Personal number -->
                         <TextBox Text="{Binding PNumber, UpdateSourceTrigger=PropertyChanged}" 
@@ -111,13 +121,17 @@
                         <!-- Roles -->
                         <ComboBox
                             ItemsSource="{Binding CurrentRoles}"
-                            DisplayMemberPath="type"
-                            SelectedItem="{Binding CurrentRole, Mode=TwoWay}"  
-                            IsEditable="True"
-                            IsReadOnly="True"
-                            Height="40"
-                            Text="{Binding ComboBoxPlaceholder}" 
-                            VerticalContentAlignment="Center"/>
+                            SelectedItem="{Binding CurrentRole, Mode=TwoWay}"
+                            SelectedIndex="0"
+                            FontFamily="{StaticResource MontserratRegular}" FontSize="{StaticResource FontSizeSmall}"
+                            Height="50">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding type}"  Background="Transparent" FontFamily="{StaticResource MontserratRegular}" Margin="10" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            
+                        </ComboBox>
 
                         <!-- Add Button -->
                         <Button Content="Lägga till"
@@ -129,14 +143,13 @@
                                 Width="150" Margin="0 50 0 0"
                                 />
 
-                        <Viewbox  Stretch="None">
+                        <Viewbox  Stretch="None" Visibility="{Binding UserExists, FallbackValue=Collapsed, 
+                                                Converter={local:BooleanToVisibilityConverter},
+                                                ConverterParameter=ErrorText}">
                             
                         <TextBlock Text="{Binding ErrorText}"
                                    Margin="0 20 0 0" HorizontalAlignment="Center"
                                    Style="{StaticResource WarningText}"
-                                   Visibility="{Binding UserExists, 
-                                                Converter={local:BooleanToVisibilityConverter},
-                                                ConverterParameter=ErrorText}"
                                    
                                    />
                             

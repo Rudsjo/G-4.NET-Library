@@ -92,8 +92,30 @@ namespace Library.Core
         /// <returns></returns>
         private async Task AbortCommand()
         {
-            // Closes the pop up
-            IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
+            switch (IoC.CreateInstance<ApplicationViewModel>().CurrentPage)
+            {
+                //Book page
+                case ApplicationPages.BookPage:
+                    {
+                        //Opens up edit again and lets you close from there
+                        IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Edit);
+                        break;
+                    }
+                
+                //EmployeePage
+                case ApplicationPages.EmployeePage:
+                    {
+                        // Closes the pop up
+                        IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
+                        break;
+                    }
+
+                //Not in use yet
+                case ApplicationPages.CustomerPage:
+                    break;
+                default:
+                    break;
+            }
 
             await Task.Delay(1);
         }

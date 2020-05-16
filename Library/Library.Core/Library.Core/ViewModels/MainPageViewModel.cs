@@ -38,7 +38,7 @@ namespace Library.Core
         public MainPageViewModel()
         {
             // Make sure that everytime this page loads there is nobody logged in
-            IoC.CreateInstance<ApplicationViewModel>().SetCurrentUserRole(UserTypes.Visitor);
+            IoC.CreateInstance<ApplicationViewModel>().SetCurrentUserRole(UserTypes.Administrator);
 
             // Reset the sorting
             IoC.CreateInstance<TableControlViewModel>().TableToSort = SortableTables.None;

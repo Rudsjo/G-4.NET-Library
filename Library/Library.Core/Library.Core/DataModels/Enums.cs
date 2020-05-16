@@ -107,6 +107,16 @@
         /// </summary>
         Info = 9,
 
+        /// <summary>
+        /// Popup for editscreen
+        /// </summary>
+        Edit = 10,
+
+        /// <summary>
+        /// Popup for filterscreen 
+        /// </summary>
+        Filter = 11
+
     }
 
     /// <summary>
@@ -168,6 +178,16 @@
         /// Sort by <see cref="ArticleViewModel.placement"/>
         /// </summary>
         Placement = 10,
+    }
+
+    /// <summary>
+    /// Change the FilterColors
+    /// </summary>
+    public enum FilterColors
+    {
+        UnChecked = 1,
+
+        Checked = 2
     }
 
 }

@@ -251,8 +251,42 @@
             return listToReturn;
         }
 
+        #region Unused method that got replaces by ToModel<I, T>()
+        /// <summary>
+        /// Method to copy the properties from one model to another
+        /// This needs further comments
+        /// 
+        /// THIS METHOD IS NOT NEEDED AS THE METHOD ( ToModel ) WORKS FINE FOR THE FUNCTION IN TABLECONTROLVIEWMODEL
+        /// 
+        /// </summary>
+        /// <typeparam name="T"> the model to copy from</typeparam>
+        /// <typeparam name="TU"> the model to copy to</typeparam>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
+        //public static void CopyPropertiesTo<T, TU>(this T source, TU destination)
+        //{
+        //    var sourceProperties = typeof(T).GetProperties().Where(x => x.CanRead).ToList();
+
+        //    var destinationProperties = typeof(TU).GetProperties().Where(x => x.CanWrite).ToList();
+
+        //    foreach (var property in sourceProperties)
+        //    {
+        //        if (destinationProperties.Any(x => x.Name == property.Name))
+        //        {
+        //            var p = destinationProperties.First(x => x.Name == property.Name);
+
+        //            if (p.CanWrite)
+        //            { // check if the property can be set or not.
+        //                p.SetValue(destination, property.GetValue(source, null), null);
+        //            }
+        //        }
+
+        //    }
+
+        //}
         #endregion
 
+        #endregion
 
     }
 }
