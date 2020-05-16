@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "42MkjvLlwwndg3yhtdfZZ9aqvwSZG0vu0A47aW/btHZwSFWoriQnKWKnVFRVrDkwzJUh3oTXEPAmMWn5OxJsPw==",
+  "dgSpecHash": "Z2w2MTrt4ijWWOUMK1dWJUeVZIH+yMDkZRZS6B0tZ8EH/AYodeWG4UxEiklC279KZRM6D47Hj6ptlBxTJIqBcg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.1\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+  "projectFilePath": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.2\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jutsu\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\jutsu\\.nuget\\packages\\fody\\6.1.1\\fody.6.1.1.nupkg.sha512",

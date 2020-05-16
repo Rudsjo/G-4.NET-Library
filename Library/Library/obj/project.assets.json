@@ -5307,11 +5307,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.1\\Library\\Library\\Library.csproj",
+      "projectUniqueName": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.2\\Library\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.1\\Library\\Library\\Library.csproj",
+      "projectPath": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.2\\Library\\Library\\Library.csproj",
       "packagesPath": "C:\\Users\\jutsu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.1\\Library\\Library\\obj\\",
+      "outputPath": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.2\\Library\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jutsu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5327,8 +5327,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.1\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
-              "projectPath": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.1\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
+            "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.2\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
+              "projectPath": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.7.2\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
             }
           }
         }

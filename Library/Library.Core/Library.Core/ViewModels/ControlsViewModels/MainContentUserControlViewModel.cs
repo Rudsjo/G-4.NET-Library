@@ -309,7 +309,7 @@ namespace Library.Core
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
             //Checks if any checkboxes are filled, then sets ChangeFilterColor property and changes the filter text.
-            if (TitleFilter == true || AuthorFilter == true || IsbnFilter == true)
+            if (TitleFilter == true || AuthorFilter == true || IsbnFilter == true || EBookFilter == true)
             {
                 FilterColor = FilterColors.Checked;
                 FilterText = $"Filter ({FilterCheckboxCounter})";
