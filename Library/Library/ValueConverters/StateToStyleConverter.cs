@@ -28,6 +28,12 @@ namespace Library
 
             // Set the default brush
             var defaultBrush = Brushes.Transparent;
+          
+            //Sets the default color for the filter button
+            var filterDefaultColor = Brushes.White;
+            
+            //Sets the color for the filter button if any checkboxes are checked
+            var filterCheckedColor = App.Current.Resources[string.Format("LightBlueBrush")];
 
             #endregion
 
@@ -164,6 +170,24 @@ namespace Library
                             else
                                 return defaultStyle;
                         }
+                }
+            }
+
+            // Checks which color to change the filter button to
+            else if (type == typeof(FilterColors))
+            {
+                switch ((FilterColors)value)
+                {
+                    case FilterColors.Checked:
+                        {
+                            return filterCheckedColor;
+                        }
+                    case FilterColors.UnChecked:
+                        {
+                            return filterDefaultColor;
+                        }
+                    default:
+                        return filterDefaultColor;
                 }
             }
 
