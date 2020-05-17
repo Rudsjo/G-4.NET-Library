@@ -1,5 +1,7 @@
 ﻿using Library.Core;
+using System.ComponentModel;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Library
 {
@@ -12,10 +14,14 @@ namespace Library
         {
             InitializeComponent();
 
+
             DataContext = IoC.CreateInstance<AddArticleControlViewModel>();
+        }
 
 
-
+        private void KeyBinding_Changed(object sender, System.EventArgs e)
+        {
+            FirstBox.Focus();
         }
     }
 }

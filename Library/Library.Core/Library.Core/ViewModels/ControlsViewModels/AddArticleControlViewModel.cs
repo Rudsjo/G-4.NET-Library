@@ -29,6 +29,8 @@ namespace Library.Core
         /// </summary>
         public ICommand Confirm { get; set; }
 
+        public ICommand Tab { get; set; }
+
         /// <summary>
         /// List to hold the added items before sending them to the database
         /// </summary>
@@ -124,6 +126,10 @@ namespace Library.Core
             if ((CurrentArticle as ArticleViewModel).quantity == 0)
                 (CurrentArticle as ArticleViewModel).quantity = 1;
 
+            // Set the edition if nothing put in
+            if((CurrentArticle as ArticleViewModel).edition == "")
+                (CurrentArticle as ArticleViewModel).edition = "1";
+
             // Set the category
             CurrentArticle.categoryID = CurrentCategory.categoryID;
 
@@ -165,13 +171,18 @@ namespace Library.Core
             // Clears the temp list
             TempListOfArticles.Clear();
 
+            // Closes the pop up and updates the list
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
             IoC.CreateInstance<TableControlViewModel>().LoadItems();
         }
 
+        /// <summary>
+        /// Clears all necessary properties
+        /// </summary>
         private void ClearProperties()
         {
             CurrentArticle = new ArticleViewModel();
+            InputPrice = InputQuantity = InputLoanTime = "";
         }
 
         #endregion

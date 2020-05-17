@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Library"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" IsTabStop="False"
-    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+             d:DesignHeight="450" d:DesignWidth="800" IsTabStop="False">
 
     <Border Background="#FFFFFF" Margin="100 50"
             BorderBrush="{StaticResource MediumGreyBrush}" BorderThickness="2">
@@ -80,6 +79,7 @@
                         UserInput = "{Binding CurrentArticle.title, Mode=TwoWay}"
                         ContentIcon="&#xf5b7;"
                         TabIndex="0"
+                        x:Name="FirstBox"
                      />
                 
                     <!-- Author -->
@@ -161,7 +161,13 @@
                          UserInput="{Binding InputQuantity, Mode=TwoWay}"
                          Tag="Antal"
                          ContentIcon="&#xf03a;" TabIndex="8"
-                         />
+                         >
+
+                    <local:ContentControlWithIcon.InputBindings>
+                        <KeyBinding Key="Return" Command="{Binding AddToTempList}" />
+                    </local:ContentControlWithIcon.InputBindings>
+
+                </local:ContentControlWithIcon>
 
                 <!-- Category -->
                 <ComboBox Grid.Row="4" Grid.Column="4"
@@ -187,19 +193,20 @@
                     Tag="Beskrivning"
                     ContentIcon="&#xf304;" TabIndex="10"
                     UserInput="{Binding CurrentArticle.description, Mode=TwoWay}"
-                  
-                         />
+                    >
+
+                    <local:ContentControlWithIcon.InputBindings>
+                        <KeyBinding Key="Return" Command="{Binding AddToTempList}" />
+                    </local:ContentControlWithIcon.InputBindings>
+
+                </local:ContentControlWithIcon>
 
 
                 <Button Grid.Row="7" Grid.ColumnSpan="2"
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         Width="220" Height="60"
                         Content="Lägg till" Style="{StaticResource BlueActionButton}"
-                        Command="{Binding AddToTempList}"
-                        TabIndex="11"
-                        />
-
-
+                        Command="{Binding AddToTempList}" />
             </Grid>
 
             <!-- Separator -->

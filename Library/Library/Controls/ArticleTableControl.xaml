@@ -45,8 +45,8 @@
 
                             <Grid.ColumnDefinitions>
 
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="3*" />
                                 <ColumnDefinition Width="2*" />
                                 <ColumnDefinition Width="2*" />
                                 <ColumnDefinition Width="2*" />
@@ -147,8 +147,8 @@
 
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="3*" />
                                 <ColumnDefinition Width="2*" />
                                 <ColumnDefinition Width="2*" />
                                 <ColumnDefinition Width="2*" />
@@ -156,7 +156,7 @@
                             </Grid.ColumnDefinitions>
 
                             <!-- Column 0 -->
-                            <ScrollViewer Grid.Column="0" Width="90" 
+                            <ScrollViewer Grid.Column="0" Width="140"
                                           HorizontalScrollBarVisibility="Auto">
                                 <TextBlock
                                        Text="{Binding title}"
@@ -166,7 +166,7 @@
                             </ScrollViewer>
 
                             <!-- Column 1 -->
-                            <ScrollViewer Grid.Column="1" Width="90" 
+                            <ScrollViewer Grid.Column="1" Width="120"
                                           HorizontalScrollBarVisibility="Auto">
                                 <TextBlock
                                        Text="{Binding author}"
