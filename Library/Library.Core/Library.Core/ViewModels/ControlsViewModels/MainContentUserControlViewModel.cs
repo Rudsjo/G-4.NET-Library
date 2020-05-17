@@ -333,9 +333,7 @@ namespace Library.Core
 
             if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
             {
-                // Get the full list
-                ArticleSearchList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ToModelDataToViewModel<IArticle, ArticleViewModel>();
-
+  
                 //Check if any filter is checked
                 if (AuthorFilter == true && TitleFilter == true && IsbnFilter == true)
                 {
@@ -417,8 +415,6 @@ namespace Library.Core
             }
             else
             {
-                // Get the full list
-                UserSearchList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>();
 
                 IoC.CreateInstance<TableControlViewModel>().CurrentList =
                 (IoC.CreateInstance<TableControlViewModel>().CurrentList as IEnumerable<UserViewModel>).Where(u =>

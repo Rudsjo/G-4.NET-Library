@@ -49,10 +49,30 @@ namespace Library.Core
         /// </summary>
         public IArticle CurrentArticle { get; set; } = new ArticleViewModel();
 
+        /// <summary>
+        /// The chosen category
+        /// </summary>
         public ICategory CurrentCategory { get; set; } = new CategoryViewModel();
 
+        /// <summary>
+        /// The available categories
+        /// </summary>
         public IEnumerable<ICategory> AvailableCategories { get; set; } = new ObservableCollection<CategoryViewModel>();
+
+        /// <summary>
+        /// The price of the <see cref="CurrentArticle"/>
+        /// </summary>
+        public string InputPrice { get; set; }
         
+        /// <summary>
+        /// The loan time of the <see cref="CurrentArticle"/>
+        /// </summary>
+        public string InputLoanTime { get; set; }
+
+        /// <summary>
+        /// The number of <see cref="CurrentArticle"/>s to create
+        /// </summary>
+        public string InputQuantity { get; set; }
 
         #endregion
 
@@ -84,12 +104,30 @@ namespace Library.Core
         /// <returns></returns>
         private async Task AddToTempListCommad()
         {
+            // Check inputs
+            if (int.TryParse(InputPrice, out int price) &&
+                int.TryParse(InputLoanTime, out int loanTime) &&
+                int.TryParse(InputQuantity, out int quantity) &&
+                CurrentArticle.title != null && CurrentArticle.author != null &&
+                CurrentArticle.publisher != null && CurrentArticle.isbn != null)
+            {
+                (CurrentArticle as ArticleViewModel).price = price;
+                (CurrentArticle as ArticleViewModel).loanTime = loanTime;
+                (CurrentArticle as ArticleViewModel).quantity = quantity;
+            }
+            else
+                return;
+
+
+
+            // Set the quantity to 1 if nothing else is mentioned
             if ((CurrentArticle as ArticleViewModel).quantity == 0)
                 (CurrentArticle as ArticleViewModel).quantity = 1;
 
-
+            // Set the category
             CurrentArticle.categoryID = CurrentCategory.categoryID;
 
+            // Add the chosen number of articles
             for (int i = 0; i < (CurrentArticle as ArticleViewModel).quantity; i++)
             {
                 // Add a new item
@@ -97,6 +135,7 @@ namespace Library.Core
                 await Task.Delay(100);
             }
 
+            // Clear all input parameters
             ClearProperties();
         }
         

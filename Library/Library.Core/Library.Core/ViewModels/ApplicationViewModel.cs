@@ -22,11 +22,6 @@ namespace Library.Core
         #region Public Properties
 
         /// <summary>
-        /// Placeholder list to be shown in the skeleton controls
-        /// </summary>
-        public IEnumerable<UserViewModel> SkeletonList { get; set; } = new ObservableCollection<UserViewModel>().FillPlaceHolders();
-
-        /// <summary>
         /// Flag to indicate if a skeleton control is visible
         /// </summary>
         public bool IsSkeletonVisible { get; set; }

@@ -15,6 +15,7 @@ namespace Library
         {
             InitializeComponent();
             tbFirstSearch.Focus();
+            DataContext = IoC.CreateInstance<MainPageViewModel>();
         }
     }
 }

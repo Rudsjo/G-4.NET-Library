@@ -93,9 +93,11 @@ namespace Library.Core
 
             // Set the content in the table
             if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
-                CurrentList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ToModelDataToViewModel<IArticle, ArticleViewModel>().FillPlaceHolders();
+                CurrentList = IoC.CreateInstance<MainContentUserControlViewModel>().ArticleSearchList
+                    = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ToModelDataToViewModel<IArticle, ArticleViewModel>().FillPlaceHolders();
             else
-                CurrentList = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>().FillPlaceHolders();
+                CurrentList = IoC.CreateInstance<MainContentUserControlViewModel>().UserSearchList
+                    = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>().FillPlaceHolders();
 
             await Task.Delay(1500);
 

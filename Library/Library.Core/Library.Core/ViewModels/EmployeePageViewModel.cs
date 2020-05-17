@@ -29,6 +29,8 @@ namespace Library.Core
         /// </summary>
         public EmployeePageViewModel()
         {
+            FillSearchableUserList();
+
             //Fills all the neccesary data on users
             IoC.CreateInstance<TableControlViewModel>().LoadItems();
 
@@ -39,6 +41,20 @@ namespace Library.Core
 
             // Setting statuses
             IoC.CreateInstance<TableControlViewModel>().TableToSort = SortableTables.None;
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        /// <summary>
+        /// Method to get all searchable users
+        /// </summary>
+        private async void FillSearchableUserList()
+        {
+            // Get the full list
+            IoC.CreateInstance<MainContentUserControlViewModel>().UserSearchList =
+                (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>();
         }
 
         #endregion

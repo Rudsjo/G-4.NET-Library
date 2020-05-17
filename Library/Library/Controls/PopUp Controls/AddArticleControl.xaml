@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Library"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" IsTabStop="False">
+             d:DesignHeight="450" d:DesignWidth="800" IsTabStop="False"
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
 
     <Border Background="#FFFFFF" Margin="100 50"
             BorderBrush="{StaticResource MediumGreyBrush}" BorderThickness="2">
@@ -54,10 +55,22 @@
                 </Grid.RowDefinitions>
                 
                 <!-- Header -->
-                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                            Text="Lägg till artikel"
                            Style="{StaticResource MainHeaderText}"
                            />
+
+                    <Border BorderBrush="{StaticResource LightBlueBrush}" BorderThickness="1" 
+                        Margin="30 20 30 0" Opacity="0.2">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="9"
+                                          ShadowDepth="1"
+                                          Opacity="0.2" />
+                        </Border.Effect>
+                    </Border>
+
+                </StackPanel>
 
                 <!-- Title -->
                     <local:ContentControlWithIcon 
@@ -126,7 +139,7 @@
                 <local:ContentControlWithIcon Grid.Row="1" Grid.Column="1"                     
                          Style="{StaticResource FormBox}"
                          VerticalContentAlignment="Bottom"
-                         UserInput="{Binding CurrentArticle.price, Mode=TwoWay}"
+                         UserInput="{Binding InputPrice, Mode=TwoWay}"
                          Tag="Inköpspris"
                          ContentIcon="&#xf155;" TabIndex="6"
                          />
@@ -135,7 +148,7 @@
                 <local:ContentControlWithIcon Grid.Row="2" Grid.Column="1"                     
                          Style="{StaticResource FormBox}"
                          VerticalContentAlignment="Bottom"
-                         UserInput="{Binding CurrentArticle.loanTime, Mode=TwoWay}"
+                         UserInput="{Binding InputLoanTime, Mode=TwoWay}"
                          Tag="Lånetid"
                          ContentIcon="&#xf4fd;"
                          TabIndex="7"
@@ -145,20 +158,26 @@
                 <local:ContentControlWithIcon Grid.Row="3" Grid.Column="1"                     
                          Style="{StaticResource FormBox}"
                          VerticalContentAlignment="Bottom"
-                         UserInput="{Binding CurrentArticle.quantity, Mode=TwoWay}"
+                         UserInput="{Binding InputQuantity, Mode=TwoWay}"
                          Tag="Antal"
                          ContentIcon="&#xf03a;" TabIndex="8"
                          />
 
                 <!-- Category -->
-                <!-- TODO: Fixa egen style -->
-                <ComboBox Grid.Row="4" Grid.Column="4" 
-                          ItemsSource="{Binding AvailableCategories}" DisplayMemberPath="type"
-                          VerticalContentAlignment="Bottom"
-                          Margin="20" 
+                <ComboBox Grid.Row="4" Grid.Column="4"
+                          ItemsSource="{Binding AvailableCategories}"
+                          BorderBrush="{StaticResource CustomLightGreyBrush}"
+                          Margin="20 10" 
                           Tag="Kategori" TabIndex="9"
-                          SelectedValue="{Binding CurrentCategory}"
-                         />
+                          SelectedValue="{Binding CurrentCategory}" SelectedIndex="0"
+                          FontFamily="{StaticResource MontserratRegular}" FontSize="{StaticResource FontSizeSmall}"
+                         >
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding type}" Background="Transparent" FontFamily="{StaticResource MontserratRegular}" Margin="10" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ComboBox>
 
                 <!-- Description -->
                 <!-- TODO: Fixa egen style -->

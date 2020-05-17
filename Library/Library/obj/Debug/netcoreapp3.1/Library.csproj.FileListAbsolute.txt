@@ -629,3 +629,97 @@ C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library\obj\Debu
 C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
 C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
 C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleEditControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleFilterControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleEditControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleFilterControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\ComboBoxes.baml
+D:\Library\Library\bin\Debug\netcoreapp3.1\Library.exe
+D:\Library\Library\bin\Debug\netcoreapp3.1\Library.deps.json
+D:\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.json
+D:\Library\Library\bin\Debug\netcoreapp3.1\Library.runtimeconfig.dev.json
+D:\Library\Library\bin\Debug\netcoreapp3.1\Library.dll
+D:\Library\Library\bin\Debug\netcoreapp3.1\Library.pdb
+D:\Library\Library\bin\Debug\netcoreapp3.1\Dapper.dll
+D:\Library\Library\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Library\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll
+D:\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.pdb
+D:\Library\Library\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\HeaderBarControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleEditControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleFilterControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\HeaderBarControlSkeleton.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\MainContentUserControlSkeleton.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\TableControlSkeleton.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\App.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.cache
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library_MarkupCompile.lref
+D:\Library\Library\obj\Debug\netcoreapp3.1\App.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\ArticleTableControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\HeaderBarControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\MainContentUserControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PageHost.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddArticleControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\AddUserControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleEditControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleFilterControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleInfoControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ConfirmationControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DatabaseLoginControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\LoadingControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\SuccessfulControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserLoginControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUpControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\SideMenuControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\HeaderBarControlSkeleton.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\MainContentUserControlSkeleton.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\Skeleton Controls\TableControlSkeleton.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Controls\UserTableControl.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BackupPage.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Pages\BookPage.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Pages\EmployeePage.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Pages\MainPage.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Buttons.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Colors.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\ComboBoxes.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Fonts.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Scroll.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\Texts.baml
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library.g.resources
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfoInputs.cache
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfo.cs
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.Fody.CopyLocal.cache
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CopyComplete
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
+D:\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
+D:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\CheckBoxes.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\CheckBoxes.baml

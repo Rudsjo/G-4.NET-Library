@@ -1,4 +1,6 @@
 ﻿using Library.Core;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 
 
@@ -12,6 +14,13 @@ namespace Library
         public TableControlSkeleton()
         {
             InitializeComponent();
+
+            SkeletonListShell.ItemsSource = SkeletonList;
         }
+
+        /// <summary>
+        /// Placeholder list to be shown in the skeleton controls
+        /// </summary>
+        public IEnumerable<UserViewModel> SkeletonList { get; set; } = new ObservableCollection<UserViewModel>().FillPlaceHolders();
     }
 }

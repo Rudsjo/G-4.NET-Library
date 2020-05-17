@@ -8,102 +8,105 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Border Background="#FFFFFF" 
-                Height="300" 
+                Height="320" 
                 Width="300"
         
                 BorderBrush="{StaticResource MediumGreyBrush}" BorderThickness="2">
+        
         <Border.Effect>
             <DropShadowEffect BlurRadius="9"
                                           ShadowDepth="1"
                                           Opacity="0.5" />
         </Border.Effect>
         <Grid >
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="2"
+            <Button
                        Style="{StaticResource CloseIconButton}"
                        Content="&#xf00d;"
                        HorizontalAlignment="Right" Margin="10"
                        FontSize="20"
                        Command="{Binding ExitFilter}"
                        />
-
-            <TextBlock Margin="0 30 0 0"
-                       Grid.Column="0"
-                       Grid.Row="0"
-                       Grid.ColumnSpan="3"
-                       Text="Filters"      
+            <StackPanel Grid.Row="1">
+                <TextBlock
+                       Text="Filter"      
                        Style="{StaticResource TableHeaderIcon}"
                        
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"/>
 
+                <Border BorderBrush="{StaticResource LightBlueBrush}" BorderThickness="1" 
+                        Margin="30 20 30 0" Opacity="0.2">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="9"
+                                          ShadowDepth="1"
+                                          Opacity="0.2" />
+                    </Border.Effect>
+                </Border>
+            </StackPanel>
 
 
+            <Grid Grid.Row="2" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-
-
-            <CheckBox Margin="10 0 0 0"
-                      Grid.Row="2"
-                      Grid.Column="0"
+                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                    <CheckBox
+                              Style="{StaticResource FilterCheckBox}"
                       Content="Titel"
-                      FontSize="16"
-                      VerticalAlignment="Center"
-                      HorizontalAlignment="Left"
-                      VerticalContentAlignment="Center"
-                       IsChecked="{Binding TitleFilter}"
-                       />
+                      FontSize="14"
+                      FontFamily="{StaticResource MontserratRegular}"
+                      IsChecked="{Binding TitleFilter}"
+                        Margin="10"
+                          />
 
-            <CheckBox Margin="10 0 0 0"
-                      Grid.Row="3"
-                      Grid.Column="0"
+                    <CheckBox
+                              Style="{StaticResource FilterCheckBox}"
                       Content="Författare"
-                      FontSize="16"
+                      FontSize="14"
+                      FontFamily="{StaticResource MontserratRegular}"
                       VerticalAlignment="Center"
                       HorizontalAlignment="Left"
                       VerticalContentAlignment="Center"
                       IsChecked="{Binding AuthorFilter}"
+                        Margin="10"
                        />
-            <CheckBox Margin="10 0 0 0"
-                      Grid.Row="2"
-                      Grid.Column="2"
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+
+                    <CheckBox Style="{StaticResource FilterCheckBox}"
+                      Grid.Column="2" Grid.Row="0"
                       Content="ISBN"
-                      FontSize="16"
-                      VerticalAlignment="Center"
-                      HorizontalAlignment="Left"
-                      VerticalContentAlignment="Center"
+                      FontSize="14"
+                      FontFamily="{StaticResource MontserratRegular}"
                       IsChecked="{Binding IsbnFilter}"
+                              Margin="10"
                        />
-            <CheckBox Margin="10 0 0 0"
-                      Grid.Row="3"
-                      Grid.Column="2"
+                    <CheckBox Style="{StaticResource FilterCheckBox}"
                       Content="E-Bok"
-                      FontSize="16"
-                      VerticalAlignment="Center"
-                      HorizontalAlignment="Left"
-                      VerticalContentAlignment="Center"
+                      FontSize="14"
+                      FontFamily="{StaticResource MontserratRegular}"
                       IsChecked="{Binding EBookFilter}"
+                              Margin="10"
                        />
 
+                </StackPanel>
+
+            </Grid>
 
 
-            <Button         Grid.Row="6"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="3"
+
+            <Button         Grid.Row="3"
+                            Margin="0 0 0 20"
                             Content="Bekräfta"
                             Style="{StaticResource BlueActionButton}"
                             Width="150"
