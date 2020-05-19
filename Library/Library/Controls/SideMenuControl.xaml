@@ -43,30 +43,58 @@
             <StackPanel Orientation="Vertical" 
                         Grid.Row="1">
 
-                <local:ButtonWithIcon Style="{StaticResource SideMenuButton}"
+                <local:ButtonWithIcon Style="{Binding ApplicationViewModel.CurrentPage, 
+                                      Source={x:Static local:ViewModelLocator.Instance}, 
+                                      Converter={local:StateToStyleConverter},
+                                      ConverterParameter=BookPage}"
+                                      
+                                      Command="{Binding ChangePage}"
+                                      CommandParameter="BookPage"
+                                      
                                       Content="Böcker"
                                       IconContent="&#xf02d;"
                                       Margin="0"
                                       />
 
-                <local:ButtonWithIcon Style="{StaticResource SideMenuButton}"
+                <local:ButtonWithIcon Style="{Binding ApplicationViewModel.CurrentPage,
+                                      Source={x:Static local:ViewModelLocator.Instance},
+                                      Converter={local:StateToStyleConverter},
+                                      ConverterParameter=EmployeePage}"
+                                      
+                                      Command="{Binding ChangePage}"
+                                      CommandParameter="EmployeePage"
+                                      
                                       Content="Anställda"
                                       IconContent="&#xf0c0;"
                                       Margin="0"
+                                      
+                                      Visibility="{Binding ApplicationViewModel.IsAdmin,
+                                                   Source={x:Static local:ViewModelLocator.Instance},
+                                                   Converter={local:BooleanToVisibilityConverter}}"
                                       />
 
-                <local:ButtonWithIcon Style="{StaticResource SideMenuButton}"
+                <local:ButtonWithIcon Style="{Binding ApplicationViewModel.CurrentPage,
+                                      Source={x:Static local:ViewModelLocator.Instance},
+                                      Converter={local:StateToStyleConverter},
+                                      ConverterParameter=CustomerPage}"
+                                      
+                                      Command="{Binding ChangePage}"
+                                      CommandParameter="CustomerPage"
+                                    
                                       Content="Studenter"
                                       IconContent="&#xf501;"
                                       Margin="0"
+                                      
+                                      Visibility="Collapsed"
                                       />
 
             </StackPanel>
 
             <local:ButtonWithIcon Grid.Row="3"
-                    Content="Logga ut"
+                    Content="{Binding ExitContent}"
                     IconContent="&#xf2f5;"
-                    Command="{Binding Logout}"
+                    Command="{Binding ChangePage}"
+                    CommandParameter="Logout"
                     Style="{StaticResource SideMenuLogoutButton}"
                     Margin="0"
                     />

@@ -1,13 +1,35 @@
-﻿E:\Library\Library\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+﻿
 FE:\Library\Library\App.xaml;;
+FE:\Library\Library\Controls\ArticleTableControl.xaml;;
+FE:\Library\Library\Controls\HeaderBarControl.xaml;;
+FE:\Library\Library\Controls\MainContentUserControl.xaml;;
 FE:\Library\Library\Controls\PageHost.xaml;;
+FE:\Library\Library\Controls\PopUp Controls\AddArticleControl.xaml;;
+FE:\Library\Library\Controls\PopUp Controls\AddUserControl.xaml;;
+FE:\Library\Library\Controls\PopUp Controls\ArticleEditControl.xaml;;
+FE:\Library\Library\Controls\PopUp Controls\ArticleFilterControl.xaml;;
+FE:\Library\Library\Controls\PopUp Controls\ArticleInfoControl.xaml;;
+FE:\Library\Library\Controls\PopUp Controls\ConfirmationControl.xaml;;
+FE:\Library\Library\Controls\PopUp Controls\DatabaseLoginControl.xaml;;
+FE:\Library\Library\Controls\PopUp Controls\LoadingControl.xaml;;
+FE:\Library\Library\Controls\PopUp Controls\SuccessfulControl.xaml;;
+FE:\Library\Library\Controls\PopUp Controls\UserLoginControl.xaml;;
+FE:\Library\Library\Controls\PopUpControl.xaml;;
 FE:\Library\Library\Controls\SideMenuControl.xaml;;
+FE:\Library\Library\Controls\Skeleton Controls\HeaderBarControlSkeleton.xaml;;
+FE:\Library\Library\Controls\Skeleton Controls\MainContentUserControlSkeleton.xaml;;
+FE:\Library\Library\Controls\Skeleton Controls\TableControlSkeleton.xaml;;
+FE:\Library\Library\Controls\UserTableControl.xaml;;
 FE:\Library\Library\MainWindow.xaml;;
+FE:\Library\Library\Pages\BackupPage.xaml;;
 FE:\Library\Library\Pages\BookPage.xaml;;
-FE:\Library\Library\Pages\LoginToDatabasePage.xaml;;
+FE:\Library\Library\Pages\EmployeePage.xaml;;
 FE:\Library\Library\Pages\MainPage.xaml;;
 FE:\Library\Library\Styling\Styles\Buttons.xaml;;
+FE:\Library\Library\Styling\Styles\CheckBoxes.xaml;;
 FE:\Library\Library\Styling\Styles\Colors.xaml;;
+FE:\Library\Library\Styling\Styles\ComboBoxes.xaml;;
 FE:\Library\Library\Styling\Styles\Fonts.xaml;;
+FE:\Library\Library\Styling\Styles\Scroll.xaml;;
 FE:\Library\Library\Styling\Styles\Texts.xaml;;
 

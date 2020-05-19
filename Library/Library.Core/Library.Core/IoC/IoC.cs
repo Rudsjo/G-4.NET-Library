@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Library.Core
 {
@@ -29,6 +30,10 @@ namespace Library.Core
         public static T CreateInstance<T>()
             where T : class, new()
             => Singleton<T>.Instance;
+
+        public static T CreateList<T>()
+            where T : IEnumerable, new()
+            => new T();
 
         #endregion
     }

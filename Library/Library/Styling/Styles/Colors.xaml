@@ -22,6 +22,14 @@
     <Color x:Key="CustomGrey">#707070</Color>
     <SolidColorBrush x:Key="CustomGreyBrush" Color="{StaticResource CustomGrey}" />
     
+    <!-- Medium Grey Color -->
+    <Color x:Key="MediumGrey">#8E8E8E</Color>
+    <SolidColorBrush x:Key="MediumGreyBrush" Color="{StaticResource MediumGrey}" />
+    
+    <!-- Medium Light Grey Color -->
+    <Color x:Key="MediumLightGrey">#D8D5D5</Color>
+    <SolidColorBrush x:Key="MediumLightGreyBrush" Color="{StaticResource MediumLightGrey}" />
+    
     <!-- Light Grey Color -->
     <Color x:Key="CustomLightGrey">#EDEDED</Color>
     <SolidColorBrush x:Key="CustomLightGreyBrush" Color="{StaticResource CustomLightGrey}" />
@@ -30,8 +38,16 @@
     <Color x:Key="CustomGreen">#4C884D</Color>
     <SolidColorBrush x:Key="CustomGreenBrush" Color="{StaticResource CustomGreen}" />
     
+    <!-- Hover Green -->
+    <Color x:Key="HoverGreen">#455E45</Color>
+    <SolidColorBrush x:Key="HoverGreenBrush" Color="{StaticResource HoverGreen}" />
+
     <!-- Wine Red Color -->
     <Color x:Key="WineRed">#651919</Color>
     <SolidColorBrush x:Key="WineRedBrush" Color="{StaticResource WineRed}" />
+
+    <!-- Hover Red -->
+    <Color x:Key="HoverRed">#2B0303</Color>
+    <SolidColorBrush x:Key="HoverRedBrush" Color="{StaticResource HoverRed}" />
 
 </ResourceDictionary>
