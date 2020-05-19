@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Library.Core">
+      <HintPath>..\..\..\G-4.NET-Library-BaseProject1.7.2\Library\Repository\Repository\bin\Debug\netcoreapp3.1\Library.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Repository">
+      <HintPath>..\..\..\G-4.NET-Library-Repository\Repository\Repository\bin\Debug\netcoreapp3.1\Repository.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

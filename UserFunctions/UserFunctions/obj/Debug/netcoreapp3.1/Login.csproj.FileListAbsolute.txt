@@ -1,0 +1,12 @@
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\obj\Debug\netcoreapp3.1\Login.csprojAssemblyReference.cache
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\obj\Debug\netcoreapp3.1\Login.AssemblyInfoInputs.cache
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\obj\Debug\netcoreapp3.1\Login.AssemblyInfo.cs
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\bin\Debug\netcoreapp3.1\Login.deps.json
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\bin\Debug\netcoreapp3.1\Login.dll
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\bin\Debug\netcoreapp3.1\Login.pdb
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\obj\Debug\netcoreapp3.1\Login.csproj.CopyComplete
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\obj\Debug\netcoreapp3.1\Login.dll
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\obj\Debug\netcoreapp3.1\Login.pdb
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\stimp\Desktop\LibraryLogin\G-4.NET-Library\Login\Login\obj\Debug\netcoreapp3.1\Login.csproj.CoreCompileInputs.cache
