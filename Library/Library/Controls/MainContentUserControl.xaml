@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="Library.MainContentUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+        <!-- Table -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- Header text and buttons -->
+            <RowDefinition Height="Auto" />
+
+            <!-- The table -->
+            <RowDefinition Height="*" />
+
+            <!-- Footer -->
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Header text and buttons -->
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Header text -->
+            <TextBlock Grid.Column="0"
+                           Style="{StaticResource MainHeaderText}"
+                           Text="{Binding HeaderText}"
+                           HorizontalAlignment="Left"
+                           Margin="50 80 0 10"
+                           />
+
+            <!-- Buttons -->
+            <StackPanel Orientation="Horizontal"
+                            Grid.Column="1"
+                            HorizontalAlignment="Right"
+                            Margin="-200 80 50 10">
+
+                <!-- Add -->
+                <local:ButtonWithIcon Content="{Binding AddButtonText}"
+                                          IconContent="&#xf067;"
+                                          Style="{StaticResource TableActionButton}"
+                                          Command="{Binding OpenAdd}"
+                                          Margin="0 0 5 0"
+                                      
+                                      Visibility="{Binding ApplicationViewModel.IsAdmin,
+                                                  Source={x:Static local:ViewModelLocator.Instance},
+                                                  Converter={local:BooleanToVisibilityConverter}}"
+                                          />
+
+                <!-- Filter -->
+                <local:ButtonWithIcon Content="{Binding FilterText}"         
+                                      IconContent="&#xf0b0;"
+                                      Style="{StaticResource TableActionButton}"
+                                      Background="{Binding FilterColor, 
+                                      Converter={local:StateToStyleConverter}}"
+                                      Command="{Binding OpenFilter}"
+                                      Margin="0 0 5 0"
+                                                                
+                                          />
+                <Button Margin="-15,0,0,0"
+                        Content="&#xf00d;"
+                        Style="{StaticResource CloseIconButtonWithBorder}"
+                        Visibility="{Binding ShowClearFilterButton, 
+                                     Converter={local:BooleanToVisibilityConverter},
+                                     ConverterParameter=ErrorText, 
+                                     FallbackValue=false, 
+                                     UpdateSourceTrigger=PropertyChanged}"
+                        Command="{Binding ClearFilters}">
+                    
+                </Button>
+
+                <!-- Show Removed Articles -->
+                <local:ButtonWithIcon Content="Borttagna objekt"
+                                          IconContent="&#xf2ed;"
+                                          Style="{StaticResource TableActionButton}"
+                                          Background="{Binding IsShowingRemovedArticles, Converter={local:StateToStyleConverter}, 
+                                                       ConverterParameter=RemovedArticlesBtn}"
+                                          Command="{Binding ShowRemovedArticles}"
+                                      
+                                      Visibility="{Binding ApplicationViewModel.IsSuperAdmin,
+                                                  Source={x:Static local:ViewModelLocator.Instance},
+                                                  Converter={local:BooleanToVisibilityConverter},
+                                                  ConverterParameter=ErrorText}"
+                                          />
+            </StackPanel>
+        </Grid>
+
+        <!-- Table -->
+        <Frame Grid.Row="1" Margin="50 0 50 0"
+                   Content="{Binding ApplicationViewModel.CurrentPage, 
+                             Source={x:Static local:ViewModelLocator.Instance},
+                             Converter={local:ApplicationPageValueConverter},
+                             ConverterParameter=Table}"
+                   local:NoFrameHistory.Value = "True"
+                   />
+
+    </Grid>
+</UserControl>

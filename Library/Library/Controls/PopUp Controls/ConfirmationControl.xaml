@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Library.ConfirmationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Border Background="#FFFFFF" Height="150" Width="300"
+            BorderBrush="{StaticResource MediumGreyBrush}" BorderThickness="2">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="9"
+                                          ShadowDepth="1"
+                                          Opacity="0.5" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock  Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Text="Är du säker på att du vill ta bort?"
+                    Style="{StaticResource TableHeaderText}"
+                      FontSize="{StaticResource FontSizeRegular}"
+                    />
+
+            <Button Grid.Row="1"
+                Style="{StaticResource ConfirmationButton}"
+                Background="{StaticResource CustomGreenBrush}"
+                Command="{Binding Confirm}"
+            />
+
+            <Button Grid.Row="1" Grid.Column="1"
+                Style="{StaticResource AbortButton}"
+                Content="&#xf00d;"
+                Command="{Binding Abort}"
+                Margin="-50 -20 0 0"
+                >
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="360" />
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>
