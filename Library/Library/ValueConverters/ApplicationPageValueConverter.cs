@@ -1,6 +1,7 @@
 ﻿using Library.Core;
 using System;
 using System.Globalization;
+using System.Windows.Documents;
 
 namespace Library
 {
@@ -11,24 +12,61 @@ namespace Library
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            // Checks the current page
-            switch ((ApplicationPages)value)
+            switch ((string)parameter)
             {
-                // Login to database page
-                case ApplicationPages.LoginToDatabasePage:
-                    return new LoginToDatabasePage();
+                case "Main":
+                    {
+                        // Checks the current page
+                        switch ((ApplicationPages)value)
+                        {
 
-                case ApplicationPages.MainPage:
-                    return new MainPage();
+                            case ApplicationPages.MainPage:
+                                {
+                                    IoC.CreateInstance<ApplicationViewModel>().PageLoadComplete = false;
+                                    return new MainPage();
+                                }
 
-                case ApplicationPages.BookPage:
-                    return new BookPage();
+                            case ApplicationPages.BookPage:
+                                {
+                                    IoC.CreateInstance<ApplicationViewModel>().PageLoadComplete = false;
+                                    return new BookPage();
+                                }
 
-                // Default
+                            case ApplicationPages.EmployeePage:
+                                {
+                                    IoC.CreateInstance<ApplicationViewModel>().PageLoadComplete = false;
+                                    return new EmployeePage();
+
+                                }
+
+                            // Default
+                            default:
+                                {
+                                    IoC.CreateInstance<ApplicationViewModel>().PageLoadComplete = false;
+                                    return new BackupPage();
+
+                                }
+                        }
+                    }
+
+                case "Table":
+                    {
+                        switch ((ApplicationPages)value)
+                        {
+                            case ApplicationPages.BookPage:
+                                return new ArticleTableControl();
+
+                            case ApplicationPages.EmployeePage:
+                                return new UserTableControl();
+
+                            default:
+                                return null;
+                        }
+                    }
+
                 default:
-                    return new LoginToDatabasePage();
+                    return null;
             }
-
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

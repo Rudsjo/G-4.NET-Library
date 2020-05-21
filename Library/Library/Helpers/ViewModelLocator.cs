@@ -19,5 +19,10 @@ namespace Library
         /// </summary>
         public static ApplicationViewModel ApplicationViewModel => IoC.CreateInstance<ApplicationViewModel>();
 
+        /// <summary>
+        /// The <see cref="MainContentUserControlViewModel"/>
+        /// </summary>
+        public static MainContentUserControlViewModel MainContentUserControlViewModel => IoC.CreateInstance<MainContentUserControlViewModel>();
+
     }
 }

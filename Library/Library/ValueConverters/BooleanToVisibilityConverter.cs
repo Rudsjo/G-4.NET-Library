@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Core;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -18,8 +19,26 @@ namespace Library
                 return (bool)value ? Visibility.Visible : Visibility.Hidden;
 
             // If it's a placeholder
-            else if((string)parameter == "Placeholder")
+            else if ((string)parameter == "Placeholder")
                 return (bool)value ? Visibility.Hidden : Visibility.Visible;
+
+            else if ((string)parameter == "OnlyUser")
+                return (bool)value ?
+                    IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 2 || IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 3 ?
+                    Visibility.Hidden : Visibility.Visible : Visibility.Hidden;
+
+            else if ((string)parameter == "Skeleton")
+                return (bool)value ? Visibility.Collapsed : Visibility.Visible;
+
+            // If it's a warning text
+            else if ((string)parameter == "ErrorText")
+                return (bool)value ? Visibility.Visible : Visibility.Collapsed;
+
+            else if ((string)parameter == "UserBlocked")
+                return (bool)value ? Visibility.Visible : Visibility.Collapsed;
+
+            else if ((string)parameter == "UserNotBlocked")
+                return (bool)value ? Visibility.Collapsed : Visibility.Visible;
 
             // Else...
             else

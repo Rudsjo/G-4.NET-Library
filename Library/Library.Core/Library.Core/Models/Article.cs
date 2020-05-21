@@ -12,7 +12,7 @@
     /// This is a model of an article in
     /// the library's system
     /// </summary>
-    public class Article
+    public class Article : IArticle
     {
         /// <value>
         /// The article identifier.
@@ -69,6 +69,11 @@
         /// This article's release date
         /// </summary>
         public int loanTime { get; set; }
+
+        /// <summary>
+        /// The edition of the article
+        /// </summary>
+        public string edition { get; set; }
 
     }
 }

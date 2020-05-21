@@ -33,13 +33,145 @@ C:\Users\joxca\Downloads\G-4.NET-Library-Core\G-4.NET-Library-Core\Library.Core\
 C:\Users\joxca\Downloads\G-4.NET-Library-Core\G-4.NET-Library-Core\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
 C:\Users\joxca\Downloads\G-4.NET-Library-Core\G-4.NET-Library-Core\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
 C:\Users\joxca\Downloads\G-4.NET-Library-Core\G-4.NET-Library-Core\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+E:\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
 E:\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
 E:\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
 E:\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
-E:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
 E:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
 E:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
 E:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
 E:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
 E:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
 E:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\pette\Desktop\Github\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library-BaseProject1.4\G-4.NET-Library-BaseProject1.4\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\BaseProjektLibrary\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\joxca\OneDrive\Skrivbord\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.7.2\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+E:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+D:\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+D:\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+D:\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+D:\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+D:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+D:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+D:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+D:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+D:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+D:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+D:\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\marcu\Desktop\G-4.NET-Library-BaseProject1.9\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\stimp\Desktop\G-4.NET-Library-BaseProject1.9.1\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
