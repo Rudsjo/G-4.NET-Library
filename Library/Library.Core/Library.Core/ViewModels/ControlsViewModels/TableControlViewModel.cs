@@ -280,7 +280,7 @@ namespace Library.Core
 
                 case ApplicationPages.EmployeePage:
                     {
-                        if (await CanDeleteUser((SelectedUser as UserViewModel).personalNumber))
+                        if (await ViewModelHelpers.CanDeleteUser((SelectedUser as UserViewModel).personalNumber))
                         {
                             IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Confirmation);
                             IoC.CreateInstance<ConfirmationControlViewModel>().UserToDelete = (SelectedUser as IUser).personalNumber;
@@ -289,18 +289,6 @@ namespace Library.Core
                     }
             }
         }
-
-
-        /// <summary>
-        /// Determines if a user can be deleted.
-        /// </summary>
-        /// <param name="PersonalNumber">The personal number.</param>
-        /// <returns>
-        ///   <c>true</c> if collection contains no articles; otherwise, <c>false</c>.
-        /// </returns>
-        public async Task<bool> CanDeleteUser(string PersonalNumber)
-        =>
-        (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(PersonalNumber)).ToList().Count() == 0;
 
 
         /// <summary>

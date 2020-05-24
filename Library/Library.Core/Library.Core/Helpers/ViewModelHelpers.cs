@@ -84,5 +84,16 @@ namespace Library.Core
             // Returns the list
             return listToReturn;
         }
+
+        /// <summary>
+        /// Determines if a user can be deleted.
+        /// </summary>
+        /// <param name="PersonalNumber">The personal number.</param>
+        /// <returns>
+        ///   <c>true</c> if collection contains no articles; otherwise, <c>false</c>.
+        /// </returns>
+        public static async Task<bool> CanDeleteUser(string PersonalNumber)
+        =>
+        (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(PersonalNumber)).ToList().Count() == 0;
     }
 }

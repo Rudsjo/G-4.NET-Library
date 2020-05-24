@@ -199,6 +199,23 @@ namespace Library.Core
             ViewModelHelpers.ResetInputProperties<AddUserControlViewModel>(nameof(PNumber), nameof(FirstName), nameof(LastName), nameof(CurrentRole));
         }
 
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Get all roles available to choose when adding
+        /// </summary>
+        public async void GetRoles()
+        {
+            if (!IoC.CreateInstance<ApplicationViewModel>().IsSuperAdmin)
+                CurrentRoles = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetAllRoles()).Where(x => x.roleID == 3).ToList().ToObservableCollection();
+
+            else
+                CurrentRoles = await IoC.CreateInstance<ApplicationViewModel>().rep.GetAllRoles();
+        }
+
+
         /// <summary>
         /// Creates a user and adds it to the system
         /// </summary>
@@ -208,7 +225,7 @@ namespace Library.Core
         /// <param name="RoleID"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        private async Task<bool> CreateUser(string PersonalNumber,
+        public async Task<bool> CreateUser(string PersonalNumber,
                                                   string FirstName,
                                                   string LastName,
                                                   int RoleID,
@@ -245,22 +262,6 @@ namespace Library.Core
                                                                          ))).ToSecureString();
             // Try to add the new user to the system.
             return await IoC.CreateInstance<ApplicationViewModel>().rep.AddUser(PersonalNumber, FirstName, LastName, RoleID, Password, SaltBase64);
-        }
-
-        #endregion
-
-        #region Public Methods
-
-        /// <summary>
-        /// Get all roles available to choose when adding
-        /// </summary>
-        public async void GetRoles()
-        {
-            if (!IoC.CreateInstance<ApplicationViewModel>().IsSuperAdmin)
-                CurrentRoles = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetAllRoles()).Where(x => x.roleID == 3).ToList().ToObservableCollection();
-
-            else
-                CurrentRoles = await IoC.CreateInstance<ApplicationViewModel>().rep.GetAllRoles();
         }
 
         #endregion

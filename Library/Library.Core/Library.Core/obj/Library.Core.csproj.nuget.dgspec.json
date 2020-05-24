@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.9.3\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {}
+    "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.9.3\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
+    "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.9.3\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+        "projectUniqueName": "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
         "projectName": "Library.Core",
-        "projectPath": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.9.3\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
-        "packagesPath": "C:\\Users\\jutsu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jutsu\\Desktop\\G-4.NET-Library-BaseProject1.9.3\\Library\\Library.Core\\Library.Core\\obj\\",
+        "projectPath": "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+        "packagesPath": "C:\\Users\\joxca\\.nuget\\packages\\",
+        "outputPath": "E:\\Library\\Library.Core\\Library.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jutsu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joxca\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

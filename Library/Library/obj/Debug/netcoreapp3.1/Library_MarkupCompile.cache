@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.9.3\Library\Library\obj\Debug\netcoreapp3.1\
+E:\Library\Library\obj\Debug\netcoreapp3.1\
 Library
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.9.3\Library\Library\App.xaml
+E:\Library\Library\App.xaml
 35-1696496504
 
 51-1100525905
-196-644215974
+1961496882654
 Controls\ArticleTableControl.xaml;Controls\HeaderBarControl.xaml;Controls\MainContentUserControl.xaml;Controls\PageHost.xaml;Controls\PopUp Controls\AddArticleControl.xaml;Controls\PopUp Controls\AddUserControl.xaml;Controls\PopUp Controls\ArticleEditControl.xaml;Controls\PopUp Controls\ArticleFilterControl.xaml;Controls\PopUp Controls\ArticleInfoControl.xaml;Controls\PopUp Controls\ConfirmationControl.xaml;Controls\PopUp Controls\DatabaseLoginControl.xaml;Controls\PopUp Controls\LoadingControl.xaml;Controls\PopUp Controls\NotificationControl.xaml;Controls\PopUp Controls\SuccessfulControl.xaml;Controls\PopUp Controls\UserEditControl.xaml;Controls\PopUp Controls\UserLoginControl.xaml;Controls\PopUpControl.xaml;Controls\SideMenuControl.xaml;Controls\Skeleton Controls\HeaderBarControlSkeleton.xaml;Controls\Skeleton Controls\MainContentUserControlSkeleton.xaml;Controls\Skeleton Controls\TableControlSkeleton.xaml;Controls\SubPopUpControl.xaml;Controls\UserTableControl.xaml;MainWindow.xaml;Pages\BackupPage.xaml;Pages\BookPage.xaml;Pages\EmployeePage.xaml;Pages\MainPage.xaml;Styling\Styles\Buttons.xaml;Styling\Styles\CheckBoxes.xaml;Styling\Styles\Colors.xaml;Styling\Styles\ComboBoxes.xaml;Styling\Styles\Fonts.xaml;Styling\Styles\Scroll.xaml;Styling\Styles\Texts.xaml;
 
 False

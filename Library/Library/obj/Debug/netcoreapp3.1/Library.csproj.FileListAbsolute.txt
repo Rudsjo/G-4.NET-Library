@@ -1171,3 +1171,9 @@ C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.9.3\Library\Library\obj\Debu
 C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.9.3\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
 C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.9.3\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\NotificationControl.g.cs
 C:\Users\jutsu\Desktop\G-4.NET-Library-BaseProject1.9.3\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\NotificationControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\NotificationControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserEditControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\SubPopUpControl.g.cs
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\NotificationControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserEditControl.baml
+E:\Library\Library\obj\Debug\netcoreapp3.1\Controls\SubPopUpControl.baml
