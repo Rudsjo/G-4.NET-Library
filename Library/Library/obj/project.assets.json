@@ -3169,7 +3169,7 @@
       ]
     },
     "System.Net.Http/4.3.0": {
-      "sha512": "sYg+FtILtRQuYWSIAuNOELwVuVsxVyJGWQyOnlAzhV4xvhyFnON1bAzYYC+jjRW8JREM45R0R5Dgi8MTC5sEwA==",
+      "sha512": "Z1UfSF6dlpCdZdxh6LeoGlYH+q6ptG/iiIWgUUeKhE3DbQACmZkU7Sz2nOX0qdHjz72MOdYRbkSJ5Qwl6sZgvg==",
       "type": "package",
       "path": "system.net.http/4.3.0",
       "files": [
@@ -5302,20 +5302,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joxca\\.nuget\\packages\\": {}
+    "C:\\Users\\stimp\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Library\\Library\\Library.csproj",
+      "projectUniqueName": "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Library\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "E:\\Library\\Library\\Library.csproj",
-      "packagesPath": "C:\\Users\\joxca\\.nuget\\packages\\",
-      "outputPath": "E:\\Library\\Library\\obj\\",
+      "projectPath": "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Library\\Library\\Library.csproj",
+      "packagesPath": "C:\\Users\\stimp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Library\\Library\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\joxca\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\stimp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5327,8 +5334,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
-              "projectPath": "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
+            "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
+              "projectPath": "C:\\Users\\stimp\\Desktop\\G-4.NET-Library\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
             }
           }
         }
@@ -5365,6 +5372,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.2, 3.1.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -5373,7 +5386,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

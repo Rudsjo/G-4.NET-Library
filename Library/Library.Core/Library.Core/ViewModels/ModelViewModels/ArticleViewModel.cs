@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Library.Core
@@ -73,6 +74,11 @@ namespace Library.Core
         /// </summary>
         public string edition { get; set; }
 
+        /// <summary>
+        /// A flag that indicates if the reserve button should be hidden from the current user.
+        /// </summary>
+        public bool IsLoanedByCurrentUser { get; set; }
+
         #endregion
 
         #region Added Properties
@@ -124,14 +130,22 @@ namespace Library.Core
         {
             get
             {
-                if (statusID == 2)
-                    _availableToReserveVisibility = true;
-                else
-                    _availableToReserveVisibility = false;
+                // Check if this book is loaned by the user that is logged in
+                if (!IsLoanedByCurrentUser)
+                {
+                    // Check if the article is available
+                    if (statusID == 2)
+                        _availableToReserveVisibility = true;
+                    // If not, then hide the reserve button 
+                    else
+                        _availableToReserveVisibility = false;
+                }
+                // If it is, then hide the reserve button
+                else _availableToReserveVisibility =  false;
 
                 return _availableToReserveVisibility;
             }
-            set {  }
+            set { }
         }
         #endregion
     }

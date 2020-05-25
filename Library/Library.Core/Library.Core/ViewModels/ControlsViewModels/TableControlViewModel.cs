@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using Dapper;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -129,17 +131,17 @@ namespace Library.Core
         public TableControlViewModel()
         {
             // Setting commands
-            Sort = new RelayParameterizedCommand(SortCommand);
+            Sort   = new RelayParameterizedCommand(SortCommand);
             Delete = new RelayParameterizedCommand(async (parameter) => await DeleteCommand(parameter));
-            Info = new RelayParameterizedCommand(async (parameter) => await InfoCommand(parameter));
-            Exit = new RelayCommand(async () => await ExitInfoCommand());
+            Info   = new RelayParameterizedCommand(async (parameter) => await InfoCommand(parameter));
+            Exit   = new RelayCommand(async () => await ExitInfoCommand());
             Update = new RelayCommand(async () => await UpdateCommand());
 
-            Return = new RelayParameterizedCommand(async (parameter) => await ReturnArticleCommand(parameter));
-            Block = new RelayCommand(async () => await BlockUserCommand());
+            Return  = new RelayParameterizedCommand(async (parameter) => await ReturnArticleCommand(parameter));
+            Block   = new RelayCommand(async () => await BlockUserCommand());
             Unblock = new RelayCommand(async () => await UnblockUserCommand());
 
-            LoanedArticle = new RelayParameterizedCommand(async (parameter) => await LoanedArticleCommand(parameter));
+            LoanedArticle  = new RelayParameterizedCommand(async (parameter) => await LoanedArticleCommand(parameter));
             ReserveArticle = new RelayParameterizedCommand(async (parameter) => await ReserveArticleCommand(parameter));
         }
 
@@ -170,6 +172,33 @@ namespace Library.Core
         }
 
         /// <summary>
+        /// Updates the articles statuses for the current user
+        /// </summary>
+        /// <returns></returns>
+        public async Task UpdateArticleStatuses()
+        {
+            // If the user is'nt logged in
+            if (IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 4) return;
+
+            // Get all loan ID's from the current user
+            var CurrentUserLoans = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(
+                                          IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber)).Select(a => a.articleID).ToList();
+
+            // Go through all articles
+            for (int i = 0; i < CurrentList.Count(); i++)
+            {
+                // If the user currently has this article
+                if (CurrentUserLoans.ToList().Contains((CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].articleID))
+                    // Hide the reserve button
+                    (CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].IsLoanedByCurrentUser = true;
+                // Else
+                else
+                    // Show either the Loan or the Reserve button
+                    (CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].IsLoanedByCurrentUser = false;
+            }
+        }
+
+        /// <summary>
         /// Method that returns a list of the articles that a user has loaned and reserved
         /// </summary>
         public async void GetUserInfo()
@@ -179,8 +208,6 @@ namespace Library.Core
 
             //Gets all the reservations on a current user
             CurrentUserReservations = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserReservations(SelectedUser.personalNumber)).ToModelDataToViewModel<IArticle, ArticleViewModel>().ToObservableCollection().FillPlaceHolders(3);
-
-            await Task.Delay(1);
         }
         #endregion
 
@@ -194,7 +221,7 @@ namespace Library.Core
         private async Task LoanedArticleCommand(object testing)
         {
             string pn = IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber;
-            CurrentArticle = (testing as IArticle);
+            CurrentArticle = (testing as IArticle);            
 
             // This sets the availability to Loaned, status = 2
             if (await IoC.CreateInstance<ApplicationViewModel>().rep.LoanArticle(pn, CurrentArticle.articleID))
@@ -215,6 +242,11 @@ namespace Library.Core
                 return;
         }
 
+        /// <summary>
+        /// When a user presses the Reserve button
+        /// </summary>
+        /// <param name="chosenArticle"></param>
+        /// <returns></returns>
         private async Task ReserveArticleCommand(object chosenArticle)
         {
             CurrentArticle = (chosenArticle as IArticle);
@@ -280,7 +312,7 @@ namespace Library.Core
 
                 case ApplicationPages.EmployeePage:
                     {
-                        if (await ViewModelHelpers.CanDeleteUser((SelectedUser as UserViewModel).personalNumber))
+                        if (await CanDeleteUser((SelectedUser as UserViewModel).personalNumber))
                         {
                             IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Confirmation);
                             IoC.CreateInstance<ConfirmationControlViewModel>().UserToDelete = (SelectedUser as IUser).personalNumber;
@@ -290,6 +322,16 @@ namespace Library.Core
             }
         }
 
+        /// <summary>
+        /// Determines if a user can be deleted.
+        /// </summary>
+        /// <param name="PersonalNumber">The personal number.</param>
+        /// <returns>
+        ///   <c>true</c> if collection contains no articles; otherwise, <c>false</c>.
+        /// </returns>
+        public async Task<bool> CanDeleteUser(string PersonalNumber)
+        =>
+        (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(PersonalNumber)).ToList().Count() == 0;
 
         /// <summary>
         /// Sorts the list depending on which buttons is pressed

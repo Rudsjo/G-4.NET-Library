@@ -100,6 +100,8 @@ namespace Library.Core
                 if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.MainPage)
                     IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.BookPage);
 
+                //await IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
+
                 // Close the login popup control
                 IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
