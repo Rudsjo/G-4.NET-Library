@@ -139,7 +139,7 @@
         /// </summary>
         /// <returns>True if reservation exists and could be deleted</returns>
         /// <param name="_categoryID">The articleID of the article to be deleted from reservations</param>
-        abstract Task<bool> DeleteReservation(int _articleID);
+        abstract Task<bool> DeleteReservation(int _articleID, string _personalNumber);
 
         #endregion
 

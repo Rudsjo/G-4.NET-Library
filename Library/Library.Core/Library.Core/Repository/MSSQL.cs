@@ -166,12 +166,12 @@
         /// </summary>
         /// <param name="_articleID"></param>
         /// <returns></returns>
-        public async Task<bool> DeleteReservation(int _articleID)
+        public async Task<bool> DeleteReservation(int _articleID, string _personalNumber)
         {
             //Opens a new connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
                 //return the result
-                return (await Connection.QueryAsync<int>("DeleteReservation", new { articleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0;
+                return (await Connection.QueryAsync<int>("DeleteReservation", new { articleID = _articleID, personalNumber = _personalNumber }, commandType: CommandType.StoredProcedure)).First() != 0;
         }
 
         #endregion

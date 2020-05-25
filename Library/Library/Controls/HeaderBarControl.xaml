@@ -47,7 +47,11 @@
                             Content="&#xf0f3;"
                             Command="{Binding OpenNotification}"
                             Background="{Binding NotificationColor, 
-                            Converter={local:StateToStyleConverter}}" >
+                            Converter={local:StateToStyleConverter}}"
+                        Visibility="{Binding ApplicationViewModel.IsUser,
+                                     Source={x:Static local:ViewModelLocator.Instance},
+                                     Converter={local:BooleanToVisibilityConverter}}"
+                        >
 
                     <Button.Resources>
                         <Style TargetType="Border">

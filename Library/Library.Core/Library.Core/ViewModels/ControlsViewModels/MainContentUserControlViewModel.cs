@@ -278,11 +278,13 @@ namespace Library.Core
                     .ToModelDataToViewModel<IArticle, ArticleViewModel>().FillPlaceHolders();
                 
                 IsShowingRemovedArticles = false;
+                IoC.CreateInstance<ApplicationViewModel>().CurrentUser = IoC.CreateInstance<ApplicationViewModel>().CurrentUser;
+                await IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
             }
             else
             {
                 IoC.CreateInstance<TableControlViewModel>().CurrentList =
-                    ArticleSearchList.Where(x => x.statusID == 3).ToList().ToObservableCollection().FillPlaceHolders();
+                    (await IoC.CreateInstance<ApplicationViewModel>().rep.GetArticlesByStatus(3)).ToList().ToObservableCollection().FillPlaceHolders();
 
                 IsShowingRemovedArticles = true;
             }

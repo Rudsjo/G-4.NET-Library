@@ -5408,11 +5408,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\joxca\\Downloads\\G-4.NET-Library-1.9.4.1\\G-4.NET-Library-1.9.4.1\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj",
       "projectName": "Library.Core.Tests",
-      "projectPath": "E:\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj",
+      "projectPath": "C:\\Users\\joxca\\Downloads\\G-4.NET-Library-1.9.4.1\\G-4.NET-Library-1.9.4.1\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj",
       "packagesPath": "C:\\Users\\joxca\\.nuget\\packages\\",
-      "outputPath": "E:\\Library\\Library.Core.Tests\\obj\\",
+      "outputPath": "C:\\Users\\joxca\\Downloads\\G-4.NET-Library-1.9.4.1\\G-4.NET-Library-1.9.4.1\\Library\\Library.Core.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joxca\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5428,8 +5428,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
-              "projectPath": "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
+            "C:\\Users\\joxca\\Downloads\\G-4.NET-Library-1.9.4.1\\G-4.NET-Library-1.9.4.1\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
+              "projectPath": "C:\\Users\\joxca\\Downloads\\G-4.NET-Library-1.9.4.1\\G-4.NET-Library-1.9.4.1\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
             }
           }
         }

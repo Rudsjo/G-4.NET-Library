@@ -37,6 +37,10 @@ namespace Library.Core
             IoC.CreateInstance<MainContentUserControlViewModel>().HeaderText = "Alla böcker";
             IoC.CreateInstance<MainContentUserControlViewModel>().AddButtonText = "Lägg till bok";
             IoC.CreateInstance<TableControlViewModel>().TableHeaderTexts = new string[] { "Titel", "Författare", "Placering", "Tillgänglighet" };
+
+            // Check for loans/reservations
+            IoC.CreateInstance<ApplicationViewModel>().CurrentUser = IoC.CreateInstance<ApplicationViewModel>().CurrentUser;
+            IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
         }
 
         #endregion

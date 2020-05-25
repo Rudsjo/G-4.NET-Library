@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/TwiCWXm1VRp6tFrXtDFopZB+q+GOjehPSAx9c4RzIaE48hfkKE1Ap2X/fA+i58Bt+i13EjnKDnImcebfD1U5A==",
+  "dgSpecHash": "Tvzdf/Fud6lybruf8tcpu9YwwEN9G84nEcNkXw8R+GLiO3m0DuX/DpkJWbR/OrGQ2XiwnY80R5oAS9uiMyPY2A==",
   "success": true,
-  "projectFilePath": "E:\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+  "projectFilePath": "C:\\Users\\joxca\\Downloads\\G-4.NET-Library-1.9.4.1\\G-4.NET-Library-1.9.4.1\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joxca\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\joxca\\.nuget\\packages\\fody\\6.1.1\\fody.6.1.1.nupkg.sha512",
