@@ -27,11 +27,6 @@ namespace Library.Core
         /// </summary>
         public BookPageViewModel()
         {
-            FillSearchableArticleList();
-
-            if (String.IsNullOrEmpty(IoC.CreateInstance<MainContentUserControlViewModel>().SearchText))
-                 IoC.CreateInstance<TableControlViewModel>().LoadItems();
-
             // Setting the dynamic texts
             IoC.CreateInstance<MainContentUserControlViewModel>().HeaderText = "Alla böcker";
             IoC.CreateInstance<MainContentUserControlViewModel>().AddButtonText = "Lägg till bok";

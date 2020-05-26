@@ -30,8 +30,8 @@ namespace Library.Core
         /// </summary>
         public SideMenuControlViewModel()
         {
-            // Setting commands
-            ChangePage = new RelayParameterizedCommand(async (pageToOpen) => await LogoutCommandAsync(pageToOpen));
+            // Create the command for changing page
+            ChangePage = new RelayParameterizedCommand( (pageToOpen) => ChangePageCommand(pageToOpen) );
         }
 
         #endregion
@@ -42,33 +42,46 @@ namespace Library.Core
         /// Command to log out a user
         /// </summary>
         /// <returns></returns>
-        private async Task LogoutCommandAsync(object pageToOpen)
+        private void ChangePageCommand(object pageToOpen)
         {
             // Resets the Filterpopup when changing page
             IoC.CreateInstance<MainContentUserControlViewModel>().ResetFilterPopup();
 
             switch ((string)pageToOpen)
             {
+                // If the suser pressed the Books button
                 case "BookPage":
                     {
+                        // Change page
                         IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.BookPage);
+
+                        // Load all articles
+                        IoC.CreateInstance<BookPageViewModel>().FillSearchableArticleList();
+                        IoC.CreateInstance<TableControlViewModel>().LoadItems();
+
                         break;
                     }
-
+                // If the uesr pressed the employees button
                 case "EmployeePage":
                     {
+                        // Change page
                         IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.EmployeePage);
+
+                        // Load all employees
+                        IoC.CreateInstance<EmployeePageViewModel>().FillSearchableUserList();
+                        IoC.CreateInstance<TableControlViewModel>().LoadItems();
+
                         break;
                     }
-
+                // If the user pressed the log out button
                 case "Logout":
                     {
+                        // Log out the current user
                         IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.MainPage);
+                        
                         break;
                     }
             }
-
-            await Task.Delay(1);
         }
 
         #endregion

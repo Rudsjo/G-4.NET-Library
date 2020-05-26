@@ -475,7 +475,8 @@ namespace Library.Core
                 }
 
                 else
-                    // Search through the list
+                {
+                    //Search through the list
                     IoC.CreateInstance<TableControlViewModel>().CurrentList =
                     ArticleSearchList.Where(s =>
                     s.IsPlaceholder == false && (
@@ -484,6 +485,7 @@ namespace Library.Core
                     s.publisher.ToLower().Contains(_searchText.ToLower()) ||
                     s.title.ToLower().Contains(_searchText.ToLower())))
                     .ToList().ToObservableCollection().FillPlaceHolders();
+                }
             }
 
             else

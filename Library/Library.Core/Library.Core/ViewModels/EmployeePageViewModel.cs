@@ -29,11 +29,6 @@ namespace Library.Core
         /// </summary>
         public EmployeePageViewModel()
         {
-            FillSearchableUserList();
-
-            //Fills all the neccesary data on users
-            IoC.CreateInstance<TableControlViewModel>().LoadItems();
-
             // Setting the dynamic texts
             IoC.CreateInstance<MainContentUserControlViewModel>().HeaderText = "Alla användare";
             IoC.CreateInstance<MainContentUserControlViewModel>().AddButtonText = "Lägg till användare";
@@ -50,7 +45,7 @@ namespace Library.Core
         /// <summary>
         /// Method to get all searchable users
         /// </summary>
-        private async void FillSearchableUserList()
+        public async void FillSearchableUserList()
         {
             // Get the full list
             IoC.CreateInstance<MainContentUserControlViewModel>().UserSearchList =

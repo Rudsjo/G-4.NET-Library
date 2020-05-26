@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace Library.Core
 {
@@ -47,15 +43,18 @@ namespace Library.Core
 
             // Setting commands
             ShowAllBooks = new RelayCommand(ShowAllBooksCommand);
-            FirstSearch = new RelayCommand(() => 
-            {
-                // Changing the page
-                IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.BookPage);
 
-                // Setting the search text
-                IoC.CreateInstance<MainContentUserControlViewModel>().SearchText = FirstSearchText;
 
-            });
+            FirstSearch = new RelayCommand(test);
+        }
+
+        void test()
+        {
+            // Changing the page
+            IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.BookPage);
+
+            // Setting the search text
+            IoC.CreateInstance<MainContentUserControlViewModel>().SearchText = FirstSearchText;
         }
 
         #endregion
@@ -73,7 +72,5 @@ namespace Library.Core
         }
 
         #endregion
-
-
     }
 }
