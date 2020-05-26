@@ -279,7 +279,7 @@ namespace Library.Core
                 
                 IsShowingRemovedArticles = false;
                 IoC.CreateInstance<ApplicationViewModel>().CurrentUser = IoC.CreateInstance<ApplicationViewModel>().CurrentUser;
-                await IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
+                IoC.CreateInstance<TableControlViewModel>().InitializeUpdateArticleStatuses();
             }
             else
             {
@@ -399,7 +399,7 @@ namespace Library.Core
         /// <summary>
         ///  Searches for articles in the articles list 
         /// </summary>
-        private async Task SearchUpdate()
+        private void SearchUpdate()
         {
 
             if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
@@ -515,8 +515,11 @@ namespace Library.Core
             // Indicating that a pop up control will be shown
             IoC.CreateInstance<ApplicationViewModel>().PopUpVisible = true;
 
-            // Setting the pop up content
-            IoC.CreateInstance<PopUpControlViewModel>().PopUpContent = PopUpContents.UserLogin;
+            if(IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID != 4)
+                // Setting the pop up content
+                IoC.CreateInstance<PopUpControlViewModel>().PopUpContent = PopUpContents.MyProfile;
+            else
+                IoC.CreateInstance<PopUpControlViewModel>().PopUpContent = PopUpContents.UserLogin;
 
 
             // Getting rid of disgusting warning

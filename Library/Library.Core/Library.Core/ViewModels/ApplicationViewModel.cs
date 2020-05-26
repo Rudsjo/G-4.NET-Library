@@ -45,12 +45,7 @@ namespace Library.Core
         /// <summary>
         /// The current user of the application, standard is an empty user marked as visitor
         /// </summary>
-        public UserViewModel CurrentUser { get { return _currentUser; } set { _currentUser = value; NewUserUpdate(); } }
-
-        private async void NewUserUpdate()
-        {
-            await IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
-        }
+        public UserViewModel CurrentUser { get { return _currentUser; } set { _currentUser = value; IoC.CreateInstance<TableControlViewModel>().InitializeUpdateArticleStatuses(); } }
 
         /// <summary>
         /// Flag to indicate if <see cref="CurrentUser"/> is SuperAdmin (RoleID = 1)

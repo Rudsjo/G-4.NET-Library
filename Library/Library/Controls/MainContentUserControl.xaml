@@ -62,8 +62,11 @@
                                       Converter={local:StateToStyleConverter}}"
                                       Command="{Binding OpenFilter}"
                                       Margin="0 0 5 0"
-                                                                
-                                          />
+                                      Visibility="{Binding ApplicationViewModel.CurrentPage, 
+                                                   Source={x:Static local:ViewModelLocator.Instance},
+                                                   Converter={local:BooleanToVisibilityConverter}, 
+                                                   ConverterParameter=BookPageOnly}" />
+
                 <Button Margin="-15,0,0,0"
                         Content="&#xf00d;"
                         Style="{StaticResource CloseIconButtonWithBorder}"
@@ -87,7 +90,7 @@
                                       Visibility="{Binding ApplicationViewModel.IsSuperAdmin,
                                                   Source={x:Static local:ViewModelLocator.Instance},
                                                   Converter={local:BooleanToVisibilityConverter},
-                                                  ConverterParameter=ErrorText}"
+                                                  ConverterParameter=RemovedArticles}"
                                           />
             </StackPanel>
         </Grid>

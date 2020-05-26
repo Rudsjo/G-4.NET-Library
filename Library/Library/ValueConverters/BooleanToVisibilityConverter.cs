@@ -27,6 +27,20 @@ namespace Library
                     IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 2 || IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 3 ?
                     Visibility.Hidden : Visibility.Visible : Visibility.Hidden;
 
+            else if ((string)parameter == "RemovedArticles")
+                return (bool)value ?
+                    IoC.CreateInstance<ApplicationViewModel>().CurrentPage != ApplicationPages.BookPage ? Visibility.Collapsed : Visibility.Visible : Visibility.Collapsed;
+
+            else if ((string)parameter == "BookPageOnly")
+                return (ApplicationPages)value == ApplicationPages.BookPage ? Visibility.Visible : Visibility.Collapsed;
+
+            else if((string)parameter == "CheckEditUser")
+            {
+                return ((int)value == 1 || (int)value == 2) ? 
+                    IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 1 ? Visibility.Visible : Visibility.Hidden : Visibility.Visible;
+            }
+                
+
             //Shows the loan button if article is available
             else if ((string)parameter == "LoanArticle")
             {

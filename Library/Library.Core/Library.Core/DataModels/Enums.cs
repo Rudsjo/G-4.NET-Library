@@ -127,6 +127,11 @@
         /// </summary>
         Notification = 13,
 
+        /// <summary>
+        /// Popup for MyProfile
+        /// </summary>
+        MyProfile = 14,
+
     }
 
     /// <summary>

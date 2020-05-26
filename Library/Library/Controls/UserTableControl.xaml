@@ -226,7 +226,10 @@
                             </ScrollViewer>
 
                             <!-- Column 5 -->
-                            <Button Grid.Column="5"
+                            <Grid Grid.Column="5" Visibility="{Binding roleID,
+                                               Converter={local:BooleanToVisibilityConverter},
+                                               ConverterParameter=CheckEditUser}">
+                                <Button
                                        Content="&#xf05a;"
                                        FontSize="16"
                                        FontFamily="{StaticResource FontAwesomeSolid}"
@@ -238,6 +241,7 @@
                                                  RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}" 
                                        CommandParameter="{Binding}"                                       
                                        />
+                            </Grid>
 
                         </Grid>
                     </Border>

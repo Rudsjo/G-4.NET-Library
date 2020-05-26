@@ -40,6 +40,9 @@
     <Compile Update="Controls\PopUp Controls\LoadingControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\PopUp Controls\MyProfileControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\PopUp Controls\NotificationControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -85,6 +88,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\PopUp Controls\ArticleFilterControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\MyProfileControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\PopUp Controls\NotificationControl.xaml">

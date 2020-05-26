@@ -55,6 +55,9 @@ namespace Library
                 case PopUpContents.Notification:
                     return new NotificationControl();
 
+                case PopUpContents.MyProfile:
+                    return new MyProfileControl();
+
                 default:
                     return null;
             }

@@ -75,22 +75,23 @@
                                            FontFamily="{StaticResource FontAwesomeSolid}"
                                            VerticalAlignment="Center"
                                            Foreground="{StaticResource CustomLightGreyBrush}"
-                                           Margin="10 "
+                                           Margin="10"
                                            TextAlignment="Center"
                                            />
 
                                 <Border BorderBrush="{StaticResource MediumLightGreyBrush}" BorderThickness="1" Margin="0 10 10 10" />
 
-                            </StackPanel>
-
-                            <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}"
+                                <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}"
                             ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                             ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                             Margin="3,3,23,3"
                             VerticalAlignment="Center"
-                            HorizontalAlignment="Left"
-                            Grid.Column="1"                       
+                            HorizontalAlignment="Left"                      
                             />
+
+                            </StackPanel>
+
+
                             
                             
                             <TextBox x:Name="PART_EditableTextBox"

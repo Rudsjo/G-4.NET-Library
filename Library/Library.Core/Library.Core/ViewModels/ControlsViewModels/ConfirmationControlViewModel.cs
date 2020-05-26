@@ -51,7 +51,7 @@ namespace Library.Core
         /// <summary>
         /// Show reasons depending on which command is used
         /// </summary>
-        public bool ShowReasons { get; set; }
+        public bool ShowReasons { get; set; } = true;
         #endregion
 
         #region Constructor
@@ -77,6 +77,9 @@ namespace Library.Core
         /// <returns></returns>
         private async Task ConfirmCommand()
         {
+            if (ChosenReason == null)
+                return;
+
             // Check the current page
             switch (IoC.CreateInstance<ApplicationViewModel>().CurrentPage)
             {
@@ -85,6 +88,8 @@ namespace Library.Core
                     {
                         // Sets the status to 3 and becomes unavaliable
                         await IoC.CreateInstance<ApplicationViewModel>().rep.DeleteArticle(ArticleToDelete);
+
+                        IoC.CreateInstance<TableControlViewModel>().LoadItems();
 
                         break;
                     }

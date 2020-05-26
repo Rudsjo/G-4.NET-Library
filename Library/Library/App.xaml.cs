@@ -22,6 +22,8 @@ namespace Library
             // Set start page
             IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.MainPage);
 
+            IoC.CreateInstance<BookPageViewModel>().FillSearchableArticleList();
+
             // Create a new instance of the main window
             Current.MainWindow = new MainWindow();
 

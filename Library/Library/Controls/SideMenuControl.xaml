@@ -64,7 +64,7 @@
                                       Command="{Binding ChangePage}"
                                       CommandParameter="EmployeePage"
                                       
-                                      Content="Anställda"
+                                      Content="Användare"
                                       IconContent="&#xf0c0;"
                                       Margin="0"
                                       

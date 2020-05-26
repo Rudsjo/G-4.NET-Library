@@ -45,11 +45,13 @@
                       Tag="Anledning"
                       FontFamily="{StaticResource MontserratRegular}" 
                       FontSize="{StaticResource FontSizeSmall}"
-                      IsEnabled="{Binding ShowReasons}">
+                      IsEnabled="{Binding ShowReasons}"
+                         HorizontalContentAlignment="Left"
+                          >
 
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding}" Background="Transparent" FontFamily="{StaticResource MontserratRegular}" Margin="10" />
+                            <TextBlock Text="{Binding}" Background="Transparent" FontFamily="{StaticResource MontserratRegular}" Margin="0"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ComboBox>

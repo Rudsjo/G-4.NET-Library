@@ -24,5 +24,10 @@ namespace Library
         /// </summary>
         public static MainContentUserControlViewModel MainContentUserControlViewModel => IoC.CreateInstance<MainContentUserControlViewModel>();
 
+        /// <summary>
+        /// The <see cref="SideMenuControlViewModel"/>
+        /// </summary>
+        public static SideMenuControlViewModel SideMenuControlViewModel => IoC.CreateInstance<SideMenuControlViewModel>();
+
     }
 }

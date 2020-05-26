@@ -29,9 +29,8 @@ namespace Library.Core
         {
             FillSearchableArticleList();
 
-            //Fills list of articles when page loads
-            if(IoC.CreateInstance<MainPageViewModel>().FirstSearchText == null)
-                IoC.CreateInstance<TableControlViewModel>().LoadItems();
+            if (String.IsNullOrEmpty(IoC.CreateInstance<MainContentUserControlViewModel>().SearchText))
+                 IoC.CreateInstance<TableControlViewModel>().LoadItems();
 
             // Setting the dynamic texts
             IoC.CreateInstance<MainContentUserControlViewModel>().HeaderText = "Alla böcker";
@@ -40,7 +39,6 @@ namespace Library.Core
 
             // Check for loans/reservations
             IoC.CreateInstance<ApplicationViewModel>().CurrentUser = IoC.CreateInstance<ApplicationViewModel>().CurrentUser;
-            IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
         }
 
         #endregion

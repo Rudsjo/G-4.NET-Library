@@ -46,7 +46,7 @@ namespace Library.Core
 
 
             // Setting commands
-            ShowAllBooks = new RelayCommand(async () => await ShowAllBooksCommandAsync());
+            ShowAllBooks = new RelayCommand(ShowAllBooksCommand);
             FirstSearch = new RelayCommand(() => 
             {
                 // Changing the page
@@ -66,12 +66,10 @@ namespace Library.Core
         /// The action ro run when the <see cref="ShowAllBooks"/> command is activated
         /// </summary>
         /// <returns></returns>
-        private async Task ShowAllBooksCommandAsync()
+        private void ShowAllBooksCommand()
         {
             // Changing the page
             IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.BookPage);
-
-            await Task.Delay(1);
         }
 
         #endregion

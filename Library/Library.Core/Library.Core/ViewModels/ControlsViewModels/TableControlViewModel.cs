@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -159,8 +160,11 @@ namespace Library.Core
 
             // Set the content in the table
             if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
+            {
                 CurrentList = IoC.CreateInstance<MainContentUserControlViewModel>().ArticleSearchList
                     = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchArticles()).ToModelDataToViewModel<IArticle, ArticleViewModel>().FillPlaceHolders();
+                await UpdateArticleStatuses();
+            }
             else
                 CurrentList = IoC.CreateInstance<MainContentUserControlViewModel>().UserSearchList
                     = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>().FillPlaceHolders();
@@ -175,34 +179,39 @@ namespace Library.Core
         /// Updates the articles statuses for the current user
         /// </summary>
         /// <returns></returns>
-        public async Task UpdateArticleStatuses()
+        private async Task UpdateArticleStatuses()
         {
-            // If the user is'nt logged in
-            if (IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 4) return;
+                // If the user is'nt logged in
+                if (IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 4) return;
 
-            // Get all loan ID's from the current user
-            var CurrentUserLoans = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(
-                                          IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber)).Select(a => a.articleID).ToList();
+                // Get all loan ID's from the current user
+                var CurrentUserLoans = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(
+                                              IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber)).Select(a => a.articleID).ToList();
 
-            // Get all reservations of the user
-            var CurrentUserReservations = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserReservations(
-                IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber)).Select(a => a.articleID).ToList();
+                // Get all reservations of the user
+                var CurrentUserReservations = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserReservations(
+                    IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber)).Select(a => a.articleID).ToList();
 
-            // Go through all articles
-            for (int i = 0; i < CurrentList.Count(); i++)
-            {
-                // If the user currently has this article loaned or reserved
-                if (CurrentUserLoans.ToList().Contains((CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].articleID) ||
-                    CurrentUserReservations.ToList().Contains((CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].articleID))
-                    // Hide the reserve button
-                    (CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].IsLoanedByCurrentUser = true;
+                // Go through all articles
+                for (int i = 0; CurrentList != null && i < CurrentList.Count(); i++)
+                {
+                    // If the user currently has this article loaned or reserved
+                    if (CurrentUserLoans.ToList().Contains((CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].articleID) ||
+                        CurrentUserReservations.ToList().Contains((CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].articleID))
+                        // Hide the reserve button
+                        (CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].IsLoanedByCurrentUser = true;
 
 
-                // Else
-                else
-                    // Show either the Loan or the Reserve button
-                    (CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].IsLoanedByCurrentUser = false;
-            }
+                    // Else
+                    else
+                        // Show either the Loan or the Reserve button
+                        (CurrentList as IEnumerable<ArticleViewModel>).ToList()[i].IsLoanedByCurrentUser = false;
+                }
+        }
+
+        public async void InitializeUpdateArticleStatuses()
+        {
+            await IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
         }
 
         /// <summary>
@@ -634,41 +643,47 @@ namespace Library.Core
         /// <returns></returns>
         private async Task ReturnArticleCommand(object itemToReturn)
         {
-            //Checks to se if the result is true
-            if (await IoC.CreateInstance<ApplicationViewModel>().rep.ReturnArticle((itemToReturn as ArticleViewModel).articleID))
+
+            if (CurrentUserLoans.Contains(itemToReturn))
             {
-                //If true, item gets returned to the library and success confirmation pops up
-                IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Success);
+                //Checks to se if the result is true
+                if (await IoC.CreateInstance<ApplicationViewModel>().rep.ReturnArticle((itemToReturn as ArticleViewModel).articleID))
+                {
+                    //If true, item gets returned to the library and success confirmation pops up
+                    IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Success);
 
-                await Task.Delay(700);
+                    await Task.Delay(700);
 
-                //Close popup
-                IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
+                    //Close popup
+                    IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
 
-                //Reset the loans to ready it for next popup
-                CurrentUserLoans = null;
-
-                //Load the items to refresh the userlist
-                LoadItems();
+                    //Reset the loans to ready it for next popup
+                    CurrentUserLoans = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(SelectedUser.personalNumber))
+                        .ToModelDataToViewModel<IArticle, ArticleViewModel>().FillPlaceHolders(3);
+                }
             }
 
-            //Checks to se if the result is true
-            else if (await IoC.CreateInstance<ApplicationViewModel>().rep.DeleteReservation((itemToReturn as ArticleViewModel).articleID, SelectedUser.personalNumber))
+            else if (CurrentUserReservations.Contains(itemToReturn))
             {
-                //If true, item gets removed from the reservationslist and success confirmation pops up
-                IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.Success);
+                //Checks to se if the result is true
+                if (await IoC.CreateInstance<ApplicationViewModel>().rep.DeleteReservation((itemToReturn as ArticleViewModel).articleID, SelectedUser.personalNumber))
+                {
+                    //If true, item gets removed from the reservationslist and success confirmation pops up
+                    IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Success);
 
-                await Task.Delay(700);
+                    await Task.Delay(700);
 
-                //Close popup
-                IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
+                    //Close popup
+                    IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
 
-                //Reset the loans to ready it for next popup
-                CurrentUserReservations = null;
-
-                //Load the items to refresh the userlist
-                LoadItems();
+                    //Reset the loans to ready it for next popup
+                    CurrentUserReservations = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserReservations(SelectedUser.personalNumber))
+                        .ToModelDataToViewModel<IArticle, ArticleViewModel>().FillPlaceHolders(3);
+                }
             }
+
+            else
+                return;
         }
 
         /// <summary>
