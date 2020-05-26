@@ -25,9 +25,9 @@ namespace Library
         public static MainContentUserControlViewModel MainContentUserControlViewModel => IoC.CreateInstance<MainContentUserControlViewModel>();
 
         /// <summary>
-        /// The <see cref="SideMenuControlViewModel"/>
+        /// The <see cref="TableControlViewModel"/>
         /// </summary>
-        public static SideMenuControlViewModel SideMenuControlViewModel => IoC.CreateInstance<SideMenuControlViewModel>();
+        public static TableControlViewModel TableControlViewModel => IoC.CreateInstance<TableControlViewModel>();
 
     }
 }
