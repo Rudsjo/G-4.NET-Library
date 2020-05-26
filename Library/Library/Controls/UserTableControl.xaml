@@ -1,0 +1,250 @@
+﻿<UserControl x:Class="Library.UserTableControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <HeaderedItemsControl ItemsSource="{Binding CurrentList}" >
+            <HeaderedItemsControl.Template>
+                <ControlTemplate TargetType="HeaderedItemsControl">
+
+                    <Border>
+
+                        <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+
+                            <StackPanel>
+
+                                <ContentPresenter ContentSource="Header" />
+
+                                <ItemsPresenter />
+
+                            </StackPanel>
+                            
+                        </ScrollViewer>
+
+                    </Border>
+                    
+                </ControlTemplate>
+            </HeaderedItemsControl.Template>
+            <HeaderedItemsControl.HeaderTemplate>
+                <DataTemplate>
+                        <Border Background="#FFFFFF">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="9"
+                                              ShadowDepth="1"
+                                              Opacity="0.2"
+                                />
+          
+                        </Border.Effect>
+
+                        <Grid Height="50">
+
+                            <Grid.ColumnDefinitions>
+
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+
+
+                            <!-- First button -->
+                            <local:ButtonWithIcon Grid.Column="0"
+                                                  Content="{Binding DataContext.TableHeaderTexts[0], 
+                                                            RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                                  IconContent="&#xf0dd;"
+                                                  Style="{StaticResource TableHeaderButton}"
+                                                  
+                                                  Background="{Binding DataContext.TableToSort, 
+                                                               RelativeSource={RelativeSource AncestorType=HeaderedItemsControl},
+                                                               Converter={local:StateToStyleConverter},
+                                                               ConverterParameter=PNumber}"
+                                                                                                    
+                                                  Command="{Binding DataContext.Sort, 
+                                                            RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                                  
+                                                  CommandParameter="PNumber"
+                                                  
+                                                  />
+
+                            <!-- Second button -->
+                            <local:ButtonWithIcon Grid.Column="1"
+                                                  Content="{Binding DataContext.TableHeaderTexts[1], 
+                                                            RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                                  IconContent="&#xf0dd;"
+                                                  Style="{StaticResource TableHeaderButton}"
+                                                  Background="{Binding DataContext.TableToSort, 
+                                                               RelativeSource={RelativeSource AncestorType=HeaderedItemsControl},
+                                                               Converter={local:StateToStyleConverter},
+                                                               ConverterParameter=FName}"
+                                                                                                    
+                                                  Command="{Binding DataContext.Sort, 
+                                                            RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                                  
+                                                  CommandParameter="FName"   
+                                                  />
+
+                            <!-- Third button -->
+                            <local:ButtonWithIcon Grid.Column="2"
+                                                  Content="{Binding DataContext.TableHeaderTexts[2], 
+                                                            RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                                  IconContent="&#xf0dd;"
+                                                  Style="{StaticResource TableHeaderButton}"
+                                                 
+                                                  Background="{Binding DataContext.TableToSort, 
+                                                               RelativeSource={RelativeSource AncestorType=HeaderedItemsControl},
+                                                               Converter={local:StateToStyleConverter},
+                                                               ConverterParameter=LName}"
+                                                                                                    
+                                                  Command="{Binding DataContext.Sort, 
+                                                            RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                                  
+                                                  CommandParameter="LName" 
+                                                  
+                                                  />
+
+                            <!-- Fourth button -->
+                            <local:ButtonWithIcon Grid.Column="3"
+                                                  Content="{Binding DataContext.TableHeaderTexts[3], 
+                                                            RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                                  IconContent="&#xf0dd;"
+                                                  Style="{StaticResource TableHeaderButton}"
+                                                 
+                                                  Background="{Binding DataContext.TableToSort, 
+                                                               RelativeSource={RelativeSource AncestorType=HeaderedItemsControl},
+                                                               Converter={local:StateToStyleConverter},
+                                                               ConverterParameter=LArticles}"
+                                                                                                    
+                                                  Command="{Binding DataContext.Sort, 
+                                                            RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                                  
+                                                  CommandParameter="LArticles" 
+                                                                                                   
+                                                  />
+
+                            <!-- Fifth button -->
+                            <local:ButtonWithIcon Grid.Column="4"
+                                                  Content="{Binding DataContext.TableHeaderTexts[4], 
+                                                            RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                                  IconContent="&#xf0dd;"
+                                                  Style="{StaticResource TableHeaderButton}"
+                                                 
+                                                  Background="{Binding DataContext.TableToSort, 
+                                                               RelativeSource={RelativeSource AncestorType=HeaderedItemsControl},
+                                                               Converter={local:StateToStyleConverter},
+                                                               ConverterParameter=RArticles}"
+                                                                                                    
+                                                  Command="{Binding DataContext.Sort, 
+                                                            RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                                  
+                                                  CommandParameter="RArticles" 
+                                                  
+                                                  />
+                            
+                            
+
+                        </Grid>
+                        
+                    </Border>
+                </DataTemplate>
+            </HeaderedItemsControl.HeaderTemplate>
+
+            <HeaderedItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="{StaticResource CustomLightGreyBrush}"
+                            BorderThickness="0 0 0 1"
+                            Padding="0 20"
+                            Background="White"
+                            >
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Column 0 -->
+                            <ScrollViewer Grid.Column="0" Width="90" 
+                                          HorizontalScrollBarVisibility="Auto">
+                                <TextBlock
+                                       Text="{Binding personalNumber}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                       Style="{StaticResource TableItemText}"
+                                       />
+                            </ScrollViewer>
+
+                            <!-- Column 1 -->
+                            <ScrollViewer Grid.Column="1" Width="90" 
+                                          HorizontalScrollBarVisibility="Auto">
+                                <TextBlock
+                                       Text="{Binding firstName}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Style="{StaticResource TableItemText}"
+                                       />
+
+                            </ScrollViewer>
+
+                            <!-- Column 2 -->
+                            <ScrollViewer Grid.Column="2" Width="90" 
+                                          HorizontalScrollBarVisibility="Auto">
+                                <TextBlock 
+                                       Text="{Binding lastName}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Style="{StaticResource TableItemText}"
+                                       />
+                            </ScrollViewer>
+
+                            <!-- Column 3 -->
+                            <ScrollViewer Grid.Column="3" Width="90" 
+                                          HorizontalScrollBarVisibility="Auto">
+                                <TextBlock
+                                       Text="{Binding loanedBooks}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Style="{StaticResource TableItemText}"
+                                       />
+                            </ScrollViewer>
+
+                            <!-- Column 4 -->
+                            <ScrollViewer Grid.Column="4" Width="90" 
+                                          HorizontalScrollBarVisibility="Auto">
+                                <TextBlock Grid.Column="4"
+                                       Text="{Binding reservedBooks}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Style="{StaticResource TableItemText}"
+                                       />
+                            </ScrollViewer>
+
+                            <!-- Column 5 -->
+                            <Button Grid.Column="5"
+                                       Content="&#xf05a;"
+                                       FontSize="16"
+                                       FontFamily="{StaticResource FontAwesomeSolid}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Right"
+                                       Style="{StaticResource IconButton}"
+                                       Visibility="{Binding IsPlaceholder, Converter={local:BooleanToVisibilityConverter},
+                                                    ConverterParameter=Placeholder}"
+                                       Command="{Binding DataContext.Info, 
+                                                 RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}" 
+                                       CommandParameter="{Binding}"                                       
+                                       />
+
+                        </Grid>
+                    </Border>
+                    
+                </DataTemplate>
+            </HeaderedItemsControl.ItemTemplate>
+        </HeaderedItemsControl>
+        
+    </Grid>
+</UserControl>
