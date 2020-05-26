@@ -12,7 +12,7 @@ using System.Xml;
 namespace Library.Core
 {
     public class MainContentUserControlViewModel : BaseViewModel
-    {
+    {   
 
         #region Public Properties
 
@@ -243,6 +243,54 @@ namespace Library.Core
 
         #endregion
 
+        #region Properties for return multiple articles
+        /// <summary>
+        /// Command that lets the user undo an add
+        /// </summary>
+        public ICommand RemoveFromList { get; set; }
+
+        /// <summary>
+        /// Command to add an article to the list
+        /// </summary>
+        public ICommand AddToList { get; set; }
+
+        /// <summary>
+        /// Extra command to close the Returnarticle popup
+        /// </summary>
+        public ICommand Close { get; set; }
+
+        /// <summary>
+        /// Command to run the return-function that returns all books to the library
+        /// </summary>
+        public ICommand Return { get; set; }
+
+        /// <summary>
+        /// Command to open the popup for return article
+        /// </summary>
+        public ICommand OpenReturn { get; set; }
+
+        /// <summary>
+        /// The temporary list that holds all items to be returned
+        /// </summary>
+        public ObservableCollection<ArticleViewModel> ListOfArticlesToReturn { get; set; }
+
+        /// <summary>
+        /// A specified article to return
+        /// </summary>
+        public ArticleViewModel ArticleToReturn { get; set; }
+
+        /// <summary>
+        /// Input to find the specified article in the database and display it with name and id
+        /// </summary>
+        public string ArticleID { get; set; }
+
+        /// <summary>
+        /// Bool to show errormessage if the article could not be added. message - "something went wrong"
+        /// </summary>
+        public bool ArticleDoesNotExists { get; set; }
+
+        #endregion
+
         #endregion
 
 
@@ -263,9 +311,20 @@ namespace Library.Core
             ExitNotification = new RelayCommand(async () => await ExitNotificationCommand());
 
             ShowRemovedArticles = new RelayCommand(async () => await ShowRemovedArticlesCommand());
+
+            #region Added for LoansPopup
+            //Added
+            OpenReturn = new RelayCommand(async () => await OpenReturnLoansCommand());
+            //Close is just a simple popup close command
+            Close = new RelayCommand(async () => await ClosePopup());
+            Return = new RelayCommand(async () => await ReturnLoansCommand());
+            AddToList = new RelayCommand(async () => await AddToListCommand());
+            RemoveFromList = new RelayParameterizedCommand(async (parameter) => await RemoveFromListCommand(parameter));
+            ListOfArticlesToReturn = new ObservableCollection<ArticleViewModel>();
+            #endregion
         }
 
-        #endregion
+        #endregion   
 
         #region Private Methods
 
@@ -501,6 +560,112 @@ namespace Library.Core
             }
         }
 
+        #region Added for return loans
+        /// <summary>
+        /// MethodCommand that opens the popup for return loans
+        /// </summary>
+        private async Task OpenReturnLoansCommand()
+        {
+            //Open popup
+            IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.ReturnLoans);
+            await Task.Delay(1);
+        }
+
+        /// <summary>
+        /// MethodCommand for closing the return loans popup
+        /// </summary>
+        private async Task ClosePopup()
+        {
+            //Close the popup
+            IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
+
+            //Resetting the bool if popup closes
+            ArticleDoesNotExists = false;
+            await Task.Delay(1);
+        }
+
+
+        /// <summary>
+        /// MethodCommand for returning the loans to the library.
+        /// </summary>
+        /// <returns></returns>
+        private async Task ReturnLoansCommand()
+        {
+            //Goes through the list of articles add returns them to the library
+            foreach (var item in ListOfArticlesToReturn)
+            {
+                //Returning specified article
+                await IoC.CreateInstance<ApplicationViewModel>().rep.ReturnArticle(item.articleID);
+            }
+
+            //Open subpopup for successful return
+            IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Success);
+
+            await Task.Delay(700);
+
+            //Closing subpopup
+            IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
+
+            //Resetting the properties for next user or session
+            ListOfArticlesToReturn = null;
+            ArticleToReturn = null;
+            ArticleID = null;
+
+            //TODO! måste ev. lägga in så listan updateras. nu uppdaterar den bara om man byter page
+        }
+
+        /// <summary>
+        /// MethodCommand for finding and adding an article to the returnlist
+        /// </summary>
+        /// <returns></returns>
+        private async Task AddToListCommand()
+        {
+            //Try to parse the input from user
+            if (int.TryParse(ArticleID, out int result))
+            {
+                //Transfer the result to a temporary variable to keep it safe from multiple key-presses that runs faster than the program can handle.
+                int temp = result;
+
+                //Finding an article in the database with ArticleID-prop, and setting the ArticleToReturn to that same object for displaying correct items in the list
+                ArticleToReturn = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetArticleByID(temp)).ToModel<IArticle, ArticleViewModel>();
+
+
+                //Check to se so that the article is not aldreay added, that the article is not null and that the status of the object is 2 ( loaned ) 
+                if (!ListOfArticlesToReturn.Any(x => x.articleID == temp) && ArticleToReturn != null && ArticleToReturn.statusID == 2)
+                {
+                    //Adds the article to the list
+                    ListOfArticlesToReturn.Add(ArticleToReturn);
+
+                    //Setting bool to false and removing warningtext
+                    ArticleDoesNotExists = false;
+                }
+
+                //Did not add to the list and opens a warningtext
+                else ArticleDoesNotExists = true;
+            }
+
+            //If it fails from start, open up warningtext
+            else ArticleDoesNotExists = true;
+
+            //Resetting the properties for next article
+            ArticleToReturn = null;
+            ArticleID = null;
+
+        }
+
+        /// <summary>
+        /// MethodCommand for removing an item from the list
+        /// </summary>
+        /// <param name="SelectedItem"></param>
+        /// <returns></returns>
+        private async Task RemoveFromListCommand(object SelectedItem)
+        {
+            //Removes the article from the list
+            ListOfArticlesToReturn.Remove((SelectedItem as ArticleViewModel));
+            await Task.Delay(1);
+        }
+
+        #endregion
 
         #endregion
 

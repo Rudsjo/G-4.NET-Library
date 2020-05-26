@@ -92,6 +92,18 @@
                                                   Converter={local:BooleanToVisibilityConverter},
                                                   ConverterParameter=RemovedArticles}"
                                           />
+
+                <local:ButtonWithIcon Content="Returnera böcker"
+                                      IconContent="&#xf2ea;"
+                                      Style="{StaticResource TableActionButton}"                                      
+                                      Command="{Binding OpenReturn}"
+                                
+                                      Visibility="{Binding ApplicationViewModel.IsAdmin,
+                                      Source={x:Static local:ViewModelLocator.Instance},
+                                      Converter={local:BooleanToVisibilityConverter},
+                                      ConverterParameter=ReturnLoans}"
+                                      />
+                
             </StackPanel>
         </Grid>
 

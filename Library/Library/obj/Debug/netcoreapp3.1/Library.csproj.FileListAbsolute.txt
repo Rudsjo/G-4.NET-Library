@@ -1657,3 +1657,19 @@ C:\Users\stimp\Desktop\G-4.NET-Library-2.0\Library\Library\obj\Debug\netcoreapp3
 C:\Users\stimp\Desktop\G-4.NET-Library-2.0\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
 C:\Users\stimp\Desktop\G-4.NET-Library-2.0\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
 C:\Users\stimp\Desktop\G-4.NET-Library-2.0\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleFilterControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\MyProfileControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\NotificationControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserEditControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\SubPopUpControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Pages\ReportPage.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ArticleFilterControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\MyProfileControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\NotificationControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\UserEditControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\SubPopUpControl.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Pages\ReportPage.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\CheckBoxes.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Styling\Styles\ComboBoxes.baml
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReturnLoansControl.g.cs
+C:\Users\pette\Desktop\Newton\Ämnesövergripande projekt inom systemutveckling\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReturnLoansControl.baml

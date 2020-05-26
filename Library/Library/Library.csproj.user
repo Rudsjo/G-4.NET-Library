@@ -46,6 +46,9 @@
     <Compile Update="Controls\PopUp Controls\NotificationControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\PopUp Controls\ReturnLoansControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\PopUp Controls\SuccessfulControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,6 +97,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\PopUp Controls\NotificationControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ReturnLoansControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\PopUp Controls\UserEditControl.xaml">

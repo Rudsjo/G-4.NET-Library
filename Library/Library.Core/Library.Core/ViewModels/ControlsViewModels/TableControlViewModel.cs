@@ -99,7 +99,7 @@ namespace Library.Core
             set
             {
                 _selectedUser = value;
-                GetUserInfo();
+                GetUserInfo();                
             }
         }
 

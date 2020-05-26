@@ -58,6 +58,9 @@ namespace Library
                 case PopUpContents.MyProfile:
                     return new MyProfileControl();
 
+                case PopUpContents.ReturnLoans:
+                    return new ReturnLoansControl();
+
                 default:
                     return null;
             }

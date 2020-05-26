@@ -50,6 +50,13 @@
         abstract Task<IEnumerable<Article>> GetArticlesByStatus(int _status);
 
         /// <summary>
+        /// Gets an article based on which ID is provided
+        /// </summary>
+        /// <param name="_articleID"></param>
+        /// <returns>An article-object with this ID</returns>
+        abstract Task<Article> GetArticleByID(int _articleID);
+
+        /// <summary>
         /// Gets the user by their identifier.
         /// </summary>
         /// <param name="_personalNumber">The personalnumber.</param>

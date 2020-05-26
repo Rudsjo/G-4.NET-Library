@@ -194,6 +194,24 @@
         }
 
         /// <summary>
+        /// <see cref="ILibraryRepository.GetArticleByID(int)"/>
+        /// </summary>
+        /// <param name="_articleID">The article ID</param>
+        /// <returns>An article that matches the article ID sent in</returns>
+        public async Task<Article> GetArticleByID(int _articleID)
+        {
+            //Open a connection to the database
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                //Get the result from the database
+                var Result = await Connection.QueryAsync<Article>("GetArticleByID", new { articleID = _articleID }, commandType: CommandType.StoredProcedure);
+
+                //Check if the item exists and returns the item
+                return (Result.Count() == 0) ? null : Result.First();
+            }
+        }
+
+        /// <summary>
         /// <see cref="ILibraryRepository.GetUserByID(string)"/>
         /// </summary>
         /// <param name="_personalNumber">The personalnumber.</param>

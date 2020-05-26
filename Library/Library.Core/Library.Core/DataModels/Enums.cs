@@ -132,6 +132,11 @@
         /// </summary>
         MyProfile = 14,
 
+        /// <summary>
+        /// Popup for returning multiple loans
+        /// </summary>
+        ReturnLoans = 15,
+
     }
 
     /// <summary>

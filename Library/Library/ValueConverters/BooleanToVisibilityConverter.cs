@@ -39,7 +39,11 @@ namespace Library
                 return ((int)value == 1 || (int)value == 2) ? 
                     IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 1 ? Visibility.Visible : Visibility.Hidden : Visibility.Visible;
             }
-                
+
+            else if ((string)parameter == "ReturnLoans")
+                return (bool)value ?
+                    IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage && (IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 1 || IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID == 2) ?
+                    Visibility.Collapsed : Visibility.Visible : Visibility.Collapsed;
 
             //Shows the loan button if article is available
             else if ((string)parameter == "LoanArticle")
