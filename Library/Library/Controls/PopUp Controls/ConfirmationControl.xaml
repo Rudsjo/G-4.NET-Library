@@ -38,7 +38,8 @@
 
                 <ComboBox Margin="20"  
                       Height="60"
-                      ItemsSource="{Binding Reasons}"
+                      ItemsSource="{Binding ApplicationViewModel.CurrentReasons, 
+                                    Source={x:Static local:ViewModelLocator.Instance}}"
                       BorderBrush="{StaticResource CustomLightGreyBrush}"
                       SelectedItem="{Binding ChosenReason, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                       Text="{Binding ChosenReason, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
@@ -51,7 +52,7 @@
 
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding}" Background="Transparent" FontFamily="{StaticResource MontserratRegular}" Margin="0"/>
+                            <TextBlock Text="{Binding reason}" Background="Transparent" FontFamily="{StaticResource MontserratRegular}" Margin="0"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ComboBox>

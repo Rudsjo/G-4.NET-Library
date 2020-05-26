@@ -1,5 +1,6 @@
 ﻿using Library.Core;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace Library
 {
@@ -22,7 +23,10 @@ namespace Library
             // Set start page
             IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.MainPage);
 
+            // Fill the initla list of articles
             IoC.CreateInstance<BookPageViewModel>().FillSearchableArticleList();
+
+            IoC.CreateInstance<ApplicationViewModel>().FillReasonsList();
 
             // Create a new instance of the main window
             Current.MainWindow = new MainWindow();

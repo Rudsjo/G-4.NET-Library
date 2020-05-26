@@ -45,10 +45,10 @@ namespace Library.Core
             ShowAllBooks = new RelayCommand(ShowAllBooksCommand);
 
 
-            FirstSearch = new RelayCommand(test);
+            FirstSearch = new RelayCommand(FirstSearchCommand);
         }
 
-        void test()
+        void FirstSearchCommand()
         {
             // Changing the page
             IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.BookPage);

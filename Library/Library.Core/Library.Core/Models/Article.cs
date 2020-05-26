@@ -75,5 +75,10 @@
         /// </summary>
         public string edition { get; set; }
 
+        /// <summary>
+        /// The reason for an eventual removal
+        /// </summary>
+        public int reasonID { get; set; }
+
     }
 }

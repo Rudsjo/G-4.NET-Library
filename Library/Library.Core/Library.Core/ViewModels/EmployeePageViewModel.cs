@@ -36,6 +36,9 @@ namespace Library.Core
 
             // Setting statuses
             IoC.CreateInstance<TableControlViewModel>().TableToSort = SortableTables.None;
+
+            IoC.CreateInstance<ApplicationViewModel>().CurrentReasons = new ObservableCollection<Reason>(
+                IoC.CreateInstance<ApplicationViewModel>().Reasons.Where(x => x.reasonType == ReasonTypes.UserReasons).ToList().ToObservableCollection());
         }
 
         #endregion

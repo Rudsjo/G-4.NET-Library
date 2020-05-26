@@ -127,12 +127,12 @@
         /// </summary>
         /// <param name="_articleID"></param>
         /// <returns></returns>
-        public async Task<bool> DeleteArticle(int _articleID)
+        public async Task<bool> DeleteArticle(int _articleID, int _reasonID)
         {
             // Open a new connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
                 // return the result
-                return ( await Connection.QueryAsync<int>("DeleteArticle", new { articleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0;
+                return ( await Connection.QueryAsync<int>("DeleteArticle", new { articleID = _articleID, reasonID = _reasonID }, commandType: CommandType.StoredProcedure)).First() != 0;
         }
 
         /// <summary>
@@ -282,6 +282,42 @@
             }
         }
 
+        /// <summary>
+        /// Gets all removed articles
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Article>> GetRemovedArticles()
+        {
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                return await Connection.QueryAsync<Article>("GetRemovedArticles", commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        /// <summary>
+        /// Get all article reason
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Reason>> GetArticleReasons()
+        {
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                return (await Connection.QueryAsync<Reason>("GetArticleReasons", commandType: CommandType.StoredProcedure)).Select(c => { c.reasonType = ReasonTypes.ArticleReasons; return c; });
+            }
+        }
+
+        /// <summary>
+        /// Get all user reasons
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Reason>> GetUserReasons()
+        {
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                return (await Connection.QueryAsync<Reason>("GetUserReasons", commandType: CommandType.StoredProcedure)).Select(c => { c.reasonType = ReasonTypes.UserReasons; return c; });
+            }
+        }
+
         #endregion
 
         #region 'Check' queries
@@ -326,13 +362,13 @@
         /// <param name="_personalNumber">PersonalNumber of the user</param>
         /// <param name="_reason">The reason for blocking this user</param>
         /// <returns></returns>
-        public async Task<bool> BlockUser(string _personalNumber, string _reason)
+        public async Task<bool> BlockUser(string _personalNumber, int _reasonID)
         {
             // Open a connectin to the database
             using (IDbConnection Connection = CreateSQLConnection())
             {
                 // Return the result
-                return (await Connection.QueryAsync<int>("BlockUser", new { PersonalNumber = _personalNumber, Reason = _reason }, commandType: CommandType.StoredProcedure)).First() != 0;
+                return (await Connection.QueryAsync<int>("BlockUser", new { PersonalNumber = _personalNumber, Reason = _reasonID }, commandType: CommandType.StoredProcedure)).First() != 0;
             }
         }
 

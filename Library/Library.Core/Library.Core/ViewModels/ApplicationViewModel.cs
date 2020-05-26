@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Library.Core
 {
@@ -22,11 +23,15 @@ namespace Library.Core
 
         #region Public Properties
 
+        public ObservableCollection<Reason> Reasons { get; set; }
+
+        public ObservableCollection<Reason> CurrentReasons { get; set; }
+
         /// <summary>
         /// Flag to indicate if a skeleton control is visible
         /// </summary>
         public bool IsSkeletonVisible { get; set; }
-
+  
         /// <summary>
         /// The repository of the application
         /// </summary>
@@ -115,6 +120,18 @@ namespace Library.Core
 
         #region Public Methods
 
+        public async void FillReasonsList()
+        {
+            Reasons = new ObservableCollection<Reason>();
+
+            foreach (var reason in await rep.GetArticleReasons())
+                Reasons.Add(reason);
+
+            foreach (var reason in await rep.GetUserReasons())
+                Reasons.Add(reason);
+        } 
+
+
         /// <summary>
         /// Resets the current user
         /// </summary>
@@ -135,6 +152,7 @@ namespace Library.Core
                 // Showing the pop up window
                 PopUpVisible = true;
             }
+
 
             // Set the current page
             CurrentPage = page;

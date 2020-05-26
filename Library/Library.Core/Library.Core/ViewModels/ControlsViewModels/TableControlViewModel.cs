@@ -211,6 +211,9 @@ namespace Library.Core
 
         public async void InitializeUpdateArticleStatuses()
         {
+            if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.MainPage)
+                return;
+
             await IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
         }
 

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -39,14 +42,9 @@ namespace Library.Core
         public string UserToBlock { get; set; }
 
         /// <summary>
-        /// Predecided reasons for a blockage of user, or deletion of an article
-        /// </summary>
-        public List<string> Reasons { get; set; }
-
-        /// <summary>
         /// The reason that gets picked
         /// </summary>
-        public string ChosenReason { get; set; }
+        public Reason ChosenReason { get; set; }
 
         /// <summary>
         /// Show reasons depending on which command is used
@@ -64,7 +62,6 @@ namespace Library.Core
             // Setting command
             Confirm = new RelayCommand(async () => await ConfirmCommand());
             Abort = new RelayCommand(async () => await AbortCommand());
-            SetReasons();
         }
 
         #endregion
@@ -87,7 +84,7 @@ namespace Library.Core
                 case ApplicationPages.BookPage:
                     {
                         // Sets the status to 3 and becomes unavaliable
-                        await IoC.CreateInstance<ApplicationViewModel>().rep.DeleteArticle(ArticleToDelete);
+                        await IoC.CreateInstance<ApplicationViewModel>().rep.DeleteArticle(ArticleToDelete, ChosenReason.reasonID);
 
                         IoC.CreateInstance<TableControlViewModel>().LoadItems();
 
@@ -102,7 +99,7 @@ namespace Library.Core
                         if (ChosenReason != null && UserToBlock != null)
                         {
                             //Block user with a reason
-                            await IoC.CreateInstance<ApplicationViewModel>().rep.BlockUser(UserToBlock, ChosenReason);
+                            await IoC.CreateInstance<ApplicationViewModel>().rep.BlockUser(UserToBlock, ChosenReason.reasonID);
 
                             //Sets the IsBlocked to true
                             (IoC.CreateInstance<TableControlViewModel>().SelectedUser as UserViewModel).IsBlocked = true;
@@ -170,35 +167,6 @@ namespace Library.Core
             ShowReasons = true;
 
             await Task.Delay(1);
-        }
-
-        /// <summary>
-        /// Method to set the standard reasons for block or removal
-        /// </summary>
-        private void SetReasons()
-        {
-            //Switch on current page
-            switch (IoC.CreateInstance<ApplicationViewModel>().CurrentPage)
-            {
-                //Bookpage
-                case ApplicationPages.BookPage:
-
-                    //Filling the list of reasons for removing article
-                    Reasons = new List<string>() { "Trasig", "Försvunnen", "Gammal upplaga", "Annat" };
-
-                    break;
-
-                    //EmployeePage
-                case ApplicationPages.EmployeePage:
-
-                    //Filling the list of reasons for blocking a user
-                    Reasons = new List<string>() { "Stöld", "Många försvunna böcker", "Många försenade böcker", "Annat" };
-
-                    break;
-
-                default:
-                    break;
-            }
         }
         #endregion
     }

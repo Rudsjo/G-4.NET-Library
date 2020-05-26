@@ -27,6 +27,9 @@ namespace Library.Core
         /// </summary>
         public BookPageViewModel()
         {
+            if (String.IsNullOrEmpty(IoC.CreateInstance<MainPageViewModel>().FirstSearchText))
+                IoC.CreateInstance<TableControlViewModel>().LoadItems();
+
             // Setting the dynamic texts
             IoC.CreateInstance<MainContentUserControlViewModel>().HeaderText = "Alla böcker";
             IoC.CreateInstance<MainContentUserControlViewModel>().AddButtonText = "Lägg till bok";
@@ -34,6 +37,10 @@ namespace Library.Core
 
             // Check for loans/reservations
             IoC.CreateInstance<ApplicationViewModel>().CurrentUser = IoC.CreateInstance<ApplicationViewModel>().CurrentUser;
+
+            if(IoC.CreateInstance<ApplicationViewModel>().Reasons != null)
+                IoC.CreateInstance<ApplicationViewModel>().CurrentReasons = new ObservableCollection<Reason>(
+                    IoC.CreateInstance<ApplicationViewModel>().Reasons.Where(x => x.reasonType == ReasonTypes.ArticleReasons).ToList().ToObservableCollection());
         }
 
         #endregion

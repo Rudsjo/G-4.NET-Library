@@ -79,6 +79,11 @@ namespace Library.Core
         /// </summary>
         public bool IsLoanedByCurrentUser { get; set; }
 
+        /// <summary>
+        /// Reason for an eventual removal
+        /// </summary>
+        public int reasonID { get; set; }
+
         #endregion
 
         #region Added Properties

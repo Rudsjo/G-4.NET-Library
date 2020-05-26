@@ -81,6 +81,26 @@
         /// <param name="_personalNumber">The user's personal number.</param>
         /// <returns></returns>
         abstract Task<IEnumerable<Article>> GetUserReservations(string _personalNumber);
+
+
+        /// <summary>
+        /// Gets all removed articles
+        /// </summary>
+        /// <returns></returns>
+        abstract Task<IEnumerable<Article>> GetRemovedArticles();
+
+        /// <summary>
+        /// Gets all reasons connected to articles
+        /// </summary>
+        /// <returns></returns>
+        abstract Task<IEnumerable<Reason>> GetArticleReasons();
+
+        /// <summary>
+        /// Gets all reasons connected to users
+        /// </summary>
+        /// <returns></returns>
+        abstract Task<IEnumerable<Reason>> GetUserReasons();
+
         #endregion
 
         #region 'Update' declerations
@@ -125,7 +145,7 @@
         /// </summary>
         /// <returns>True if article exists and could be deleted</returns>
         /// <param name="_articleID">The ID of the article to be deleted</param>
-        abstract Task<bool> DeleteArticle(int _articleID);
+        abstract Task<bool> DeleteArticle(int _articleID, int _reasonID);
 
         /// <summary>
         /// Removes an existing category from the system
@@ -150,7 +170,7 @@
         /// </summary>
         /// <returns>True if user exists and is blocked</returns>
         /// <param name="_userID">The ID of the user to check</param>
-        abstract Task<bool> IsUserBlocked(string _userID);
+        abstract Task<bool> IsUserBlocked(string _personalNumber);
 
         /// <summary>
         /// Checks if a specific article is reserved or not
@@ -186,7 +206,7 @@
         /// </summary>
         /// <returns>True if user exists in the systen and could be blocked</returns>
         /// <param name="_personalNumber">The ID of the user to be blocked</param>
-        abstract Task<bool> BlockUser(string _personalNumber, string _reason);
+        abstract Task<bool> BlockUser(string _personalNumber, int _reasonID);
 
         /// <summary>
         /// Unblocks a user

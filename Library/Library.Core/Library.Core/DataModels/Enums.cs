@@ -216,4 +216,10 @@
 
     }
 
+    public enum ReasonTypes
+    {
+        ArticleReasons = 0,
+        UserReasons = 1,
+    }
+
 }

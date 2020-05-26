@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -39,7 +41,7 @@ namespace Library.Core
         #region Private Methods
 
         /// <summary>
-        /// Command to log out a user
+        /// Command to change a page
         /// </summary>
         /// <returns></returns>
         private void ChangePageCommand(object pageToOpen)

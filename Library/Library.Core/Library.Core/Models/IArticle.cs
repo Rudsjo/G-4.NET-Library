@@ -15,5 +15,7 @@
         string title { get; set; }
 
         string edition { get; set; }
+
+        int reasonID { get; set; }
     }
 }
