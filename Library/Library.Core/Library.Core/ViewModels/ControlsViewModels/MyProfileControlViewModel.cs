@@ -42,8 +42,6 @@ namespace Library.Core
         /// </summary>
         public MyProfileControlViewModel()
         {
-            GetMyLoansAndReservations();
-
             // Setting commands
             Logout = new RelayCommand(LogoutCommand);
             Exit = new RelayCommand(() => IoC.CreateInstance<ApplicationViewModel>().ClosePopUp());
@@ -56,7 +54,7 @@ namespace Library.Core
         /// <summary>
         /// Filling <see cref="MyLoans"/> and <see cref="MyReservations"/>
         /// </summary>
-        private async void GetMyLoansAndReservations()
+        public async void GetMyLoansAndReservations()
         {
             MyLoans = new ObservableCollection<ArticleViewModel>((await
                 IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(

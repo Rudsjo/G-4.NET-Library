@@ -211,10 +211,19 @@ namespace Library.Core
 
         public async void InitializeUpdateArticleStatuses()
         {
-            if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.MainPage)
-                return;
+            //For safety reasons, Application can crasch because of async loading of lists
+            try
+            {
+                if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.MainPage)
+                    return;
 
-            await IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
+                await IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         /// <summary>

@@ -102,6 +102,8 @@ namespace Library.Core
 
                 //await IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
 
+                IoC.CreateInstance<MyProfileControlViewModel>().GetMyLoansAndReservations();
+
                 // Close the login popup control
                 IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
