@@ -41,7 +41,7 @@
                       ItemsSource="{Binding ApplicationViewModel.CurrentReasons, 
                                     Source={x:Static local:ViewModelLocator.Instance}}"
                       BorderBrush="{StaticResource CustomLightGreyBrush}"
-                      SelectedItem="{Binding ChosenReason, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                      SelectedItem="{Binding ChosenReason, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}"
                       Text="{Binding ChosenReason, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                       Tag="Anledning"
                       FontFamily="{StaticResource MontserratRegular}" 
@@ -52,7 +52,10 @@
 
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding reason}" Background="Transparent" FontFamily="{StaticResource MontserratRegular}" Margin="0"/>
+                            <TextBlock Text="{Binding reason}" 
+                                       Background="Transparent" 
+                                       FontFamily="{StaticResource MontserratRegular}" 
+                                       Margin="0"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ComboBox>

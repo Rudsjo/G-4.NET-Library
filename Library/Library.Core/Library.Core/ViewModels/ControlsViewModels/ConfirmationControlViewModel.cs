@@ -46,10 +46,6 @@ namespace Library.Core
         /// </summary>
         public Reason ChosenReason { get; set; }
 
-        /// <summary>
-        /// Show reasons depending on which command is used
-        /// </summary>
-        public bool ShowReasons { get; set; } = true;
         #endregion
 
         #region Constructor
@@ -74,9 +70,6 @@ namespace Library.Core
         /// <returns></returns>
         private async Task ConfirmCommand()
         {
-            if (ChosenReason == null)
-                return;
-
             // Check the current page
             switch (IoC.CreateInstance<ApplicationViewModel>().CurrentPage)
             {
@@ -88,13 +81,14 @@ namespace Library.Core
 
                         IoC.CreateInstance<TableControlViewModel>().LoadItems();
 
+                        //Close the subpopup
+                        IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
                         break;
                     }
 
                 // Employee page
                 case ApplicationPages.EmployeePage:
                     {
-
                         //Checks so that both needed parameters is not null, only then can a user be blocked
                         if (ChosenReason != null && UserToBlock != null)
                         {
@@ -105,19 +99,24 @@ namespace Library.Core
                             (IoC.CreateInstance<TableControlViewModel>().SelectedUser as UserViewModel).IsBlocked = true;
 
                             //Resetting values
-                            ChosenReason = null;
                             UserToBlock = null;
 
+                            //Close the subpopup
+                            IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
                             break;
                         }
                         //Check so that a user is selected and a reason is null, and then deletes a user
-                        else if (UserToDelete != null && ChosenReason == null)
+                        else if (UserToDelete != null && ChosenReason != null)
                         {
                             // Deletes the user
                             await IoC.CreateInstance<ApplicationViewModel>().rep.DeleteUser(UserToDelete);
 
                             //reset values
                             UserToDelete = null;
+
+                            IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
+                            IoC.CreateInstance<TableControlViewModel>().LoadItems();
+
                             break;
                         }
 
@@ -127,12 +126,6 @@ namespace Library.Core
                 default:
                     break;
             }
-
-            //Sets the showreasons to true, as that is the most used state
-            ShowReasons = true;
-
-            //Close the subpopup
-            IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
         }
 
         /// <summary>
@@ -162,9 +155,6 @@ namespace Library.Core
                 default:
                     break;
             }
-
-            //Sets the showreasons to true, as that is the most used state
-            ShowReasons = true;
 
             await Task.Delay(1);
         }

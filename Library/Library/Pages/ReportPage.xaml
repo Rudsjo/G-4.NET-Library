@@ -12,32 +12,90 @@
       d:DesignHeight="450" d:DesignWidth="1200"
       Title="ReportPage">
 
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <!-- This thing is sick! -->
-        <HeaderedItemsControl ItemsSource="{Binding    CurrentCSV}" Background="White"                              
+            <!-- Header text -->
+            <TextBlock Grid.Column="0"
+                       Style="{StaticResource MainHeaderText}"
+                       Text="Rapporter"
+                       HorizontalAlignment="Left"
+                       Margin="50 80 0 10"
+                       />
+
+            <!-- Buttons -->
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="1" HorizontalAlignment="Right"
+                        Margin="-200 80 50 10">
+
+                <!-- Download CSV -->
+                <local:ButtonWithIcon Content="Ladda ner CSV"
+                                      IconContent="&#xf019;"
+                                      Style="{StaticResource TableActionButton}"
+                                      Command="{Binding DownloadCSV}"
+                                      Margin="0 0 5 0"
+                                      />
+
+                <!-- Filter -->
+                <local:ButtonWithIcon Content="Filter"
+                                      IconContent="&#xf0b0;"
+                                      Style="{StaticResource TableActionButton}"
+                                      Background="{Binding MainContentUserControlViewModel.FilterColor,
+                                                   Source={x:Static local:ViewModelLocator.Instance},
+                                                   Converter={local:StateToStyleConverter}}"
+                                      Command="{Binding Filter}"
+                                      Margin="0 0 5 0"
+                                      />
+
+                <!-- Clear filter button -->
+                <Button Margin="-15 0 0 0"
+                        Content="&#xf00d;"
+                        Style="{StaticResource CloseIconButtonWithBorder}"
+                        Visibility="{Binding ShowClearFilter, Converter={local:BooleanToVisibilityConverter},
+                                     ConverterParameter=ErrorText, FallbackValue=false, UpdateSourceTrigger=PropertyChanged}"
+                        Command="{Binding ClearFilter}"
+                        />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="50 0 50 55">
+            <!-- This thing is sick! -->
+            <HeaderedItemsControl
+                              ItemsSource="{Binding    CurrentCSV}" Background="White"                              
                               HeaderTemplate="{Binding CurrentCSV, Converter={local:DynamicListToHeaderTemplateConverter}}"
                               ItemTemplate="{Binding   CurrentCSV, Converter={local:DynamicListToItemTemplateConverter}}">
-                   
-            <!-- ControlTemplate -->
-            <HeaderedItemsControl.Template>
-                <ControlTemplate TargetType="{x:Type HeaderedItemsControl}">
 
-                    <Border>
-                        <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
-                            <StackPanel>
-                                <ContentPresenter ContentSource="Header" />
-                                <ItemsPresenter />
-                            </StackPanel>
-                        </ScrollViewer>
-                    </Border>
-                    
-                </ControlTemplate>
-            </HeaderedItemsControl.Template>
+                <!-- ControlTemplate -->
+                <HeaderedItemsControl.Template>
+                    <ControlTemplate TargetType="{x:Type HeaderedItemsControl}">
 
-        </HeaderedItemsControl>
-        
+                        <Border>
+                            <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+                                <StackPanel>
+                                    <ContentPresenter ContentSource="Header" />
+                                    <ItemsPresenter />
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Border>
+
+                    </ControlTemplate>
+                </HeaderedItemsControl.Template>
+
+            </HeaderedItemsControl>
+
+        </Grid>
+
     </Grid>
-    
+
 </local:BasePage>

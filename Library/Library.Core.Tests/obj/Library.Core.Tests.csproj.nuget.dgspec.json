@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj": {}
+    "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj": {
+    "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj",
         "projectName": "Library.Core.Tests",
-        "projectPath": "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj",
-        "packagesPath": "C:\\Users\\pette\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core.Tests\\obj\\",
+        "projectPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core.Tests\\Library.Core.Tests.csproj",
+        "packagesPath": "C:\\Users\\joxca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core.Tests\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\pette\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\joxca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -31,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
-                "projectPath": "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
+              "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
+                "projectPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core\\Library.Core\\Library.Core.csproj"
               }
             }
           }
@@ -69,31 +65,33 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
+    "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core\\Library.Core\\Library.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+        "projectUniqueName": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
         "projectName": "Library.Core",
-        "projectPath": "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
-        "packagesPath": "C:\\Users\\pette\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pette\\Desktop\\Newton\\Ämnesövergripande projekt inom systemutveckling\\Library\\Library.Core\\Library.Core\\obj\\",
+        "projectPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+        "packagesPath": "C:\\Users\\joxca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joxca\\OneDrive\\Skrivbord\\PizzaPalatset_2.0\\G-4.NET-Library\\Library\\Library.Core\\Library.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\pette\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\joxca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -143,12 +141,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

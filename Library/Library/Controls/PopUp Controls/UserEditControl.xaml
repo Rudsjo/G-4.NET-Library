@@ -287,7 +287,7 @@
                         Grid.Row="6"
                         Grid.ColumnSpan="2"
                         BorderThickness="2" 
-                        Margin="25 20 25 10" 
+                        Margin="25 20 25 5" 
                         Height="4"
                         VerticalAlignment="Top"
                         BorderBrush="{StaticResource MediumLightGreyBrush}"
@@ -301,113 +301,70 @@
                 </Border>
 
 
-                <!--<local:ButtonWithIcon Grid.Row="6" Grid.Column="1" Grid.RowSpan="2"
-                        HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 20 40"
-                        Width="250" Height="60"
-                        Content="Blockera" 
-                        Style="{StaticResource BlueActionButton}"
-                        Command="{Binding Block}"
-                        Visibility="{Binding IsUserBlocked, Converter={local:BooleanToVisibilityConverter},
-                                                    ConverterParameter=UserNotBlocked,UpdateSourceTrigger=PropertyChanged}"
-                        />
+                <!-- Delete and block -->
+                <Grid Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--Delete button-->
+
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <local:ButtonWithIcon HorizontalAlignment="Center"                        
+                                Content="Radera användare"
+                                IconContent="&#xf2ed;"
+                                Style="{StaticResource TextButtonWithIconOnTop}"
+                                Command="{Binding Delete, UpdateSourceTrigger=PropertyChanged}"
+                                />
+
+                            <TextBlock Text="{Binding CantDeleteUser}" HorizontalAlignment="Center" Margin="-15 10 0 -25"
+                                       Style="{StaticResource WarningText}" TextAlignment="Center"
+                                       Visibility="{Binding UserHasLoansOrReservations,
+                                                    Converter={local:BooleanToVisibilityConverter},
+                                                    ConverterParameter=ErrorText}" />
+
+                        </StackPanel>
+                    
 
 
-                <local:ButtonWithIcon Grid.Row="6" Grid.Column="1" Grid.RowSpan="2"
-                        HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 20 40"
-                        Width="250" Height="60"
-                        Content="Avblockera" 
-                        Style="{StaticResource BlueActionButton}"
-                        Command="{Binding Unblock}"
-                        Visibility="{Binding IsUserBlocked, Converter={local:BooleanToVisibilityConverter},
-                                                    ConverterParameter=UserBlocked, UpdateSourceTrigger=PropertyChanged}"
-                        />-->
+                    <!--Block Button-->
+
+                    <Border Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            BorderThickness="0.5" 
+                            Padding="9"        
+                            Visibility="{Binding SelectedUser.IsBlocked, Converter={local:BooleanToVisibilityConverter},
+                                         ConverterParameter=UserNotBlocked, UpdateSourceTrigger=PropertyChanged}"
+                            >
+
+                        <local:ButtonWithIcon
+                            HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                            Content="Blockera användare" 
+                            IconContent="&#xf506;"
+                            Style="{StaticResource TextButtonWithIconOnTop}"
+                            Command="{Binding Block, UpdateSourceTrigger=PropertyChanged}"                    
+                            />
+                    </Border>
 
 
+                    <!--Unblock Button-->
 
+                    <Border Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            BorderThickness="0.5" 
+                            Padding="9"        
+                            Visibility="{Binding SelectedUser.IsBlocked, Converter={local:BooleanToVisibilityConverter},
+                                         ConverterParameter=UserBlocked, UpdateSourceTrigger=PropertyChanged}"
+                            >
 
-                <!--<local:ButtonWithIcon Grid.Row="6" Grid.Column="0" Grid.RowSpan="2"
-                        HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20 0 0 40"
-                        Width="250" Height="60"
-                        Content="Radera" 
-                        Style="{StaticResource BlueActionButton}"
-                        Command="{Binding Delete, UpdateSourceTrigger=PropertyChanged}"
-                        />-->
-
-                <!--Delete button-->
-
-                <Border Grid.Row="6" Grid.Column="0" Grid.RowSpan="2" Margin="20 0 0 30" 
-                        BorderThickness="0.5" 
-                        Padding="9"       
-                        >
-
-                    <local:ButtonWithIcon 
-                        HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                         
-                        Content="Radera användare"
-                        IconContent="&#xf2ed;"
-                        Style="{StaticResource TextButtonWithIconOnTop}"
-                        Command="{Binding Delete, UpdateSourceTrigger=PropertyChanged}"                    
-                        />
-                </Border>
-
-
-                <!--Block Button-->
-
-                <Border Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" Margin="20 0 0 30" 
-                        BorderThickness="0.5" 
-                        Padding="9"        
-                        Visibility="{Binding SelectedUser.IsBlocked, Converter={local:BooleanToVisibilityConverter},
-                                     ConverterParameter=UserNotBlocked, UpdateSourceTrigger=PropertyChanged}"
-                        >
-
-                    <local:ButtonWithIcon 
-                        HorizontalAlignment="Center" VerticalAlignment="Bottom" 
-                        Content="Blockera användare" 
-                        IconContent="&#xf506;"
-                        Style="{StaticResource TextButtonWithIconOnTop}"
-                        Command="{Binding Block, UpdateSourceTrigger=PropertyChanged}"                    
-                        />
-                </Border>
-
-
-                <!--Unblock Button-->
-
-                <Border Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" Margin="20 0 0 30" 
-                        BorderThickness="0.5" 
-                        Padding="9"        
-                        Visibility="{Binding SelectedUser.IsBlocked, Converter={local:BooleanToVisibilityConverter},
-                                     ConverterParameter=UserBlocked, UpdateSourceTrigger=PropertyChanged}"
-                        >
-
-                    <local:ButtonWithIcon 
-                        HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                        Content="Avblockera användare" 
-                        IconContent="&#xf007;"
-                        Style="{StaticResource TextButtonWithIconOnTop}"
-                        Command="{Binding Unblock, UpdateSourceTrigger=PropertyChanged}"                              
-                        />
-                </Border>
-
-
-                <!-- Reason for block -->
-                <!--
-                <ComboBox Grid.Row="7" Grid.Column="1"
-                          ItemsSource="{Binding BlockReason}"
-                          BorderBrush="{StaticResource CustomLightGreyBrush}"
-                          SelectedItem="{Binding ChosenReason, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                          Text="{Binding ChosenReason, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                          Margin="20 10" 
-                          Tag="Anledning"
-                          FontFamily="{StaticResource MontserratRegular}" 
-                          FontSize="{StaticResource FontSizeSmall}"
-                         >
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding}" Background="Transparent" FontFamily="{StaticResource MontserratRegular}" Margin="10" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ComboBox>-->
-
+                        <local:ButtonWithIcon 
+                            HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                            Content="Avblockera användare" 
+                            IconContent="&#xf007;"
+                            Style="{StaticResource TextButtonWithIconOnTop}"
+                            Command="{Binding Unblock, UpdateSourceTrigger=PropertyChanged}"                              
+                            />
+                    </Border>
+                </Grid>
 
             </Grid>
         </Grid>

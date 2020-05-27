@@ -122,7 +122,20 @@ namespace Library.Core
         /// List of articles that a user has loaned, used in the ReserveArticleCommand
         /// </summary>
         public IEnumerable<object> CurrentUserLoansList { get; set; }
+
+        /// <summary>
+        /// Flag to indicate if the user has any loans or reservations active
+        /// </summary>
+        public bool UserHasLoansOrReservations { get; set; } = false;
+
+        /// <summary>
+        /// The message to show if the user can't be deleted
+        /// </summary>
+        public string CantDeleteUser { get; set; } = $"Användaren har lån, reservationer\neller är blockerad";
+
         #endregion
+
+        
 
         #region Constructor
 
@@ -135,7 +148,7 @@ namespace Library.Core
             Sort   = new RelayParameterizedCommand(SortCommand);
             Delete = new RelayParameterizedCommand(async (parameter) => await DeleteCommand(parameter));
             Info   = new RelayParameterizedCommand(async (parameter) => await InfoCommand(parameter));
-            Exit   = new RelayCommand(async () => await ExitInfoCommand());
+            Exit   = new RelayCommand(ExitInfoCommand);
             Update = new RelayCommand(async () => await UpdateCommand());
 
             Return  = new RelayParameterizedCommand(async (parameter) => await ReturnArticleCommand(parameter));
@@ -344,11 +357,17 @@ namespace Library.Core
 
                 case ApplicationPages.EmployeePage:
                     {
-                        if (await CanDeleteUser((SelectedUser as UserViewModel).personalNumber))
+                        if (await CanDeleteUser((SelectedUser as IUser).personalNumber))
                         {
                             IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Confirmation);
                             IoC.CreateInstance<ConfirmationControlViewModel>().UserToDelete = (SelectedUser as IUser).personalNumber;
+                            UserHasLoansOrReservations = false;
                         }
+
+                        else
+                           UserHasLoansOrReservations = true;
+
+
                         break;
                     }
             }
@@ -363,7 +382,8 @@ namespace Library.Core
         /// </returns>
         public async Task<bool> CanDeleteUser(string PersonalNumber)
         =>
-        (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(PersonalNumber)).ToList().Count() == 0;
+        (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(PersonalNumber)).ToList().Count() == 0 &&
+            (await IoC.CreateInstance<ApplicationViewModel>().rep.IsUserBlocked(PersonalNumber) == false);
 
         /// <summary>
         /// Sorts the list depending on which buttons is pressed
@@ -591,12 +611,12 @@ namespace Library.Core
         /// Command that exits the info popup
         /// </summary>
         /// <returns></returns>
-        private async Task ExitInfoCommand()
+        private void ExitInfoCommand()
         {
             //Closes the popup
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
-            await Task.Delay(1);
+            UserHasLoansOrReservations = false;
         }
 
         /// <summary>

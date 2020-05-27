@@ -165,6 +165,14 @@ namespace Library
                             else
                                 return defaultStyle;
                         }
+
+                    case ApplicationPages.ReportPage:
+                        {
+                            if ((string)parameter == "ReportPage")
+                                return activeStyle;
+                            else
+                                return defaultStyle;
+                        }
                 }
             }
 

@@ -121,7 +121,6 @@
                         <ComboBox
                             ItemsSource="{Binding CurrentRoles}"
                             SelectedItem="{Binding CurrentRole, Mode=TwoWay}"
-                            SelectedIndex="0"
                             FontFamily="{StaticResource MontserratRegular}" FontSize="{StaticResource FontSizeSmall}"
                             Height="50">
                             <ItemsControl.ItemTemplate>

@@ -208,6 +208,7 @@ namespace Library.Core
             //Open
             SubPopUpVisible = true;
             IoC.CreateInstance<PopUpControlViewModel>().SubPopUpContent = content;
+
         }
 
         /// <summary>
@@ -231,6 +232,8 @@ namespace Library.Core
 
             //Closing
             SubPopUpVisible = false;
+
+            IoC.CreateInstance<PopUpControlViewModel>().SubPopUpContent = PopUpContents.None;
         }
 
         /// <summary>

@@ -75,6 +75,15 @@ namespace Library.Core
 
                         break;
                     }
+
+                case "ReportPage":
+                    {
+                        // Change page
+                        IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.ReportPage);
+
+                        break;
+                    }
+
                 // If the user pressed the log out button
                 case "Logout":
                     {

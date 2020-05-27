@@ -39,6 +39,12 @@ namespace Library
 
                                 }
 
+                            case ApplicationPages.ReportPage:
+                                {
+                                    IoC.CreateInstance<ApplicationViewModel>().PageLoadComplete = false;
+                                    return new ReportPage();
+                                }
+
                             // Default
                             default:
                                 {
