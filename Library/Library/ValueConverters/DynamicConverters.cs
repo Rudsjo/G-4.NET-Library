@@ -28,6 +28,9 @@ namespace Library
             // Create the View
             var Headers = new DataTemplate();
 
+            if (value == null)
+                return Headers;
+
             // Create the main border
             FrameworkElementFactory MainBorder =                new FrameworkElementFactory(typeof(Border));
             MainBorder.SetValue(Border.BackgroundProperty,      new SolidColorBrush(Color.FromRgb(255, 255, 255)));
@@ -129,6 +132,9 @@ namespace Library
         {
             // Create a new DataTemplate
             var Headers = new DataTemplate();
+
+            if (value == null)
+                return Headers;
 
             // Create the main border
             FrameworkElementFactory MainBorder = new FrameworkElementFactory(typeof(Border));

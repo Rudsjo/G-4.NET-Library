@@ -135,7 +135,10 @@ namespace Library.Core
         /// <summary>
         /// Resets the current user
         /// </summary>
-        public void ResetCurrentUser() { CurrentUser = new UserViewModel() { roleID = 4 }; }
+        public void ResetCurrentUser()
+        {
+            CurrentUser = new UserViewModel() { roleID = 4 };
+        }
 
         /// <summary>
         /// Navigates to the specified page

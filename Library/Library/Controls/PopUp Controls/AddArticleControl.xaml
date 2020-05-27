@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" IsTabStop="False">
 
-    <Border Background="#FFFFFF" Margin="100 50"
+    <Border Background="#FFFFFF" Margin="100 15"
             BorderBrush="{StaticResource MediumGreyBrush}" BorderThickness="2">
         <Border.Effect>
             <DropShadowEffect BlurRadius="9"
@@ -173,7 +173,7 @@
                 <ComboBox Grid.Row="4" Grid.Column="4"
                           ItemsSource="{Binding AvailableCategories}"
                           BorderBrush="{StaticResource CustomLightGreyBrush}"
-                          Margin="20 10" 
+                          Margin="20 13" 
                           Tag="Kategori" TabIndex="9"
                           SelectedValue="{Binding CurrentCategory}" SelectedIndex="0"
                           FontFamily="{StaticResource MontserratRegular}" FontSize="{StaticResource FontSizeSmall}"
@@ -202,11 +202,21 @@
                 </local:ContentControlWithIcon>
 
 
-                <Button Grid.Row="7" Grid.ColumnSpan="2"
-                        HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Width="220" Height="60"
-                        Content="Lägg till" Style="{StaticResource BlueActionButton}"
-                        Command="{Binding AddToTempList}" />
+                <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Margin="0 -5 0 0">
+                    <Button 
+                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Width="220" Height="60"
+                            Content="Lägg till" Style="{StaticResource BlueActionButton}"
+                            Command="{Binding AddToTempList}" />
+
+                    <TextBlock Text="Alla fält är inte ifyllda korrekt"
+                               Style="{StaticResource WarningText}"
+                               HorizontalAlignment="Center"
+                               Margin="0"
+                               Visibility="{Binding IsFilledCorrect, Converter={local:BooleanToVisibilityConverter}, ConverterParameter=UserNotBlocked}"
+                               />
+
+                </StackPanel>
             </Grid>
 
             <!-- Separator -->
@@ -298,7 +308,7 @@
                 
                 <!-- Add button -->
 
-                <StackPanel Grid.Row="1">
+                <StackPanel Grid.Row="1" Margin="0 -5 0 0">
                     <Border BorderBrush="{StaticResource LightBlueBrush}" BorderThickness="1" Opacity="0.2" Margin="10">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="9"

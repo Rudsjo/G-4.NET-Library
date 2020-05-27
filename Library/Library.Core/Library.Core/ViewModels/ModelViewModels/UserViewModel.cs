@@ -49,17 +49,18 @@ namespace Library.Core
         /// <summary>
         /// The number of loaned articles the user has
         /// </summary>
-        public int loanedArticles { get; set; }
+        public string loanedArticles { get; set; }
 
         /// <summary>
         /// The number of reserved articles the user has
         /// </summary>
-        public int reservedArticles { get; set; }
+        public string reservedArticles { get; set; }
 
         /// <summary>
         /// Property to check if a user is blocked
         /// </summary>
         public bool IsBlocked { get; set; }
+
         #endregion
     }
 }

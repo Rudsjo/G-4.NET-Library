@@ -480,6 +480,14 @@
             }
         }
 
+        public async Task<bool> RetrieveArticle(int _articleID)
+        {
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                return (await Connection.QueryAsync<int>("RetrieveArticle", new { articleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0;
+            }
+        }
+
         #endregion
 
         #region 'Search' queries

@@ -209,7 +209,7 @@
                             <ScrollViewer Grid.Column="3" Width="90" 
                                           HorizontalScrollBarVisibility="Auto">
                                 <TextBlock
-                                       Text="{Binding loanedBooks}"
+                                       Text="{Binding loanedArticles}"
                                        VerticalAlignment="Center" HorizontalAlignment="Center"
                                        Style="{StaticResource TableItemText}"
                                        />
@@ -219,7 +219,7 @@
                             <ScrollViewer Grid.Column="4" Width="90" 
                                           HorizontalScrollBarVisibility="Auto">
                                 <TextBlock Grid.Column="4"
-                                       Text="{Binding reservedBooks}"
+                                       Text="{Binding reservedArticles}"
                                        VerticalAlignment="Center" HorizontalAlignment="Center"
                                        Style="{StaticResource TableItemText}"
                                        />

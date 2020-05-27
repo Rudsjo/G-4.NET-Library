@@ -9,8 +9,155 @@
              x:Name="Control"
              >
     <Grid>
+        <!-- Removed Articles -->
+        <HeaderedItemsControl ItemsSource="{Binding RemovedArticles}">
+            <HeaderedItemsControl.Template>
+                <ControlTemplate TargetType="HeaderedItemsControl">
 
-        <HeaderedItemsControl ItemsSource="{Binding CurrentList}" >
+                    <Border>
+
+                        <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+
+                            <StackPanel>
+
+                                <ContentPresenter ContentSource="Header" />
+
+                                <ItemsPresenter />
+
+                            </StackPanel>
+
+                        </ScrollViewer>
+
+                    </Border>
+
+                </ControlTemplate>
+            </HeaderedItemsControl.Template>
+            <HeaderedItemsControl.HeaderTemplate>
+                <DataTemplate>
+                    <Border Background="#FFFFFF">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="9"
+                                              ShadowDepth="1"
+                                              Opacity="0.2"
+                                />
+
+                        </Border.Effect>
+
+                        <Grid Height="50">
+
+                            <Grid.ColumnDefinitions>
+
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+
+
+                            <!-- First button -->
+                            <local:ButtonWithIcon Grid.Column="0"
+                                                  Content="Artikel ID"                                                  
+                                                  Style="{StaticResource TableHeaderButton}"
+                                                  Background="White"
+                                                  />
+
+                            <!-- Second button -->
+                            <local:ButtonWithIcon Grid.Column="1"
+                                                  Content="Titel"
+                                                  Style="{StaticResource TableHeaderButton}"
+                                                  Background="White"
+                                                  />
+
+                            <!-- Third button -->
+                            <local:ButtonWithIcon Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                                                  Content="Anledning"
+                                                  Style="{StaticResource TableHeaderButton}"
+                                                  Background="White"
+                                                  
+                                                  />
+                        </Grid>
+
+                    </Border>
+                </DataTemplate>
+            </HeaderedItemsControl.HeaderTemplate>
+
+            <HeaderedItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="{StaticResource CustomLightGreyBrush}"
+                            BorderThickness="0 0 0 1"
+                            Padding="0 20"
+                            Background="White"
+                            >
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Column 0 -->
+                            <ScrollViewer Grid.Column="0" Width="140"
+                                          HorizontalScrollBarVisibility="Auto">
+                                <TextBlock
+                                       Text="{Binding articleID,Converter={local:IntToStringConverter}}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                       Style="{StaticResource TableItemText}"
+                                       />
+                            </ScrollViewer>
+
+                            <!-- Column 1 -->
+                            <ScrollViewer Grid.Column="1" Width="120"
+                                          HorizontalScrollBarVisibility="Auto">
+                                <TextBlock
+                                       Text="{Binding title}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Style="{StaticResource TableItemText}"
+                                       />
+
+                            </ScrollViewer>
+
+                            <!-- Column 3 -->
+                            <ScrollViewer Grid.Column="2" Width="90" Grid.ColumnSpan="2"
+                                          HorizontalScrollBarVisibility="Auto">
+                                <TextBlock
+                                       Text="{Binding reasonID, Converter={local:IntToStringConverter}, ConverterParameter=GetReason}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Style="{StaticResource TableItemText}"
+                                       />
+                            </ScrollViewer>
+
+                            <!-- Retrieve button -->
+                            <Button    Grid.Column="5"
+                                       Content="Ångra"
+                                       FontSize="16"
+                                       VerticalAlignment="Center" HorizontalAlignment="Right"
+                                       Style="{StaticResource TextButton}"
+                                       Command="{Binding DataContext.RetrieveDeletedArticle,
+                                                 RelativeSource={RelativeSource AncestorType=HeaderedItemsControl}}"
+                                       CommandParameter="{Binding}"
+                                       
+                                       Visibility="{Binding IsPlaceholder, Converter={local:BooleanToVisibilityConverter}, ConverterParameter=Placeholder}"
+                                        />
+
+
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </HeaderedItemsControl.ItemTemplate>
+        </HeaderedItemsControl>
+
+        <!-- Existing articles -->
+        <HeaderedItemsControl ItemsSource="{Binding CurrentList}" 
+                              Visibility="{Binding MainContentUserControlViewModel.IsShowingRemovedArticles,
+                                           Source={x:Static local:ViewModelLocator.Instance}, Converter={local:BooleanToVisibilityConverter}, ConverterParameter=Placeholder}">
             <HeaderedItemsControl.Template>
                 <ControlTemplate TargetType="HeaderedItemsControl">
 
@@ -249,6 +396,7 @@
                 </DataTemplate>
             </HeaderedItemsControl.ItemTemplate>
         </HeaderedItemsControl>
-        
+       
+
     </Grid>
 </UserControl>

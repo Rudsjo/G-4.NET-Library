@@ -61,6 +61,9 @@ namespace Library
                 case PopUpContents.ReturnLoans:
                     return new ReturnLoansControl();
 
+                case PopUpContents.ChangePassword:
+                    return new ChangePasswordControl();
+
                 default:
                     return null;
             }

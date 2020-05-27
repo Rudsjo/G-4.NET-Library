@@ -263,6 +263,13 @@
         ///          Null if the login failed.></returns>
         abstract Task<User> AttemptLogin(string _personalNumber, SecureString Password);
 
+        /// <summary>
+        /// Retrieves an article from a deleted state
+        /// </summary>
+        /// <param name="_articleID"></param>
+        /// <returns></returns>
+        abstract Task<bool> RetrieveArticle(int _articleID);
+
         #endregion
     }
 }

@@ -20,6 +20,16 @@ namespace Library.Core
         #region Public Properties
 
         /// <summary>
+        /// The list of removed articles
+        /// </summary>
+        public IEnumerable<ArticleViewModel> RemovedArticles { get; set; }
+
+        /// <summary>
+        /// Command to regret a removal of a deleted article
+        /// </summary>
+        public ICommand RetrieveDeletedArticle { get; set; }
+
+        /// <summary>
         /// Command property to unblock a user
         /// </summary>
         public ICommand Unblock { get; set; }
@@ -67,6 +77,11 @@ namespace Library.Core
         /// Command to reserve an article
         /// </summary>
         public ICommand ReserveArticle { get; set; }
+
+        /// <summary>
+        /// Command to open the changepassword pop up
+        /// </summary>
+        public ICommand ChangePassword { get; set; }
 
         /// <summary>
         /// State of which table to sort
@@ -157,6 +172,10 @@ namespace Library.Core
 
             LoanedArticle  = new RelayParameterizedCommand(async (parameter) => await LoanedArticleCommand(parameter));
             ReserveArticle = new RelayParameterizedCommand(async (parameter) => await ReserveArticleCommand(parameter));
+
+            RetrieveDeletedArticle = new RelayParameterizedCommand(RetrieveDeletedArticleCommand);
+
+            ChangePassword = new RelayCommand(() => { IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.ChangePassword); });
         }
 
         #endregion
@@ -179,8 +198,25 @@ namespace Library.Core
                 await UpdateArticleStatuses();
             }
             else
+            {
+                // Update the current list
                 CurrentList = IoC.CreateInstance<MainContentUserControlViewModel>().UserSearchList
                     = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToModelDataToViewModel<IUser, UserViewModel>().FillPlaceHolders();
+
+                // Get the number of loans and reservations for each user
+                foreach(var user in CurrentList)
+                {
+                    if(!(user as UserViewModel).IsPlaceholder)
+                    {
+                        (user as UserViewModel).loanedArticles =
+                            (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans((user as UserViewModel).personalNumber)).Count().ToString();
+
+                        (user as UserViewModel).reservedArticles =
+                            (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserReservations((user as UserViewModel).personalNumber)).Count().ToString();
+                    }
+                }
+
+            }
 
             await Task.Delay(1500);
 
@@ -255,14 +291,27 @@ namespace Library.Core
         #region Private Methods
 
         /// <summary>
+        /// Command to retrieve a deleted article
+        /// </summary>
+        /// <param name="itemToRetrieve"></param>
+        private async void RetrieveDeletedArticleCommand(object itemToRetrieve) 
+        {
+            if (await IoC.CreateInstance<ApplicationViewModel>().rep.RetrieveArticle((itemToRetrieve as ArticleViewModel).articleID))
+            {
+                RemovedArticles = (await IoC.CreateInstance<ApplicationViewModel>().rep.GetRemovedArticles()).ToList().ToObservableCollection()
+                    .ToModelDataToViewModel<IArticle, ArticleViewModel>().FillPlaceHolders();
+            }
+        }
+
+        /// <summary>
         /// Command to loan an article if the article is available
         /// </summary>
         /// <param name="testing"></param>
         /// <returns></returns>
-        private async Task LoanedArticleCommand(object testing)
+        private async Task LoanedArticleCommand(object article)
         {
             string pn = IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber;
-            CurrentArticle = (testing as IArticle);            
+            CurrentArticle = (article as IArticle);            
 
             // This sets the availability to Loaned, status = 2
             if (await IoC.CreateInstance<ApplicationViewModel>().rep.LoanArticle(pn, CurrentArticle.articleID))
@@ -332,7 +381,7 @@ namespace Library.Core
 
                     IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
-                    //Refreshes the list of articles when user successfully loans an article
+                    //Refreshes the list of articles when user successfully reserves an article
                     LoadItems();
                     IoC.CreateInstance<ApplicationViewModel>().CurrentUser = IoC.CreateInstance<ApplicationViewModel>().CurrentUser;
                     await UpdateArticleStatuses();
@@ -439,7 +488,7 @@ namespace Library.Core
 
                         // Return the ordered list with placeholders
                         CurrentList =
-                            (CurrentList as IEnumerable<UserViewModel>).SortByPropertyName(nameof(UserViewModel.loanedArticles))
+                            (CurrentList as IEnumerable<UserViewModel>).OrderByDescending(x => x.loanedArticles)
                             .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
@@ -452,7 +501,7 @@ namespace Library.Core
 
                         // Return the ordered list with placeholders
                         CurrentList =
-                            (CurrentList as IEnumerable<UserViewModel>).SortByPropertyName(nameof(UserViewModel.reservedArticles))
+                            (CurrentList as IEnumerable<UserViewModel>).OrderByDescending(x => x.reservedArticles)
                             .Where(x => x.IsPlaceholder == false).FillPlaceHolders().ToList().ToObservableCollection();
 
                         break;
@@ -616,6 +665,15 @@ namespace Library.Core
             //Closes the popup
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
+            if(IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
+            {
+                // Check if the user has any changes
+                if ((SelectedUser as UserViewModel) != (CurrentList as IEnumerable<UserViewModel>).Where(x => x.personalNumber == SelectedUser.personalNumber).First())
+                // Load the list if any changes is made
+                LoadItems();
+            }
+
+
             UserHasLoansOrReservations = false;
         }
 
@@ -681,6 +739,9 @@ namespace Library.Core
                 //Checks to se if the result is true
                 if (await IoC.CreateInstance<ApplicationViewModel>().rep.ReturnArticle((itemToReturn as ArticleViewModel).articleID))
                 {
+                    // Reduce the loan counter
+                    (SelectedUser as UserViewModel).loanedArticles = (int.Parse((SelectedUser as UserViewModel).loanedArticles) - 1).ToString();
+
                     //If true, item gets returned to the library and success confirmation pops up
                     IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Success);
 
@@ -700,6 +761,9 @@ namespace Library.Core
                 //Checks to se if the result is true
                 if (await IoC.CreateInstance<ApplicationViewModel>().rep.DeleteReservation((itemToReturn as ArticleViewModel).articleID, SelectedUser.personalNumber))
                 {
+                    // Reduce the loan counter
+                    (SelectedUser as UserViewModel).reservedArticles = (int.Parse((SelectedUser as UserViewModel).reservedArticles) - 1).ToString();
+
                     //If true, item gets removed from the reservationslist and success confirmation pops up
                     IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Success);
 

@@ -88,7 +88,7 @@
                          ContentIcon="&#xf5b7;" 
                     />
 
-                <!-- Current role -->
+                <!-- Current role --><!--
                 <local:ContentControlWithIcon
                          Grid.Row="4"                     
                          Style="{StaticResource FormBox}"
@@ -98,15 +98,24 @@
                          IsEnabled="False"                                
                          Tag="Roll"
                          ContentIcon="&#xf507;"
-                         />
+                         />-->
 
                 <!-- Update button-->
-                <Button Grid.Row="5" Grid.Column="0"
+                <Button Grid.Row="4" Grid.Column="0"
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         Width="250" Height="60"
                         Content="Uppdatera" 
                         Style="{StaticResource BlueActionButton}"
                         Command="{Binding Update, UpdateSourceTrigger=PropertyChanged}"
+                        />
+
+                <!-- Change password button-->
+                <Button Grid.Row="5" Grid.Column="0"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Width="250" Height="60"
+                        Content="Byt lösenord" 
+                        Style="{StaticResource BlueActionButton}"
+                        Command="{Binding ChangePassword, UpdateSourceTrigger=PropertyChanged}"
                         />
 
 

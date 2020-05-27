@@ -76,6 +76,11 @@ namespace Library.Core
         /// </summary>
         public string InputQuantity { get; set; }
 
+        /// <summary>
+        /// Flag to check if everything is filled up correctly
+        /// </summary>
+        public bool IsFilledCorrect { get; set; } = true;
+
         #endregion
 
         public AddArticleControlViewModel()
@@ -83,7 +88,7 @@ namespace Library.Core
 
             // Setting commands
             AddToTempList = new RelayCommand(async () => await AddToTempListCommad());
-            Close = new RelayCommand(() => { IoC.CreateInstance<ApplicationViewModel>().ClosePopUp(); });
+            Close = new RelayCommand(() => { IoC.CreateInstance<ApplicationViewModel>().ClosePopUp(); IsFilledCorrect = true; });
             Confirm = new RelayCommand(async () => await ConfirmCommand());
             RemoveAddedItem = new RelayParameterizedCommand((item) => { TempListOfArticles.Remove(item as ArticleViewModel); });
 
@@ -111,14 +116,20 @@ namespace Library.Core
                 int.TryParse(InputLoanTime, out int loanTime) &&
                 int.TryParse(InputQuantity, out int quantity) &&
                 CurrentArticle.title != null && CurrentArticle.author != null &&
-                CurrentArticle.publisher != null && CurrentArticle.isbn != null)
+                CurrentArticle.publisher != null && CurrentArticle.isbn != null &&
+                CurrentArticle.edition != null
+                )
             {
                 (CurrentArticle as ArticleViewModel).price = price;
                 (CurrentArticle as ArticleViewModel).loanTime = loanTime;
                 (CurrentArticle as ArticleViewModel).quantity = quantity;
+                IsFilledCorrect = true;
             }
             else
+            {
+                IsFilledCorrect = false;
                 return;
+            }
 
 
 
@@ -157,7 +168,7 @@ namespace Library.Core
                 if (!await IoC.CreateInstance<ApplicationViewModel>().rep.AddArticle(item.ToModel<IArticle, Article>()))
                 {
                     // TODO: Skapa varningstext
-                    return;
+                    break;
                 }
 
                 // Set the out animation

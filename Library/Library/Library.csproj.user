@@ -31,6 +31,9 @@
     <Compile Update="Controls\PopUp Controls\ArticleInfoControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\PopUp Controls\ChangePasswordControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\PopUp Controls\DatabaseLoginControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -44,6 +47,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Controls\PopUp Controls\NotificationControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\ReportFilterControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Controls\PopUp Controls\ReturnLoansControl.xaml.cs">
@@ -93,10 +99,16 @@
     <Page Update="Controls\PopUp Controls\ArticleFilterControl.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Controls\PopUp Controls\ChangePasswordControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\PopUp Controls\MyProfileControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\PopUp Controls\NotificationControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ReportFilterControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\PopUp Controls\ReturnLoansControl.xaml">

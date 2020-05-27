@@ -40,11 +40,8 @@ namespace Library.Core
             // Reset the sorting
             IoC.CreateInstance<TableControlViewModel>().TableToSort = SortableTables.None;
 
-
             // Setting commands
             ShowAllBooks = new RelayCommand(ShowAllBooksCommand);
-
-
             FirstSearch = new RelayCommand(FirstSearchCommand);
         }
 

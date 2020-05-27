@@ -137,6 +137,11 @@
         /// </summary>
         ReturnLoans = 15,
 
+        /// <summary>
+        /// Popup for the change password
+        /// </summary>
+        ChangePassword = 16,
+
     }
 
     /// <summary>

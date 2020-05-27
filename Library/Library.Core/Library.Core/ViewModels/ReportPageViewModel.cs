@@ -3,6 +3,8 @@
     #region Namespaces
     using System;
     using System.Collections.ObjectModel;
+    using System.IO;
+    using System.Linq;
     using System.Windows.Input;
     #endregion
 
@@ -24,6 +26,16 @@
         /// </summary>
         public ICommand UpdateCSVItems { get; set; }
 
+        /// <summary>
+        /// Command to download the CSV file
+        /// </summary>
+        public ICommand DownloadCSV { get; set; }
+
+        /// <summary>
+        /// Command to set the choice of filter
+        /// </summary>
+        public ICommand MainFilterChoice { get; set; }
+
         #endregion
 
         /// <summary>
@@ -31,35 +43,29 @@
         /// </summary>
         public ReportPageViewModel()
         {
-            // Create the CSV collection
-            CurrentCSV = new ObservableCollection<dynamic>()
-            {
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-                new { ID = 1, FirstName = "Jimmy", LasName = "Sassila", Age = 22 },
-            };
+            GetList();
 
             // Create the update command
             UpdateCSVItems = new RelayCommand(UpdateCSV);
+            DownloadCSV = new RelayCommand(() =>
+            {
+                File.WriteAllLines(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Test.csv", CurrentCSV.ToCSV());
+            });
+        }
+
+        async void GetList()
+        {
+            var list = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToList().ToObservableCollection();
+
+            // Create the CSV collection
+            CurrentCSV = new ObservableCollection<dynamic>(list);
         }
 
 
         #region Private functions
 
         /// <summary>
-        /// Update the <see cref="Curre"/>
+        /// Update the <see cref="CurrentCSV"/>
         /// </summary>
         private async void UpdateCSV()
         {

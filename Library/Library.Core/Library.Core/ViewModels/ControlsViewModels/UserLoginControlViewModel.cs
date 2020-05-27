@@ -46,7 +46,7 @@ namespace Library.Core
         {
             // Setting commands
             LoginAsUser = new RelayParameterizedCommand(async (password) => await LoginAsUserCommandAsync(password));
-            CloseUserLoginControl = new RelayCommand(async () => await CloseUserLoginControlCommandAsync());
+            CloseUserLoginControl = new RelayCommand(CloseUserLoginControlCommand);
         }
 
         #endregion
@@ -100,12 +100,11 @@ namespace Library.Core
                 if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.MainPage)
                     IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.BookPage);
 
-                //await IoC.CreateInstance<TableControlViewModel>().UpdateArticleStatuses();
+                // Closes the popup if we're not in firstload-mode
+                if (!IoC.CreateInstance<ApplicationViewModel>().IsLoading && IoC.CreateInstance<ApplicationViewModel>().CurrentPage != ApplicationPages.MainPage)
+                    IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
                 IoC.CreateInstance<MyProfileControlViewModel>().GetMyLoansAndReservations();
-
-                // Close the login popup control
-                IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
                 // Reset input properties
                 ViewModelHelpers.ResetInputProperties<UserLoginControlViewModel>(nameof(PNumber));
@@ -122,15 +121,13 @@ namespace Library.Core
         /// Closes the User login control
         /// </summary>
         /// <returns></returns>
-        public async Task CloseUserLoginControlCommandAsync()
+        public void CloseUserLoginControlCommand()
         {
             // Hide the text
             ShowLoginFailedText = false;
 
             // Closes the popup control
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
-
-            await Task.Delay(1);
         }
 
         #endregion

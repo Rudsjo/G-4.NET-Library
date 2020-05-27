@@ -16,7 +16,14 @@ namespace Library.Core
 
         #region Public Properties
 
+        /// <summary>
+        /// The actual list of article to search from
+        /// </summary>
         public IEnumerable<ArticleViewModel> ArticleSearchList { get; set; }
+
+        /// <summary>
+        /// The actual list of users to search from
+        /// </summary>
         public IEnumerable<UserViewModel> UserSearchList { get; set; }
 
         /// <summary>
@@ -73,7 +80,7 @@ namespace Library.Core
         /// <summary>
         /// Flag to indicate if removed articles are shown
         /// </summary>
-        public bool IsShowingRemovedArticles { get; set; }
+        public bool IsShowingRemovedArticles { get; set; } = false;
 
         /// <summary>
         /// The text to show in the header above the table
@@ -302,7 +309,7 @@ namespace Library.Core
         {
 
             // Setting commands
-            MyProfile = new RelayCommand(async () => await MyProfileCommandAsync());
+            MyProfile = new RelayCommand(MyProfileCommand);
             OpenAdd = new RelayCommand(async () => await OpenAddCommand());
             OpenFilter = new RelayCommand(async () => await OpenFilterCommand());
             ExitFilter = new RelayCommand(async () => await ExitFilterCommand());
@@ -310,7 +317,7 @@ namespace Library.Core
             OpenNotification = new RelayCommand(async () => await OpenNotificationCommand());
             ExitNotification = new RelayCommand(async () => await ExitNotificationCommand());
 
-            ShowRemovedArticles = new RelayCommand(async () => await ShowRemovedArticlesCommand());
+            ShowRemovedArticles = new RelayCommand(ShowRemovedArticlesCommand);
 
             #region Added for LoansPopup
             //Added
@@ -328,7 +335,7 @@ namespace Library.Core
 
         #region Private Methods
 
-        private async Task ShowRemovedArticlesCommand()
+        private async void ShowRemovedArticlesCommand()
         {
             if (IsShowingRemovedArticles)
             {
@@ -339,11 +346,13 @@ namespace Library.Core
                 IsShowingRemovedArticles = false;
                 IoC.CreateInstance<ApplicationViewModel>().CurrentUser = IoC.CreateInstance<ApplicationViewModel>().CurrentUser;
                 IoC.CreateInstance<TableControlViewModel>().InitializeUpdateArticleStatuses();
+
             }
             else
             {
-                IoC.CreateInstance<TableControlViewModel>().CurrentList =
-                    (await IoC.CreateInstance<ApplicationViewModel>().rep.GetArticlesByStatus(3)).ToList().ToObservableCollection().FillPlaceHolders();
+                IoC.CreateInstance<TableControlViewModel>().RemovedArticles = ArticleSearchList =
+                    (await IoC.CreateInstance<ApplicationViewModel>().rep.GetRemovedArticles()).ToModelDataToViewModel<IArticle, ArticleViewModel>()
+                    .ToList().ToObservableCollection().FillPlaceHolders();
 
                 IsShowingRemovedArticles = true;
             }
@@ -683,21 +692,13 @@ namespace Library.Core
         /// if user is not logged in the login popup will be displayed
         /// </summary>
         /// <returns></returns>
-        public async Task MyProfileCommandAsync()
+        public void MyProfileCommand()
         {
-            // Indicating that a pop up control will be shown
-            IoC.CreateInstance<ApplicationViewModel>().PopUpVisible = true;
-
-            if(IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID != 4)
+            if (IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID != 4)
                 // Setting the pop up content
-                IoC.CreateInstance<PopUpControlViewModel>().PopUpContent = PopUpContents.MyProfile;
+                IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.MyProfile);
             else
-                IoC.CreateInstance<PopUpControlViewModel>().PopUpContent = PopUpContents.UserLogin;
-
-
-            // Getting rid of disgusting warning
-            await Task.Delay(1);
-
+                IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.UserLogin);
         }
 
         /// <summary>
