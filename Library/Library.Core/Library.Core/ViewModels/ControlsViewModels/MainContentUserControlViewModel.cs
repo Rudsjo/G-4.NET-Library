@@ -611,7 +611,10 @@ namespace Library.Core
             ArticleToReturn = null;
             ArticleID = null;
 
-            //TODO! måste ev. lägga in så listan updateras. nu uppdaterar den bara om man byter page
+            //reload users to get updated list. Closes the window
+            IoC.CreateInstance<TableControlViewModel>().LoadItems();
+
+            //TODO! Change LoadItems To one that doesnt close the window. 
         }
 
         /// <summary>
@@ -623,6 +626,9 @@ namespace Library.Core
             //Try to parse the input from user
             if (int.TryParse(ArticleID, out int result))
             {
+                //If the list does not exist ( if the user does the return twice ), add to list creates a new list
+                if (ListOfArticlesToReturn == null) ListOfArticlesToReturn = new ObservableCollection<ArticleViewModel>();
+
                 //Transfer the result to a temporary variable to keep it safe from multiple key-presses that runs faster than the program can handle.
                 int temp = result;
 
