@@ -29,6 +29,8 @@ namespace Library.Core
         /// </summary>
         public EmployeePageViewModel()
         {
+            IoC.CreateInstance<MainContentUserControlViewModel>().IsShowingRemovedArticles = false;
+
             // Setting the dynamic texts
             IoC.CreateInstance<MainContentUserControlViewModel>().HeaderText = "Alla användare";
             IoC.CreateInstance<MainContentUserControlViewModel>().AddButtonText = "Lägg till användare";

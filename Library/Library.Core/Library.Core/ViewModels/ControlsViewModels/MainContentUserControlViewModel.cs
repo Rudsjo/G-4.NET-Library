@@ -470,7 +470,7 @@ namespace Library.Core
         private void SearchUpdate()
         {
 
-            if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
+            if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage && IsShowingRemovedArticles == false)
             {
   
                 //Check if any filter is checked
@@ -554,6 +554,20 @@ namespace Library.Core
                     s.title.ToLower().Contains(_searchText.ToLower())))
                     .ToList().ToObservableCollection().FillPlaceHolders();
                 }
+            }
+
+            else if(IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage && IsShowingRemovedArticles == true)
+            {
+                var id = IoC.CreateInstance<ApplicationViewModel>().Reasons.Where(r => r.reason.ToLower().Contains(_searchText.ToLower())).Select(r => r.reasonID);
+
+                IoC.CreateInstance<TableControlViewModel>().RemovedArticles =
+                ArticleSearchList.Where(x =>
+                    x.IsPlaceholder == false && (
+                    x.articleID.ToString().Contains(_searchText) ||
+                    x.title.ToLower().Contains(_searchText.ToLower()) || 
+                    id.Contains(x.reasonID)
+                    
+                )).ToList().ToObservableCollection().FillPlaceHolders();
             }
 
             else
