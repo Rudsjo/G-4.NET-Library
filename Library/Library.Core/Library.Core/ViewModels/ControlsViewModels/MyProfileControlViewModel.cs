@@ -22,6 +22,12 @@ namespace Library.Core
         /// </summary>
         public ICommand Exit { get; set; }
 
+
+        /// <summary>
+        /// Command to open the changepassword pop up
+        /// </summary>
+        public ICommand ChangePassword { get; set; }
+
         /// <summary>
         /// The loans of the current user
         /// </summary>
@@ -45,6 +51,7 @@ namespace Library.Core
             // Setting commands
             Logout = new RelayCommand(LogoutCommand);
             Exit = new RelayCommand(() => IoC.CreateInstance<ApplicationViewModel>().ClosePopUp());
+            ChangePassword = new RelayCommand(() => { IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.ChangePassword); });
         }
 
         #endregion

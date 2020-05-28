@@ -391,6 +391,21 @@
         #region 'Action' queries
 
         /// <summary>
+        /// <see cref="ILibraryRepository.ResetUserPassword(string, string)"/>
+        /// </summary>
+        /// <param name="personalNumber"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
+        public async Task<bool> ResetUserPassword(string personalNumber, string Password)
+        {
+            // Open a new connection to the database
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                return (await Connection.QueryAsync<int>("ResetPassword", new { personalNumber = personalNumber, newPass = Password }, commandType: CommandType.StoredProcedure)).First() != 0;
+            }
+        }
+
+        /// <summary>
         /// <see cref="ILibraryRepository.BlockUser(string, string)"/>
         /// </summary>
         /// <param name="_personalNumber">PersonalNumber of the user</param>
@@ -613,7 +628,7 @@
         }
 
         /// <summary>
-        /// Changes the password for a user.
+        /// <see cref="ILibraryRepository.UpdatePassword(string, SecureString, SecureString, string)"/>
         /// </summary>
         /// <param name="personalNumber">The personal number.</param>
         /// <param name="oldPass">The old password.</param>
@@ -629,8 +644,8 @@
                     new
                     {
                         personalNumber = personalNumber,
-                        old_pass_hash = oldPass,
-                        new_pass_hash = newPass,
+                        old_pass_hash = oldPass.ToUnsecureString(),
+                        new_pass_hash = newPass.ToUnsecureString(),
                         new_salt = newSalt
                     },
                     commandType: CommandType.StoredProcedure)).First() != 0;

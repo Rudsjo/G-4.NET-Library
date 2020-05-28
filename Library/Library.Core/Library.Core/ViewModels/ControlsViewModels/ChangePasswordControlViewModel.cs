@@ -27,7 +27,6 @@ namespace Library.Core
 
         #endregion
 
-
         #region Constructor
 
         /// <summary>
@@ -59,10 +58,22 @@ namespace Library.Core
                 return;
             }
 
-            // TODO: Koppla mot databas
-            var old = (password as IHavePassword).SecurePassword.Length;
+            if(await LoginHelpers.UpdatePassword(IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber,
+                                              (password as IHavePassword).SecurePassword, (password as INewPassword).SecondPassword))
+            {
+                IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
+                IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Success);
+                await Task.Delay(700);
+                IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
+                IsNotFilledCorrectly = false;
+            }
+            else
+            {
+                IsNotFilledCorrectly = true;
+                return;
+            }
 
-            var newp = (password as INewPassword).SecondPassword.Length;
+
         }
 
         #endregion

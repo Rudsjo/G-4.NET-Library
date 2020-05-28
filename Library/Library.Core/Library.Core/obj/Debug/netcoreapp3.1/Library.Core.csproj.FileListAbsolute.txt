@@ -240,3 +240,14 @@ C:\Users\stimp\Desktop\G-4.NET-Library-2.0\Library\Library.Core\Library.Core\obj
 C:\Users\stimp\Desktop\G-4.NET-Library-2.0\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
 C:\Users\stimp\Desktop\G-4.NET-Library-2.0\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
 C:\Users\stimp\Desktop\G-4.NET-Library-2.0\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll.config
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csprojAssemblyReference.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
+C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb

@@ -79,9 +79,9 @@ namespace Library.Core
         public ICommand ReserveArticle { get; set; }
 
         /// <summary>
-        /// Command to open the changepassword pop up
+        /// Resets a users password
         /// </summary>
-        public ICommand ChangePassword { get; set; }
+        public ICommand ResetPassword { get; set; }
 
         /// <summary>
         /// State of which table to sort
@@ -175,7 +175,8 @@ namespace Library.Core
 
             RetrieveDeletedArticle = new RelayParameterizedCommand(RetrieveDeletedArticleCommand);
 
-            ChangePassword = new RelayCommand(() => { IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.ChangePassword); });
+            ResetPassword = new RelayCommand(async () => await ResetPasswordCommand());
+
         }
 
         #endregion
@@ -289,6 +290,23 @@ namespace Library.Core
         #endregion
 
         #region Private Methods
+
+        /// <summary>
+        /// Command to reset a users password to 12345
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        private async Task ResetPasswordCommand()
+        {
+            if (await LoginHelpers.ResetUserPassword(SelectedUser.personalNumber))
+            {
+                IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Success);
+                await Task.Delay(700);
+                IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
+            }
+            else
+                return;
+        }
 
         /// <summary>
         /// Command to retrieve a deleted article
@@ -665,7 +683,7 @@ namespace Library.Core
             //Closes the popup
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
-            if(IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage)
+            if(IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.EmployeePage)
             {
                 // Check if the user has any changes
                 if ((SelectedUser as UserViewModel) != (CurrentList as IEnumerable<UserViewModel>).Where(x => x.personalNumber == SelectedUser.personalNumber).First())

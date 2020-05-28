@@ -226,6 +226,14 @@
         #region Actions
 
         /// <summary>
+        /// Resets a users password
+        /// </summary>
+        /// <param name="personalNumber"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
+        abstract Task<bool> ResetUserPassword(string personalNumber, string Password);
+
+        /// <summary>
         /// Blocks a user
         /// </summary>
         /// <returns>True if user exists in the systen and could be blocked</returns>

@@ -21,7 +21,7 @@ namespace Library.Core
                 return null;
 
             // Get the user's salt.
-            var SaltBase64 = await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserByID(PersonalNumber);
+            var SaltBase64 = await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserSalt(PersonalNumber);
 
             // If the result is null, then we know that the username is incorrect.
             if (SaltBase64 == null)
@@ -71,15 +71,31 @@ namespace Library.Core
 
             // Convert the salt bytes into a Base64 string
             var Salt64 = Convert.ToBase64String(SaltBytes);
+            // Get the old salt from the user
+            var OldSalt = await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserSalt(personalNumber);
 
             // Get the hash from the new password
-            newPass = Convert.ToBase64String(Hasher.ComputeHash(Encoding.Default.GetBytes(newPass.ToUnsecureString()))).ToSecureString();
+            newPass = Convert.ToBase64String(Hasher.ComputeHash(Encoding.Default.GetBytes(newPass.ToUnsecureString() + Salt64))).ToSecureString();
 
             // Compute the old password
-            oldPass = Convert.ToBase64String(Hasher.ComputeHash(Encoding.Default.GetBytes((oldPass.ToUnsecureString() + IoC.CreateInstance<ApplicationViewModel>().rep.GetUserSalt(personalNumber))))).ToSecureString();
+            oldPass = Convert.ToBase64String(Hasher.ComputeHash(Encoding.Default.GetBytes(oldPass.ToUnsecureString() + OldSalt))).ToSecureString();
 
             // Return the result
             return (await IoC.CreateInstance<ApplicationViewModel>().rep.UpdatePassword(personalNumber, oldPass, newPass, Salt64));
+        }
+
+        /// <summary>
+        /// Sets a new temp password for the user so they can login and change their password
+        /// </summary>
+        /// <param name="PersonalNumber"></param>
+        /// <returns></returns>
+        public static async Task<bool> ResetUserPassword(string PersonalNumber)
+        {
+            // Create the new password
+            string Password = Convert.ToBase64String(SHA256.Create().ComputeHash(Encoding.Default.GetBytes("12345")));
+
+            // Update the users password
+            return await IoC.CreateInstance<ApplicationViewModel>().rep.ResetUserPassword(PersonalNumber, Password);
         }
 
     }

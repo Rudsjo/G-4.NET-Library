@@ -176,13 +176,25 @@
                 <!-- Separator -->
                 <Border BorderBrush="{StaticResource CustomLightGreyBrush}" BorderThickness="1" Margin="20 20 20 -20"/>
 
-                <local:ButtonWithIcon Margin="80 50"
-                    Content="Logga ut"
-                    IconContent="&#xf2f5;"
-                    Command="{Binding Logout}"
-                    Style="{StaticResource SideMenuLogoutButton}"
-                    />
-                
+                <StackPanel Orientation="Horizontal">
+
+                    <local:ButtonWithIcon Style="{StaticResource TextButtonWithIconOnTop}"
+                                          Content="Byt lösenord"
+                                          IconContent="&#xf362;"
+                                          Command="{Binding ChangePassword}"
+                                          Margin="50"
+                                          />
+
+                    <local:ButtonWithIcon Margin="50"
+                        Content="Logga ut"
+                        IconContent="&#xf2f5;"
+                        Command="{Binding Logout}"
+                        Style="{StaticResource TextButtonWithIconOnTop}"
+                        />
+                    
+                </StackPanel>
+
+
             </StackPanel>
 
         </Grid>
