@@ -1679,3 +1679,13 @@ C:\Users\joxca\OneDrive\Skrivbord\PizzaPalatset_2.0\G-4.NET-Library\Library\Libr
 C:\Users\joxca\OneDrive\Skrivbord\PizzaPalatset_2.0\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReportFilterControl.baml
 C:\Users\joxca\OneDrive\Skrivbord\PizzaPalatset_2.0\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ChangePasswordControl.g.cs
 C:\Users\joxca\OneDrive\Skrivbord\PizzaPalatset_2.0\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ChangePasswordControl.baml
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ChangePasswordControl.g.cs
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\MyProfileControl.g.cs
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReportFilterControl.g.cs
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReturnLoansControl.g.cs
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Pages\ReportPage.g.cs
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ChangePasswordControl.baml
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\MyProfileControl.baml
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReportFilterControl.baml
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReturnLoansControl.baml
+C:\Users\stimp\Desktop\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Pages\ReportPage.baml

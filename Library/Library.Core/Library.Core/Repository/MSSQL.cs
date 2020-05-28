@@ -13,6 +13,7 @@
     using System.Data;
     using System.Data.SqlClient;
     using Dapper;
+    using System.Security.Cryptography;
     #endregion
 
     /// <summary>
@@ -177,6 +178,21 @@
         #endregion
 
         #region 'Get' queries
+
+        /// <summary>
+        /// Gets the user salt.
+        /// </summary>
+        /// <param name="personalNumber">The personal number.</param>
+        /// <returns></returns>
+        public async Task<string> GetUserSalt(string personalNumber)
+        {
+            // Open a new connection
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                // Return the query result
+                return (await Connection.QueryAsync<string>("RetrieveUserSalt", new { personalNumber = personalNumber }, commandType: CommandType.StoredProcedure)).First();
+            }
+        }
 
         /// <summary>
         /// <see cref="ILibraryRepository.GetArticlesByStatus(int)"/>
@@ -594,6 +610,32 @@
                     }, 
                     commandType: CommandType.StoredProcedure)).First() != 0;
             }
+        }
+
+        /// <summary>
+        /// Changes the password for a user.
+        /// </summary>
+        /// <param name="personalNumber">The personal number.</param>
+        /// <param name="oldPass">The old password.</param>
+        /// <param name="newPass">The new password.</param>
+        /// <returns></returns>
+        public async Task<bool> UpdatePassword(string personalNumber, SecureString oldPass, SecureString newPass, string newSalt)
+        {
+            // Open a new connection
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                // Return the query result
+                return (await Connection.QueryAsync<int>("ChangePassword",
+                    new
+                    {
+                        personalNumber = personalNumber,
+                        old_pass_hash = oldPass,
+                        new_pass_hash = newPass,
+                        new_salt = newSalt
+                    },
+                    commandType: CommandType.StoredProcedure)).First() != 0;
+            }
+
         }
         #endregion
     }

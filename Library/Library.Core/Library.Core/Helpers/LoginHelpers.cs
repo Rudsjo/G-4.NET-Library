@@ -47,5 +47,40 @@ namespace Library.Core
             return newUser;
         }
 
+        /// <summary>
+        /// Updates the password.
+        /// </summary>
+        /// <param name="personalNumber">The personal number.</param>
+        /// <param name="oldPass">The old password.</param>
+        /// <param name="newPass">The new password.</param>
+        /// <returns></returns>
+        public static async Task<bool> UpdatePassword(string personalNumber, SecureString oldPass, SecureString newPass)
+        {
+            // Create a haser
+            var Hasher = SHA256.Create();
+
+            // Where the salt bytes will be places
+            var SaltBytes = new byte[16];
+
+            // Create a pseudo random cryptographic number generator
+            using (RandomNumberGenerator RNG = RandomNumberGenerator.Create())
+            {
+                // Generate a new random salt
+                RNG.GetBytes(SaltBytes);
+            }
+
+            // Convert the salt bytes into a Base64 string
+            var Salt64 = Convert.ToBase64String(SaltBytes);
+
+            // Get the hash from the new password
+            newPass = Convert.ToBase64String(Hasher.ComputeHash(Encoding.Default.GetBytes(newPass.ToUnsecureString()))).ToSecureString();
+
+            // Compute the old password
+            oldPass = Convert.ToBase64String(Hasher.ComputeHash(Encoding.Default.GetBytes((oldPass.ToUnsecureString() + IoC.CreateInstance<ApplicationViewModel>().rep.GetUserSalt(personalNumber))))).ToSecureString();
+
+            // Return the result
+            return (await IoC.CreateInstance<ApplicationViewModel>().rep.UpdatePassword(personalNumber, oldPass, newPass, Salt64));
+        }
+
     }
 }

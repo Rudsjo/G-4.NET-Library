@@ -43,6 +43,13 @@
         #region 'Get' declerations
 
         /// <summary>
+        /// Gets the user salt.
+        /// </summary>
+        /// <param name="personalNumber">The personal number.</param>
+        /// <returns></returns>
+        abstract Task<string> GetUserSalt(string personalNumber);
+
+        /// <summary>
         /// Gets all atrticles from the system with a specific status
         /// </summary>
         /// <returns>An IEnumerable with all found articles</returns>
@@ -111,6 +118,16 @@
         #endregion
 
         #region 'Update' declerations
+
+        /// <summary>
+        /// Updates the password.
+        /// </summary>
+        /// <param name="personalNumber">The personal number.</param>
+        /// <param name="oldPass">The old pass.</param>
+        /// <param name="newPass">The new pass.</param>
+        /// <param name="newSalt">The new salt.</param>
+        /// <returns></returns>
+        abstract Task<bool> UpdatePassword(string personalNumber, SecureString oldPass, SecureString newPass, string newSalt);
 
         /// <summary>
         /// Preform changes to an existing article
