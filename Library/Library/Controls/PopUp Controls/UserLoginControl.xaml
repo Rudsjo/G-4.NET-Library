@@ -51,18 +51,73 @@
                         <Grid.RowDefinitions>
                             <!-- Closing button -->
                             <RowDefinition Height="Auto" />
-                            
+
                             <!-- Login content -->
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-                        <Button Content="&#xf00d;"
-                                Style="{StaticResource CloseIconButton}"
-                                HorizontalAlignment="Right"
-                                Margin="0 0 10 40"
-                                FontSize="20"
-                                Command="{Binding CloseUserLoginControl}"
-                                />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                            <Button Content="&#xf059;"
+                                    Style="{StaticResource IconInfoButton}">
+
+                                <Button.Template>
+                                    <ControlTemplate>
+
+                                        <Grid x:Name="BtnGrid">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Text="&#xf059;" 
+                                                       Style="{StaticResource ButtonIcon}" 
+                                                       Grid.Row="0"
+                                                       Margin="0 10 -80 0"
+                                                       />
+
+                                            <Border x:Name="HelpText" Visibility="Hidden">
+                                                <Border.Effect>
+                                                    <DropShadowEffect BlurRadius="9"
+                                                                      ShadowDepth="1"
+                                                                      Opacity="0.2" />
+                                                </Border.Effect>
+
+                                                <TextBlock Padding="10" Background="White"
+                                                           Style="{StaticResource WarningText}"
+                                                           FontSize="12"
+                                                           Grid.Row="1"
+                                                           Margin="0 30 -80 0"
+                                                           >
+                                                    Problem med inloggning? <LineBreak/>
+                                                    Kontakta personalen!
+
+                                                </TextBlock>
+
+                                            </Border>
+
+                                        </Grid>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger SourceName="BtnGrid" Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="HelpText" Property="Visibility" Value="Visible" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+
+                                    </ControlTemplate>
+                                </Button.Template>
+
+                            </Button>
+
+                            <Button Content="&#xf00d;"
+                                    Style="{StaticResource CloseIconButton}"
+                                    HorizontalAlignment="Right"
+                                    Margin="0 0 10 40"
+                                    FontSize="20"
+                                    Command="{Binding CloseUserLoginControl}"
+                                    />
+                        </StackPanel>
+
 
 
                         <!-- Login content -->
@@ -138,12 +193,6 @@
 
                     </Grid>
                 </Border>
-
-                <!-- Forgot password -->
-                <!--<Button Style="{StaticResource TextButton}"
-                        Command="{Binding ForgotPassword}"
-                        Content="Glömt lösenord..."
-                        HorizontalAlignment="Center" />-->
 
             </StackPanel>
         </Grid>

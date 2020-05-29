@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Styling\Images\LibsysFavicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +18,7 @@
     <None Remove="Styling\Fonts\PassionOne-Bold.ttf" />
     <None Remove="Styling\Fonts\PassionOne-Regular.ttf" />
     <None Remove="Styling\Images\LibsysBackground.png" />
+    <None Remove="Styling\Images\LibsysFavicon.ico" />
     <None Remove="Styling\Images\LibsysLogo.png" />
     <None Remove="Styling\Images\LibsysLogo_White.png" />
   </ItemGroup>
@@ -64,6 +66,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Styling\Images\LibsysBackground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Styling\Images\LibsysFavicon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Styling\Images\LibsysLogo.png">

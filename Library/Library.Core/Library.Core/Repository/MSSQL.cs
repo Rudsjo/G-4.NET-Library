@@ -360,6 +360,18 @@
             }
         }
 
+        /// <summary>
+        /// Get all dewey placements
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Dewey>> GetDeweyPlacements()
+        {
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                try { return await Connection.QueryAsync<Dewey>("GetDeweyPlacements", commandType: CommandType.StoredProcedure); } catch (Exception ex) { return null; }
+            }
+        }
+
         #endregion
 
         #region 'Check' queries

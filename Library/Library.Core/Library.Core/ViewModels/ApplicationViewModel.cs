@@ -23,8 +23,19 @@ namespace Library.Core
 
         #region Public Properties
 
+        /// <summary>
+        /// List of all deweys
+        /// </summary>
+        public ObservableCollection<Dewey> Deweys { get; set; }
+
+        /// <summary>
+        /// List of all reasons
+        /// </summary>
         public ObservableCollection<Reason> Reasons { get; set; }
 
+        /// <summary>
+        /// List of the current reasons depending on page
+        /// </summary>
         public ObservableCollection<Reason> CurrentReasons { get; set; }
 
         /// <summary>
@@ -120,6 +131,15 @@ namespace Library.Core
 
         #region Public Methods
 
+        public async void FillDeweyList()
+        {
+            Deweys = new ObservableCollection<Dewey>((await rep.GetDeweyPlacements()).ToList().ToObservableCollection());
+
+        }
+
+        /// <summary>
+        /// Fills the reasons list
+        /// </summary>
         public async void FillReasonsList()
         {
             Reasons = new ObservableCollection<Reason>();

@@ -75,13 +75,9 @@ namespace Library.Core
         public string edition { get; set; }
 
         /// <summary>
-        /// A flag that indicates if the reserve button should be hidden from the current user.
-        /// </summary>
-        public bool IsLoanedByCurrentUser { get; set; }
-
-        /// <summary>
         /// Reason for an eventual removal
         /// </summary>
+        [ReflectionSkipper]
         public int reasonID { get; set; }
 
         #endregion
@@ -91,27 +87,34 @@ namespace Library.Core
         /// <summary>
         /// Flag to indicate if the object is a real user or not
         /// </summary>
+        [ReflectionSkipper]
         public bool IsPlaceholder { get; set; }
 
         /// <summary>
         /// The quantity of the article
         /// </summary>
+        [ReflectionSkipper]
         public int quantity { get; set; }
 
         /// <summary>
         /// The number of articles available
         /// </summary>
+        [ReflectionSkipper]
         public string availability { get; set; }
 
         /// <summary>
         /// Flag to indicate if animation should take place
         /// </summary>
+        [ReflectionSkipper]
         public bool ShouldAnimateOut { get; set; }
 
         /// <summary>
         /// Flag to indicate if to show loan article button
         /// </summary>
+        [ReflectionSkipper]
         private bool _availableToLoanVisibility;
+
+        [ReflectionSkipper]
         public bool AvailableToLoanVisibility
         {
             get
@@ -130,7 +133,10 @@ namespace Library.Core
         /// <summary>
         /// Flag to indicate if to show reserve article button
         /// </summary>
+        [ReflectionSkipper]
         private bool _availableToReserveVisibility;
+
+        [ReflectionSkipper]
         public bool AvailableToReserveVisibility
         {
             get
@@ -152,6 +158,18 @@ namespace Library.Core
             }
             set { }
         }
+
+        /// <summary>
+        /// A flag that indicates if the reserve button should be hidden from the current user.
+        /// </summary>
+        /// 
+        [ReflectionSkipper]
+        public bool IsLoanedByCurrentUser { get; set; }
         #endregion
+    }
+
+    public class ReflectionSkipper : Attribute
+    {
+
     }
 }

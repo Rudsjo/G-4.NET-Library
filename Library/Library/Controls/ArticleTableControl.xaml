@@ -106,7 +106,7 @@
                             <ScrollViewer Grid.Column="0" Width="140"
                                           HorizontalScrollBarVisibility="Auto">
                                 <TextBlock
-                                       Text="{Binding articleID,Converter={local:IntToStringConverter}}"
+                                       Text="{Binding articleID,Converter={local:IntToStringConverter}, ConverterParameter=GetReasonID}"
                                        VerticalAlignment="Center" HorizontalAlignment="Center" 
                                        Style="{StaticResource TableItemText}"
                                        />
@@ -329,7 +329,7 @@
                             <ScrollViewer Grid.Column="2" Width="90" 
                                           HorizontalScrollBarVisibility="Auto">
                                 <TextBlock 
-                                       Text="{Binding placement}"
+                                       Text="{Binding placement, Converter={local:IntToStringConverter}, ConverterParameter=GetDewey}"
                                        VerticalAlignment="Center" HorizontalAlignment="Center"
                                        Style="{StaticResource TableItemText}"
                                        />

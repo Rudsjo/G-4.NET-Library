@@ -47,10 +47,6 @@
 
             // Create the update command
             UpdateCSVItems = new RelayCommand(UpdateCSV);
-            DownloadCSV = new RelayCommand(() =>
-            {
-                File.WriteAllLines(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Test.csv", CurrentCSV.ToCSV());
-            });
         }
 
         async void GetList()

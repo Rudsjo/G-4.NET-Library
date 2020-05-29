@@ -23,10 +23,10 @@ namespace Library
             // Set start page
             IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.MainPage);
 
-            // Fill the initla list of articles
+            // Fill necessary lists
             IoC.CreateInstance<BookPageViewModel>().FillSearchableArticleList();
-
             IoC.CreateInstance<ApplicationViewModel>().FillReasonsList();
+            IoC.CreateInstance<ApplicationViewModel>().FillDeweyList();
 
             // Create a new instance of the main window
             Current.MainWindow = new MainWindow();

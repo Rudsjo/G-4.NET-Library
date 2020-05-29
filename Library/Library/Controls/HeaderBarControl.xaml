@@ -34,14 +34,6 @@
                         Grid.Column="1"
                         HorizontalAlignment="Right">
 
-                <!-- Settings -->
-                <Button Style="{StaticResource IconButton}"
-                        Content="&#xf013;"
-                        Visibility="{Binding ApplicationViewModel.IsUser,
-                                     Source={x:Static local:ViewModelLocator.Instance},
-                                     Converter={local:BooleanToVisibilityConverter}}"
-                            />
-
                 <Grid>
                     <!-- Notifications -->
                     <Button Style="{StaticResource IconButton}"                  

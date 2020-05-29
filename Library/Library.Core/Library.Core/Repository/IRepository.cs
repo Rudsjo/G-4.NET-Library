@@ -114,6 +114,12 @@
         /// <returns></returns>
         abstract Task<IEnumerable<Reason>> GetUserReasons();
 
+        /// <summary>
+        /// Gets all the deweyplacements
+        /// </summary>
+        /// <returns></returns>
+        abstract Task<IEnumerable<Dewey>> GetDeweyPlacements();
+
         #endregion
 
         #region 'Update' declerations

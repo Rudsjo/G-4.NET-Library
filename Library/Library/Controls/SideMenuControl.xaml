@@ -85,13 +85,11 @@
                                       Content="Rapporter"
                                       IconContent="&#xf70e;"
                                       Margin="0"
-                                      
-                                      Visibility="Collapsed" />
 
-                <!--Visibility="{Binding ApplicationViewModel.IsSuperAdmin,
+                Visibility="{Binding ApplicationViewModel.IsSuperAdmin,
                                                    Source={x:Static local:ViewModelLocator.Instance},
-                                                   Converter={local:BooleanToVisibilityConverter}}"-->
-                                      
+                                                   Converter={local:BooleanToVisibilityConverter}}" />
+
 
             </StackPanel>
 

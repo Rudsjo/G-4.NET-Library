@@ -70,8 +70,60 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                
-                <TextBlock Grid.Row="0" Text="Mina lån" Style="{StaticResource SubHeaderText}" />
+
+                <DockPanel>
+                     <TextBlock Text="Mina lån" Style="{StaticResource SubHeaderText}" />
+
+                    <Button Content="&#xf059;"
+                            Style="{StaticResource IconInfoButton}"
+                            HorizontalAlignment="Right" Margin="0 0 5 0">
+
+                        <Button.Template>
+                            <ControlTemplate>
+
+                                <Grid x:Name="BtnGrid">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Text="&#xf059;"
+                                                       Style="{StaticResource ButtonIcon}" 
+                                                       Grid.Row="0"
+                                                       />
+
+                                    <Border x:Name="HelpText" Visibility="Collapsed" Margin="-150 0 0 0">
+                                        <Border.Effect>
+                                            <DropShadowEffect BlurRadius="9"
+                                                                      ShadowDepth="1"
+                                                                      Opacity="0.2" />
+                                        </Border.Effect>
+
+                                        <TextBlock Padding="10" Background="White"
+                                                           Style="{StaticResource WarningText}"
+                                                           FontSize="12"
+                                                           Grid.Row="1"
+                                                           >
+                                            
+                                            Dagar kvar av lånet
+
+                                        </TextBlock>
+
+                                    </Border>
+
+                                </Grid>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger SourceName="BtnGrid" Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="HelpText" Property="Visibility" Value="Visible" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                </DockPanel>
 
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding MyLoans}">
@@ -83,39 +135,65 @@
 
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border BorderBrush="{StaticResource LightBlueBrush}" 
-                                        BorderThickness="0.5" 
-                                        Padding="9" Margin="0 10 0 0"
-                                        >
-                                    <Border.Effect>
-                                        <DropShadowEffect BlurRadius="2"
-                                                  ShadowDepth="1"
-                                                  Opacity="0.5"
-                                                  Direction="-90"
-                                                  Color="{StaticResource DarkBlue}"
-                                                  />
-                                    </Border.Effect>
 
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding articleID}" 
-                                                   Margin="5 0 0 0"
-                                                   FontSize="10" FontFamily="{StaticResource MontserratLight}"
-                                                   Visibility="{Binding IsPlaceholder, Converter={local:BooleanToVisibilityConverter},
-                                                   ConverterParameter=Placeholder}"
-                                                   VerticalAlignment="Center" HorizontalAlignment="Left"
-                                                   />
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="{Binding title}"
-                                                   FontSize="10" FontFamily="{StaticResource MontserratLight}"
-                                                   Visibility="{Binding IsPlaceholder, Converter={local:BooleanToVisibilityConverter},
-                                                   ConverterParameter=Placeholder}"
-                                                   VerticalAlignment="Center"
-                                                   Margin="20 0 0 0"
-                                                   />
-                                    </StackPanel>
+                                    <Border BorderBrush="{StaticResource LightBlueBrush}" 
+                                            BorderThickness="0.5" 
+                                            Padding="9" Margin="0 10 20 0"
+                                            >
+                                        <Border.Effect>
+                                            <DropShadowEffect BlurRadius="2"
+                                                      ShadowDepth="1"
+                                                      Opacity="0.5"
+                                                      Direction="-90"
+                                                      Color="{StaticResource DarkBlue}"
+                                                      />
+                                        </Border.Effect>
 
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding articleID}" 
+                                                       Margin="5 0 0 0"
+                                                       FontSize="10" FontFamily="{StaticResource MontserratLight}"
+                                                       Visibility="{Binding IsPlaceholder, Converter={local:BooleanToVisibilityConverter},
+                                                       ConverterParameter=Placeholder}"
+                                                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                                                       />
 
-                                </Border>
+                                            <TextBlock Text="{Binding title}"
+                                                       FontSize="10" FontFamily="{StaticResource MontserratLight}"
+                                                       Visibility="{Binding IsPlaceholder, Converter={local:BooleanToVisibilityConverter},
+                                                       ConverterParameter=Placeholder}"
+                                                       VerticalAlignment="Center"
+                                                       Margin="20 0 0 0"
+                                                       />
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Grid.Column="1" BorderBrush="{StaticResource LightBlueBrush}"
+                                            BorderThickness="0.5" Padding="5 7 10 5" Margin="0 10 0 0">
+                                        <Border.Effect>
+                                            <DropShadowEffect BlurRadius="2"
+                                                              ShadowDepth="1"
+                                                              Opacity="0.5"
+                                                              Direction="-90"
+                                                              Color="{StaticResource DarkBlue}"
+                                                              />
+                                        </Border.Effect>
+
+                                        <TextBlock Text="{Binding loanTime}"
+                                                       Margin="5 0 0 0"
+                                                       FontSize="10" FontFamily="{StaticResource MontserratLight}"
+                                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                       Visibility="{Binding IsPlaceholder, Converter={local:BooleanToVisibilityConverter}, ConverterParameter=Placeholder}"
+                                                       />
+                                    </Border>
+                                    
+                                </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

@@ -8,10 +8,12 @@
     using System.Collections;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.IO;
     using System.Linq;
     using System.Net;
     using System.Reflection;
     using System.Security;
+    using System.Text;
     using System.Threading.Tasks;
     using static System.Runtime.InteropServices.Marshal;
     #endregion
@@ -258,43 +260,42 @@
         /// <typeparam name="T"></typeparam>
         /// <param name="Items"></param>
         /// <returns></returns>
-        public static List<string> ToCSV<T>(this IEnumerable<T> Items) where T : class
+        public static void SaveAsCSV<T>(this IEnumerable<T> Items, string filePath) where T : class
         {
-            // Result list
-            List<string> Result = new List<string>();
-
-            // Create the headers
-            PropertyInfo[] Info = Items.ToList()[0].GetType().GetProperties();
-
-            // Get the headers
-            string Header = String.Empty;
-            Info.ToList().ForEach(i =>
+            using (StreamWriter sw = new StreamWriter(File.Open(filePath, FileMode.Create), Encoding.UTF8))
             {
-                // Append the property name
-                Header += ((Info.ToList().IndexOf(i) < Info.Length - 1) ? i.Name + "," : i.Name);
-            });
-            // Add the header
-            Result.Add(Header);
+                // Create the headers
+                PropertyInfo[] Info = Items.ToList()[0].GetType().GetProperties();
 
-            // Loop through each item in the collection
-            foreach (var Item in Items)
-            {
-                // Create the row
-                string Row = String.Empty;
+                // Get the headers
+                string Header = String.Empty;
+                Info.ToList().ForEach(i =>
+                {
+                    if(!Attribute.IsDefined(i, typeof(ReflectionSkipper)))
+                        // Append the property name
+                        Header += ((Info.ToList().IndexOf(i) < Info.Length - 1) ? i.Name + "," : i.Name);
+                });
+                // Write the header to the file
+                sw.WriteLine(Header);
 
-                // Get info from the item
-                PropertyInfo[] inf = Item.GetType().GetProperties();
-                // Loop through all properties
-                for (int i = 0; i < inf.Length; i++)
-                    // Add the data to the row
-                    Row += (i < inf.Length - 1) ? $"\"{inf[i].GetValue(Item)}\"," : $"\"{inf[i].GetValue(Item)}\"";
+                // Loop through each item in the collection
+                foreach (var Item in Items)
+                {
+                    // Create the row
+                    string Row = String.Empty;
 
-                // Add the row to the CSV
-                Result.Add(Row);
+                    // Get info from the item
+                    PropertyInfo[] inf = Item.GetType().GetProperties();
+                    // Loop through all properties
+                    for (int i = 0; i < inf.Length; i++)
+                        if(!Attribute.IsDefined(inf[i], typeof(ReflectionSkipper)))
+                            // Add the data to the row
+                            Row += (i < inf.Length - 1) ? $"\"{inf[i].GetValue(Item)}\"," : $"\"{inf[i].GetValue(Item)}\"";
+
+                    // Write all bytes to the file
+                    sw.WriteLine(Row);
+                }
             }
-
-            // Return the result
-            return Result;
         }
 
         #endregion

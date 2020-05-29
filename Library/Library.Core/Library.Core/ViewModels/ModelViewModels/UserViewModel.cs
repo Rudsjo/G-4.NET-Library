@@ -44,26 +44,34 @@ namespace Library.Core
         /// <summary>
         /// Flag to indicate if the object is a real user or not
         /// </summary>
+        [ReflectionSkipper]
         public bool IsPlaceholder { get; set; }
 
         /// <summary>
         /// The number of loaned articles the user has
         /// </summary>
+        /// 
+        [ReflectionSkipper]
         public string loanedArticles { get; set; }
 
         /// <summary>
         /// The number of reserved articles the user has
         /// </summary>
+        /// 
+        [ReflectionSkipper]
         public string reservedArticles { get; set; }
 
         /// <summary>
         /// Property to check if a user is blocked
         /// </summary>
+        /// 
         public bool IsBlocked { get; set; }
 
         /// <summary>
         /// Counts the number of reservations that are ready for loan ( is at the top of reservationslist)
         /// </summary>
+        /// 
+        [ReflectionSkipper]
         public int NumberOfNotifications { get; set; }
         #endregion
     }

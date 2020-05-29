@@ -44,7 +44,7 @@ namespace Library.Core
         /// Command to change a page
         /// </summary>
         /// <returns></returns>
-        private void ChangePageCommand(object pageToOpen)
+        private async void ChangePageCommand(object pageToOpen)
         {
             // Resets the Filterpopup when changing page
             IoC.CreateInstance<MainContentUserControlViewModel>().ResetFilterPopup();
@@ -89,6 +89,8 @@ namespace Library.Core
                     {
                         // Log out the current user
                         IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.MainPage);
+
+                        IoC.CreateInstance<MainPageViewModel>().FirstSearchText = "";
                         
                         break;
                     }

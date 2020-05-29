@@ -3,8 +3,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Transactions;
 using System.Windows.Input;
@@ -80,6 +82,11 @@ namespace Library.Core
         /// Command for clearing all filters
         /// </summary>
         public ICommand ClearFilters { get; set; }
+
+        /// <summary>
+        /// Command to download the current list as a CSV file
+        /// </summary>
+        public ICommand DownloadCSV { get; set; }
 
         /// <summary>
         /// Flag to indicate if removed articles are shown
@@ -337,7 +344,36 @@ namespace Library.Core
             ReturnReservation = new RelayParameterizedCommand(async (parameter) => await ReturnReservationCommand(parameter));
             LoanReservation = new RelayParameterizedCommand(async (parameter) => await LoanReservationCommand(parameter));
             #endregion
+
             #endregion
+
+            DownloadCSV = new RelayCommand(() =>
+            {
+                string CSVName = IoC.CreateInstance<ApplicationViewModel>().CurrentPage.ToString();
+
+                // File index
+                int FileNumber = 0;
+                // Get all files on the desktop
+                var fls = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\");
+                foreach(string f in fls)
+                {
+                    // Get info about the file
+                    FileInfo file = new FileInfo(f);
+                    // Check if it is the correct file
+                    if (file.Name.StartsWith(CSVName))
+                        // Check if the ending digit is grater than the previous one
+                        if (int.TryParse(Regex.Match(file.Name, @"[\d]+").Value, out int i) && i == FileNumber)
+                            FileNumber++;
+                }
+
+                if(!IsShowingRemovedArticles)
+                    IoC.CreateInstance<TableControlViewModel>().CurrentList.Where(x => x.GetType().GetProperty("IsPlaceholder")
+                    .GetValue(x).Equals(false)).SaveAsCSV(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) 
+                    + $"\\{CSVName}{FileNumber}.csv");
+                else
+                    IoC.CreateInstance<TableControlViewModel>().RemovedArticles.Where(x => x.GetType().GetProperty("IsPlaceholder")
+                    .GetValue(x).Equals(false)).SaveAsCSV(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\{CSVName}{FileNumber}.csv");
+            });
         }
 
         #endregion   
@@ -476,7 +512,7 @@ namespace Library.Core
         /// <summary>
         ///  Searches for articles in the articles list 
         /// </summary>
-        private void SearchUpdate()
+        public void SearchUpdate()
         {
 
             if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.BookPage && IsShowingRemovedArticles == false)
@@ -553,6 +589,8 @@ namespace Library.Core
 
                 else
                 {
+                    var dewey = IoC.CreateInstance<ApplicationViewModel>().Deweys.Where(d => d.description.ToLower().Contains(_searchText.ToLower())).Select(d => d.deweyID);
+
                     //Search through the list
                     IoC.CreateInstance<TableControlViewModel>().CurrentList =
                     ArticleSearchList.Where(s =>
@@ -560,6 +598,7 @@ namespace Library.Core
                     s.author.ToLower().Contains(_searchText.ToLower()) ||
                     s.isbn.ToLower().Contains(_searchText.ToLower()) ||
                     s.publisher.ToLower().Contains(_searchText.ToLower()) ||
+                    dewey.Contains(s.placement) ||
                     s.title.ToLower().Contains(_searchText.ToLower())))
                     .ToList().ToObservableCollection().FillPlaceHolders();
                 }
@@ -579,11 +618,10 @@ namespace Library.Core
                 )).ToList().ToObservableCollection().FillPlaceHolders();
             }
 
-            else
+            else if(IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.EmployeePage)
             {
 
-                IoC.CreateInstance<TableControlViewModel>().CurrentList =
-                (IoC.CreateInstance<TableControlViewModel>().CurrentList as IEnumerable<UserViewModel>).Where(u =>
+                IoC.CreateInstance<TableControlViewModel>().CurrentList = UserSearchList.Where(u =>
                 u.IsPlaceholder == false && (
                 u.personalNumber.ToLower().Contains(_searchText.ToLower()) ||
                 u.firstName.ToLower().Contains(_searchText.ToLower()) ||
@@ -738,6 +776,9 @@ namespace Library.Core
                 }
                 //Else set no notification
                 else IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.NoNotification;
+
+                //Load all items again
+                IoC.CreateInstance<TableControlViewModel>().LoadItems();
             }
         }
 
@@ -776,6 +817,9 @@ namespace Library.Core
                 }
                 //Else set no notification
                 else IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.NoNotification;
+
+                //Load all items again
+                IoC.CreateInstance<TableControlViewModel>().LoadItems();
             }
         }
         #endregion

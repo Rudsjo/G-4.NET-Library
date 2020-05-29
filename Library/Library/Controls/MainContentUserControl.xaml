@@ -42,6 +42,17 @@
                             HorizontalAlignment="Right"
                             Margin="-200 80 50 10">
 
+                <!-- Download CSV -->
+                <local:ButtonWithIcon Content="CSV"
+                                      IconContent="&#xf019;"
+                                      Style="{StaticResource TableActionButton}"
+                                      Margin="0 0 5 0"
+                                      Command="{Binding DownloadCSV}"
+                                      Visibility="{Binding ApplicationViewModel.IsSuperAdmin,
+                                                   Source={x:Static local:ViewModelLocator.Instance},
+                                                   Converter={local:BooleanToVisibilityConverter}}"
+                                      />
+
                 <!-- Add -->
                 <local:ButtonWithIcon Content="{Binding AddButtonText}"
                                           IconContent="&#xf067;"

@@ -219,10 +219,14 @@ namespace Library.Core
 
             }
 
+            if(IoC.CreateInstance<MainContentUserControlViewModel>().SearchText != null)
+                IoC.CreateInstance<MainContentUserControlViewModel>().SearchUpdate();
+
             await Task.Delay(1500);
 
             // When data is loaded, set the flag
             IoC.CreateInstance<ApplicationViewModel>().IsLoading = false;
+
         }
 
         /// <summary>
@@ -365,7 +369,7 @@ namespace Library.Core
             CurrentUserReservationsList = await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserReservations(pn);
             
 
-            string dateTime = "2000-01-01";
+            string dateTime = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToLongTimeString()}";
 
             //Checks to see if article is already loaned or reserved by user.
             bool AlreadyReservedArticleCheck = false;

@@ -136,42 +136,6 @@ namespace Library.Core
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
         }
 
-        ///// <summary>
-        ///// Method to check if a user has any reservations available for loan
-        ///// </summary>
-        ///// <returns></returns>
-        //public async Task CheckUserForNotifications()
-        //{
-        //    //Create a new list to hold all reservations avaliable for loan
-        //    IoC.CreateInstance<MainContentUserControlViewModel>().NotificationList = new ObservableCollection<Reservation>();
-
-        //    //get all the reservations in database
-        //    var allReservations = await IoC.CreateInstance<ApplicationViewModel>().rep.GetAllReservations();
-
-        //    //get user specific reservations
-        //    var userReservations = await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserReservations(IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber);
-
-        //    //Go trough every reservation in user reservation
-        //    foreach (var reservation in userReservations)
-        //    {
-
-        //        //gets a result of the first occuring sequence in database, list goes backward?!
-        //        // || x.userID == IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber, this section was removed for trying out, seems to work
-        //        var result = allReservations.Where(x => x.articleID == reservation.articleID && x.userID == IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber).First();
-
-        //        //if user from result is the same as current user, and article has status 4, the notification enables
-        //        if (reservation.statusID == 4)
-        //        {
-        //            IoC.CreateInstance<ApplicationViewModel>().CurrentUser.NumberOfNotifications++;
-        //            //Change notification
-        //            IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.Notification;
-
-        //            //Adding the reservation avaliable for loan to notificationlist and displaying it
-        //            //IoC.CreateInstance<MainContentUserControlViewModel>().NotificationList.Add(reservation as Reservation);
-        //        }
-        //    }
-        //}
-
 
         public async Task CheckNotifications()
         {

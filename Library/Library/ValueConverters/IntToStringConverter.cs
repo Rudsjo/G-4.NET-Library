@@ -10,12 +10,21 @@ namespace Library
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            // Returns an empty string if an int is 0
-            if ((int)value == 0 && (string)parameter == null)
-                return "";
+            // Get the reason id and convert it to string 
+            if ((string)parameter == "GetReasonID")
+            {
+                foreach (var reason in IoC.CreateInstance<ApplicationViewModel>().CurrentReasons)
+                {
+                    if ((int)value == 0)
+                        return "";
+
+                    if (reason.reasonID == (int)value)
+                        return reason.reasonID;
+                }
+            }
 
             // Get the reason id and convert it to string 
-            if((string)parameter == "GetReason")
+            if ((string)parameter == "GetReason")
             {
                 foreach(var reason in IoC.CreateInstance<ApplicationViewModel>().CurrentReasons)
                 {
@@ -24,6 +33,15 @@ namespace Library
 
                     if (reason.reasonID == (int)value)
                         return reason.reason;
+                }
+            }
+
+            else if((string)parameter == "GetDewey")
+            {
+                foreach(var dewey in IoC.CreateInstance<ApplicationViewModel>().Deweys)
+                {
+                    if (dewey.deweyID == (string)value)
+                        return dewey.description;
                 }
             }
 
