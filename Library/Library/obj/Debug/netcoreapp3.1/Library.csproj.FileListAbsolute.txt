@@ -1807,3 +1807,5 @@ C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Co
 C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Pages\ReportPage.baml
 C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
 C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
+C:\Users\joxca\OneDrive\Skrivbord\PizzaPalatset_2.0\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DownloadingControl.g.cs
+C:\Users\joxca\OneDrive\Skrivbord\PizzaPalatset_2.0\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\DownloadingControl.baml

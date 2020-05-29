@@ -1,5 +1,4 @@
-﻿using Library.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -15,14 +14,13 @@ using System.Windows.Shapes;
 namespace Library
 {
     /// <summary>
-    /// Interaction logic for ReportFilterControl.xaml
+    /// Interaction logic for DownloadingControl.xaml
     /// </summary>
-    public partial class ReportFilterControl : UserControl
+    public partial class DownloadingControl : UserControl
     {
-        public ReportFilterControl()
+        public DownloadingControl()
         {
             InitializeComponent();
-            DataContext = IoC.CreateInstance<ReportPageViewModel>();
         }
     }
 }

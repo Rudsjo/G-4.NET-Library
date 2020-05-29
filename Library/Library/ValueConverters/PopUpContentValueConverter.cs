@@ -64,6 +64,12 @@ namespace Library
                 case PopUpContents.ChangePassword:
                     return new ChangePasswordControl();
 
+                case PopUpContents.ReportFilter:
+                    return new ReportFilterControl();
+
+                case PopUpContents.Downloading:
+                    return new DownloadingControl();
+
                 default:
                     return null;
             }

@@ -142,6 +142,16 @@
         /// </summary>
         ChangePassword = 16,
 
+        /// <summary>
+        /// Popup for the report filter
+        /// </summary>
+        ReportFilter = 17,
+
+        /// <summary>
+        /// Popup for downloading
+        /// </summary>
+        Downloading = 18,
+
     }
 
     /// <summary>

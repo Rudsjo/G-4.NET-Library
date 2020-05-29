@@ -265,6 +265,27 @@ namespace Library
                     return defaultColor;
             }
 
+            else if(type == typeof(bool) && (string)parameter == "LoanedBooksReport")
+            {
+                if ((bool)value)
+                {
+                    return filterCheckedColor;
+                }
+                else
+                    return defaultColor;
+            }
+
+            else if (type == typeof(bool) && (string)parameter == "ReservedBooksReport")
+            {
+                if ((bool)value)
+                {
+                    IoC.CreateInstance<ReportPageViewModel>().AllLoanedBooksFilter = false;
+                    return filterCheckedColor;
+                }
+                else
+                    return defaultColor;
+            }
+
             return defaultBrush;
         }
 

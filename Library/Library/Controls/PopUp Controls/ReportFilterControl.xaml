@@ -6,53 +6,84 @@
              xmlns:local="clr-namespace:Library"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <Border Background="#FFFFFF" 
+                Height="320" 
+                Width="300"
+        
+                BorderBrush="{StaticResource MediumGreyBrush}" BorderThickness="2">
 
-        <!-- Buttons -->
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="9"
+                                          ShadowDepth="1"
+                                          Opacity="0.5" />
+        </Border.Effect>
+        <Grid>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
+            
+            
+            <Button
+                       Style="{StaticResource CloseIconButton}"
+                       Content="&#xf00d;"
+                       HorizontalAlignment="Right" Margin="10"
+                       FontSize="20"
+                       Command="{Binding Close}"
+                       />
 
-            <Button Grid.Column="0" Grid.Row="0"
-                    Content="Artiklar"
+
+            <StackPanel Grid.Row="1">
+                <TextBlock
+                       Text="Rapportfilter"      
+                       Style="{StaticResource TableHeaderIcon}"
+                       
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+                <Border BorderBrush="{StaticResource LightBlueBrush}" BorderThickness="1" 
+                        Margin="30 20 30 0" Opacity="0.2">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="9"
+                                          ShadowDepth="1"
+                                          Opacity="0.2" />
+                    </Border.Effect>
+                </Border>
+            </StackPanel>
+
+            <ScrollViewer Grid.Row="2" Margin="-10 20 0 0" HorizontalAlignment="Center"
+                          HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+                
+                <StackPanel>
+
+                    <CheckBox Style="{StaticResource FilterCheckBox}"
+                              Content="Alla lånade böcker"
+                              FontSize="14" FontFamily="{StaticResource MontserratRegular}"
+                              IsChecked="{Binding AllLoanedBooksFilter}"
+                              Margin="10" />
+
+                    <CheckBox Style="{StaticResource FilterCheckBox}"
+                              Content="Alla reserverade böcker"
+                              FontSize="14" FontFamily="{StaticResource MontserratRegular}"
+                              IsChecked="{Binding AllReservedBooksFilter}"
+                              Margin="10" />
+
+                </StackPanel>
+                
+            </ScrollViewer>
+
+
+            <Button Content="Bekräfta" Grid.Row="3"
+                    Style="{StaticResource BlueActionButton}"
+                    Margin="50 20"
+                    Command="{Binding Confirm}"
                     />
 
-            <Button Grid.Column="1" Grid.Row="0"
-                    Content="Användare"
-                    />
-
-            <Border Grid.Row="1" Grid.ColumnSpan="2"
-                    BorderBrush="{StaticResource LightBlueBrush}"
-                    BorderThickness="1" Margin="0 5">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="9"
-                                      ShadowDepth="1"
-                                      Opacity="0.2" />
-                </Border.Effect>
-            </Border>
-            
         </Grid>
-        
-        <!-- Filter options -->
-        <Grid Grid.Row="1" Visibility="{Binding ShowArticleFilters, 
-                                        Converter={local:BooleanToVisibilityConverter},
-                                        ConverterParameter=ErrorText}">
+    </Border>
 
-            
-            
-        </Grid>
-            
-    </Grid>
 </UserControl>

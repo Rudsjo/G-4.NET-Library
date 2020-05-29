@@ -47,25 +47,27 @@
                                       Margin="0 0 5 0"
                                       />
 
-                <!-- Filter -->
-                <local:ButtonWithIcon Content="Filter"
+                <!-- Loaned articles -->
+                <local:ButtonWithIcon Content="Lånade böcker"
                                       IconContent="&#xf0b0;"
                                       Style="{StaticResource TableActionButton}"
-                                      Background="{Binding MainContentUserControlViewModel.FilterColor,
-                                                   Source={x:Static local:ViewModelLocator.Instance},
-                                                   Converter={local:StateToStyleConverter}}"
-                                      Command="{Binding UpdateCSVItems}"
+                                      Background="{Binding AllLoanedBooksFilter, UpdateSourceTrigger=PropertyChanged,
+                                                   Converter={local:StateToStyleConverter}, 
+                                                   ConverterParameter=LoanedBooksReport}"
+                                      Command="{Binding ShowLoanedArticles}"
                                       Margin="0 0 5 0"
                                       />
 
-                <!-- Clear filter button -->
-                <Button Margin="-15 0 0 0"
-                        Content="&#xf00d;"
-                        Style="{StaticResource CloseIconButtonWithBorder}"
-                        Visibility="{Binding ShowClearFilter, Converter={local:BooleanToVisibilityConverter},
-                                     ConverterParameter=ErrorText, FallbackValue=false, UpdateSourceTrigger=PropertyChanged}"
-                        Command="{Binding ClearFilter}"
-                        />
+                <!-- Reserved articles -->
+                <local:ButtonWithIcon Content="Reserverade böcker"
+                                      IconContent="&#xf0b0;"
+                                      Style="{StaticResource TableActionButton}"
+                                      Background="{Binding AllReservedBooksFilter,
+                                                   Converter={local:StateToStyleConverter}, 
+                                                   ConverterParameter=ReservedBooksReport}"
+                                      Command="{Binding ShowReservedArticles}"
+                                      Margin="0 0 5 0"
+                                      />
             </StackPanel>
         </Grid>
 

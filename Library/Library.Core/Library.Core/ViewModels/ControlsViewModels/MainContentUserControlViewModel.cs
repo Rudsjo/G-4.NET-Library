@@ -347,8 +347,13 @@ namespace Library.Core
 
             #endregion
 
+            // Command to download a CSV file of the current list and sve it to the desktop with a prefixed name
             DownloadCSV = new RelayCommand(() =>
             {
+                // Open the download pop up
+                IoC.CreateInstance<ApplicationViewModel>().ShowDownload();
+
+                // Set the custom name
                 string CSVName = IoC.CreateInstance<ApplicationViewModel>().CurrentPage.ToString();
 
                 // File index
@@ -820,7 +825,6 @@ namespace Library.Core
 
 
         #region Public Methods
-
         /// <summary>
         /// Command to open a MyProfile popup,
         /// if user is not logged in the login popup will be displayed

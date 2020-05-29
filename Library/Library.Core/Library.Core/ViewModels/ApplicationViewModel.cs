@@ -131,6 +131,28 @@ namespace Library.Core
 
         #region Public Methods
 
+        /// <summary>
+        /// Opens a downloading popup and closes it
+        /// </summary>
+        public async void ShowDownload()
+        {
+            // Open the popup
+            OpenPopUp(PopUpContents.Downloading);
+
+            // Wait
+            await Task.Delay(2500);
+
+            // Close it
+            ClosePopUp();
+
+            // Open the success popup
+            OpenPopUp(PopUpContents.Success);
+            await Task.Delay(700);
+
+            // Close it
+            ClosePopUp();
+        }
+
         public async void FillDeweyList()
         {
             Deweys = new ObservableCollection<Dewey>((await rep.GetDeweyPlacements()).ToList().ToObservableCollection());

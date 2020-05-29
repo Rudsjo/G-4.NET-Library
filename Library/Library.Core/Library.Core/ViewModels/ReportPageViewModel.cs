@@ -6,6 +6,7 @@
     using System.Collections.ObjectModel;
     using System.IO;
     using System.Linq;
+    using System.Text.RegularExpressions;
     using System.Threading.Tasks;
     using System.Windows.Input;
     #endregion
@@ -21,12 +22,8 @@
         /// <summary>
         /// CSV items
         /// </summary>
+        /// 
         public ObservableCollection<dynamic> CurrentCSV { get; set; }
-
-        /// <summary>
-        /// Command for updating the <see cref="CurrentCSV"/> collection
-        /// </summary>
-        public ICommand UpdateCSVItems { get; set; }
 
         /// <summary>
         /// Command to download the CSV file
@@ -34,9 +31,25 @@
         public ICommand DownloadCSV { get; set; }
 
         /// <summary>
-        /// Command to set the choice of filter
+        /// Command to show the report of loaned articles
         /// </summary>
-        public ICommand MainFilterChoice { get; set; }
+        public ICommand ShowLoanedArticles { get; set; }
+
+        /// <summary>
+        /// Command to show the report of reserved articles
+        /// </summary>
+        public ICommand ShowReservedArticles { get; set; }
+
+
+        /// <summary>
+        /// Flag to be set if all loaned books should be shown
+        /// </summary>
+        public bool AllLoanedBooksFilter { get; set; }
+
+        /// <summary>
+        /// Flag to be set if all loaned books should be shown
+        /// </summary>
+        public bool AllReservedBooksFilter { get; set; }
 
         #endregion
 
@@ -45,48 +58,128 @@
         /// </summary>
         public ReportPageViewModel()
         {
+            // Setting initial list
             CurrentCSV = new ObservableCollection<dynamic>()
             {
-                new { x = 1 }
+                new { Rubrik = "" }
             };
 
-            // Create the update command
-            UpdateCSVItems = new RelayCommand(async () => await UpdateCSV());
-        }
+            // Setting commands
+            ShowLoanedArticles = new RelayCommand(GetAllLoanedArticlesAndTheUser);
+            ShowReservedArticles = new RelayCommand(GetAllReservedArticlesAndTheUser);
 
-        async void GetInitialList()
-        {
-            // Create the CSV collection
-            CurrentCSV = new ObservableCollection<dynamic>();
+            DownloadCSV = new RelayCommand(DownloadCSVCommand);
         }
-
 
         #region Private functions
 
-        /// <summary>
-        /// Update the <see cref="CurrentCSV"/>
-        /// </summary>
-        private async Task UpdateCSV()
+        private void DownloadCSVCommand()
         {
+            IoC.CreateInstance<ApplicationViewModel>().ShowDownload();
 
-            var templist = new ObservableCollection<dynamic>();
+            string CSVName = IoC.CreateInstance<ApplicationViewModel>().CurrentPage.ToString();
 
-            foreach(var user in IoC.CreateInstance<MainContentUserControlViewModel>().UserSearchList)
+            // File index
+            int FileNumber = 0;
+            // Find the file with the highest or missing index
+            foreach (string file_string in Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\"))
+                if (Regex.IsMatch(new FileInfo(file_string).Name, @$"{CSVName}[\d]+\.csv") && int.TryParse(Regex.Match(new FileInfo(file_string).Name, @"[\d]+").Value, out int i) && i == FileNumber)
+                    FileNumber++;
+
+            CurrentCSV.SaveAsCSV(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\{CSVName}{FileNumber}.csv");
+
+        }
+
+        /// <summary>
+        /// Gets all the current loans and the user loaning it
+        /// </summary>
+        private async void GetAllLoanedArticlesAndTheUser()
+        {
+            try
             {
-                (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(user.personalNumber)).ToList().ForEach(x => 
-                {
-                    templist.Add(new
-                    {
-                        Namn = $"{user.firstName} {user.lastName}",
-                        Bok = $"{x.title}"
-                    });
-                });
+                // Making sure the user doesnt click anything while loading
+                IoC.CreateInstance<ApplicationViewModel>().IsLoading = true;
 
+                // Setting a temporary list
+                var templist = new ObservableCollection<dynamic>();
+
+                // Getting all the items
+                foreach (var user in IoC.CreateInstance<MainContentUserControlViewModel>().UserSearchList)
+                {
+                    (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(user.personalNumber)).ToList().ForEach(x =>
+                    {
+                        templist.Add(new
+                        {
+                            Namn = $"{user.firstName} {user.lastName}",
+                            Bok = $"{x.title}"
+                        });
+                    });
+                }
+
+                // Setting the flags to change backgrounds in UI
+                AllLoanedBooksFilter = true;
+                AllReservedBooksFilter = false;
+
+                // Making sure we have items, otherwise we tell the user
+                if (templist.Count != 0)
+                    CurrentCSV = templist;
+                else
+                    CurrentCSV = new ObservableCollection<dynamic>()
+                {
+                    new { NoResults = "" },
+                };
             }
 
-            CurrentCSV = templist;
+            // End the load no matter what happens
+            finally { IoC.CreateInstance<ApplicationViewModel>().IsLoading = false; }
 
         } 
+
+        /// <summary>
+        /// Gets all the current reservations and the user reserving it
+        /// </summary>
+        /// <returns></returns>
+        private async void GetAllReservedArticlesAndTheUser()
+        {
+            try
+            {
+                // Making sure the user doesnt click anything while loading
+                IoC.CreateInstance<ApplicationViewModel>().IsLoading = true;
+
+                // Setting a temporary list
+                var templist = new ObservableCollection<dynamic>();
+
+                // Getting all the items
+                foreach (var user in IoC.CreateInstance<MainContentUserControlViewModel>().UserSearchList)
+                {
+                    (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserReservations(user.personalNumber)).ToList().ForEach(x =>
+                    {
+                        templist.Add(new
+                        {
+                            Namn = $"{user.firstName} {user.lastName}",
+                            Bok = $"{x.title}"
+                        });
+                    });
+
+                }
+
+                // Setting the flags to change backgrounds in UI
+                AllReservedBooksFilter = true;
+                AllLoanedBooksFilter = false;
+
+                // Making sure we have items, otherwise we tell the user
+                if (templist.Count != 0)
+                    CurrentCSV = templist;
+                else
+                    CurrentCSV = new ObservableCollection<dynamic>()
+                {
+                    new { NoResults = "" },
+                };
+            }
+
+            // End the load no matter what happens
+            finally { IoC.CreateInstance<ApplicationViewModel>().IsLoading = false; }
+        }
 
         #endregion
     }
