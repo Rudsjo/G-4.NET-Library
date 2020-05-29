@@ -61,6 +61,10 @@ namespace Library.Core
         /// </summary>
         public bool IsBlocked { get; set; }
 
+        /// <summary>
+        /// Counts the number of reservations that are ready for loan ( is at the top of reservationslist)
+        /// </summary>
+        public int NumberOfNotifications { get; set; }
         #endregion
     }
 }

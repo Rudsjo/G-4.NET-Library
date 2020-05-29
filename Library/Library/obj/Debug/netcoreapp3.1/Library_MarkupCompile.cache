@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\
 Library
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library\App.xaml
+C:\Users\pette\Desktop\Library\Library\App.xaml
 40-1472759825
 
 58-1237213120
-196192625084
+1961033508111
 Controls\ArticleTableControl.xaml;Controls\HeaderBarControl.xaml;Controls\MainContentUserControl.xaml;Controls\PageHost.xaml;Controls\PopUp Controls\AddArticleControl.xaml;Controls\PopUp Controls\AddUserControl.xaml;Controls\PopUp Controls\ArticleEditControl.xaml;Controls\PopUp Controls\ArticleFilterControl.xaml;Controls\PopUp Controls\ArticleInfoControl.xaml;Controls\PopUp Controls\ChangePasswordControl.xaml;Controls\PopUp Controls\ConfirmationControl.xaml;Controls\PopUp Controls\DatabaseLoginControl.xaml;Controls\PopUp Controls\LoadingControl.xaml;Controls\PopUp Controls\MyProfileControl.xaml;Controls\PopUp Controls\NotificationControl.xaml;Controls\PopUp Controls\ReportFilterControl.xaml;Controls\PopUp Controls\ReturnLoansControl.xaml;Controls\PopUp Controls\SuccessfulControl.xaml;Controls\PopUp Controls\UserEditControl.xaml;Controls\PopUp Controls\UserLoginControl.xaml;Controls\PopUpControl.xaml;Controls\SideMenuControl.xaml;Controls\Skeleton Controls\HeaderBarControlSkeleton.xaml;Controls\Skeleton Controls\MainContentUserControlSkeleton.xaml;Controls\Skeleton Controls\TableControlSkeleton.xaml;Controls\SubPopUpControl.xaml;Controls\UserTableControl.xaml;MainWindow.xaml;Pages\BackupPage.xaml;Pages\BookPage.xaml;Pages\EmployeePage.xaml;Pages\MainPage.xaml;Pages\ReportPage.xaml;Styling\Styles\Buttons.xaml;Styling\Styles\CheckBoxes.xaml;Styling\Styles\Colors.xaml;Styling\Styles\ComboBoxes.xaml;Styling\Styles\Fonts.xaml;Styling\Styles\Scroll.xaml;Styling\Styles\Texts.xaml;
 
 False

@@ -42,23 +42,37 @@
                                      Converter={local:BooleanToVisibilityConverter}}"
                             />
 
-                <!-- Notifications -->
-                <Button Style="{StaticResource IconButton}"                  
-                            Content="&#xf0f3;"
+                <Grid>
+                    <!-- Notifications -->
+                    <Button Style="{StaticResource IconButton}"                  
+                            Content="&#xf0f3;"                        
                             Command="{Binding OpenNotification}"
-                            Background="{Binding NotificationColor, 
-                            Converter={local:StateToStyleConverter}}"
-                        Visibility="{Binding ApplicationViewModel.IsUser,
+                            Visibility="{Binding ApplicationViewModel.IsUser,
                                      Source={x:Static local:ViewModelLocator.Instance},
                                      Converter={local:BooleanToVisibilityConverter}}"
                         >
 
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="8"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Border Background="{Binding NotificationColor, 
+                            Converter={local:StateToStyleConverter}}"
+                            Visibility="{Binding ApplicationViewModel.IsUser,
+                            Source={x:Static local:ViewModelLocator.Instance},
+                            Converter={local:BooleanToVisibilityConverter}}"
+                            CornerRadius="360"
+                            Width="10"
+                            Height="10"
+                            VerticalAlignment="Top"
+                            Margin="0 10 0 0">
+
+                    </Border>
+
+                </Grid>
 
                 <!-- MyProfile / Login -->
                 <Button Style="{StaticResource IconButton}"

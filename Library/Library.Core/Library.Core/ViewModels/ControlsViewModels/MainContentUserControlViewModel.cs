@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Core.Models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,7 +13,10 @@ using System.Xml;
 namespace Library.Core
 {
     public class MainContentUserControlViewModel : BaseViewModel
-    {   
+    {
+        public ICommand ReturnReservation { get; set; }
+        public ICommand LoanReservation { get; set; }
+        public ObservableCollection<Reservation> NotificationList { get; set; }
 
         #region Public Properties
 
@@ -328,6 +332,11 @@ namespace Library.Core
             AddToList = new RelayCommand(async () => await AddToListCommand());
             RemoveFromList = new RelayParameterizedCommand(async (parameter) => await RemoveFromListCommand(parameter));
             ListOfArticlesToReturn = new ObservableCollection<ArticleViewModel>();
+
+            #region Added for notification
+            ReturnReservation = new RelayParameterizedCommand(async (parameter) => await ReturnReservationCommand(parameter));
+            LoanReservation = new RelayParameterizedCommand(async (parameter) => await LoanReservationCommand(parameter));
+            #endregion
             #endregion
         }
 
@@ -694,6 +703,81 @@ namespace Library.Core
             await Task.Delay(1);
         }
 
+        /// <summary>
+        /// MethodCommand to return a reservation if the user first in line regrets reserving it
+        /// </summary>
+        /// <param name="itemToReturn"></param>
+        /// <returns></returns>
+        private async Task ReturnReservationCommand(object itemToReturn)
+        {
+            //Small check so that itemToReturn is not null
+            if (itemToReturn != null)
+            {
+                //Deletes the reservation from current user, and if there are more reservations on article sets the status to 4
+                await IoC.CreateInstance<ApplicationViewModel>().rep.DeleteReservation((int)itemToReturn, IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber);
+                
+                //Clear the list
+                NotificationList.Clear();
+
+                //Open popup to indicate successfull return
+                IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Success);             
+
+                await Task.Delay(700);
+
+                //Close popup
+                IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
+
+                //Check the user if there are any more avaliable reservations
+                await IoC.CreateInstance<UserLoginControlViewModel>().CheckNotifications();
+
+                //Check if the new list contains any items
+                if (NotificationList.Count > 0)
+                {
+                    //If true sets the notification
+                    IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.Notification;
+                }
+                //Else set no notification
+                else IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.NoNotification;
+            }
+        }
+
+        /// <summary>
+        /// MethodCommand to loan a article that is reserved by the user. (User is first in line on that article
+        /// </summary>
+        /// <param name="itemToLoan"></param>
+        /// <returns></returns>
+        private async Task LoanReservationCommand(object itemToLoan)
+        {
+            //Small check so that itemToLoan is not null
+            if (itemToLoan != null)
+            {
+                //Loan article from reservation-list.
+                await IoC.CreateInstance<ApplicationViewModel>().rep.LoanArticle(IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber, (int)itemToLoan);
+
+                //Clear the list
+                NotificationList.Clear();
+
+                //Open popup to indicate successful loan
+                IoC.CreateInstance<ApplicationViewModel>().OpenSubPopUp(PopUpContents.Success);
+
+                await Task.Delay(700);
+
+                //Close popup
+                IoC.CreateInstance<ApplicationViewModel>().CloseSubPopUp();
+
+                //Check the user if there are any more avaliable reservations
+                await IoC.CreateInstance<UserLoginControlViewModel>().CheckNotifications();
+
+                //Check if the new list contains any items
+                if (NotificationList.Count > 0)
+                {
+                    //If true sets the notification
+                    IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.Notification;
+                }
+                //Else set no notification
+                else IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.NoNotification;
+            }
+        }
         #endregion
 
         #endregion
@@ -709,8 +793,12 @@ namespace Library.Core
         public void MyProfileCommand()
         {
             if (IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID != 4)
+            {
+                //Load the data to the profile everytime it opens
+                IoC.CreateInstance<MyProfileControlViewModel>().GetMyLoansAndReservations();
                 // Setting the pop up content
                 IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.MyProfile);
+            }     
             else
                 IoC.CreateInstance<ApplicationViewModel>().OpenPopUp(PopUpContents.UserLogin);
         }

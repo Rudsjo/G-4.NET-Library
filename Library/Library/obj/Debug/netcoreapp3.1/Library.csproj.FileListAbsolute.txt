@@ -1793,3 +1793,17 @@ C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library\obj\Debug\netc
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ChangePasswordControl.g.cs
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\MyProfileControl.g.cs
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\NotificationControl.g.cs
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReportFilterControl.g.cs
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReturnLoansControl.g.cs
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Pages\ReportPage.g.cs
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ChangePasswordControl.baml
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\MyProfileControl.baml
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\NotificationControl.baml
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReportFilterControl.baml
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Controls\PopUp Controls\ReturnLoansControl.baml
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Pages\ReportPage.baml
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
+C:\Users\pette\Desktop\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache

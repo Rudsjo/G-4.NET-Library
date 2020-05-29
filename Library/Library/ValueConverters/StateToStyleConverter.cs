@@ -36,7 +36,7 @@ namespace Library
             var filterCheckedColor = App.Current.Resources[string.Format("LightBlueBrush")];
 
             //Sets the color for the Notification button if any reservations are ready to be picked up
-            var notificationColor = App.Current.Resources[string.Format("LightBlueBrush")];
+            var notificationColor = App.Current.Resources[string.Format("WineRedBrush")];
 
             #endregion
 

@@ -1,4 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using Library.Core.Models;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Library.Core
@@ -96,6 +100,8 @@ namespace Library.Core
                 IoC.CreateInstance<ApplicationViewModel>().CurrentUser = NewUser;
                 IoC.CreateInstance<ApplicationViewModel>().SetCurrentUserRole();
 
+                await CheckNotifications();
+
                 // If the login is made from the start screen we go to the book page
                 if (IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.MainPage)
                     IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.BookPage);
@@ -130,6 +136,90 @@ namespace Library.Core
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
         }
 
+        ///// <summary>
+        ///// Method to check if a user has any reservations available for loan
+        ///// </summary>
+        ///// <returns></returns>
+        //public async Task CheckUserForNotifications()
+        //{
+        //    //Create a new list to hold all reservations avaliable for loan
+        //    IoC.CreateInstance<MainContentUserControlViewModel>().NotificationList = new ObservableCollection<Reservation>();
+
+        //    //get all the reservations in database
+        //    var allReservations = await IoC.CreateInstance<ApplicationViewModel>().rep.GetAllReservations();
+
+        //    //get user specific reservations
+        //    var userReservations = await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserReservations(IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber);
+
+        //    //Go trough every reservation in user reservation
+        //    foreach (var reservation in userReservations)
+        //    {
+
+        //        //gets a result of the first occuring sequence in database, list goes backward?!
+        //        // || x.userID == IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber, this section was removed for trying out, seems to work
+        //        var result = allReservations.Where(x => x.articleID == reservation.articleID && x.userID == IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber).First();
+
+        //        //if user from result is the same as current user, and article has status 4, the notification enables
+        //        if (reservation.statusID == 4)
+        //        {
+        //            IoC.CreateInstance<ApplicationViewModel>().CurrentUser.NumberOfNotifications++;
+        //            //Change notification
+        //            IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.Notification;
+
+        //            //Adding the reservation avaliable for loan to notificationlist and displaying it
+        //            //IoC.CreateInstance<MainContentUserControlViewModel>().NotificationList.Add(reservation as Reservation);
+        //        }
+        //    }
+        //}
+
+
+        public async Task CheckNotifications()
+        {
+            //Create a new list to hold all reservations avaliable for loan
+            IoC.CreateInstance<MainContentUserControlViewModel>().NotificationList = new ObservableCollection<Reservation>();
+
+            //get all the reservations in database
+            var allReservations = await IoC.CreateInstance<ApplicationViewModel>().rep.GetAllReservations();
+
+            var duplicates = allReservations.GroupBy(x => x.articleID)
+                                            .Where(g => g.Count() > 1)
+                                            .Select(g => g.Key)
+                                            .ToList();
+
+            foreach (var item in allReservations)
+            {
+                if (item.userID == IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber)
+                {
+                    if (!duplicates.Contains(item.articleID) && item.statusID == 4)
+                    {
+                        //Change notification
+                        IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.Notification;
+
+                        //Adding the reservation avaliable for loan to notificationlist and displaying it
+                        IoC.CreateInstance<MainContentUserControlViewModel>().NotificationList.Add(item);
+                    }
+
+                    else if (duplicates.Contains(item.articleID))
+                    {
+                        var first = allReservations
+                                   .Where(x => x.articleID == item.articleID && item.userID == IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber)
+                                   .ToList()
+                                   .First();
+
+                        if(first.userID == IoC.CreateInstance<ApplicationViewModel>().CurrentUser.personalNumber && item.statusID == 4)
+                        {
+                            //Change notification
+                            IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.Notification;
+
+                            //Adding the reservation avaliable for loan to notificationlist and displaying it
+                            IoC.CreateInstance<MainContentUserControlViewModel>().NotificationList.Add(item);
+                        }
+                    }
+                    
+                }
+            }
+
+        }
         #endregion
     }
 }

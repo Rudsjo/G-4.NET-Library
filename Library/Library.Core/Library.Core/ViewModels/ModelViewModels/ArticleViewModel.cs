@@ -139,7 +139,7 @@ namespace Library.Core
                 if (!IsLoanedByCurrentUser)
                 {
                     // Check if the article is available
-                    if (statusID == 2)
+                    if (statusID == 2 || statusID == 4)
                         _availableToReserveVisibility = true;
                     // If not, then hide the reserve button 
                     else

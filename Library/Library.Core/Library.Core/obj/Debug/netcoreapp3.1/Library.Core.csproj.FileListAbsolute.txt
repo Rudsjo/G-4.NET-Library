@@ -251,3 +251,4 @@ C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.C
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.Fody.CopyLocal.cache
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
 C:\Users\joxca\OneDrive\Skrivbord\G-4.NET-Library\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+C:\Users\pette\Desktop\Library\Library.Core\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache

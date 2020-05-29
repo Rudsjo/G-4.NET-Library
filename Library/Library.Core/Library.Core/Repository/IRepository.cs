@@ -5,6 +5,7 @@
     /// </summary>
     #region Namespaces
     using Library.Core;
+    using Library.Core.Models;
     using System.Collections.Generic;
     using System.Security;
     using System.Threading.Tasks;
@@ -64,13 +65,6 @@
         abstract Task<Article> GetArticleByID(int _articleID);
 
         /// <summary>
-        /// Gets the user by their identifier.
-        /// </summary>
-        /// <param name="_personalNumber">The personalnumber.</param>
-        /// <returns>The salt from that user</returns>
-        abstract Task<string> GetUserByID(string _personalNumber);
-
-        /// <summary>
         /// Gets all the roles
         /// </summary>
         /// <returns></returns>
@@ -96,6 +90,11 @@
         /// <returns></returns>
         abstract Task<IEnumerable<Article>> GetUserReservations(string _personalNumber);
 
+        /// <summary>
+        /// Gets all reservations 
+        /// </summary>
+        /// <returns></returns>
+        abstract Task<IEnumerable<Reservation>> GetAllReservations();
 
         /// <summary>
         /// Gets all removed articles

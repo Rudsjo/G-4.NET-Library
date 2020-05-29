@@ -14,6 +14,7 @@
     using System.Data.SqlClient;
     using Dapper;
     using System.Security.Cryptography;
+    using Library.Core.Models;
     #endregion
 
     /// <summary>
@@ -66,7 +67,7 @@
             // Open a connectin to the database
             using (SqlConnection Connection = CreateSQLConnection())
                 // Return the result
-                return (await Connection.QueryAsync<int>("AddCategory", new { type = _categoryName }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("AddCategory", new { type = _categoryName }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
 
         }
 
@@ -80,21 +81,25 @@
             // Open a connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                return (await Connection.QueryAsync<int>("AddArticle",
-                    new
-                    {
-                        title = _article.title,
-                        author = _article.author,
-                        publisher = _article.publisher,
-                        isbn = _article.isbn,
-                        price = _article.price,
-                        categoryID = _article.categoryID,
-                        description = _article.description,
-                        loanTime = _article.loanTime,
-                        placement = _article.placement,
-                        edition = _article.edition
-                    },
-                    commandType: CommandType.StoredProcedure)).First() != 0;
+                try
+                {
+                   return (await Connection.QueryAsync<int>("AddArticle",
+                   new
+                   {
+                       title = _article.title,
+                       author = _article.author,
+                       publisher = _article.publisher,
+                       isbn = _article.isbn,
+                       price = _article.price,
+                       categoryID = _article.categoryID,
+                       description = _article.description,
+                       loanTime = _article.loanTime,
+                       placement = _article.placement,
+                       edition = _article.edition
+                   },
+                   commandType: CommandType.StoredProcedure)).First() != 0;
+                }
+                catch { return false; }
             }
         }
 
@@ -108,14 +113,19 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Return the result as bool
-                return (await Connection.QueryAsync<int>("AddUser", new {
-                    personalNumber = PersonalNumber,
-                    firstName      = FirstName,
-                    lastName       = LastName,
-                    roleID         = RoleID,
-                    password       = Password.ToUnsecureString(),
-                    salt           = SaltBase64
-                }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try
+                {
+                    return (await Connection.QueryAsync<int>("AddUser", new
+                    {
+                        personalNumber = PersonalNumber,
+                        firstName = FirstName,
+                        lastName = LastName,
+                        roleID = RoleID,
+                        password = Password.ToUnsecureString(),
+                        salt = SaltBase64
+                    }, commandType: CommandType.StoredProcedure)).First() != 0;
+                }
+                catch { return false; }
             }
         }
 
@@ -133,7 +143,7 @@
             // Open a new connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
                 // return the result
-                return ( await Connection.QueryAsync<int>("DeleteArticle", new { articleID = _articleID, reasonID = _reasonID }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("DeleteArticle", new { articleID = _articleID, reasonID = _reasonID }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
         }
 
         /// <summary>
@@ -146,7 +156,7 @@
             // Open a new connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
                 // return the result
-                return (await Connection.QueryAsync<int>("DeleteArticle", new { categoryID = _categoryID }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("DeleteArticle", new { categoryID = _categoryID }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
         }
 
         /// <summary>
@@ -159,7 +169,7 @@
             // Open a new connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
                 // return the result
-                return (await Connection.QueryAsync<int>("DeleteUser", new { personalNumber = _personalNumber }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("DeleteUser", new { personalNumber = _personalNumber }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
         }
 
         /// <summary>
@@ -172,7 +182,7 @@
             //Opens a new connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
                 //return the result
-                return (await Connection.QueryAsync<int>("DeleteReservation", new { articleID = _articleID, personalNumber = _personalNumber }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("DeleteReservation", new { articleID = _articleID, personalNumber = _personalNumber }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
         }
 
         #endregion
@@ -190,7 +200,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Return the query result
-                return (await Connection.QueryAsync<string>("RetrieveUserSalt", new { personalNumber = personalNumber }, commandType: CommandType.StoredProcedure)).First();
+                try { return (await Connection.QueryAsync<string>("RetrieveUserSalt", new { personalNumber = personalNumber }, commandType: CommandType.StoredProcedure)).First(); } catch(Exception ex) { return null; }
             }
         }
 
@@ -205,7 +215,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Return the result
-                return await Connection.QueryAsync<Article>("GetAllArticlesByStatus", new { statusID = _status }, commandType: System.Data.CommandType.StoredProcedure);
+                try { return await Connection.QueryAsync<Article>("GetAllArticlesByStatus", new { statusID = _status }, commandType: System.Data.CommandType.StoredProcedure); } catch (Exception ex) { return null; }
             }
         }
 
@@ -219,32 +229,15 @@
             //Open a connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                //Get the result from the database
-                var Result = await Connection.QueryAsync<Article>("GetArticleByID", new { articleID = _articleID }, commandType: CommandType.StoredProcedure);
+                try
+                {
+                    //Get the result from the database
+                    var Result = await Connection.QueryAsync<Article>("GetArticleByID", new { articleID = _articleID }, commandType: CommandType.StoredProcedure);
 
-                //Check if the item exists and returns the item
-                return (Result.Count() == 0) ? null : Result.First();
-            }
-        }
-
-        /// <summary>
-        /// <see cref="ILibraryRepository.GetUserByID(string)"/>
-        /// </summary>
-        /// <param name="_personalNumber">The personalnumber.</param>
-        /// <returns>
-        /// The salt from that user
-        /// </returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public async Task<string> GetUserByID(string _personalNumber)
-        {
-            // Open a connection to the database
-            using (SqlConnection Connection = CreateSQLConnection())
-            {
-                // Get the result from the database.
-                var Result = await Connection.QueryAsync<string>("FindUser", new { PersonalNumber = _personalNumber }, commandType: CommandType.StoredProcedure);
-
-                // Check if result contains any elements.
-                return (Result.Count() == 0) ? null : Result.First();
+                    //Check if the item exists and returns the item
+                    return (Result.Count() == 0) ? null : Result.First();
+                }
+                catch { return null; }
             }
         }
 
@@ -258,7 +251,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Get the result from the database
-                return await Connection.QueryAsync<Role>("GetAllRoles", new { }, commandType: System.Data.CommandType.StoredProcedure);
+                try { return await Connection.QueryAsync<Role>("GetAllRoles", new { }, commandType: System.Data.CommandType.StoredProcedure); } catch (Exception ex) { return null; }
             }
         }
 
@@ -272,9 +265,24 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Get the result from the database
-                return await Connection.QueryAsync<Category>("GetAllCategories", new { }, commandType: System.Data.CommandType.StoredProcedure);
+                try { return await Connection.QueryAsync<Category>("GetAllCategories", new { }, commandType: System.Data.CommandType.StoredProcedure); } catch (Exception ex) { return null; }
             }
         }
+
+        /// <summary>
+        /// <see cref="ILibraryRepository.GetAllReservations"/>
+        /// </summary>
+        /// <returns>returns a list of all reservations</returns>
+        public async Task<IEnumerable<Reservation>> GetAllReservations()
+        {
+            //Open a connection to the database
+            using (SqlConnection Connection = CreateSQLConnection())
+            {
+                //Get the result from the database
+                try { return await Connection.QueryAsync<Reservation>("GetAllReservations", new { }, commandType: CommandType.StoredProcedure); } catch (Exception ex) { return null; }
+            }
+        }
+
 
         /// <summary>
         /// <see cref="ILibraryRepository.GetUserLoans(string)"/>
@@ -292,7 +300,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Get and return the collection 
-                return await Connection.QueryAsync<Article>("GetUserLoans", new { PersonalNumber = _personalNumber }, commandType: CommandType.StoredProcedure);
+                try { return await Connection.QueryAsync<Article>("GetUserLoans", new { PersonalNumber = _personalNumber }, commandType: CommandType.StoredProcedure); } catch (Exception ex) { return null; }
             }
         }
 
@@ -312,7 +320,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Get and return the collection 
-                return await Connection.QueryAsync<Article>("GetUserReservations", new { PersonalNumber = _personalNumber }, commandType: CommandType.StoredProcedure);
+                try { return await Connection.QueryAsync<Article>("GetUserReservations", new { PersonalNumber = _personalNumber }, commandType: CommandType.StoredProcedure); } catch (Exception ex) { return null; }
             }
         }
 
@@ -324,7 +332,7 @@
         {
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                return await Connection.QueryAsync<Article>("GetRemovedArticles", commandType: CommandType.StoredProcedure);
+                try { return await Connection.QueryAsync<Article>("GetRemovedArticles", commandType: CommandType.StoredProcedure); } catch (Exception ex) { return null; }
             }
         }
 
@@ -336,7 +344,7 @@
         {
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                return (await Connection.QueryAsync<Reason>("GetArticleReasons", commandType: CommandType.StoredProcedure)).Select(c => { c.reasonType = ReasonTypes.ArticleReasons; return c; });
+                try { return (await Connection.QueryAsync<Reason>("GetArticleReasons", commandType: CommandType.StoredProcedure)).Select(c => { c.reasonType = ReasonTypes.ArticleReasons; return c; }); } catch { return null; }
             }
         }
 
@@ -348,7 +356,7 @@
         {
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                return (await Connection.QueryAsync<Reason>("GetUserReasons", commandType: CommandType.StoredProcedure)).Select(c => { c.reasonType = ReasonTypes.UserReasons; return c; });
+                try { return (await Connection.QueryAsync<Reason>("GetUserReasons", commandType: CommandType.StoredProcedure)).Select(c => { c.reasonType = ReasonTypes.UserReasons; return c; }); } catch { return null; }
             }
         }
 
@@ -367,7 +375,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Return the result
-                return (await Connection.QueryAsync<int>("CheckIfArticleIsReserved", new { ArticleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("CheckIfArticleIsReserved", new { ArticleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
             }
         }
 
@@ -382,7 +390,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Return the result
-                return (await Connection.QueryAsync<int>("CheckIfUserIsBlocked", new { personalNumber = _personalNumber }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("CheckIfUserIsBlocked", new { personalNumber = _personalNumber }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
             }
         }
 
@@ -401,7 +409,7 @@
             // Open a new connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                return (await Connection.QueryAsync<int>("ResetPassword", new { personalNumber = personalNumber, newPass = Password }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("ResetPassword", new { personalNumber = personalNumber, newPass = Password }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
             }
         }
 
@@ -417,7 +425,7 @@
             using (IDbConnection Connection = CreateSQLConnection())
             {
                 // Return the result
-                return (await Connection.QueryAsync<int>("BlockUser", new { PersonalNumber = _personalNumber, Reason = _reasonID }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("BlockUser", new { PersonalNumber = _personalNumber, Reason = _reasonID }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
             }
         }
 
@@ -432,7 +440,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Return the result
-                return (await Connection.QueryAsync<int>("UnblockUser", new { personalNumber = _personalNumber }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("UnblockUser", new { personalNumber = _personalNumber }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
             }
         }
 
@@ -456,7 +464,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Return the result
-                return (await Connection.QueryAsync<int>("LoanArticle", new { UserID = _personalNumber, ArticleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("LoanArticle", new { UserID = _personalNumber, ArticleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
             }
         }
 
@@ -473,7 +481,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Return the result
-                return (await Connection.QueryAsync<int>("ReserveArticle", new { UserID = _personalNumber, ArticleID = _articleID, DateTime = _dateTime }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("ReserveArticle", new { UserID = _personalNumber, ArticleID = _articleID, DateTime = _dateTime }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
             }
         }
 
@@ -488,7 +496,7 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Return the result
-                return (await Connection.QueryAsync<int>("ReturnArticle", new { ArticleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("ReturnArticle", new { ArticleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
             }
         }
 
@@ -503,11 +511,18 @@
             // Open a new connection to the database.
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                // Get the result from the database.
-                var Result = await Connection.QueryAsync<User>("AttemptLogin", new { PersonalNumber = _personalNumber,
-                                                                                     Password = Password.ToUnsecureString() }, commandType: CommandType.StoredProcedure);
-                // Check if the result has an element, if not return null
-                return (Result.Count() == 0) ? null : Result.First();
+                try
+                {
+                    // Get the result from the database.
+                    var Result = await Connection.QueryAsync<User>("AttemptLogin", new
+                    {
+                        PersonalNumber = _personalNumber,
+                        Password = Password.ToUnsecureString()
+                    }, commandType: CommandType.StoredProcedure);
+                    // Check if the result has an element, if not return null
+                    return (Result.Count() == 0) ? null : Result.First();
+                }
+                catch { return null; }
             }
         }
 
@@ -515,7 +530,7 @@
         {
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                return (await Connection.QueryAsync<int>("RetrieveArticle", new { articleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("RetrieveArticle", new { articleID = _articleID }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
             }
         }
 
@@ -532,10 +547,14 @@
             // Open a connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                var Articles = (await Connection.QueryAsync<Article>("SearchArticle", new { SearchKey = _keyword }, commandType: CommandType.StoredProcedure));
+                try
+                {
+                    var Articles = (await Connection.QueryAsync<Article>("SearchArticle", new { SearchKey = _keyword }, commandType: CommandType.StoredProcedure));
 
-                // Return an empty collection if no result was found
-                return (Articles == null || Articles.Count() == 0) ? new List<Article>() : Articles;
+                    // Return an empty collection if no result was found
+                    return (Articles == null || Articles.Count() == 0) ? new List<Article>() : Articles;
+                }
+                catch { return null; }
             }
         }
 
@@ -547,11 +566,15 @@
         {
             // Open a connection to the database
             using(SqlConnection Connection = CreateSQLConnection())
-            {            
-                var Users = (await Connection.QueryAsync<User>("SearchUser", new { SearchKey = _keyword }, commandType: CommandType.StoredProcedure));
+            {
+                try
+                {
+                    var Users = (await Connection.QueryAsync<User>("SearchUser", new { SearchKey = _keyword }, commandType: CommandType.StoredProcedure));
 
-                // Return an empty collection if no result was found
-                return (Users == null || Users.Count() == 0) ? new List<User>() : Users;
+                    // Return an empty collection if no result was found
+                    return (Users == null || Users.Count() == 0) ? new List<User>() : Users;
+                }
+                catch { return null; }
             }
         }
 
@@ -570,22 +593,27 @@
             // Open a connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                return (await Connection.QueryAsync<int>("UpdateArticle", 
-                    new {
-                        articleID = _articleID               ,
-                        title     = newArticle.title         ,
-                        author    = newArticle.author        ,
-                        publisher = newArticle.publisher     ,
-                        isbn      = newArticle.isbn          ,
-                        price       = newArticle.price       ,
-                        categoryID  = newArticle.categoryID  ,
-                        description = newArticle.description ,
-                        loanTime  = newArticle.loanTime      ,
-                        statusID  = newArticle.statusID      ,
-                        placement = newArticle.placement     ,
-                        edition = newArticle.edition
-                    }, 
-                    commandType: CommandType.StoredProcedure)).First() != 0;
+                try
+                {
+                    return (await Connection.QueryAsync<int>("UpdateArticle",
+                   new
+                   {
+                       articleID = _articleID,
+                       title = newArticle.title,
+                       author = newArticle.author,
+                       publisher = newArticle.publisher,
+                       isbn = newArticle.isbn,
+                       price = newArticle.price,
+                       categoryID = newArticle.categoryID,
+                       description = newArticle.description,
+                       loanTime = newArticle.loanTime,
+                       statusID = newArticle.statusID,
+                       placement = newArticle.placement,
+                       edition = newArticle.edition
+                   },
+                   commandType: CommandType.StoredProcedure)).First() != 0;
+                }
+                catch { return false; }
             }
         }
 
@@ -600,7 +628,7 @@
             // Open a connection to the database
             using(SqlConnection Connection = CreateSQLConnection())
             {
-                return (await Connection.QueryAsync<int>("UpdateCategory", new { categoryID = _categoryID, type = _newCategory }, commandType: CommandType.StoredProcedure)).First() != 0;
+                try { return (await Connection.QueryAsync<int>("UpdateCategory", new { categoryID = _categoryID, type = _newCategory }, commandType: CommandType.StoredProcedure)).First() != 0; } catch { return false; }
             }
         }
 
@@ -615,15 +643,19 @@
             // Open a connection to the database
             using (SqlConnection Connection = CreateSQLConnection())
             {
-                return (await Connection.QueryAsync<int>("UpdateUser", 
-                    new 
-                    {
-                        personalNumber = _newUser.personalNumber,
-                        firstName = _newUser.firstName,
-                        lastName = _newUser.lastName,
-                        roleID = _newUser.roleID
-                    }, 
-                    commandType: CommandType.StoredProcedure)).First() != 0;
+                try
+                {
+                   return (await Connection.QueryAsync<int>("UpdateUser",
+                   new
+                   {
+                       personalNumber = _newUser.personalNumber,
+                       firstName = _newUser.firstName,
+                       lastName = _newUser.lastName,
+                       roleID = _newUser.roleID
+                   },
+                   commandType: CommandType.StoredProcedure)).First() != 0;
+                }
+                catch { return false; }
             }
         }
 
@@ -640,15 +672,19 @@
             using (SqlConnection Connection = CreateSQLConnection())
             {
                 // Return the query result
-                return (await Connection.QueryAsync<int>("ChangePassword",
-                    new
-                    {
-                        personalNumber = personalNumber,
-                        old_pass_hash = oldPass.ToUnsecureString(),
-                        new_pass_hash = newPass.ToUnsecureString(),
-                        new_salt = newSalt
-                    },
-                    commandType: CommandType.StoredProcedure)).First() != 0;
+                try
+                {
+                    return (await Connection.QueryAsync<int>("ChangePassword",
+                        new
+                        {
+                            personalNumber = personalNumber,
+                            old_pass_hash = oldPass.ToUnsecureString(),
+                            new_pass_hash = newPass.ToUnsecureString(),
+                            new_salt = newSalt
+                        },
+                        commandType: CommandType.StoredProcedure)).First() != 0;
+                }
+                catch { return false; }
             }
 
         }

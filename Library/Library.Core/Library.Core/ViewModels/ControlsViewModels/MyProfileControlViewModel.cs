@@ -82,7 +82,8 @@ namespace Library.Core
         {
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
             IoC.CreateInstance<ApplicationViewModel>().GoToPage(ApplicationPages.MainPage);
-
+            //Set the NotificationColor to default when loggin out
+            IoC.CreateInstance<MainContentUserControlViewModel>().NotificationColor = NotificationColors.NoNotification;
         }
 
 

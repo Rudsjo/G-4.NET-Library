@@ -65,10 +65,15 @@
             </StackPanel>
             
             <!-- User Loans -->
-            <StackPanel Margin="20 0" Grid.Row="2">
-                <TextBlock Text="Mina lån" Style="{StaticResource SubHeaderText}" />
+            <Grid Margin="20 0 20 15" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" Text="Mina lån" Style="{StaticResource SubHeaderText}" />
 
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding MyLoans}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -115,13 +120,18 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-            </StackPanel>
+            </Grid>
 
             <!-- User Reservations -->
-            <StackPanel Margin="20 0" Grid.Row="3">
-                <TextBlock Text="Mina reservationer" Style="{StaticResource SubHeaderText}" />
+            <Grid Margin="20 0 20 15" Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" Text="Mina reservationer" Style="{StaticResource SubHeaderText}" />
 
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding MyReservations}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -168,7 +178,7 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-            </StackPanel>
+            </Grid>
 
 
             <StackPanel Grid.Row="4">
