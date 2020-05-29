@@ -2,9 +2,11 @@
 {
     #region Namespaces
     using System;
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.IO;
     using System.Linq;
+    using System.Threading.Tasks;
     using System.Windows.Input;
     #endregion
 
@@ -43,18 +45,19 @@
         /// </summary>
         public ReportPageViewModel()
         {
-            GetList();
+            CurrentCSV = new ObservableCollection<dynamic>()
+            {
+                new { x = 1 }
+            };
 
             // Create the update command
-            UpdateCSVItems = new RelayCommand(UpdateCSV);
+            UpdateCSVItems = new RelayCommand(async () => await UpdateCSV());
         }
 
-        async void GetList()
+        async void GetInitialList()
         {
-            var list = (await IoC.CreateInstance<ApplicationViewModel>().rep.SearchUsers()).ToList().ToObservableCollection();
-
             // Create the CSV collection
-            CurrentCSV = new ObservableCollection<dynamic>(list);
+            CurrentCSV = new ObservableCollection<dynamic>();
         }
 
 
@@ -63,8 +66,25 @@
         /// <summary>
         /// Update the <see cref="CurrentCSV"/>
         /// </summary>
-        private async void UpdateCSV()
+        private async Task UpdateCSV()
         {
+
+            var templist = new ObservableCollection<dynamic>();
+
+            foreach(var user in IoC.CreateInstance<MainContentUserControlViewModel>().UserSearchList)
+            {
+                (await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserLoans(user.personalNumber)).ToList().ForEach(x => 
+                {
+                    templist.Add(new
+                    {
+                        Namn = $"{user.firstName} {user.lastName}",
+                        Bok = $"{x.title}"
+                    });
+                });
+
+            }
+
+            CurrentCSV = templist;
 
         } 
 

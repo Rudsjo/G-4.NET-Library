@@ -79,7 +79,7 @@ namespace Library
                     Content.SetValue(TextBlock.FontFamilyProperty, App.Current.Resources[string.Format("PassionOneRegular")]);
                     Content.SetValue(TextBlock.FontSizeProperty,   App.Current.Resources[string.Format("FontSizeSmall")]);
                     Content.SetValue(TextBlock.ForegroundProperty, App.Current.Resources[string.Format("CustomGreyBrush")]);
-                    Content.SetValue(TextBlock.WidthProperty, 90.0D);
+                    Content.SetValue(TextBlock.WidthProperty, 120.0D);
 
                     // Append the item to the stackpanel
                     MainStack.AppendChild(Content);
@@ -141,7 +141,8 @@ namespace Library
             MainBorder.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(255, 255, 255)));
             MainBorder.SetValue(Border.BorderBrushProperty, App.Current.Resources["CustomLightGreyBrush"]);
             MainBorder.SetValue(Border.BorderThicknessProperty, new Thickness(0, 0, 0, 1));
-            MainBorder.SetValue(Border.HeightProperty, 50.0D);            
+           
+            MainBorder.SetValue(Border.PaddingProperty, new Thickness(0, 20, 0, 20));            
 
             // Create the stackpanel
             FrameworkElementFactory MainStack = new FrameworkElementFactory(typeof(StackPanel));
@@ -161,6 +162,11 @@ namespace Library
 
                 for (int i2 = 0; i2 < Properties.Length; i2++)
                 {
+                    // Create the scrollViewer
+                    FrameworkElementFactory scroll = new FrameworkElementFactory(typeof(ScrollViewer));
+                    scroll.SetValue(ScrollViewer.WidthProperty, 120.0D);
+                    scroll.SetValue(ScrollViewer.HorizontalScrollBarVisibilityProperty,
+                        ScrollBarVisibility.Auto);
                     // Create the header container
                     FrameworkElementFactory Content = new FrameworkElementFactory(typeof(TextBlock));
 
@@ -171,11 +177,11 @@ namespace Library
                     Content.SetValue(TextBlock.TextAlignmentProperty,       TextAlignment.Center);
                     Content.SetValue(TextBlock.FontFamilyProperty, App.Current.Resources[string.Format("MontserratBold")]);
                     Content.SetValue(TextBlock.FontSizeProperty,   App.Current.Resources[string.Format("FontSizeVerySmall")]);
-                    Content.SetValue(TextBlock.ForegroundProperty, App.Current.Resources[string.Format("CustomGreyBrush")]);
-                    Content.SetValue(TextBlock.WidthProperty, 90.0D);
 
                     // Append the item to the stackpanel
-                    MainStack.AppendChild(Content);
+                    scroll.AppendChild(Content);
+                    // Append the ScrollViewer to the Stackpanel
+                    MainStack.AppendChild(scroll);
                 }
             }
             // Catch the exception

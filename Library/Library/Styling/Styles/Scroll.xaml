@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:Library">
 
     <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
-        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="IsTabStop" Value="false"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -57,7 +57,7 @@
                 <Setter Property="MinWidth" Value="0"/>
                 <Setter Property="Height" Value="10"/>
                 <Setter Property="MinHeight" Value="{Binding Height, RelativeSource={RelativeSource Self}}"/>
-                <Setter Property="Margin" Value="0 0 0 -15" />
+                <Setter Property="Margin" Value="0 0 0 0" />
 
                 <Setter Property="Template">
                     <Setter.Value>

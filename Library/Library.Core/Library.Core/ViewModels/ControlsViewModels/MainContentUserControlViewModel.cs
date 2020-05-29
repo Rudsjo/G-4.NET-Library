@@ -353,20 +353,12 @@ namespace Library.Core
 
                 // File index
                 int FileNumber = 0;
-                // Get all files on the desktop
-                var fls = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\");
-                foreach(string f in fls)
-                {
-                    // Get info about the file
-                    FileInfo file = new FileInfo(f);
-                    // Check if it is the correct file
-                    if (file.Name.StartsWith(CSVName))
-                        // Check if the ending digit is grater than the previous one
-                        if (int.TryParse(Regex.Match(file.Name, @"[\d]+").Value, out int i) && i == FileNumber)
-                            FileNumber++;
-                }
+                // Find the file with the highest or missing index
+                foreach (string file_string in Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\"))
+                    if (Regex.IsMatch(new FileInfo(file_string).Name, @$"{CSVName}[\d]+\.csv") && int.TryParse(Regex.Match(new FileInfo(file_string).Name, @"[\d]+").Value, out int i) && i == FileNumber)
+                        FileNumber++;
 
-                if(!IsShowingRemovedArticles)
+                if (!IsShowingRemovedArticles)
                     IoC.CreateInstance<TableControlViewModel>().CurrentList.Where(x => x.GetType().GetProperty("IsPlaceholder")
                     .GetValue(x).Equals(false)).SaveAsCSV(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) 
                     + $"\\{CSVName}{FileNumber}.csv");
