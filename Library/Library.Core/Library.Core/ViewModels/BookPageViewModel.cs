@@ -19,7 +19,6 @@ namespace Library.Core
 
         #endregion
 
-
         #region Constructor
 
         /// <summary>

@@ -166,10 +166,41 @@ namespace Library.Core
         [ReflectionSkipper]
         public bool IsLoanedByCurrentUser { get; set; }
         #endregion
-    }
 
-    public class ReflectionSkipper : Attribute
-    {
+        /// <summary>
+        /// Copies this instance.
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            // Create a new instance of this class
+            ArticleViewModel vm = new ArticleViewModel();
 
+            #region Copy all properties from this class to the new one
+            vm.articleID                    = this.articleID;
+            vm.availability                 = this.availability;
+            vm.AvailableToLoanVisibility    = this.AvailableToLoanVisibility;
+            vm.AvailableToReserveVisibility = this.AvailableToReserveVisibility;
+            vm.categoryID                   = this.categoryID;
+            vm.IsLoanedByCurrentUser        = this.IsLoanedByCurrentUser;
+            vm.IsPlaceholder                = this.IsPlaceholder;
+            vm.loanTime                     = this.loanTime;
+            vm.price                        = this.price;
+            vm.quantity                     = this.quantity;
+            vm.reasonID                     = this.reasonID;
+            vm.statusID                     = this.statusID;
+            vm.ShouldAnimateOut             = this.ShouldAnimateOut;
+            vm.title       = new string(this.title);
+            vm.publisher   = new string(this.publisher);
+            vm.placement   = new string(this.placement);
+            vm.edition     = new string(this.edition);
+            vm.description = new string(this.description);
+            vm.author      = new string(this.author);
+            vm.isbn        = new string(this.isbn);
+            #endregion
+
+            // Return the new instance
+            return vm;
+        }
     }
 }

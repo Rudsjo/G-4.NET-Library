@@ -80,5 +80,9 @@
         /// </summary>
         public int reasonID { get; set; }
 
+        /// <summary>
+        /// Creates a new object that is a copy of the current instance (NOT IMPLEMENTED).
+        /// </summary>
+        public object Clone() => null;
     }
 }

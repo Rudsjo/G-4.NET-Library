@@ -1,6 +1,8 @@
-﻿namespace Library.Core
+﻿using System;
+
+namespace Library.Core
 {
-    public interface IArticle
+    public interface IArticle: ICloneable
     {
         int articleID { get; set; }
         string author { get; set; }

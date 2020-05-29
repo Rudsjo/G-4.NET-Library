@@ -174,9 +174,6 @@ namespace Library.Core
             ReserveArticle = new RelayParameterizedCommand(async (parameter) => await ReserveArticleCommand(parameter));
 
             RetrieveDeletedArticle = new RelayParameterizedCommand(RetrieveDeletedArticleCommand);
-
-            ResetPassword = new RelayCommand(async () => await ResetPasswordCommand());
-
         }
 
         #endregion
@@ -608,7 +605,6 @@ namespace Library.Core
         /// <param name="itemToInspect">the chosen article</param>
         /// <returns></returns>
 
-
         private async Task InfoCommand(object itemToInspect)
         {
 
@@ -616,7 +612,7 @@ namespace Library.Core
             {
                 case ApplicationPages.BookPage:
 
-                    CurrentArticle = (itemToInspect as IArticle);
+                    CurrentArticle = (IArticle)(itemToInspect as IArticle).Clone();
 
                     switch (IoC.CreateInstance<ApplicationViewModel>().CurrentUser.roleID)
                     {
@@ -688,13 +684,10 @@ namespace Library.Core
             IoC.CreateInstance<ApplicationViewModel>().ClosePopUp();
 
             if(IoC.CreateInstance<ApplicationViewModel>().CurrentPage == ApplicationPages.EmployeePage)
-            {
                 // Check if the user has any changes
                 if ((SelectedUser as UserViewModel) != (CurrentList as IEnumerable<UserViewModel>).Where(x => x.personalNumber == SelectedUser.personalNumber).First())
-                // Load the list if any changes is made
-                LoadItems();
-            }
-
+                    // Load the list if any changes is made
+                    LoadItems();
 
             UserHasLoansOrReservations = false;
         }
@@ -746,7 +739,6 @@ namespace Library.Core
             }
 
         }
-
 
         /// <summary>
         /// Command that selects an item from a user and "returns" it to the library
