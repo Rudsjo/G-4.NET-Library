@@ -5281,25 +5281,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marcu\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\pette\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marcu\\Desktop\\G-4.NET-Library-2.0 (1)\\G-4.NET-Library-2.0\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+      "projectUniqueName": "C:\\Users\\pette\\Desktop\\Library from 2.0\\Senaste push från marcus 2.0.1\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
       "projectName": "Library.Core",
-      "projectPath": "C:\\Users\\marcu\\Desktop\\G-4.NET-Library-2.0 (1)\\G-4.NET-Library-2.0\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
-      "packagesPath": "C:\\Users\\marcu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marcu\\Desktop\\G-4.NET-Library-2.0 (1)\\G-4.NET-Library-2.0\\Library\\Library.Core\\Library.Core\\obj\\",
+      "projectPath": "C:\\Users\\pette\\Desktop\\Library from 2.0\\Senaste push från marcus 2.0.1\\Library\\Library.Core\\Library.Core\\Library.Core.csproj",
+      "packagesPath": "C:\\Users\\pette\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pette\\Desktop\\Library from 2.0\\Senaste push från marcus 2.0.1\\Library\\Library.Core\\Library.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\marcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pette\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5356,7 +5354,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

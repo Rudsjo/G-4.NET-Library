@@ -339,11 +339,26 @@
                             <ScrollViewer Grid.Column="3" Width="90" 
                                           HorizontalScrollBarVisibility="Auto">
                                 <TextBlock
-                                       Text="{Binding availability}"
+                                       Text="1"
                                        VerticalAlignment="Center" HorizontalAlignment="Center"
                                        Style="{StaticResource TableItemText}"
+                                       Visibility="{Binding AvailableToLoanVisibility, Converter={local:BooleanToVisibilityConverter},
+                                                    ConverterParameter=LoanArticle}"
                                        />
                             </ScrollViewer>
+
+                            <!-- Column 3 -->
+                            <ScrollViewer Grid.Column="3" Width="90" 
+                                          HorizontalScrollBarVisibility="Auto">
+                                <TextBlock
+                                       Text="0"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Style="{StaticResource TableItemText}"
+                                       Visibility="{Binding AvailableToReserveVisibility, Converter={local:BooleanToVisibilityConverter},
+                                                    ConverterParameter=ReserveArticle}"
+                                       />
+                            </ScrollViewer>
+
 
                             <!-- Column 4 -->
                             <Grid Grid.Column="4" Visibility="{Binding ApplicationViewModel.IsUser,
