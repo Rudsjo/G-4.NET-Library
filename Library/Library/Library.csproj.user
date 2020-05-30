@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Controls\HeaderBarControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\MainContentUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PageHost.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\AddArticleControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\AddUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\ArticleEditControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\ArticleFilterControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\ArticleInfoControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\ChangePasswordControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\DatabaseLoginControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\ConfirmationControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\DownloadingControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\LoadingControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\MyProfileControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\NotificationControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\ReportFilterControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\ReturnLoansControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\SuccessfulControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\UserEditControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUp Controls\UserLoginControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\PopUpControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\SideMenuControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\SubPopUpControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\UserTableControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\BackupPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\BookPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\EmployeePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\HeaderBarControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ArticleEditControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ArticleFilterControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ChangePasswordControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\DownloadingControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\MyProfileControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\NotificationControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ReportFilterControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ReturnLoansControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\UserEditControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Skeleton Controls\HeaderBarControlSkeleton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Skeleton Controls\MainContentUserControlSkeleton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\MainContentUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PageHost.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\AddArticleControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\AddUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ArticleInfoControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\DatabaseLoginControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\ConfirmationControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\LoadingControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\SuccessfulControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUp Controls\UserLoginControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PopUpControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\SideMenuControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\ArticleTableControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Skeleton Controls\TableControlSkeleton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\SubPopUpControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\UserTableControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\BackupPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\BookPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\EmployeePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styling\Styles\Buttons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styling\Styles\CheckBoxes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styling\Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styling\Styles\ComboBoxes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styling\Styles\Fonts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styling\Styles\Scroll.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styling\Styles\Texts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
