@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="Library.HeaderBarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <!-- Header bar -->
+    <Border>
+
+        <Border.Effect>
+            <!-- Setting border shadow -->
+            <DropShadowEffect BlurRadius="9"
+                                  ShadowDepth="1"
+                                  Opacity="0.5"/>
+        </Border.Effect>
+
+        <Grid Background="#FFFFFF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Search box -->
+            <TextBox Style="{StaticResource SearchBox}" Tag="Sök..." 
+                         VerticalContentAlignment="Center"
+                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                         />
+
+            <!-- Header buttons -->
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right">
+
+                <Grid>
+                    <!-- Notifications -->
+                    <Button Style="{StaticResource IconButton}"                  
+                            Content="&#xf0f3;"                        
+                            Command="{Binding OpenNotification}"
+                            Visibility="{Binding ApplicationViewModel.IsUser,
+                                     Source={x:Static local:ViewModelLocator.Instance},
+                                     Converter={local:BooleanToVisibilityConverter}}"
+                        >
+
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Border Background="{Binding NotificationColor, 
+                            Converter={local:StateToStyleConverter}}"
+                            Visibility="{Binding ApplicationViewModel.IsUser,
+                            Source={x:Static local:ViewModelLocator.Instance},
+                            Converter={local:BooleanToVisibilityConverter}}"
+                            CornerRadius="360"
+                            Width="10"
+                            Height="10"
+                            VerticalAlignment="Top"
+                            Margin="0 10 0 0">
+
+                    </Border>
+
+                </Grid>
+
+                <!-- MyProfile / Login -->
+                <Button Style="{StaticResource IconButton}"
+                            Content="&#xf007;"
+                            Command="{Binding MyProfile}"
+                            />
+
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</UserControl>
