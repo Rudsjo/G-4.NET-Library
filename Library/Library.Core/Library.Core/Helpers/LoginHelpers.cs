@@ -11,7 +11,7 @@ namespace Library.Core
     {
 
         /// <summary>
-        /// Attempts the login.
+        /// Attempts to login.
         /// </summary>
         /// <returns>True if login was successful</returns>
         public static async Task<User> AttemptLogin(string PersonalNumber, SecureString Password)
@@ -62,22 +62,22 @@ namespace Library.Core
             // Where the salt bytes will be places
             var SaltBytes = new byte[16];
 
-            // Create a pseudo random cryptographic number generator
+            // Create a secure cryptographic random number generator
             using (RandomNumberGenerator RNG = RandomNumberGenerator.Create())
             {
                 // Generate a new random salt
                 RNG.GetBytes(SaltBytes);
             }
 
-            // Convert the salt bytes into a Base64 string
+            // Convert the bytes into a Base64 string
             var Salt64 = Convert.ToBase64String(SaltBytes);
             // Get the old salt from the user
             var OldSalt = await IoC.CreateInstance<ApplicationViewModel>().rep.GetUserSalt(personalNumber);
 
-            // Get the hash from the new password
+            // compute the hash from the new password
             newPass = Convert.ToBase64String(Hasher.ComputeHash(Encoding.Default.GetBytes(newPass.ToUnsecureString() + Salt64))).ToSecureString();
 
-            // Compute the old password
+            // Compute the hash from the old password
             oldPass = Convert.ToBase64String(Hasher.ComputeHash(Encoding.Default.GetBytes(oldPass.ToUnsecureString() + OldSalt))).ToSecureString();
 
             // Return the result
